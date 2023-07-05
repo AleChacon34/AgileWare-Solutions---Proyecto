@@ -72,6 +72,18 @@ main div .offerBody {
 }
 
 button {
+    background-color: white;
+    border: none;
     width: 190px;
     height: 30px;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: rgb(188, 188, 188);
+    cursor: pointer;
+}
+
+button:active {
+    background-color: rgb(156, 156, 156);
 }
