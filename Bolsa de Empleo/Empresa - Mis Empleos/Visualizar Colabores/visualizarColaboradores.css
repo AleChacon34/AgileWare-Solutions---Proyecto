@@ -1,0 +1,181 @@
+html, body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+}
+
+h2, a, h4, h1,p{
+    font-family: sans-serif;
+}
+
+h4{
+    width: 25%;
+}
+
+h1{
+    margin:10px 10px;
+}
+
+body{
+    box-sizing: content-box;
+    display: flex;
+    flex: wrap;
+    flex-direction:column;
+    background-color: rgb(255, 255, 255);
+}
+
+header{
+    display: flex;
+    width: 100%;
+    margin: 10px 0px 100px 0px;
+    padding: 15px;
+    border: 1px solid;
+    background-color: darkblue;
+    color: white;
+    border-radius: 10px;
+}
+
+main{
+    /* box-sizing: content-box; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main-navigation{
+    height:200px;
+    display: flex;
+    Background-color: black;
+    color: white;
+    margin: 0px 0px 30px 0px;
+}
+
+#main-navigation p{
+    margin:0;
+}
+#main-navigation section{
+    align-items: center;
+}
+
+#main-navigation section:hover{
+    background-color: gray;
+}
+
+#main-navigation p{
+    font-size:xx-large;
+    margin: 5px;
+}
+
+#main-navigation section a{
+    font-size:large;
+}
+
+#main-navigation section a:hover{
+    border-bottom: 4px solid white;
+}
+
+#second-navigation{
+    text-align: center;
+}
+
+#second-navigation a {
+    margin: 5px;
+    font-size: large;  
+}
+
+#second-navigation a:link{
+    color: gray;
+    text-decoration: none;
+}
+
+#second-navigation a:visited{
+    color: gray;
+}
+
+/* nav a:active{
+    font-weight: bold;
+} */
+
+#second-navigation a:hover{
+    border-top: 3px solid darkblue;
+    color: darkblue;
+}
+
+#second-navigation button:hover{
+    content: "J";
+    opacity: 1;
+}
+
+
+div{
+    height: 250PX;
+    width: 60%;
+    padding: 10px;  
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 30px 30px;
+    border: 2px solid #808080;
+}
+
+div:hover{
+    box-shadow: 16px 16px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+    justify-content: center;
+}
+
+section p {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    height: 50px;
+    width: 200px;
+    margin: 10px;
+    align-items:center;
+    background-color: #00008b;
+    color: white;
+    font-weight:bold;
+    opacity: 0.6;
+}
+
+button:hover{
+    opacity: 1;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+section button {
+    background-color: transparent;
+    color:black;
+    width: 40px;
+    height: 40px;
+    font-size: x-large;
+    border: 1px solid gray;
+}
+
+section button:hover{
+    background-color: gray;
+    color: white;
+}
+
+.image-placeholder{
+    width: 50%;
+    height: 100%;    
+    background-color: gray;
+}
+
+
+
+
+
