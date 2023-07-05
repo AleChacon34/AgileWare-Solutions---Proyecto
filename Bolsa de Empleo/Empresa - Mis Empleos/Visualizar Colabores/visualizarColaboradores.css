@@ -4,7 +4,7 @@ html, body{
     margin: 0px;
 }
 
-h2, a, h4, p{
+h2, a, h4, h1,p{
     font-family: sans-serif;
 }
 
@@ -12,11 +12,15 @@ h4{
     width: 25%;
 }
 
+h1{
+    margin:10px 10px;
+}
+
 body{
     box-sizing: content-box;
     display: flex;
+    flex: wrap;
     flex-direction:column;
-    padding: 50px;
     background-color: rgb(255, 255, 255);
 }
 
@@ -32,26 +36,59 @@ header{
 }
 
 main{
-    box-sizing: content-box;
+    /* box-sizing: content-box; */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-nav{
+#main-navigation{
+    height:200px;
+    display: flex;
+    Background-color: black;
+    color: white;
+    margin: 0px 0px 30px 0px;
+}
+
+#main-navigation p{
+    margin:0;
+}
+#main-navigation section{
+    align-items: center;
+}
+
+#main-navigation section:hover{
+    background-color: gray;
+}
+
+#main-navigation p{
+    font-size:xx-large;
+    margin: 5px;
+}
+
+#main-navigation section a{
+    font-size:large;
+}
+
+#main-navigation section a:hover{
+    border-bottom: 4px solid white;
+}
+
+#second-navigation{
     text-align: center;
 }
 
-nav a {
-    margin: 5px;  
+#second-navigation a {
+    margin: 5px;
+    font-size: large;  
 }
 
-nav a:link{
+#second-navigation a:link{
     color: gray;
     text-decoration: none;
 }
 
-nav a:visited{
+#second-navigation a:visited{
     color: gray;
 }
 
@@ -59,23 +96,16 @@ nav a:visited{
     font-weight: bold;
 } */
 
-nav a:hover{
+#second-navigation a:hover{
     border-top: 3px solid darkblue;
     color: darkblue;
 }
 
-nav button{
-    float: right;
-    background-color: #00008b;
-    color: white;
-    font-weight:bold;
-    opacity: 0.6;
-}
-
-nav button:hover{
+#second-navigation button:hover{
     content: "J";
     opacity: 1;
 }
+
 
 div{
     height: 250PX;
@@ -106,8 +136,28 @@ section p {
     margin-right: auto;
 }
 
+button {
+    height: 50px;
+    width: 200px;
+    margin: 10px;
+    align-items:center;
+    background-color: #00008b;
+    color: white;
+    font-weight:bold;
+    opacity: 0.6;
+}
+
+button:hover{
+    opacity: 1;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
 section button {
     background-color: transparent;
+    color:black;
     width: 40px;
     height: 40px;
     font-size: x-large;
