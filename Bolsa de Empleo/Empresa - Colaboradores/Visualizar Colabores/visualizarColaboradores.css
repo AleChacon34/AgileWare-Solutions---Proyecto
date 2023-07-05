@@ -76,6 +76,7 @@ main{
 
 #second-navigation{
     text-align: center;
+    margin: 20px;
 }
 
 #second-navigation a {
@@ -167,6 +168,10 @@ section button {
 section button:hover{
     background-color: gray;
     color: white;
+}
+
+#agregar-colaborador{
+    align-items: right;
 }
 
 .image-placeholder{
