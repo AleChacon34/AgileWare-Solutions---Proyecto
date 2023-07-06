@@ -7,36 +7,11 @@ body {
     font-family: sans-serif;
 }
 
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    width: 100%;
-    background-color: grey;
-    height: 60px;
-}
-
 main {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: row;
-}
-
-/*TODO estilos especificos del 'nav' */
-
-nav a{
-    margin: 0 130px;
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-}
-
-nav a:hover{
-    border-bottom: 1px solid rgb(255, 255, 255);
-    padding: 8px;
-    transition: all 0.3s;
 }
 
 /*TODO estilos especificos del 'main div' */
