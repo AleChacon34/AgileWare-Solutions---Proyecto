@@ -27,7 +27,6 @@ nav div:hover {
     transition: all 0.3s;
     background-color: rgb(0, 0, 0);
     padding: 5px;
-    border-bottom: 1px solid white;
 }
 
 nav div:active {
