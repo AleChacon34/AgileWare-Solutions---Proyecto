@@ -1,0 +1,62 @@
+html, body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    align-items: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+    justify-content: space-evenly;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+    margin: 5px 0px;
+}
+
+div button{
+    display: block;
+    height: 50px;
+    width: 150px;
+}
+
+div input[name="barra-busqueda"]{
+    text-align: right;
+    margin: 2px;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(202, 202, 202);
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid rgb(183, 183, 183);
+}
+
+section h4, textarea, a {
+    flex-basis: 100%;
+}
+
+section a {
+    display: block;
+    text-align: right;
+}
+
+section textarea{
+    height: 100px
+}
