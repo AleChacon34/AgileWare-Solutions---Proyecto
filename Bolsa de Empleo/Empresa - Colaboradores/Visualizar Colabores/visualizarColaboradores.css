@@ -185,15 +185,7 @@ section button:active {
     background-color: gray;
 }
 
-.btns {
+.btn {
     display: flex;
     flex-direction: row;
 }
-
-.invitar {
-    width: 50%;
-    font-size: 12px;
-}
-
-
-
