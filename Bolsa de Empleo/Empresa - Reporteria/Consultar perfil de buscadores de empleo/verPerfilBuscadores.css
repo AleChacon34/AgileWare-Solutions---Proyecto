@@ -1,0 +1,70 @@
+html, body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0; 
+}
+
+body {
+    font-family: sans-serif;
+}
+
+p {
+    color: black;
+    font-size: x-large;
+}
+
+main {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-around;
+    height: 75%;
+    padding: 30px;
+    background-color: rgb(197, 197, 197);
+    border-radius: 15px;
+    margin: 20px 50px;
+}
+
+.ver-datos-personales{
+    padding: 5px;
+    border: 2px solid rgb(153, 153, 153);
+}
+
+.image-placeholder{
+    height: 100px;
+    width: 100px;
+    background-color: white;
+}
+
+button[name="ver-seccion-estudios"]{
+    color: white;
+    background-color: rgb(137, 137, 137);
+    font-weight: bolder;
+    border-style: none;
+    margin: 5px;
+    height:30px;
+    width: 220px;
+    border-radius: 4px;
+}
+
+button[name="enviar-invitacion"]{
+    color: white;
+    background-color: rgb(137, 137, 137);
+    font-weight: bolder;
+    border-style: none;
+    margin: 5px;
+    height:30px;
+    width: 220px;
+    border-radius: 4px; 
+}
+
+button:hover{
+    background-color: #3ca2a2;
+    color: black;
+}
+
+
+
+
+
+
+

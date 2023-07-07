@@ -65,3 +65,19 @@ main aside .filter {
 main aside .filter:hover{
     border: 1px solid rgb(0, 88, 189);
 }
+
+button {
+    background-color: white;
+    border: none;
+    padding: 7px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(185, 185, 185);
+}
+
+button:active {
+    background-color: rgb(157, 157, 157);
+}
