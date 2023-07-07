@@ -157,6 +157,7 @@ button a {
     text-decoration: none;
 }
 section button {
+    cursor: pointer;
     background-color: transparent;
     color:black;
     width: 40px;
@@ -170,6 +171,10 @@ section button:hover{
     color: white;
 }
 
+section button:active {
+    background-color: rgb(104, 104, 104);
+}
+
 #agregar-colaborador{
     align-items: right;
 }
@@ -180,7 +185,7 @@ section button:hover{
     background-color: gray;
 }
 
-
-
-
-
+.btn {
+    display: flex;
+    flex-direction: row;
+}

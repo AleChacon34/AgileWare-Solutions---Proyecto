@@ -7,17 +7,6 @@ body {
     font-family: sans-serif;
 }
 
-nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    width: 100%;
-    background-color: grey;
-    height: 60px;
-}
-
 main {
     width: 100%;
     display: flex;
@@ -35,20 +24,6 @@ main section {
 
 main aside {
     width: 10%;
-}
-
-/*TODO estilos especificos del 'nav' */
-
-nav a{
-    margin: 0 130px;
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-}
-
-nav a:hover{
-    border-bottom: 1px solid rgb(255, 255, 255);
-    padding: 10px;
-    transition: all 0.3s;
 }
 
 /*TODO estilos especificos del main section */
@@ -89,4 +64,20 @@ main aside .filter {
 
 main aside .filter:hover{
     border: 1px solid rgb(0, 88, 189);
+}
+
+button {
+    background-color: white;
+    border: none;
+    padding: 7px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(185, 185, 185);
+}
+
+button:active {
+    background-color: rgb(157, 157, 157);
 }

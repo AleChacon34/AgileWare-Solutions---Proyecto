@@ -1,0 +1,76 @@
+html, body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+label {
+    color: black;
+    font-weight: bold;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+div{
+    display: flex;
+    height: 10%;
+    width: 60%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div input{
+    height: 40px;
+    width: 70%; 
+}
+
+#seccion-datos{
+    width: 100%;
+    height: 350px;
+    background-color: rgb(228, 228, 228);
+}
+
+.buttons{
+    justify-content: space-around;
+}
+
+table, th, td {
+    border: 2px double black;
+}
+
+th {
+    background-color: #92c7a3
+}
+
+button{
+    color: white;
+    background-color: rgb(137, 137, 137);
+    font-weight: bolder;
+    border-style: none;
+    margin: 5px;
+    height:30px;
+    width: 220px;
+    border-radius: 4px;
+}
+
+button:hover{
+    background-color: black;
+    width: 240px;
+}
+
+/* footer{
+    width:100%;
+    text-align: center;
+    font-size: x-small;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgb(0, 102, 27) 35%, rgb(0, 145, 24) 100%);
+} */
