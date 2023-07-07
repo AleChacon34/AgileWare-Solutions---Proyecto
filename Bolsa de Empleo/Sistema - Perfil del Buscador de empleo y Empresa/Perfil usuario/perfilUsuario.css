@@ -44,3 +44,7 @@ nav a {
 i {
     color: white;
 }
+section{
+    background-color: gray;
+    margin: 50px;
+}
