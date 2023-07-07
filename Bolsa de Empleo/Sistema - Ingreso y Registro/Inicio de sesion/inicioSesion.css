@@ -5,7 +5,7 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    height: 600px;
+    height: 100vh;
 
 }
 form {
@@ -15,9 +15,7 @@ form {
 .container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
+    justify-content: space-between;
     height: 350px;
     width: 200px;
 }
@@ -35,29 +33,50 @@ section{
     border: 1px solid black;
     border-radius: 7px;
 }
+.container div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(101, 100, 100);
+    margin: 5px 0px;
+
+}
+
+i{
+    color: white;
+    translate: 5px 13px;
+}
 input{
     height: 21px;
     margin: 10px;
     border-radius: 5px;
     border: 1px;
-    translate: 0px -70px;
     background-color: white;
     color: gray
     
 }
 button{
-    border-radius: 5px;
+    border-radius: 1px;
+    padding: 9px;
+    border: none;
     background-color: white;
     display: flex;
     margin: 7px;
+    cursor: pointer;
 }
+
+button:hover{
+    background-color: rgb(238, 238, 238)
+}
+button:active{
+    background-color: grey;
+    color: white;
+}
+
 h2{
-    height: 110px;
     color: black
 }
-#ing1{
-    translate: 0px -70px;
-}
+
 a{
     color:blue
 }
