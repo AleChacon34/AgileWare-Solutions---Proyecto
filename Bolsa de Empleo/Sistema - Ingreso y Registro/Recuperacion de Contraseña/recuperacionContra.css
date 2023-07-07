@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    font-family: sans-serif;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 600px;
+}
+h2{
+    border: 1px;
+}
+button{
+border-radius: 2px;
+border: 6px;
+background-color: lightgray;
+display: flex;
+margin: 7px;
+}
