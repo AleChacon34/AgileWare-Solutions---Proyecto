@@ -1,0 +1,12 @@
+table, th, td {
+    border: 2px double black;
+}
+
+table{
+    margin-top: 100px;
+    width: 80%;
+}
+
+th {
+    background-color: #92c7a3
+}
