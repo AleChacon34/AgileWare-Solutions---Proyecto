@@ -3,16 +3,30 @@
   <head>
     <title>Document</title>
     <link rel="stylesheet" href="inicioSesion.css" />
+    <script
+      src="https://kit.fontawesome.com/3d4c892592.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <form>
       <div class="container">
-        <h2>Inicio de Sesión</h2>
-          <input type="email" placeholder="usuario@dominio.com" />
-          <input type="password" placeholder="Contraseña..." />
+        <section>
+          <h2>Inicio de Sesión</h2>
+          <div>
+            <i class="fa-solid fa-at"></i>
+            <input type="email" placeholder="usuario@dominio.com" />
+          </div>
+          <div>
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" placeholder="Contraseña..." />
+          </div>
           <button id="ing1">Ingresar</button>
+        </section>
+        <section>
           <a>¿Olvidó su contraseña?</a>
           <button>Registrarme</button>
+        </section>
       </div>
     </form>
   </body>
