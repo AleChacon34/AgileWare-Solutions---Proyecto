@@ -1,8 +1,3 @@
-body {
-    margin: 0;
-    font-family: sans-serif;
-}
-
 nav {
     display: flex;
     flex-direction: row;
