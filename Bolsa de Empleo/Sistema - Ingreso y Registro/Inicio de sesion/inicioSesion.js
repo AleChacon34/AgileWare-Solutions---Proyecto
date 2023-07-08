@@ -59,7 +59,14 @@ function verificarDatosIngreso(usuario){
             if (usuario.pass === user.pass){
                 autenticado = true
                 usuarioCorrecto = user;
-                
+            }
+            else{
+                Swal.fire({
+                    icon: 'error',
+                    title: '¡Usuario o contraseña incorrecta!',
+                    text: 'Por favor verifique sus datos',
+                    footer: '<a href="">Contactar SAC</a>'
+                  })
             }
         }
     }    
