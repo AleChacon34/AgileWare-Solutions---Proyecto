@@ -11,6 +11,26 @@ let usuarios = [{
         correo: "buscador@buscador.com",
         pass: "buscador",
         rol: "Buscador de Empleo"
+    }, 
+    {
+        correo: "super-usuario@super-usuario.com",
+        pass: "super-usuario",
+        rol: "Super-Usuario"
+    }, 
+    {
+        correo: "empresa@empresa.com",
+        pass: "empresa",
+        rol: "Empresa de Empleo"
+    }, 
+    {
+        correo: "manager@manager.com",
+        pass: "manager",
+        rol: "Manager"
+    }, 
+    {
+        correo: "reclutador@reclutador.com",
+        pass: "reclutador",
+        rol: "Reclutador"
     }
 ];
 
@@ -36,42 +56,41 @@ function verificarDatosIngreso(usuario){
         console.log(usuario.correo);
         console.log(usuario.pass);
         if (usuario.correo === user.correo){
-            alert("Usuario Funciona!!!");
             if (usuario.pass === user.pass){
                 autenticado = true
                 usuarioCorrecto = user;
-                console.log(usuarioCorrecto.rol)
+                
             }
         }
     }    
-    // if (autenticado){
-    //     paginaInicio(usuarioCorrecto.rol);
-    // }
+    if (autenticado){
+        paginaInicio(usuarioCorrecto.rol);
+    }
 }
 
-// function paginaInicio(rol){
-//     if (rol === "Buscador de Empleo"){
-//         window.location.href = "/AgileWare-Solutions---Proyecto/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Perfil usuario/perfilUsuario.html";
-//     }
+function paginaInicio(rol){
+    if (rol === "Buscador de Empleo"){
+        location.href = "/AgileWare-Solutions---Proyecto/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Perfil usuario/perfilUsuario.html";
+    }
 
-//     else if(rol === "Administrador"){
-//         window.location.href = "facebook.com";
-//     }
+    else if(rol === "Administrador"){
+        location.href = "https://www.facebook.com";
+    }
 
-//     else if(rol === "Reclutador"){
-//         window.location.href = "google.com";
-//     }
+    else if(rol === "Reclutador"){
+        location.href = "https://www.google.com";
+    }
 
-//     else if(rol === "Manager"){
-//         window.location.href = "192.168.0.1";
-//     }
+    else if(rol === "Manager"){
+        location.href = "http://github.com";
+    }
 
-//     else if(rol === "Super-Usuario"){
-//         window.location.href = "twitter.com";
-//     }
+    else if(rol === "Super-Usuario"){
+        location.href = "https://www.twitter.com";
+    }
 
-//     else if(rol === "Empresa"){
-//         window.location.href = "/AgileWare-Solutions---Proyecto/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Perfil usuario/perfilUsuario.html";
-//     }
-// }
+    else if(rol === "Empresa"){
+        location.href = "/AgileWare-Solutions---Proyecto/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Perfil usuario/perfilUsuario.html";
+    }
+}
         
