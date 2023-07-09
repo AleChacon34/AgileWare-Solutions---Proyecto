@@ -14,8 +14,8 @@ main{
     flex-direction: column;
     background-color: rgb(186, 186, 186);
     margin: 0px;
-    height: 70%;
-    width: 70%;
+    height: 80%;
+    width: 95%;
 }
 section{
     display: flex;
@@ -27,7 +27,7 @@ section img{
 }
 section p {
     background-color: white;
-    width: 70%;
+    width: 50%;
 }
 button{
     width: 190px;
