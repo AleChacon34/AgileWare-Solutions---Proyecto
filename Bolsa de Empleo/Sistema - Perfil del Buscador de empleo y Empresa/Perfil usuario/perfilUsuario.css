@@ -10,10 +10,11 @@ body{
     justify-content: center;
 }
 main{
+    padding: 10px;
     display: flex;
     flex-direction: column;
     background-color: rgb(186, 186, 186);
-    margin: 0px;
+    margin: auto;
     height: 80%;
     width: 95%;
 }
