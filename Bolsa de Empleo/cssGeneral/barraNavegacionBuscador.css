@@ -16,7 +16,7 @@ body {
 
 .navBar div {
     height: 80%;
-    width: 33%;
+    width: 30%;
     display: flex;
     flex-direction: column;
     justify-content: center;
