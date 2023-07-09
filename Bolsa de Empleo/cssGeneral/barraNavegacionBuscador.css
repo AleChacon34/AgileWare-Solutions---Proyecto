@@ -1,4 +1,9 @@
-nav {
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.navBar {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -9,7 +14,7 @@ nav {
     height: 60px;
 }
 
-nav div {
+.navBar div {
     height: 80%;
     width: 33%;
     display: flex;
@@ -19,17 +24,17 @@ nav div {
     align-items: center;
 }
 
-nav div:hover {
+.navBar div:hover {
     transition: all 0.3s;
     background-color: rgb(0, 0, 0);
     padding: 2px;
 }
 
-nav div:active {
+.navBar div:active {
     background-color: rgb(62, 62, 62);
 }
 
-nav a {  
+.navBar a {  
     margin-top: 5px;
     text-decoration: none;
     color: rgb(255, 255, 255);

@@ -1,82 +1,76 @@
 body {
-    display: flex;
+    margin: 0;
     font-family: sans-serif;
-    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    height: 100vh;
-
 }
+
+.container {
+    height: 45%;
+    background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 3px;
+    border: 2px solid grey;
+}
+
 form {
     display: flex;
-    flex-direction: row;
-}
-.container{
-    display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 350px;
-    width: 200px;
-}
-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
 }
-.container{
-    background-color: lightgrey;
-    margin: 10px;
-    padding: 10px;
-    border: 2px solid rgb(169, 169, 169);
-    border-radius: 4px;
-}
-.container div{
+
+.buttons {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-color: rgb(101, 100, 100);
-    margin: 5px 0px;
-
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
-i{
-    color: white;
-    translate: 5px 13px;
+.inputs {
+    margin: 5px 10px;
+    background-color: rgb(86, 86, 86);
+    padding: 7px;
 }
-input{
-    height: 21px;
-    margin: 10px;
-    border-radius: 5px;
-    border: 1px ;
-    background-color: white;
-    color: gray
-    
+
+input {
+    height: 20px;
 }
-button{
-    border-radius: 1px;
-    padding: 9px;
+
+button {
     border: none;
+    padding: 7px;
+    border-radius: 3px;
     background-color: white;
-    display: flex;
-    margin: 7px;
-    cursor: pointer;
 }
 
-button:hover{
-    background-color: rgb(238, 238, 238)
-}
-button:active{
+button:hover {
     background-color: grey;
     color: white;
 }
 
-h2{
-    color: black
+button:active {
+    background-color: rgb(98, 98, 98);
+    color: white;
 }
 
-a{
-    color:blue
+a {
+    margin: 5px 0;
+    color: blue;
+    text-decoration: none;
+}
+
+i {
+    color: rgb(233, 233, 233);
 }
