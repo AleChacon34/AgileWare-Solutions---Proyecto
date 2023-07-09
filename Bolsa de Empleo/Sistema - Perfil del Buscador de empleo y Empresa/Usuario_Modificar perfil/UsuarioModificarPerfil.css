@@ -39,6 +39,28 @@ section,button{
 } 
 
 input {
-    width: 98%;
+    width: 200px;
 }
 
+.container{
+    display:flex ;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+button{
+    width: 200px;
+    height: 25px;
+    border: 2px solid grey;
+    background-color: rgb(168, 166, 166);
+}
+
+button:hover{
+    background-color:rgb(80, 79, 79) ;
+    color: white;
+}
+
+p{
+    translate: 0 -15px;
+}
