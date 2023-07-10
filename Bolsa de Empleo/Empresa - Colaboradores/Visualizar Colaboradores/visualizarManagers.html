@@ -6,11 +6,11 @@
             <title>Visualizar Managers</title>
             <script src="https://kit.fontawesome.com/3d4c892592.js" crossorigin="anonymous"></script>
             <link rel="stylesheet" href="visualizarColaboradores.css"/>
-            <link rel="stylesheet" href="/AgileWare-Solutions---Proyecto/Bolsa de Empleo/cssGeneral/barraNavegacionEmpresa.css"/>
-            <script src="visualizarColaboradores.js"></script>
+            <link rel="stylesheet" href="../../cssGeneral/barraNavegacionEmpresa.css"/>
+            <script src="visualizarManagers.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         </head>
-        <body>
+        <body onload="onLoadComplete()">
             <nav class = "navBar">
               <div>
                 <i class="fa-solid fa-user"></i>
@@ -38,8 +38,8 @@
                 <a href="visualizarReclutadores.html">Reclutadores</a>     
             </nav>
             <main>
-                <button id = "agregar-colaborador"><a href="#">AGREGAR MANAGER</a></button>
-                <div>
+                <button id = "agregar-colaborador">AGREGAR MANAGERS</button>
+                <div class="card">
                     <section>
                         <h4>Manager 1</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, nesciunt magnam saepe, ipsam doloremque facere placeat cumque suscipit totam voluptates soluta, atque blanditiis officiis deserunt. Eius cumque dolor voluptatum praesentium.</p>
@@ -49,7 +49,7 @@
                         <img src="#" alt="placeholder"/>          
                     </section> 
                 </div>
-                <div>
+                <div class="card">
                     <section>
                         <h4>Manager 2</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, nesciunt magnam saepe, ipsam doloremque facere placeat cumque suscipit totam voluptates soluta, atque blanditiis officiis deserunt. Eius cumque dolor voluptatum praesentium.</p>
@@ -59,7 +59,7 @@
                         <img src="#" alt="placeholder"/>          
                     </section> 
                 </div>
-                <div>
+                <div class="card">
                     <section>
                         <h4>Manager 3</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, nesciunt magnam saepe, ipsam doloremque facere placeat cumque suscipit totam voluptates soluta, atque blanditiis officiis deserunt. Eius cumque dolor voluptatum praesentium.</p>
