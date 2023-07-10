@@ -1,15 +1,12 @@
 body{
-    margin: 0;
+    margin: 0px;
     font-family: sans-serif;
     height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
 }
-
 main{
     width: 90%;
     height: 90%;
@@ -25,13 +22,12 @@ h2{
     background-color: whitesmoke;
     padding: 15px;
     border: 1px solid rgb(179, 178, 178);
-    
 }
 
 form div{
     margin-top: 100px;
     display: flex;
-    flex-direction:column;
+    flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
