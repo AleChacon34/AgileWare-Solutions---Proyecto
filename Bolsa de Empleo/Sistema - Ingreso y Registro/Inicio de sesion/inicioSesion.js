@@ -66,7 +66,7 @@ function verificarDatosIngreso(usuario){
                     title: '¡Usuario o contraseña incorrecta!',
                     text: 'Por favor verifique sus datos',
                     footer: '<a href="">Contactar SAC</a>'
-                  })
+                });
             }
         }
     }    
