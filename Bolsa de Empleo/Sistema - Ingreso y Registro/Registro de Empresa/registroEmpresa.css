@@ -16,7 +16,7 @@ main{
 }
 form{
     width: 100%;
-    background-color: lightgrey;
+    background-color: rgb(228, 226, 226);
     padding: 20px;
     height: 80%;
 }
