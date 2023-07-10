@@ -47,7 +47,7 @@ main{
     height: auto;
 }
 
-main div{
+main .card{
     display: flex;
     justify-content: space-between;
     height: 30%;
@@ -82,7 +82,7 @@ main button a:hover{
     color: black;   
 }
 
-div section{
+.card section{
     display: flex;
     flex-direction: column;
     margin: 10px 0px;
@@ -108,9 +108,13 @@ section button  {
     margin-top: 5px;
     width: 40px;
     height: 40px;
+    cursor: pointer;
 }
 
-
+#agregar-colaborador {
+    cursor: pointer;
+    padding: 7px;
+}
 
 
 
