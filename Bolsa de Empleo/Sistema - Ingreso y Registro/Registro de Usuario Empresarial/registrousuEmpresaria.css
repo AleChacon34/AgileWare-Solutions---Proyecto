@@ -6,33 +6,34 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
 }
 main{
     width: 90%;
-    height: 90%;
+    height: 95%;
 }
 form{
     width: 100%;
     background-color: lightgrey;
     padding: 20px;
-    height: 80%;
-    
+    height: 90%;
+    margin-bottom: -20px;
 }
 h2{
     background-color: whitesmoke;
     padding: 15px;
+    margin-top: -10px;
     border: 1px solid rgb(179, 178, 178);
 }
 
 form div{
-    margin-top: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
+    margin-top: 0px;
+
 }
 input{
+    margin-left: 195px;
+    translate: -10px -35px;
     width: 25%;
     height: 20px;
 }
@@ -40,13 +41,29 @@ input:hover{
     border: 1px solid rgb(179, 178, 178);
 }
 button{
-    margin-top: 30%;
-    padding: 8px;
+    padding: 10px;
     border-radius: 5px;
     border: none;
+    margin-top: 0px;
+    margin-left: 182px;
+    translate: 0px -40px;
     background-color: rgb(185, 185, 185);
 }
 button:hover{
     background-color:  rgb(131, 130, 130);
     cursor: pointer;
+}
+section{
+    float: right;
+    border: none;
+    margin-top: -1%;
+}
+.container{
+    float: right;
+    translate: 195px -244px;
+}
+small{
+    float: right;
+    margin-right: -26%;
+    margin-top: -20%;
 }
