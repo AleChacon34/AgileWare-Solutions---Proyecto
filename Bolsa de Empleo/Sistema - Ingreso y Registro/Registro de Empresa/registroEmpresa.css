@@ -12,29 +12,23 @@ body{
 
 main{
     width: 90%;
-    height: 70%;
+    height: 80%;
 }
 form{
     width: 100%;
     background-color: lightgrey;
     padding: 20px;
     height: 80%;
-    
 }
 h2{
     background-color: whitesmoke;
     padding: 15px;
     border: 1px solid rgb(179, 178, 178);
-    
 }
 
 form div{
-    margin-top: 100px;
-    display: flex;
-    flex-direction:column;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
+    margin-top: 0px;
+
 }
 input{
     width: 25%;
@@ -48,9 +42,35 @@ button{
     padding: 8px;
     border-radius: 5px;
     border: none;
+    margin-top: 0px;
+    margin-left: 195px;
+    translate: 0px -40px;
     background-color: rgb(185, 185, 185);
 }
 button:hover{
     background-color:  rgb(131, 130, 130);
     cursor: pointer;
+}
+section{
+    float: right;
+    border: none;
+    margin-top: -1%;
+
+}
+input{
+    margin-left: 195px;
+    translate: 0px -37px;
+}
+.container{
+    float: right;
+    translate: 195px -162px;
+}
+small{
+    float: right;
+    margin-right: -26%;
+    margin-top: -14%;
+}
+img{
+    float: right;
+    translate: 500px -440px;
 }

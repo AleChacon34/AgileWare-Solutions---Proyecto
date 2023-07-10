@@ -3,22 +3,23 @@
         <head>
             <meta charset="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <title>Visualizar Reclutadores</title>
+            <title>Visualizar Administradores</title>
             <script src="https://kit.fontawesome.com/3d4c892592.js" crossorigin="anonymous"></script>
             <link rel="stylesheet" href="visualizarColaboradores.css"/>
-            <link rel="stylesheet" href="/AgileWare-Solutions---Proyecto/Bolsa de Empleo/cssGeneral/barraNavegacionEmpresa.css"/>
-            <script src="visualizarColaboradores.js"></script>
+            <link rel="stylesheet" href="../../cssGeneral/barraNavegacionEmpresa.css"/>
+            <script src="visualizarAdministradores.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <link rel="stylesheet" href="">
         </head>
-        <body>
+        <body onload="onLoadComplete()">
             <nav class = "navBar">
               <div>
                 <i class="fa-solid fa-user"></i>
-                <a href="">Perfil</a>
+                <a href="../../Sistema - Perfil del Buscador de empleo y Empresa/Perfil usuario/perfilUsuario.html">Perfil</a>
               </div>
               <div>
                 <i class="fa-solid fa-briefcase"></i>
-                <a href="">Mis Empleos</a>
+                <a href="../../Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarListaOfertas.html">Mis Empleos</a>
               </div>
               <div>
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -38,10 +39,10 @@
                 <a href="visualizarReclutadores.html">Reclutadores</a>     
             </nav>
             <main>
-                <button id = "agregar-colaborador"><a href="#">AGREGAR RECLUTADOR</a></button>
-                <div>
+                <button id = "agregar-colaborador">AGREGAR ADMINISTRADOR</button>
+                <div class="card">
                     <section>
-                        <h4>Reclutador 1</h4>
+                        <h4>Administrador 1</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, nesciunt magnam saepe, ipsam doloremque facere placeat cumque suscipit totam voluptates soluta, atque blanditiis officiis deserunt. Eius cumque dolor voluptatum praesentium.</p>
                         <button><a>&#9965</a></button>
                     </section>
@@ -49,19 +50,19 @@
                         <img src="#" alt="placeholder"/>          
                     </section> 
                 </div>
-                <div>
+                <div class="card">
                     <section>
-                        <h4>Reclutador 2</h4>
+                        <h4>Administrador 2</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, nesciunt magnam saepe, ipsam doloremque facere placeat cumque suscipit totam voluptates soluta, atque blanditiis officiis deserunt. Eius cumque dolor voluptatum praesentium.</p>
                         <button><a>&#9965</a></button>
                     </section>
                     <section class = "image-placeholder">
                         <img src="#" alt="placeholder"/>          
                     </section> 
-                </div>  
-                <div>
+                </div>
+                <div class="card">
                     <section>
-                        <h4>Reclutador 3</h4>
+                        <h4>Administrador 3</h4>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, nesciunt magnam saepe, ipsam doloremque facere placeat cumque suscipit totam voluptates soluta, atque blanditiis officiis deserunt. Eius cumque dolor voluptatum praesentium.</p>
                         <button><a>&#9965</a></button>
                     </section>
