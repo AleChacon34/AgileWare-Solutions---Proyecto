@@ -4,8 +4,15 @@ html, body{
     margin: 0,
 }
 
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 main{
     display: flex;
+    width: 80%; 
     flex-direction: column;
     align-items: center;
 }

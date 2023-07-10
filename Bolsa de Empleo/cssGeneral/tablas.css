@@ -1,12 +1,13 @@
-table, th, td {
+.tabla-datos, .tabla-datos th, .tabla-datos td {
     border: 2px double black;
 }
 
-table{
+.tabla-datos{
     margin-top: 100px;
     width: 80%;
+    font-size: x-large;
 }
 
-th {
+.tabla-datos th {
     background-color: #92c7a3
 }
