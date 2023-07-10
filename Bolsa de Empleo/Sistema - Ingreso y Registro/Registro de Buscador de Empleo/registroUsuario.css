@@ -40,6 +40,10 @@ button :hover{
 button{
     translate: 150px -186px;
 }
+img{
+    float: right;
+    translate: 500px -440px;
+}
 
 
 

@@ -67,3 +67,7 @@ small{
     margin-right: -26%;
     margin-top: -20%;
 }
+img{
+    float: right;
+    translate: 500px -550px;
+}
