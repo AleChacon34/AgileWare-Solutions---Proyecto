@@ -54,8 +54,7 @@ th {
 
 button{
     color: white;
-    background-color: rgb(137, 137, 137);
-    font-weight: bolder;
+    background-color: #3ca2a2;
     border-style: none;
     margin: 5px;
     height:30px;
@@ -64,8 +63,9 @@ button{
 }
 
 button:hover{
-    background-color: black;
-    width: 240px;
+    background-color: #92c7a3;
+    color: black;
+    font-weight: bolder;
 }
 
 /* footer{
