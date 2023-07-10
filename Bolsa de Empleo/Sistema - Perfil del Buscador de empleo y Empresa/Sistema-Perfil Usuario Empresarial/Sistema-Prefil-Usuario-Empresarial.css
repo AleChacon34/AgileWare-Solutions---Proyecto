@@ -1,0 +1,60 @@
+html,body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;   
+    align-items: center;
+    justify-content: center;
+}
+main{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(186, 186, 186);
+    margin: auto;
+    height: 80%;
+    width: 95%;
+}
+section{
+    display: flex;
+    flex-direction: column;
+}
+section img{
+    width: 100px;
+    height: 100px;
+}
+section p {
+    background-color: white;
+    padding: 5px;
+    width: 50%;
+}
+button{
+    width: 190px;
+    padding: 5px;
+    border: none;
+    background-color: rgb(218, 218, 218);
+}
+
+button:hover {
+    background-color: grey;
+}
+
+button:active {
+    background-color: rgb(96, 96, 96);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: white;
+}
+
+a:active {
+    color: white;
+}
