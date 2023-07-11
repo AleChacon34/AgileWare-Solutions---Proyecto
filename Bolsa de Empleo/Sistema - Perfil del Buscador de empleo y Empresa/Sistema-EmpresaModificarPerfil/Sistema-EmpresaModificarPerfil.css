@@ -1,0 +1,70 @@
+html,body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+}
+
+h1{
+    width: 100%;
+    text-align: center;
+    border-style: groove;
+}
+
+section,input{
+    background-color: white;
+    width: 60%;
+    margin: 1% ;
+}
+
+section,button{
+    background-color: white;
+    width: 100%;
+    margin:1% ;
+}
+
+.block ,img{
+    margin: 1%;
+} 
+
+input {
+    width: 200px;
+}
+
+.container{
+    display:flex ;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+button{
+    width: 200px;
+    height: 25px;
+    border: 2px solid grey;
+    background-color: rgb(168, 166, 166);
+}
+
+button:hover{
+    background-color:rgb(80, 79, 79) ;
+    color: white;
+}
+
+button:active {
+    background-color: rgb(56, 56, 56) ;
+}
+
+p{
+    translate: 0 -15px;
+}
