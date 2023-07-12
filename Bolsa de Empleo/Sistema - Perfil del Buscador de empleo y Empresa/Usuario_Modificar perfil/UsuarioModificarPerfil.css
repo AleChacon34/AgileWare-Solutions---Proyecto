@@ -68,3 +68,8 @@ button:active {
 p{
     translate: 0 -15px;
 }
+
+button[name="agregar-campodeestudio"] a{
+    text-decoration: none;
+    color: black;
+}
