@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    font-family: sans-serif;
+}
+
+main {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    width: 50%;
+    height: 55%;
+    background-color: lightgray;
+    padding: 10px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px;
+    justify-content: space-around;
+}
+
+button {
+    background-color: rgb(0, 190, 130);
+    color: white;
+    border: none;
+    padding: 7px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(0, 155, 106);
+}
+
+button:active {
+    background-color: rgb(0, 117, 80);
+    color: white;
+}
+
+input {
+    width: 235px;
+    text-align: center;
+    height: 20px;
+}
