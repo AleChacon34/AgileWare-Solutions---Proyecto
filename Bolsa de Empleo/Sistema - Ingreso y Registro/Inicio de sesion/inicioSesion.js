@@ -34,6 +34,7 @@ let usuarios = [{
     }
 ];
 
+
 document.addEventListener("DOMContentLoaded", () =>{
     let btnLogin = document.querySelector("#ing1");
     btnLogin.addEventListener("click", obtenerCredenciales);
