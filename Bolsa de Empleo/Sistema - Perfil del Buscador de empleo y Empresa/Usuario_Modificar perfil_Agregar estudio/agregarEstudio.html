@@ -6,7 +6,7 @@
     <title>Agregar Estudio</title>
     <script src="https://kit.fontawesome.com/3d4c892592.js" crossorigin="anonymous"></script>
     <script src="agregarEstudio.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/Bolsa de Empleo/jsGeneral/SweetAlert.js"></script>
     <link rel="stylesheet" href="../../cssGeneral/barraNavegacionBuscador.css"/>
     <link rel="stylesheet" href="agregarEstudio.css" />
   </head>
@@ -31,15 +31,15 @@
         <form action="">
           <div class="inputBox">
             <label for="title">Titulo de estudio: </label>
-            <input type="text" name="title">
+            <input type="text" name="title" id="title">
           </div>
           <div class="inputBox">
             <label for="date">Fecha: </label>
-            <input type="date" name="date">
+            <input type="date" name="date" id="date">
           </div>
           <div class="inputBox">
             <label for="description">Descripcion: </label>
-            <textarea name="description" cols="30" rows="10"></textarea>
+            <textarea name="description" cols="30" rows="10" id="description"></textarea>
           </div>
         </form>
         <button id="agregar">Agregar</button>
