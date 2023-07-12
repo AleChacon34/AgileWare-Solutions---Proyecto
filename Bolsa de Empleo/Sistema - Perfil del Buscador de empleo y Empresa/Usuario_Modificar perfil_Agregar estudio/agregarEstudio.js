@@ -13,6 +13,6 @@ function redirect() {
 }
 
 function displayAlert() {
-    Swal.fire('¡Invitacion enviada!', '', 'success');
+    Swal.fire('¡Estudio agregado!', '', 'success');
     location.href = "UsuarioModificarPerfilAgregarEstudio.html";
 }
