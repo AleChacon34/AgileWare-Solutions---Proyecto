@@ -44,7 +44,7 @@ section {
 .card {
     border: 1px solid grey;
     width: 25%;
-    background-color: rgb(184, 184, 184);
+    background-color: rgb(229, 229, 229);
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -65,4 +65,11 @@ img {
 h2 {
     text-align: center;
     color: white;
+}
+
+h3 {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+    width: 100%;
 }
