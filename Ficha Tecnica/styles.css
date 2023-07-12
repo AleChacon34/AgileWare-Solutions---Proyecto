@@ -10,7 +10,7 @@ body {
 
 header {
     height: 10%;
-    background: radial-gradient(circle, rgba(46,51,0,1) 0%, rgba(124,136,0,1) 35%, rgba(195,218,0,1) 100%);
+    background: radial-gradient(circle, rgb(51, 40, 0) 0%, rgb(136, 111, 0) 35%, rgb(218, 164, 0) 100%);
     width: 100%;
 }
 
@@ -52,6 +52,11 @@ section {
     border-radius: 5px;
     margin: 5px;
 }
+
+.card:hover {
+    border: 2px solid rgb(218, 164, 0);
+}
+
 footer {
     width: 100%;
     height: auto;
