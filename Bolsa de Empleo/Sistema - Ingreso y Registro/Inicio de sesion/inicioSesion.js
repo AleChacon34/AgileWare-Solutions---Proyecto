@@ -53,8 +53,6 @@ function obtenerCredenciales(){
 function verificarDatosIngreso(usuario){
     let usuarioCorrecto;
     for (let user of usuarios){
-        console.log(usuario.correo);
-        console.log(usuario.pass);
         if (usuario.correo === user.correo){
             if (usuario.pass === user.pass){
                 autenticado = true
