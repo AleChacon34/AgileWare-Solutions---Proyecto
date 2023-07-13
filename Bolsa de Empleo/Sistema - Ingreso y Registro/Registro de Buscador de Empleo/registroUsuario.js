@@ -1,4 +1,4 @@
-// "use-strict"
+"use-strict"
 let listaBuscadoresdeEmpleo = [];
 
 
@@ -26,7 +26,7 @@ function guardarRegistro(listaUsuarios, infoUsuario){
         Swal.fire({
             icon: 'success',
             title: 'Registro exitoso',
-            text: 'La información del nuevo usuario a sido guardada exitosamente.',
+            text: 'La información del nuevo usuario ha sido guardada exitosamente.',
         })
     }
 
