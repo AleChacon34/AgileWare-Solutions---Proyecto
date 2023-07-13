@@ -11,24 +11,25 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 function publicarOferta(){
     Swal.fire({
-        icon: 'success',
-        title: 'Oferta Publicada',
-        showConfirmButton: false,
-        timer: 1500,
-    })
-    
-    // .then(
-    //     window.location.replace("/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarListaOfertas.html")
-    // )
-    
+        title: 'Oferta publicada con éxito',
+        showDenyButton: false,
+        showCancelButton: false,
+        confirmButtonText: 'Continuar',
+      }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.replace("/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarListaOfertas.html")
+        }
+      })
 }
 
 function ocultarOferta(){
     console.log("oculta")
     Swal.fire({
-        icon: 'success',
-        title: 'La oferta fue ocultada con éxito',
-        confirmButtonText: 'Continuar',  
-    })
-    window.location.replace("/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarListaOfertas.html")
+        title: 'Oferta ocultada con éxito',
+        confirmButtonText: 'Continuar',
+      }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.replace("/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarListaOfertas.html")
+        }
+      })
 }
