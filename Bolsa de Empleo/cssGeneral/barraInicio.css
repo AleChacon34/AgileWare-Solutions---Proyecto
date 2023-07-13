@@ -1,26 +1,3 @@
-html, body{
-    width: 100vw;
-    height: 100vh;
-    margin:0;
-}
-
-body{
-    font-family: sans-serif;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background-color: #ffffff;
-}
-
-h1{
-    font-size: xxx-large;
-    color: rgb(89, 89, 89);
-}
-
-p{
-    font-size: large;
-}
-
 .barraInicio{
     display: flex;
     width: 100%;
@@ -34,7 +11,7 @@ p{
     margin-left: auto;
 }
 
-button[name="iniciar-sesion"]:hover{
+.barraInicio button[name="iniciar-sesion"]:hover{
     border-left: 2px groove white;
 }
 
@@ -44,7 +21,7 @@ button[name="iniciar-sesion"]:hover{
     margin: 30px;
 }
 
-button a{
+.barraInicio button a{
     text-decoration: none;
     color: white;
     border: none;
@@ -52,43 +29,13 @@ button a{
     font-size: x-large;
 }
 
-button[name="ver-inicio"]:hover{
+.barraInicio button[name="ver-inicio"]:hover{
     border-right: 2px groove white;
 }
 
-button a:hover{
+.barraInicio button a:hover{
     color: rgb(88, 88, 88);
 }
 
-div button{
-    background-color: #3ca2a2;
-}
 
-div p{
-    text-align: center;
-}
-
-main{
-    display: flex;
-    flex-direction: column;
-    height: 500px;
-    padding: 20px;
-    align-items: center;
-    border: 5px solid rgb(214, 214, 214);
-    border-radius: 15px;
-}
-
-main:hover{
-    border: 5px groove rgb(214, 214, 214);
-}
-
-main div{
-    display: flex;
-    flex-direction: column;
-}
-
-#mtss-logo{
-    height: 200px;
-    width: 300px;
-}
 

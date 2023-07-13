@@ -31,7 +31,7 @@ img {
     height: 100px;
 }
 
-button {
+section button {
     background-color: rgb(176, 176, 176);
     translate: 10px 70px;
     margin: 0 10px;
@@ -41,7 +41,7 @@ button {
     border-radius: 5px;
 }
 
-button:hover {
+section button:hover {
     color: white;
     background-color: rgb(134, 134, 134);
 }
