@@ -7,12 +7,56 @@ html, body{
 body{
     font-family: sans-serif;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    background-color: #fceccc;
+    background-color: #ffffff;
+}
+
+h1{
+    font-size: xxx-large;
+    color: rgb(89, 89, 89);
 }
 
 nav{
     display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: 100px;
+    background-color: #3ca2a2;
+    box-shadow: 0px 5px 10px rgb(173, 173, 173);
+}
+
+nav button[name="iniciar-sesion"]{
+    margin-left: auto;
+}
+
+button[name="iniciar-sesion"]:hover{
+    border-left: 2px groove white;
+}
+
+nav button{
+    background-color: transparent;
+    border-style: none;
+    margin: 30px;
+}
+
+button a{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+button[name="ver-inicio"]:hover{
+    border-right: 2px groove white;
+}
+
+button a:hover{
+    color: rgb(88, 88, 88);
+}
+
+div button{
+    background-color: #3ca2a2;
 }
 
 main{
@@ -25,5 +69,10 @@ main{
 main div{
     display: flex;
     flex-direction: column;
+}
+
+#mtss-logo{
+    height: 200px;
+    width: 300px;
 }
 
