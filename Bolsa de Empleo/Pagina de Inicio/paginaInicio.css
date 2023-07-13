@@ -17,6 +17,10 @@ h1{
     color: rgb(89, 89, 89);
 }
 
+p{
+    font-size: large;
+}
+
 nav{
     display: flex;
     width: 100%;
@@ -43,6 +47,7 @@ nav button{
 button a{
     text-decoration: none;
     color: white;
+    border: none;
     font-weight: bolder;
     font-size: x-large;
 }
@@ -62,8 +67,15 @@ div button{
 main{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    height: 500px;
+    padding: 20px;
     align-items: center;
+    border: 5px solid rgb(214, 214, 214);
+    border-radius: 15px;
+}
+
+main:hover{
+    border: 5px groove rgb(214, 214, 214);
 }
 
 main div{
