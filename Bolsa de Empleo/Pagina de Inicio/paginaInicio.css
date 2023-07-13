@@ -1,0 +1,29 @@
+html, body{
+    width: 100vw;
+    height: 100vh;
+    margin:0;
+}
+
+body{
+    font-family: sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fceccc;
+}
+
+nav{
+    display: flex;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main div{
+    display: flex;
+    flex-direction: column;
+}
+
