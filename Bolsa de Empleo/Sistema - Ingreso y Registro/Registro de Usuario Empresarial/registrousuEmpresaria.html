@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <title>Registro de Usuario Empresarial</title>
-    <link rel="stylesheet" href="/AgileWare-Solutions---Proyecto/Bolsa de Empleo/Sistema - Ingreso y Registro/registros.css" />
+    <link rel="stylesheet" href="/Bolsa de Empleo/Sistema - Ingreso y Registro/registros.css" />
+    <script src = "/Bolsa de Empleo/Sistema - Ingreso y Registro/Registro de Usuario Empresarial/registroUsuarioEmpresarial.js"></script>
+    <script src = "/Bolsa de Empleo/jsGeneral/SweetAlert.js"></script>
 </head>
 <body>
     <main>
@@ -10,16 +12,16 @@
         <form><!--Acá inicia el formulario de registro usuario empresarial -->    
             <div>
                 <section><!--Esta seccion se encuentra el nombre,apellidos,correo electrónico,número telefónico y género -->
-                    <p>Nombre:<input type="text"/></p> 
-                    <p>Apellidos:<input type="text"/></p>
-                    <p>Correo Electrónico:<input type="email"/></p>
-                    <p>Número Telefónico:<input type="tel"/></p>
-                    <p>Género:<select name="genero" id="seleccion-genero">
+                    <p>Nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name = "usuario-empresarial" /></p> 
+                    <p>Apellidos:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="usuario-empresarial-apellidos"/></p>
+                    <p>Correo Electrónico:&nbsp;&nbsp;<input type="email" name="correo"/></p>
+                    <p>Número Telefónico:&nbsp;&nbsp;<input type="tel" name="numero-telefono"/></p>
+                    <p>Género:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="genero" id="seleccion-genero">
                         <option>No especificar</option><!--Aca se especificaria el tipo de genero-->
                         <option>Femenino</option>
                         <option>Masculino</option>
                     </select></p>
-                    <p>Contraseña:<input type="password" name = "contrasenna"></p>
+                    <p>Contraseña:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name = "contrasenna"></p>
                 </section>
             </div>
             <div class = "image-placeholder">
@@ -35,45 +37,3 @@
     </main>
 </body>
 </html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Document</title>
-    <link rel="stylesheet" href="registrousuEmpresaria.css" />
-</head>
-<body>
-    <main>
-        <form>
-            <h2>Registro de Usuario Empresarial</h2>
-                <div>
-                    <p>Nombre</p>
-                    <input type="text" placeholder=""/>
-                    <p>Apellidos</p>
-                    <input type="password" placeholder=""/>
-                    <p>Correo Electrónico</p>
-                    <input type="email" placeholder=""/>
-                    <p>Numero Telefónico</p>
-                    <input type="tel" placeholder=""/>
-                    <p>Género:<select name="genero" id="seleccion-genero">
-                        <option>No especificar</option>
-                        <option>Femenino</option>
-                        <option>Masculino</option>
-                    </select></p>
-                    <p>Contraseña</p>
-                    <input type="password" placeholder="Contraseña"/>
-                    <p>Mis archivos</p>
-                    <a><button>Añadir Archivos</button></a>
-                </div>
-        </form>
-        <section>
-            <section><a><button>Completar Registro</button></a></section>
-        </section>
-        <div class="container">
-            <a><button>Añadir Archivo</button></a></section>
-        </div>
-        <small>Subir foto de perfil</small>
-        <img src="Prototaw.svg" alt="white and black" width="260px" height="250px"> 
-    </main>
-</body>
-</html> -->

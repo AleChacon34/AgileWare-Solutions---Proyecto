@@ -7,5 +7,5 @@ function onLoadComplete() {
 }
 
 function displayOffer() {
-    window.location.replace("../Aplicar oferta de empleo/aplicarEmpleo.html");
+    window.location.href = "../Aplicar oferta de empleo/aplicarEmpleo.html";
 }

@@ -7,11 +7,12 @@ function onLoadComplete() {
 
 function displayAlert() {
   Swal.fire({
-    title: "¿Desea enviar invitacion o registrar manualmente?",
+    title: "¿Desea enviar invitación de correo electrónica o registrarlo manualmente?",
     showDenyButton: true,
     showCancelButton: true,
     confirmButtonText: "Enviar invitación",
     denyButtonText: `Registrar manualmente`,
+    width: "64em",
   }).then((result) => {
     if (result.isConfirmed) {
       insertEmail();

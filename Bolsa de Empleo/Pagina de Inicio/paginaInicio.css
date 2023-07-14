@@ -1,0 +1,67 @@
+html, body{
+    width: 100vw;
+    height: 100vh;
+    margin:0;
+}
+
+body{
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+}
+
+h1{
+    font-size: xxx-large;
+    text-align: center;
+    color: rgb(89, 89, 89);
+}
+
+p{
+    font-size: large;
+}
+
+div p{
+    text-align: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    padding: 20px;
+    align-items: center;
+    border: 5px solid rgb(214, 214, 214);
+    border-radius: 15px;
+}
+
+main:hover{
+    border: 5px groove rgb(214, 214, 214);
+}
+
+main div{
+    display: flex;
+    flex-direction: column;
+}
+
+#mtss-logo{
+    height: 200px;
+    width: 300px;
+}
+
+button a{
+    text-decoration: none;
+    color: white;
+    border: none;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+button a:hover{
+    color: rgb(88, 88, 88);
+}
+
+div button{
+    background-color: #3ca2a2;
+}

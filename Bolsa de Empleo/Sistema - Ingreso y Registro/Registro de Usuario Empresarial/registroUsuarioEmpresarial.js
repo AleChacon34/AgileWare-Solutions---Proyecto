@@ -1,5 +1,5 @@
 "use-strict"
-let listaBuscadoresdeEmpleo = [];
+let listaUsuariosEmpresariales = [];
 
 
 document.addEventListener("DOMContentLoaded", () =>{
@@ -8,25 +8,25 @@ document.addEventListener("DOMContentLoaded", () =>{
 })
 
 function completarRegistro(){
-    let nombre = document.querySelector("input[name='nombre-usuario']");
-    let apellidos = document.querySelector("input[name='apellidos-usuario']");
+    let nombre = document.querySelector("input[name='usuario-empresarial']");
+    let apellidos = document.querySelector("input[name='usuario-empresarial-apellidos']");
     let correo = document.querySelector("input[name='correo']");
     let telefono = document.querySelector("input[name='numero-telefono']");
     let genero = document.querySelector("#seleccion-genero");
     let contrasenna = document.querySelector("input[name='contrasenna']");
-    let usuario = {nombreBuscador: nombre.value, apellidosBuscador: apellidos.value, correoBuscador: correo.value, telefonoBuscador: telefono.value, generoBuscador: genero.value, contrasennaBuscador: contrasenna.value,};
+    let usuario = {nombreUsuarioEmpresarial: nombre.value, apellidosUsuarioEmpresarial: apellidos.value, correoUsuarioEmpresarial: correo.value, telefonoUsuarioEmpresarial: telefono.value, generoUsuarioEmpresarial: genero.value, contrasennaUsuarioEmpresarial: contrasenna.value,};
     console.log(usuario);
-    guardarRegistro(listaBuscadoresdeEmpleo, usuario);
+    guardarRegistro(listaUsuariosEmpresariales, usuario);
 }
 
 function guardarRegistro(listaUsuarios, infoUsuario){
 
-    if (!((infoUsuario.nombreBuscador === "") || (infoUsuario.apellidosBuscador === "") || (infoUsuario.correoBuscador === "") || (infoUsuario.telefonoBuscador === "") || (infoUsuario.generoBuscador === "") || (infoUsuario.contrasennaBuscador === ""))){
+    if (!((infoUsuario.nombreUsuarioEmpresarial === "") || (infoUsuario.apellidosUsuarioEmpresarial === "") || (infoUsuario.correoUsuarioEmpresarial === "") || (infoUsuario.telefonoUsuarioEmpresarial === "") || (infoUsuario.generoUsuarioEmpresarial === "") || (infoUsuario.contrasennaUsuarioEmpresarial === ""))){
         listaUsuarios.push(infoUsuario);
         Swal.fire({
             icon: 'success',
             title: 'Registro exitoso',
-            text: 'La información del nuevo usuario ha sido guardada exitosamente.',
+            text: 'La información del nuevo usuario empresarial ha sido guardada exitosamente.',
         })
     }
 

@@ -1,0 +1,41 @@
+.barraInicio{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    height: 100px;
+    background-color: #3ca2a2;
+    box-shadow: 0px 5px 10px rgb(173, 173, 173);
+}
+
+.barraInicio button[name="iniciar-sesion"]{
+    margin-left: auto;
+}
+
+.barraInicio button[name="iniciar-sesion"]:hover{
+    border-left: 2px groove white;
+}
+
+.barraInicio button{
+    background-color: transparent;
+    border-style: none;
+    margin: 30px;
+}
+
+.barraInicio button a{
+    text-decoration: none;
+    color: white;
+    border: none;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.barraInicio button[name="ver-inicio"]:hover{
+    border-right: 2px groove white;
+}
+
+.barraInicio button a:hover{
+    color: rgb(88, 88, 88);
+}
+
+
+

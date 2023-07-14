@@ -3,27 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Empleos</title>
-    <link rel="stylesheet" href="/Bolsa de Empleo/cssGeneral/barraNavegacionBuscador.css" />
-    <link rel="stylesheet" href="/Bolsa de Empleo/Buscador de Empleo - Empleos/Visualizar empleos disponibles/visualizarEmpleos.css">
+    <title>Ver Empleos</title>
+    <link rel="stylesheet" href="/Bolsa de Empleo/cssGeneral/barraInicio.css" />
+    <link rel="stylesheet" href="/Bolsa de Empleo/Pagina de Inicio/verOfertasPublico.css">
     <script src="https://kit.fontawesome.com/3d4c892592.js" crossorigin="anonymous"></script>
-    <script src="visualizarEmpleos.js"></script>
+    <script src="/Bolsa de Empleo/Pagina de Inicio/verOfertasPublico.js"></script>
+    <script src="/Bolsa de Empleo/jsGeneral/SweetAlert.js"></script>
   </head>
-  <body onload="onLoadComplete()">
-    <nav class="navBar">
-      <div>
-        <i class="fa-solid fa-user"></i>
-        <a href="/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Perfil usuario/perfilUsuario.html">Perfil</a>
-      </div>
-      <div>
-        <i class="fa-solid fa-briefcase"></i>
-        <a href="#">Empleos</a>
-      </div>
-      <div>
-        <i class="fa-solid fa-hand-pointer"></i> 
-        <a href="/Bolsa de Empleo/Buscador de Empleo - Postulaciones/Ver Postulaciones/verPostulaciones.html">Postulaciones</a>
-      </div>
-    </nav>
+  <nav class = "barraInicio">
+    <button type = "button" name = "ver-inicio"><a href="/Bolsa de Empleo/Pagina de Inicio/paginaInicio.html">Inicio</a></button>
+    <button type = "button" name = "iniciar-sesion"><a href="/Bolsa de Empleo/Sistema - Ingreso y Registro/Inicio de sesion/inicioSesion.html">Iniciar Sesión</a></button>
+  </nav>
+  <body>
     <main>
       <section>
         <div class="card">
@@ -40,7 +31,7 @@
               <p>Conocimiento en base de datos de MongoDB</p>
             </div>
           </div>
-          <button>Ver Oferta</button>
+          <button name='ver-oferta'>Ver Oferta</button>
         </div>
         <div class="card">
           <div class="image">
@@ -56,7 +47,7 @@
               <p>Conocimiento en base de datos de MongoDB</p>
             </div>
           </div>
-          <button>Ver Oferta</button>
+          <button name='ver-oferta'>Ver Oferta</button>
         </div>
         <div class="card">
           <div class="image">
@@ -72,7 +63,7 @@
               <p>Conocimiento en base de datos de MongoDB</p>
             </div>
           </div>
-          <button>Ver Oferta</button>
+          <button name='ver-oferta'>Ver Oferta</button>
         </div>
       </section>
       <aside>
@@ -82,4 +73,3 @@
       </aside>
     </main>
   </body>
-</html>

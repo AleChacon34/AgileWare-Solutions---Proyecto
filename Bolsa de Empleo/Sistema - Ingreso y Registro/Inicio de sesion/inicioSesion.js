@@ -76,27 +76,27 @@ function verificarDatosIngreso(usuario){
 
 function paginaInicio(rol){
     if (rol === "Buscador de Empleo"){
-        location.href = "/AgileWare-Solutions---Proyecto/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Perfil usuario/perfilUsuario.html";
+        location.replace("/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Perfil usuario/perfilUsuario.html");
     }
 
     else if(rol === "Administrador"){
-        location.href = "https://www.facebook.com";
+        location.replace("/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Sistema-Perfil Usuario Empresarial/Sistema-Perfil -Usuario-Empresarial.html");
     }
 
     else if(rol === "Reclutador"){
-        location.href = "https://www.google.com";
+        location.replace("/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Sistema-Perfil Usuario Empresarial/Sistema-Perfil -Usuario-Empresarial.html");
     }
 
     else if(rol === "Manager"){
-        location.href = "http://github.com";
+        location.replace("/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Sistema-Perfil Usuario Empresarial/Sistema-Perfil -Usuario-Empresarial.html");
     }
 
     else if(rol === "Super-Usuario"){
-        location.href = "https://www.twitter.com";
+        location.replace("/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Sistema-Super-Usuario/Sistema-Super-Usuario.html");
     }
 
-    else if(rol === "Empresa"){
-        location.href = "/AgileWare-Solutions---Proyecto/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Perfil usuario/perfilUsuario.html";
+    else if(rol === "Empresa de Empleo"){
+        location.replace("/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Sistema-Perfil Empresa/Sistema-PerfilEmpresa.html");
     }
 }
         
