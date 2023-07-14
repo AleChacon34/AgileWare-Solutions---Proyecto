@@ -3,6 +3,8 @@
 <head>
     <title>Recuperación Contraseña</title>
     <link rel="stylesheet" href="recuperacionContra.css" />
+    <script src="/Bolsa de Empleo/jsGeneral/SweetAlert.js"></script>
+    <script src="/Bolsa de Empleo/Sistema - Ingreso y Registro/Recuperacion de Contraseña/recuperacionContra.js"></script>
 </head>
 <body>
     <main>
@@ -10,10 +12,10 @@
             <h2>Recuperación de Contraseña</h2>
             <div>
                 <p>Correo Electrónico</p>
-                <input type="text" placeholder="" />
+                <input type="email" placeholder="usuario@dominio.com" name="correo"/>
                 <p>Número Telefónico</p>
-                <input type="password" placeholder="" />
-                <button>Recuperar Contraseña</button>
+                <input type="tel" name = "numero-telefono" />
+                <button type="button" name="recuperar-contrasenna">Recuperar Contraseña</button>
             </div>
         </form>
     </main>

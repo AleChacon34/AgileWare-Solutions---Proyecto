@@ -37,7 +37,7 @@ function insertEmail() {
       }
     },
     showCancelButton: true,
-    confirmButtonText: 'Look up',
+    confirmButtonText: 'Enviar',
     showLoaderOnConfirm: true,
     preConfirm: (result) => {
       Swal.fire('¡Invitacion enviada!', '', 'success');

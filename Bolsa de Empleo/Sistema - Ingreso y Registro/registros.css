@@ -8,7 +8,7 @@ body{
     display: flex;
     font-family: sans-serif;
     align-items: center;
-    justify-content: center;
+    flex-direction: column;
 }
 
 main{
