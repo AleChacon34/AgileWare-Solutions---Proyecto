@@ -1,5 +1,5 @@
 function onLoadComplete() {
-    let btns = document.querySelectorAll('button');
+    let btns = document.querySelectorAll('.verPostulacion');
     for (let i = 0; i < btns.length; i++) {
         let btn = btns[i];
         btn.onclick = redirect;
@@ -7,5 +7,5 @@ function onLoadComplete() {
 }
 
 function redirect() {
-    window.location.replace("postulacion.html");
+    window.location.href = "postulacion.html";
 }

@@ -66,7 +66,7 @@ main aside .filter:hover{
     border: 1px solid rgb(0, 88, 189);
 }
 
-button {
+.verPostulacion {
     background-color: white;
     border: none;
     padding: 7px;
@@ -74,10 +74,10 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.verPostulacion:hover {
     background-color: rgb(185, 185, 185);
 }
 
-button:active {
+.verPostulacion:active {
     background-color: rgb(157, 157, 157);
 }
