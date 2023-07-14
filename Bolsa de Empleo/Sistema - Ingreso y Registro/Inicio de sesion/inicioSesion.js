@@ -3,6 +3,9 @@
 let autenticado = false;
 let usuarioAutenticado = false;
 
+/**
+ * Lista de usuarios quemados que se les permite entra a la pagina
+ */
 let usuarios = [{
         correo: "administrador@administrador.com",
         pass: "admin",
@@ -35,12 +38,17 @@ let usuarios = [{
     }
 ];
 
-
+/**
+ * Al cargar la pagina, se le asigna el evento al boton de ingresar
+ */
 document.addEventListener("DOMContentLoaded", () =>{
     let btnLogin = document.querySelector("#ing1");
     btnLogin.addEventListener("click", obtenerCredenciales);
 });
 
+/**
+ * Funcion que obtiene las credenciales de los 'inputs' para luego ser verificados
+ */
 function obtenerCredenciales(){
     let correo = document.querySelector("input[name='correo']");
     let pass = document.querySelector("input[name='pass']");
@@ -52,6 +60,7 @@ function obtenerCredenciales(){
     verificarDatosIngreso(usuario);
 }
 
+/**Funcion que verificar los datos ingresados */
 function verificarDatosIngreso(usuario){
     let usuarioCorrecto;
     for (let user of usuarios){
@@ -67,6 +76,7 @@ function verificarDatosIngreso(usuario){
     autenticar();
 }
 
+/**Funcion que realiza la autenticacion final*/
 function autenticar() {
     if (usuarioAutenticado){
         if (autenticado) {
@@ -91,6 +101,9 @@ function autenticar() {
     autenticado = false;
 }
 
+/**
+ * Funcion que evalua el rol para redireccionar a la pagina correspondiente 
+ */
 function paginaInicio(rol){
     if (rol === "Buscador de Empleo"){
         location.replace("/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Perfil usuario/perfilUsuario.html");
