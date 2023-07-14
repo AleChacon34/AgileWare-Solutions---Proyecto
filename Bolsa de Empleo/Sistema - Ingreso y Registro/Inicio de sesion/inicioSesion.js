@@ -62,11 +62,18 @@ function verificarDatosIngreso(usuario){
             else{
                 Swal.fire({
                     icon: 'error',
-                    title: '¡Usuario o contraseña incorrecta!',
+                    title: '¡Contraseña incorrecta!',
                     text: 'Por favor verifique sus datos',
                     footer: '<a href="">Contactar SAC</a>'
                 });
             }
+        }else{
+            Swal.fire({
+                icon: 'error',
+                title: '¡Usuario incorrecto!',
+                text: 'Por favor verifique sus datos',
+                footer: '<a href="">Contactar SAC</a>'
+            });
         }
     }    
     if (autenticado){
