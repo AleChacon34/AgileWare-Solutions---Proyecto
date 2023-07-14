@@ -14,7 +14,7 @@ function displayAlert() {
     if (title == "" || date == "" || description == "") {
         Swal.fire('Por favor, no dejar espacios en blanco', '', 'warning');
     } else {
-        Swal.fire('¡Estudio agregado!', '', 'warning'),
+        Swal.fire('¡Estudio agregado!', '', 'success'),
         setInterval(
             redirect,  
             900
