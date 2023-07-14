@@ -2,7 +2,7 @@
 
 let autenticado = false;
 let usuarioAutenticado = false;
-
+let usuarioCorrecto = false;
 /**
  * Lista de usuarios quemados que se les permite entra a la pagina
  */
@@ -62,7 +62,6 @@ function obtenerCredenciales(){
 
 /**Funcion que verificar los datos ingresados */
 function verificarDatosIngreso(usuario){
-    let usuarioCorrecto;
     for (let user of usuarios){
         if (usuario.correo === user.correo){
             usuarioAutenticado = true;
