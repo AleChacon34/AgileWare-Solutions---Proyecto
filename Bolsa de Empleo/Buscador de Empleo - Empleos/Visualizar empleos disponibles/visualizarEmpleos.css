@@ -31,7 +31,7 @@ img {
     height: 100px;
 }
 
-button {
+.visualizar {
     background-color: rgb(176, 176, 176);
     translate: 10px 70px;
     margin: 0 10px;
@@ -41,12 +41,12 @@ button {
     border-radius: 5px;
 }
 
-button:hover {
+.visualizar:hover {
     color: white;
     background-color: rgb(134, 134, 134);
 }
 
-button:active {
+.visualizar:active {
     background-color: rgb(106, 106, 106);
     color: white;
 }

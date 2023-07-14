@@ -1,5 +1,5 @@
 function onLoadComplete() {
-  let btn = document.querySelector("button");
+  let btn = document.querySelector("#aplicar");
   btn.onclick = displayAlert;
 }
 
