@@ -57,7 +57,7 @@ button[name="enviar-invitacion"]{
     border-radius: 4px; 
 }
 
-button:hover{
+button[name="enviar-invitacion"]:hover{
     background-color: #3ca2a2;
     color: black;
 }
