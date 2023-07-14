@@ -5,3 +5,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     actualizarBt.addEventListener("click", notificarActualizar);
 })
 
+function notificarActualizar(){
+    Swal.fire
+}
+
