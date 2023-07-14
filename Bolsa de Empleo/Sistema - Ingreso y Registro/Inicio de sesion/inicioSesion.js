@@ -1,6 +1,7 @@
 "use strict";
 
 let autenticado = false;
+let usuarioAutenticado = false;
 
 let usuarios = [{
         correo: "administrador@administrador.com",
@@ -55,30 +56,39 @@ function verificarDatosIngreso(usuario){
     let usuarioCorrecto;
     for (let user of usuarios){
         if (usuario.correo === user.correo){
+            usuarioAutenticado = true;
             if (usuario.pass === user.pass){
                 autenticado = true
                 usuarioCorrecto = user;
             }
-            else{
-                Swal.fire({
-                    icon: 'error',
-                    title: '¡Contraseña incorrecta!',
-                    text: 'Por favor verifique sus datos',
-                    footer: '<a href="">Contactar SAC</a>'
-                });
-            }
-        }else{
+        }
+    }    
+
+    autenticar();
+}
+
+function autenticar() {
+    if (usuarioAutenticado){
+        if (autenticado) {
+            paginaInicio(usuarioCorrecto.rol);
+        } else {
             Swal.fire({
                 icon: 'error',
-                title: '¡Usuario incorrecto!',
+                title: '¡Contraseña incorrecta!',
                 text: 'Por favor verifique sus datos',
                 footer: '<a href="">Contactar SAC</a>'
             });
         }
-    }    
-    if (autenticado){
-        paginaInicio(usuarioCorrecto.rol);
+    } else {
+        Swal.fire({
+            icon: 'error',
+            title: '¡Usuario incorrecto!',
+            text: 'Por favor verifique sus datos',
+            footer: '<a href="">Contactar SAC</a>'
+        });
     }
+    usuarioAutenticado = false;
+    autenticado = false;
 }
 
 function paginaInicio(rol){
