@@ -4,6 +4,7 @@
             <script src="https://kit.fontawesome.com/3d4c892592.js" crossorigin="anonymous"></script>
             <link rel="stylesheet" href= "/Bolsa de Empleo/Empresa - Mis Empleos/OfertaEmpleo.css"/>
             <link rel="stylesheet" href= "/Bolsa de Empleo/cssGeneral/barraNavegacionEmpresa.css"/>
+            <script src="/Bolsa de Empleo/jsGeneral/cerrarSesion.js"></script>
         </head>
         <body>
             <!-- Esta barra pertenece al perfil de Empresa o Usuario Empresarial -->
@@ -24,6 +25,9 @@
                   <i class="fa-solid fa-users"></i>
                   <a href="/Bolsa de Empleo/Empresa - Colaboradores/Visualizar Colaboradores/visualizarAdministradores.html">Colaboradores</a>
                 </div>
+                <div class="logout">
+                    <button id="logOut"><i class="fa-solid fa-right-from-bracket"></i></button>
+                </div>
             </nav>
             <main>
                 <div>
@@ -38,10 +42,10 @@
                     <textarea id = "seccion-datos" name = "Datos de la oferta" placeholder = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos facere ipsa ipsam quod neque esse sed a quo dignissimos modi? Beatae culpa minima enim sapiente in ullam quos quidem quisquam."></textarea>
                 </div>
                 <div class = "buttons">
-                    <button type="submit">ACTUALIZAR OFERTA</button>
-                    <button type="submit">ELIMINAR OFERTA</button>
-                    <button type="submit">PUBLICAR OFERTA</button>
-                    <button type="submit">OCULTAR OFERTA</button>
+                    <button class="btns" type="submit">ACTUALIZAR OFERTA</button>
+                    <button class="btns" type="submit">ELIMINAR OFERTA</button>
+                    <button class="btns" type="submit">PUBLICAR OFERTA</button>
+                    <button class="btns" type="submit">OCULTAR OFERTA</button>
                 </div>
             </main>
         </body>

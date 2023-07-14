@@ -16,6 +16,7 @@
     />
     <script src = "/Bolsa de Empleo/jsGeneral/SweetAlert.js"></script>
     <script src="/Bolsa de Empleo/Empresa - Mis Empleos/Crear Oferta de Empleo/crearOfertaEmpleo.js"></script>
+    <script src="/Bolsa de Empleo/jsGeneral/cerrarSesion.js"></script>
   </head>
   <body>
     <!-- Esta barra pertenece al perfil de Empresa o Usuario Empresarial -->
@@ -35,6 +36,9 @@
       <div>
         <i class="fa-solid fa-users"></i>
         <a href="/Bolsa de Empleo/Empresa - Colaboradores/Visualizar Colaboradores/visualizarAdministradores.html">Colaboradores</a>
+      </div>
+      <div class="logout">
+        <button id="logOut"><i class="fa-solid fa-right-from-bracket"></i></button>
       </div>
     </nav>
     <main>
@@ -58,8 +62,8 @@
       </div>
       <div class="buttons">
         <!-- Estos botones -->
-        <button type="submit" name="publicar">PUBLICAR OFERTA</button>
-        <button type="submit" name = "ocultar">OCULTAR OFERTA</button>
+        <button class="btns" type="submit" name="publicar">PUBLICAR OFERTA</button>
+        <button class="btns" type="submit" name = "ocultar">OCULTAR OFERTA</button>
       </div>
     </main>
   </body>

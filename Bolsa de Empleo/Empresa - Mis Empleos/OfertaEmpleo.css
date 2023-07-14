@@ -52,7 +52,7 @@ th {
     background-color: #92c7a3
 }
 
-button{
+.btns{
     color: white;
     background-color: #3ca2a2;
     border-style: none;
@@ -62,7 +62,7 @@ button{
     border-radius: 4px;
 }
 
-button:hover{
+.btns:hover{
     background-color: #92c7a3;
     color: black;
     font-weight: bolder;
