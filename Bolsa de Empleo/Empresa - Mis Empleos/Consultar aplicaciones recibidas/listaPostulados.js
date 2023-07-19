@@ -9,6 +9,7 @@
 document.addEventListener("DOMContentLoaded", () =>{
     let genBtn = document.querySelector("button[name='generar-reporte']");
     genBtn.addEventListener('click', generarReporte);
+    generarReporte();
 });
 
 function generarReporte(){
@@ -17,32 +18,47 @@ function generarReporte(){
         {nombre: "Marco", apellidos: "Mora Herra", correoElectronico: "jmorah@ucenfotec.ac.cr", estado: "Enviada"},
         {nombre: "Cristopher", apellidos: "Mora Herra", correoElectronico: "jmorah@ucenfotec.ac.cr", estado: "Enviada"}
     ]
-    imprimirReporte(datosUsuarios);
+    obtenerSeleccion(datosUsuarios);
 }
 
-function imprimirReporte(datosUsuarios){
-    //Crear una tabla, agregarla al body y asignarle una clase
+function obtenerSeleccion(listaDatos){
+    let opcionSeleccion = document.querySelector("#postulaciones");
+    console.log(opcionSeleccion.value);
+    imprimirReporte(listaDatos, opcionSeleccion);
+}
 
+function imprimirReporte(listaDatos, opcion){
+    //Borrar el cuerpo de la tabla ya existente en el HTML
     let crearTabla = document.querySelector(".tabla-datos tbody");
     crearTabla.innerHTML = "";
-    //Crear el Table Header
-    let headRow = crearTabla.insertRow(0)
-    headRow.insertCell(0).outerHTML ="<th>Nombre</th>";
-    headRow.insertCell(1).outerHTML ="<th>Apellidos</th>";
-    headRow.insertCell(2).outerHTML ="<th>Correo Electrónico</th>";
-    headRow.insertCell(3).outerHTML ="<th>Estado</th>";
 
-    //Crear las filas con la informacion de los objetos
-    console.log(datosUsuarios.length)
-    for(let dato = 0;  dato < datosUsuarios.length; dato++){
-        console.log("Funcionaaa")
-        console.log(datosUsuarios)
-        console.log(datosUsuarios.nombre)
-        console.log(datosUsuarios.apellidos)
-        let row = crearTabla.insertRow((dato+1));
-        row.insertCell(0).appendChild(document.createTextNode(datosUsuarios[dato].nombre));
-        row.insertCell(1).appendChild(document.createTextNode(datosUsuarios[dato].apellidos));
-        row.insertCell(2).appendChild(document.createTextNode(datosUsuarios[dato].correoElectronico));
-        row.insertCell(3).appendChild(document.createTextNode(datosUsuarios[dato].estado));
+    // Diferentes tipos de reportes
+    switch (opcion.value){
+        case "POSTULACIONES":
+             //Crear el Table Header
+            let headRow = crearTabla.insertRow(0)
+            headRow.insertCell(0).outerHTML ="<th>Nombre</th>";
+            headRow.insertCell(1).outerHTML ="<th>Apellidos</th>";
+            headRow.insertCell(2).outerHTML ="<th>Correo Electrónico</th>";
+            headRow.insertCell(3).outerHTML ="<th>Estado</th>";
+
+            //Crear las filas con la informacion de los objetos
+            for(let dato = 0;  dato < listaDatos.length; dato++){
+                let row = crearTabla.insertRow((dato+1));
+                row.insertCell(0).appendChild(document.createTextNode(listaDatos[dato].nombre));
+                row.insertCell(1).appendChild(document.createTextNode(listaDatos[dato].apellidos));
+                row.insertCell(2).appendChild(document.createTextNode(listaDatos[dato].correoElectronico));
+                row.insertCell(3).appendChild(document.createTextNode(listaDatos[dato].estado));
+            }
+            break;
+        case "COLABORADORES":
+            break;
+        case "BUSCADORES DE EMPLEOS":
+            break;
+        case "MIS EMPLEOS":
+            break;
+        default:
+            break;
     }
+   
 }
