@@ -13,28 +13,25 @@ function getData() {
 }
 
 function notificarActualizar(email) {
-  /*console.log("funciona")
-    Swal.fire({
-        icon: "success",
-        text: "Recibirá un correo con la información para la recuperación de contraseña.",
-        confirmButtonText: "Continuar",
-    })*/
-  Email.send({
-    Host: "smtp.elasticemail.com",
-    Port: 2525,
-    Username: "mchaconc1@ucenfotec.ac.cr",
-    Password: "",
-    To: `${email}`,
-    From: "mchaconc1@ucenfotec.ac.cr",
-    Subject: "Pruebas de recuperacion de contrasennia",
-    Body: "Prueba de envio de correo con JS",
-  }).then((message) => {
+  
+  Email.send(
+    {
+      Host: "smtp.elasticemail.com",
+      Port: 2525,
+      Username: "mchaconc1@ucenfotec.ac.cr",
+      Password: "",
+      To: `${email}`,
+      From: "mchaconc1@ucenfotec.ac.cr",
+      Subject: "Pruebas de recuperacion de contrasennia",
+      Body: "Prueba de envio de correo con JS",
+    }
+  ).then((message) => {
     Swal.fire({
       icon: "success",
       text: "Recibirá un correo con la información para la recuperación de contraseña.",
       confirmButtonText: "Continuar",
     });
-  }).catch(err => {
+  }).catch((err) => {
     Swal.fire("Ha habido un error", "", "warning");
   });
 }
