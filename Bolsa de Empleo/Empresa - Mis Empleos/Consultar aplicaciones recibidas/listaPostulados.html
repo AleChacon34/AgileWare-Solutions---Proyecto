@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/Bolsa de Empleo/cssGeneral/barraNavegacionEmpresa.css"/>
     <link rel="stylesheet" href="/Bolsa de Empleo/Empresa - Mis Empleos/Consultar aplicaciones recibidas/listaPostulados.css">
     <link rel= "stylesheet" href= "/Bolsa de Empleo/cssGeneral/tablas.css">
+    <script src="/Bolsa de Empleo/Empresa - Mis Empleos/Consultar aplicaciones recibidas/listaPostulados.js"></script>
     <script src="/Bolsa de Empleo/jsGeneral/SweetAlert.js"></script>
     <script src="/Bolsa de Empleo/jsGeneral/cerrarSesion.js"></script>
 </head>
@@ -35,7 +36,11 @@
     </nav>
     <main>
       <h2>TITULO DE LA OFERTA - POSTULACIONES</h2>
-      <table class = "tabla-datos">
+      <select id = "postulaciones">
+        <option name="reporte-postulaciones">POSTULACIONES</option>
+      </select>
+      <button type="button" name="generar-reporte">Generar Reporte</button>
+      <!-- <table class = "tabla-datos">
         <tr>
             <th>NOMBRE</th>
             <th>APELLIDOS</th>
@@ -60,7 +65,7 @@
             <td>DATOS</td>
             <td><a href="/Bolsa de Empleo/Empresa - Mis Empleos/Consultar aplicaciones recibidas/modificarEstadoPostulacion.html">ESTADO</a></td>
         </tr>
-    </table>
+    </table> -->
     </main>
   </body>
 </html>
