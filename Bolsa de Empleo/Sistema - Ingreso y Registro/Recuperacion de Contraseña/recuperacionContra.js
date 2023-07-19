@@ -22,8 +22,8 @@ function notificarActualizar(email) {
   Email.send({
     Host: "smtp.elasticemail.com",
     Port: 2525,
-    Username: "mchaconc1@ucenfotec.ac.cr",
-    Password: "93F94DAF6A182203E3E6D1738AFA001293F9",
+    Username: "",
+    Password: "",
     To: `${email}`,
     From: "mchaconc1@ucenfotec.ac.cr",
     Subject: "Pruebas de recuperacion de contrasennia",
