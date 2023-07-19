@@ -22,10 +22,9 @@ function generarReporte(){
 
 function imprimirReporte(datosUsuarios){
     //Crear una tabla, agregarla al body y asignarle una clase
-    let crearTabla = document.createElement("table");
-    crearTabla.classList.add("tabla-datos");
-    document.body.appendChild(crearTabla);
 
+    let crearTabla = document.querySelector(".tabla-datos tbody");
+    crearTabla.innerHTML = "";
     //Crear el Table Header
     let headRow = crearTabla.insertRow(0)
     headRow.insertCell(0).outerHTML ="<th>Nombre</th>";
