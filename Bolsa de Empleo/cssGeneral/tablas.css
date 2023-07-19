@@ -11,3 +11,26 @@
 .tabla-datos th {
     background-color: #92c7a3
 }
+
+#seleccion-reporte{
+    width: 200px;
+    height:40px;
+    background-color: rgb(230, 230, 230);
+}
+
+#seleccion-reporte option{
+    text-align: center;
+    background-color: #92c7a3;
+    font-size: small;
+    margin:2px;
+}
+
+#generar-reporte{
+    height: 50px;
+    width: 150px;
+    border-radius: 15px;
+    font-size: medium;
+    margin: 2px;
+    background-color: rgb(209, 209, 209);
+    border-style: none;
+}

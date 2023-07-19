@@ -21,7 +21,7 @@ function generarReporte(){
 }
 
 function obtenerSeleccion(listaDatos){
-    let opcionSeleccion = document.querySelector("#postulaciones");
+    let opcionSeleccion = document.querySelector("#seleccion-reporte");
     imprimirReporte(listaDatos, opcionSeleccion);
 }
 
