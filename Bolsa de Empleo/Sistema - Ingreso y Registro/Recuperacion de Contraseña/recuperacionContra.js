@@ -22,7 +22,7 @@ function notificarActualizar(email) {
   Email.send({
     Host: "smtp.elasticemail.com",
     Port: 2525,
-    Username: "",
+    Username: "mchaconc1@ucenfotec.ac.cr",
     Password: "",
     To: `${email}`,
     From: "mchaconc1@ucenfotec.ac.cr",
