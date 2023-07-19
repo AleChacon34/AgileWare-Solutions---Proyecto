@@ -9,7 +9,6 @@
 document.addEventListener("DOMContentLoaded", () =>{
     let genBtn = document.querySelector("button[name='generar-reporte']");
     genBtn.addEventListener('click', generarReporte);
-    generarReporte();
 });
 
 function generarReporte(){
@@ -23,7 +22,6 @@ function generarReporte(){
 
 function obtenerSeleccion(listaDatos){
     let opcionSeleccion = document.querySelector("#postulaciones");
-    console.log(opcionSeleccion.value);
     imprimirReporte(listaDatos, opcionSeleccion);
 }
 
@@ -52,10 +50,13 @@ function imprimirReporte(listaDatos, opcion){
             }
             break;
         case "COLABORADORES":
+            console.log("COLABORADORES")
             break;
-        case "BUSCADORES DE EMPLEOS":
+        case "BUSCADORES DE EMPLEO":
+            console.log("BUSCADORES DE EMPLEO")
             break;
         case "MIS EMPLEOS":
+            console.log("MIS EMPLEOS")
             break;
         default:
             break;
