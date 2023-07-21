@@ -34,7 +34,7 @@ function insertEmail() {
     confirmButtonText: 'Enviar',
     showLoaderOnConfirm: true,
     preConfirm: (result) => {
-      Swal.fire('¡Invitacion enviada!', '', 'success');
+      Swal.fire('¡Invitación enviada!', '', 'success');
     },
     allowOutsideClick: () => !Swal.isLoading()
   });
