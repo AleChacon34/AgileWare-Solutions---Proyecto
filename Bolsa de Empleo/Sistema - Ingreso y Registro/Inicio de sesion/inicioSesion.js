@@ -6,7 +6,8 @@ let usuarioCorrecto = false;
 /**
  * Lista de usuarios quemados que se les permite entra a la pagina
  */
-let usuarios = [{
+let usuarios = [
+    {
         correo: "administrador@administrador.com",
         pass: "admin",
         rol: "Administrador"
