@@ -30,7 +30,6 @@ function insertEmail() {
       autocapitalize: 'off',
       placeholder: "ejemplo@ejemplo.com"
     },
-    
     showCancelButton: true,
     confirmButtonText: 'Enviar',
     showLoaderOnConfirm: true,
