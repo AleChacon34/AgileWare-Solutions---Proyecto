@@ -30,11 +30,6 @@ function insertEmail() {
       autocapitalize: 'off',
       placeholder: "ejemplo@ejemplo.com"
     },
-    inputValidator: (value) => {
-      if (value == "") {
-        return "Por favor, no dejar espacios en blanco"
-      }
-    },
     showCancelButton: true,
     confirmButtonText: 'Enviar',
     showLoaderOnConfirm: true,
