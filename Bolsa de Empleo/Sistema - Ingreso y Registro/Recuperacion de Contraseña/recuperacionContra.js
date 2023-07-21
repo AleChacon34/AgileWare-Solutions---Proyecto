@@ -1,5 +1,6 @@
 "use strict";
 
+//Aqui llama a un 'listener' para llama al evento de un boton
 document.addEventListener("DOMContentLoaded", () => {
   let actualizarBtn = document.querySelector(
     "button[name='recuperar-contrasenna']"
@@ -7,11 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
   actualizarBtn.addEventListener("click", getData);
 });
 
+//Esta funcion se encarga de obtener los datos de email de input
 function getData() {
   let email = document.getElementById('email').value;
   notificarActualizar(email)
 }
 
+//Funcion que se encargar de enviar el email por medio de un API
 function notificarActualizar(email) {
   
   Email.send(
