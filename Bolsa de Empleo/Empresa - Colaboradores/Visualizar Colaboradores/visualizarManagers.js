@@ -1,9 +1,9 @@
 "use strict";
 
-function onLoadComplete() {
+document.addEventListener("DOMContentLoaded", ()=> {
   let btn = document.querySelector("#agregar-colaborador");
   btn.onclick = displayAlert;
-}
+});
 
 function displayAlert() {
   Swal.fire({
@@ -31,16 +31,11 @@ function insertEmail() {
       autocapitalize: 'off',
       placeholder: "ejemplo@ejemplo.com"
     },
-    inputValidator: (value) => {
-      if (value == "") {
-        return "Por favor, no dejar espacios en blanco"
-      }
-    },
     showCancelButton: true,
     confirmButtonText: 'Enviar',
     showLoaderOnConfirm: true,
     preConfirm: (result) => {
-      Swal.fire('¡Invitacion enviada!', '', 'success');
+      Swal.fire('¡Invitación enviada!', '', 'success');
     },
     allowOutsideClick: () => !Swal.isLoading()
   });
