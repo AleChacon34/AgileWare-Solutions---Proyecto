@@ -1,9 +1,9 @@
 "use strict";
 
-function onLoadComplete() {
+document.addEventListener('DOMContentLoaded', () => {
   let btn = document.querySelector("#agregar-colaborador");
   btn.onclick = displayAlert;
-}
+});
 
 function displayAlert() {
   Swal.fire({
@@ -25,16 +25,12 @@ function displayAlert() {
 function insertEmail() {
   Swal.fire({
     title: 'Ingrese la dirección de correo electrónico',
-    input: 'text',
+    input: 'email',
     inputAttributes: {
       autocapitalize: 'off',
       placeholder: "ejemplo@ejemplo.com"
     },
-    inputValidator: (value) => {
-      if (value == "") {
-        return "Por favor, no dejar espacios en blanco"
-      }
-    },
+    
     showCancelButton: true,
     confirmButtonText: 'Enviar',
     showLoaderOnConfirm: true,
