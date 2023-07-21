@@ -129,4 +129,4 @@ function paginaInicio(rol){
         location.replace("/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Sistema-Perfil Empresa/Sistema-PerfilEmpresa.html");
     }
 }
-        
+
