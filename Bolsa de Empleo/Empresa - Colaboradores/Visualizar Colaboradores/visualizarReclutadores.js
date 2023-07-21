@@ -1,9 +1,9 @@
 "use strict";
 
-function onLoadComplete() {
+document.addEventListener('DOMContentLoaded', () => {
   let btn = document.querySelector("#agregar-colaborador");
   btn.onclick = displayAlert;
-}
+});
 
 function displayAlert() {
   Swal.fire({
