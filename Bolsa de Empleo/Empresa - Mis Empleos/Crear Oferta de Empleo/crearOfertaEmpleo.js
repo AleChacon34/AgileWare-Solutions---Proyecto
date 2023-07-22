@@ -11,9 +11,8 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 function publicarOferta(){
     Swal.fire({
+        icon: 'success',
         title: 'Oferta publicada con éxito',
-        showDenyButton: false,
-        showCancelButton: false,
         confirmButtonText: 'Continuar',
       }).then((result) => {
         if (result.isConfirmed) {
@@ -25,6 +24,7 @@ function publicarOferta(){
 function ocultarOferta(){
     console.log("oculta")
     Swal.fire({
+        icon: 'success',
         title: 'Oferta ocultada con éxito',
         confirmButtonText: 'Continuar',
       }).then((result) => {
