@@ -2,10 +2,12 @@
     <html>
         <head>
             <title>Modificar Oferta de Empleo</title>
-            <script src="https://kit.fontawesome.com/3d4c892592.js" crossorigin="anonymous"></script>
             <link rel="stylesheet" href= "/Bolsa de Empleo/Empresa - Mis Empleos/OfertaEmpleo.css"/>
             <link rel="stylesheet" href= "/Bolsa de Empleo/cssGeneral/barraNavegacionEmpresa.css"/>
+            <script src="https://kit.fontawesome.com/3d4c892592.js" crossorigin="anonymous"></script>
             <script src="/Bolsa de Empleo/jsGeneral/cerrarSesion.js"></script>
+            <script src="/Bolsa de Empleo/Empresa - Mis Empleos/Modificar Oferta de Empleo/ModificarOferta.js"></script>
+            <script src="/Bolsa de Empleo/jsGeneral/SweetAlert.js"></script>
         </head>
         <body>
             <!-- Esta barra pertenece al perfil de Empresa o Usuario Empresarial -->
@@ -34,19 +36,19 @@
                 <div>
                     <!-- Este input guarda el título de la oferta de empleo -->
                     <label for = "seccion-titulo">TÍTULO DE LA OFERTA: </label>
-                    <input id = "seccion-titulo" type = "text" placeholder="Nombre actual de la Oferta(...)">
+                    <input id = "seccion-titulo" type = "text" maxlength="75" minlength="25" placeholder="Nombre actual de la Oferta(...)">
                 </div>
                 <div>
                     <!-- Esta área de texto guarda los datos de la oferta de empleo -->
                     <label for = "seccion-datos"></label>
                     <!-- Esta área de texto guarda los datos de la oferta de empleo -->
-                    <textarea id = "seccion-datos" name = "Datos de la oferta" placeholder = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos facere ipsa ipsam quod neque esse sed a quo dignissimos modi? Beatae culpa minima enim sapiente in ullam quos quidem quisquam."></textarea>
+                    <textarea id = "seccion-datos" name = "Datos de la oferta" maxlength="3500" minlength="500" placeholder= "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos facere ipsa ipsam quod neque esse sed a quo dignissimos modi? Beatae culpa minima enim sapiente in ullam quos quidem quisquam."></textarea>
                 </div>
                 <div class = "buttons">
-                    <button class="btns" type="submit">ACTUALIZAR OFERTA</button>
-                    <button class="btns" type="submit">ELIMINAR OFERTA</button>
-                    <button class="btns" type="submit">PUBLICAR OFERTA</button>
-                    <button class="btns" type="submit">OCULTAR OFERTA</button>
+                    <button id="actualizar-btn" class="btns" type="submit">ACTUALIZAR OFERTA</button>
+                    <button id="eliminar-btn" class="btns" type="submit">ELIMINAR OFERTA</button>
+                    <button id="publicar-btn" class="btns" type="submit">PUBLICAR OFERTA</button>
+                    <button id="ocultar-btn" class="btns" type="submit">OCULTAR OFERTA</button>
                 </div>
             </main>
         </body>
