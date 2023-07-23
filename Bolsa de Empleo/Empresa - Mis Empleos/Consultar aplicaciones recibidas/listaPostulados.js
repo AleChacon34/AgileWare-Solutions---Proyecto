@@ -10,25 +10,32 @@ function generarReporte(){
         {id: "#123", titulo: "Ingeniería Mecatrónica", estado: "Pública"},
         {id: "#321", titulo: "Diseño Web", estado: "Oculta"},
         {id: "#213", titulo: "Data Analysis", estado: "Pública"}
-    ]
+    ];
 
     let datosUsuariosC = [
         {nombre: "Jonathan", apellidos: "Mora Herra", correoElectronico: "jmorah@ucenfotec.ac.cr", rol: "Aministrador"},
         {nombre: "Marco", apellidos: "Mora Herra", correoElectronico: "jmorah@ucenfotec.ac.cr", rol: "Manager"},
         {nombre: "Cristopher", apellidos: "Mora Herra", correoElectronico: "jmorah@ucenfotec.ac.cr", rol: "Reclutador"}
-    ]
+    ];
 
     let datosUsuariosB = [
         {nombre: "Jonathan", apellidos: "Mora Herra", correoElectronico: "jmorah@ucenfotec.ac.cr", estado: "Enviada", numeroTelefonico: "8888-8888"},
         {nombre: "Marco", apellidos: "Mora Herra", correoElectronico: "jmorah@ucenfotec.ac.cr", estado: "Enviada", numeroTelefonico: "8888-8888"},
         {nombre: "Cristopher", apellidos: "Mora Herra", correoElectronico: "jmorah@ucenfotec.ac.cr", estado: "Enviada", numeroTelefonico: "8888-8888"}
-    ]
+    ];
 
     let datosUsuariosP = [
         {nombre: "Jonathan", apellidos: "Mora Herra", correoElectronico: "jmorah@ucenfotec.ac.cr", postulacion: "titulo de la oferta", estado: "Enviada"},
         {nombre: "Marco", apellidos: "Mora Herra", correoElectronico: "jmorah@ucenfotec.ac.cr", postulacion: "titulo de la oferta", estado: "En revisión"},
         {nombre: "Cristopher", apellidos: "Mora Herra", correoElectronico: "jmorah@ucenfotec.ac.cr", postulacion: "titulo de la oferta", estado: "Denegada"}
-    ]
+    ];
+
+    let datosInvitaciones= [
+        {id: "#123", correoElectronicoInvitado: "usuario@dominio.com", emisor: "Nombre emisor", rol: "Reclutador"},
+        {id: "#321", correoElectronicoInvitado: "usuario@dominio.com", emisor: "Nombre emisor", rol: "Manager"},
+        {id: "#213", correoElectronicoInvitado: "usuario@dominio.com", emisor: "Nombre emisor", rol: "Administrador"}
+    ]; 
+
     let opcionSeleccion = document.querySelector("#seleccion-reporte");
 
     switch (opcionSeleccion.value){
@@ -43,6 +50,9 @@ function generarReporte(){
             break;
         case "POSTULACIONES DE EMPLEO":
             imprimirReporte(datosUsuariosP, opcionSeleccion);
+            break;
+        case "INVITACIONES DE EMPLEO":
+            imprimirReporte(datosInvitaciones, opcionSeleccion);
             break;
         default:
             break;
@@ -122,6 +132,23 @@ function imprimirReporte(listaDatos, opcion){
                 row.insertCell(2).appendChild(document.createTextNode(listaDatos[dato].correoElectronico));
                 row.insertCell(3).appendChild(document.createTextNode(listaDatos[dato].postulacion));
                 row.insertCell(4).appendChild(document.createTextNode(listaDatos[dato].estado));
+            }
+            break;
+        case "INVITACIONES DE EMPLEO":
+            //Crear el Table Header
+            let headRowI = crearTabla.insertRow(0)
+            headRowI.insertCell(0).outerHTML ="<th>ID Oferta</th>";
+            headRowI.insertCell(1).outerHTML ="<th>Correo del Invitado</th>";
+            headRowI.insertCell(2).outerHTML ="<th>Emisor de la Invitación</th>";
+            headRowI.insertCell(3).outerHTML ="<th>Rol del Emisor</th>";
+
+            //Crear las filas con la informacion de los objetos
+            for(let dato = 0;  dato < listaDatos.length; dato++){
+                let row = crearTabla.insertRow();
+                row.insertCell(0).appendChild(document.createTextNode(listaDatos[dato].id));
+                row.insertCell(1).appendChild(document.createTextNode(listaDatos[dato].correoElectronicoInvitado));
+                row.insertCell(2).appendChild(document.createTextNode(listaDatos[dato].emisor));
+                row.insertCell(3).appendChild(document.createTextNode(listaDatos[dato].rol));
             }
             break;
         default:
