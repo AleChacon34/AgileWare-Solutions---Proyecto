@@ -21,7 +21,7 @@ main{
     justify-content: space-around;
 }
 
-div{
+main div{
     display: flex;
     height: 10%;
     width: 60%;
@@ -36,6 +36,7 @@ div input{
 
 #seccion-datos{
     width: 100%;
+    resize: none;
     height: 350px;
     background-color: rgb(228, 228, 228);
 }
@@ -66,6 +67,10 @@ th {
     background-color: #92c7a3;
     color: black;
     font-weight: bolder;
+}
+
+.swal{
+    border-radius: 15px;
 }
 
 /* footer{

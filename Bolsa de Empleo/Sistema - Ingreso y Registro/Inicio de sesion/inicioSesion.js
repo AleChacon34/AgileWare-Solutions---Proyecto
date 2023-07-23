@@ -6,7 +6,8 @@ let usuarioCorrecto = false;
 /**
  * Lista de usuarios quemados que se les permite entra a la pagina
  */
-let usuarios = [{
+let usuarios = [
+    {
         correo: "administrador@administrador.com",
         pass: "admin",
         rol: "Administrador"
@@ -128,4 +129,4 @@ function paginaInicio(rol){
         location.replace("/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Sistema-Perfil Empresa/Sistema-PerfilEmpresa.html");
     }
 }
-        
+
