@@ -10,12 +10,15 @@ body{
     justify-content: center;
     flex-wrap: wrap;
     background-color: #ffffff;
+    background-image: url("../imagenes/imagen.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h1{
     font-size: xxx-large;
     text-align: center;
-    color: rgb(89, 89, 89);
+    color: rgb(255, 255, 255);
 }
 
 p{
@@ -27,6 +30,7 @@ div p{
 }
 
 main{
+    color: white;
     display: flex;
     flex-direction: column;
     height: 500px;
@@ -34,6 +38,7 @@ main{
     align-items: center;
     border: 5px solid rgb(214, 214, 214);
     border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 main:hover{
@@ -46,6 +51,8 @@ main div{
 }
 
 #mtss-logo{
+    padding: 20px;
+    background-color: #ffffff;
     height: 200px;
     width: 300px;
 }
