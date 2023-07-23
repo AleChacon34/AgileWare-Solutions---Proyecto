@@ -60,6 +60,10 @@ function eliminarOferta(){
 // Funcion para actualizar los datos de la Oferta
 function publicarOferta(){
     Swal.fire({
+        customClass: ({
+            container: '.container',
+            popup: ".popup",
+        }),
         icon: "warning",
         title: '¿Desea publicar la oferta?',
         text: "Esta oferta será visible públicamente",
