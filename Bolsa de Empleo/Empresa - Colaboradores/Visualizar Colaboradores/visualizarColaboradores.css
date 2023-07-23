@@ -28,7 +28,7 @@ body{
     display: flex;
     font-weight: bold;
     color: #00008B;
-    border-bottom: 3px solid #00008B;
+    border-bottom: 5px solid #00008B;
 }
 
 #second-navigation a{
