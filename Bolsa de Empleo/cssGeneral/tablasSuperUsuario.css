@@ -9,7 +9,7 @@
 }
 
 .tabla-datos th {
-    background-color: #92c7a3
+    background-color: #7b7db0
 }
 
 #seleccion-reporte{
@@ -21,7 +21,7 @@
 
 #seleccion-reporte option{
     text-align: center;
-    background-color: #92c7a3;
+    background-color: #a9a8ce;
     font-size: small;
     margin:2px;
     font-weight: bold;

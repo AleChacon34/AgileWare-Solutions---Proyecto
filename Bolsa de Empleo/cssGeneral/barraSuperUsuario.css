@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.navBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(123,125,176,1) 57%, rgba(169,168,206,1) 76%, rgba(0,0,0,1) 98%);
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.navBar div {
+    height: 80%;
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navBar div:hover {
+    transition: all 0.3s;
+    background-color: rgb(0, 0, 0);
+    padding: 5px;
+}
+
+.navBar div:active {
+    background-color: rgb(39, 39, 39);
+}
+
+.navBar a {  
+    margin-top: 5px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.navBar .logout {
+    width: 5%;
+}
+
+i {
+    color: white;
+}
+
+#logOut {
+    border: none;
+    background-color: rgb(39, 39, 39);
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    cursor: pointer;
+}
+
+#logOut:hover {
+    transition: all 0.3s;
+    background-color: rgb(0, 0, 0);
+    padding: 2px;
+}
+
+#logOut:active {
+    background-color: rgb(29, 29, 29);
+}
