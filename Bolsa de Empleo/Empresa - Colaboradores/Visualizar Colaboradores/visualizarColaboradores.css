@@ -19,18 +19,21 @@ body{
 
 #second-navigation{
     display: flex;
+    font-size: x-large;
+    border: 3px solid #92c7a3;
+    border-radius: 15px;
 }
 
-#second-navigation a:hover{
+#main-list{
     display: flex;
     font-weight: bold;
     color: #00008B;
-    border-bottom: 2px solid #00008B;
+    border-bottom: 5px solid #00008B;
 }
 
 #second-navigation a{
     color: black;
-    margin: 5px;
+    margin: 5px 15px 5px 15px;
 }
 
 #second-navigation a{
