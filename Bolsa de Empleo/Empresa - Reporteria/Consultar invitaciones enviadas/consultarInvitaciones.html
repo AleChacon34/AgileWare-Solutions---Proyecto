@@ -8,11 +8,13 @@
         src="https://kit.fontawesome.com/3d4c892592.js"
         crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="Sistema-Super-Usuario.css">
     <link rel="stylesheet" href="/Bolsa de Empleo/cssGeneral/barraSuperUsuario.css">
+    <link rel="stylesheet" href="/Bolsa de Empleo/cssGeneral/tablasSuperUsuario.css">
+    <link rel="stylesheet" href="/Bolsa de Empleo/Empresa - Reporteria/Consultar invitaciones enviadas/consultarInvitaciones.css">
     <script src="/Bolsa de Empleo/jsGeneral/cerrarSesion.js"></script>
+    <script src="/Bolsa de Empleo/Empresa - Reporteria/Consultar invitaciones enviadas/consultarInvitaciones.js"></script>
 </head>
-<body>
+  <body>
     <nav class="navBar">
         <div>
           <i class="fa-solid fa-user"></i>
@@ -26,18 +28,18 @@
           <button id="logOut"><i class="fa-solid fa-right-from-bracket"></i></button>
         </div>
       </nav>
-    <main><!--Esta parte se refleja la informacion del super usuario-->
-        <section class="imagen-placeholder">
-            <img src="Captura de pantalla 2023-07-06 141638.png" alt="Foto ">
-        </section>
-        <section>
-            <p>Nombre Usuario</p>
-            <p>Correo Electrónico</p>
-            <p>Número Telefónico</p>
-        </section>
-        <section>
-            <button type="button"name="editar-perfil"><a href="/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Sistema-SuperUsuario-ModificarPerfil/Sistema-SuperUsuario-ModificarPerfil.html">Editar informacion del Perfil</a></button> 
-        </section>
+    <main>
+      <h2>NOMBRE EMPRESA - REPORTERIA</h2>
+      <select id = "seleccion-reporte">
+        <option name="invitacionesEnviadas">INVITACIONES ENVIADAS</option>
+        <option name="empresasActivas">REPORTE DE EMPRESAS</option>
+      </select>
+      <button type="submit" name="generar-reporte" id = "generar-reporte">Generar Reporte</button>
+      <table class = "tabla-datos">
+        <tr>
+            <th>Por favor genere un reporte para visualizarlo</th>
+        </tr>  
+      </table>
     </main>
-</body>
+  </body>
 </html>
