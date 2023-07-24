@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let btn = document.querySelector("#agregar-colaborador");
   btn.onclick = displayAlert;
 });
-
+// En esta sección se le pregunta la opción de invitación: manual o por correo 
 function displayAlert() {
   Swal.fire({
     title: "¿Desea enviar invitación de correo electrónica o registrarlo manualmente?",
@@ -21,7 +21,7 @@ function displayAlert() {
     }
   });
 }
-
+// Aquí se solicita la dirección de correo electrónico para la solicitud
 function insertEmail() {
   Swal.fire({
     title: 'Ingrese la dirección de correo electrónico',
