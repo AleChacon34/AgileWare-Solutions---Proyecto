@@ -37,6 +37,4 @@ function guardarRegistro(listaUsuarios, infoUsuario){
             text: 'Por favor llene todos los espacios para completar el registro.',
         })
     }
-        
 }
-    
