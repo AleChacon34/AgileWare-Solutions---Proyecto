@@ -10,7 +10,6 @@
     ></script>
     <link rel="stylesheet" href="Sistema-EmpresaModificarPerfil.css">
     <link rel="stylesheet" href="/Bolsa de Empleo/cssGeneral/barraNavegacionEmpresa.css">
-    <script src="/Bolsa de Empleo/jsGeneral/confirmacionActualizar.js"></script> 
     <script src ="/Bolsa de Empleo/jsGeneral/SweetAlert.js"></script> 
     <script src="/Bolsa de Empleo/jsGeneral/cerrarSesion.js"></script> 
     <script src="/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Sistema-EmpresaModificarPerfil/Sistema-EmpresaModificarPerfil.js"></script> 
@@ -39,27 +38,27 @@
     </nav>
     <main><!--En esta parte se ingresa la información de perfil empresa -->
         <h1>Perfil de la Empresa</h1>
-        <div class="block">
+        <form id="newUserData">
             <section>
                 <div class="container">
                     <label >Nombre de la Empresa</label>
-                    <input type="text">
+                    <input type="text" id="nombreEmpresa">
                 </div>
                 <div class="container">
                     <label>Correo Electrónico</label>
-                    <input type="email">
+                    <input type="email" id="correo">
                 </div>
                 <div class="container">
                     <label>Número Telefónico</label>
-                    <input type="email">
+                    <input type="tel" id="telefono">
                 </div>
                 <div class="container">
                     <label>Contreaseña</label>
-                    <input type="password">
+                    <input type="password" id="pass" minlength="8" maxlength="15">
                 </div>
                 <div class="container">
                     <label>Verificar contraseña</label>
-                    <input type="password">
+                    <input type="password" id="verifyPass" minlength="8" maxlength="15">
                 </div>
             </section>
             <section>
@@ -68,15 +67,15 @@
                     <button>Añadir archivo</button>
                 </div>
             </section>
+        </form>
+        <div class="block">
+                <img src="Captura de pantalla 2023-07-06 141638.png" alt="Foto">
+            <div class="container">
+                <p>Subir foto de perfil</p>
+                <button>Añadir archivo</button>
             </div>
-                <div class="block">
-                    <img src="Captura de pantalla 2023-07-06 141638.png" alt="Foto">
-                <div class="container">
-                    <p>Subir foto de perfil</p>
-                    <button>Añadir archivo</button>
-                </div>
-                <button type="button" name = "actualizar-perfil">ACTUALIZAR PERFIL</button>
-                </div>
+            <button type="button" id="btn">ACTUALIZAR PERFIL</button>
+        </div>
     </main>
 </body>
 </html>
