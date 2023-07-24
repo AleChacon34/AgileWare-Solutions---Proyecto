@@ -3,7 +3,7 @@ let listaUsuariosEmpresariales = [];
 
 
 document.addEventListener("DOMContentLoaded", () =>{
-    let registro = document.querySelector("button[name='completar-registro'] a");
+    let registro = document.querySelector("button[name='completar-registro']");
     registro.addEventListener("click", completarRegistro);
 })
 
