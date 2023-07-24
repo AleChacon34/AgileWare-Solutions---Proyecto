@@ -3,7 +3,7 @@ let listaUsuariosEmpresariales = [];
 
 
 document.addEventListener("DOMContentLoaded", () =>{
-    let registro = document.querySelector("button[name='completar-registro'] a");
+    let registro = document.querySelector("button[name='completar-registro']");
     registro.addEventListener("click", completarRegistro);
 })
 
@@ -37,6 +37,4 @@ function guardarRegistro(listaUsuarios, infoUsuario){
             text: 'Por favor llene todos los espacios para completar el registro.',
         })
     }
-        
 }
-    
