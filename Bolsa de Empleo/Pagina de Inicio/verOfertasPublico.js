@@ -1,8 +1,11 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () =>{
-    let ofertaBtn = document.querySelector("button[name='ver-oferta']");
-    ofertaBtn.addEventListener("click", pedirIngreso);
+    let ofertaBtns = document.querySelectorAll("button");
+    for (let i = 0; i , ofertaBtns.length; i++) {
+        let btn = ofertaBtns[i];
+        btn.onclick = pedirIngreso;
+    }
 })
 
 // Función para redirigir al usuario a iniciar sesión
