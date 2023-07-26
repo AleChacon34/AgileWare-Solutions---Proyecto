@@ -60,7 +60,13 @@ function verifyPass(userData) {
 }
 
 function errorValidationMessage() {
-    Swal.fire("Por favor, no dejar espacios en blanco", "", "error");
+    Swal.fire({
+        title: "No dejar espacios en blanco",
+        icon: "error",
+        customClass: {
+            confirmButton: "btnError"
+        }
+    });
 }
 
 function updateData(userData) {
