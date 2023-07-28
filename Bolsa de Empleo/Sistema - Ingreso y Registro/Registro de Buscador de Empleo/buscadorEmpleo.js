@@ -27,9 +27,6 @@ function guardarRegistro(listaUsuarios, infoUsuario){
             icon: 'success',
             title: 'Registro exitoso',
             text: 'La información del nuevo usuario ha sido guardada exitosamente.',
-            customClass: {
-                popup: "popupClass"
-            }
         })
     }
 
