@@ -36,8 +36,17 @@ section p {
 display: flex;
 flex-direction: row;
 justify-content: space-between;
-font-size: 10px;
+padding: 3px;
+}
 
+.Modificar{
+    font-size: 10px;
+    width: 10% ;
+    height: 50%;
+}
+
+a{
+    text-decoration: none;
 }
 
 section .descripcion {
