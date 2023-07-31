@@ -69,3 +69,7 @@ button:active {
 p{
     translate: 0 -15px;
 }
+
+.btnError {
+    color: #0000;
+}
