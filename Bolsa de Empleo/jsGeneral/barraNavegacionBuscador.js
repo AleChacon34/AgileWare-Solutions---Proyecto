@@ -5,5 +5,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
 });
 
 function crearBarraNavegacion(){
-    let navBar = document.createElement("nav").outerHTML = ""
+    let navBar = document.createElement("nav").outerHTML = "<nav id='navBar'></nav>"
 }
