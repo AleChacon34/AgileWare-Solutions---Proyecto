@@ -19,6 +19,7 @@ function completarRegistro(){
     guardarRegistro(listaBuscadoresdeEmpleo, usuario);
 }
 
+
 function guardarRegistro(listaUsuarios, infoUsuario){
 
     if (!((infoUsuario.nombreBuscador === "") || (infoUsuario.apellidosBuscador === "") || (infoUsuario.correoBuscador === "") || (infoUsuario.telefonoBuscador === "") || (infoUsuario.generoBuscador === "") || (infoUsuario.contrasennaBuscador === ""))){
