@@ -32,6 +32,14 @@ section p {
     padding: 10px;
 }
 
+.title{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+font-size: 10px;
+
+}
+
 section .descripcion {
     width: 97%;
 }
