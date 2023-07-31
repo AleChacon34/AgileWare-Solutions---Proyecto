@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () =>{
  * Funcion que muestra la alerta de que se actualizaron los datos
  */
 function notificarActualizar(){
-    console.log("funciona")
     Swal.fire({
         icon: "success",
         title: "Datos Actualizados",
