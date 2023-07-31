@@ -8,8 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    let modBtn = document.querySelector('#modificar');
-    modBtn.addEventListener("click",direct) 
+    let modBtns = document.querySelectorAll('.modificar');
+    for(let i = 0; i<modBtns.length;i++){
+        let modBtn=modBtns[i];
+        modBtn.addEventListener("click",direct) 
+    }
 })
-var 
-location.href = "agregarEstudio.html"
+function direct(){
+    location.href = "agregarEstudio.html"
+}
