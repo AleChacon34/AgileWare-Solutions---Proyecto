@@ -43,6 +43,7 @@ function notificarActualizar(email) {
   });
 }
 
+//Funcion que se encarga de generar una contraseña temporal
 function randomPassword() {
   let pass = "";
   let str = "ABDCEFGHIJKLMNOPQRSTUVWXYZ" + "abcdefghijklmnopqrstuvwxyz1234567890";
