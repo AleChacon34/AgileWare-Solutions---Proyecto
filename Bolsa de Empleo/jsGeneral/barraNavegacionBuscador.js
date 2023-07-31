@@ -6,7 +6,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 function crearBarraNavegacion(){
     let navBar = document.createElement('navBar');
-    let addDivI = navBar.appendChild("div");
-    let addDivII = navBar.appendChild("div");
-    let addDivIII = navBar.appendChild("div");
+    navBar.classList.add("navBar");
+    let addDivI = navBar.appendChild(Object.assign(
+        document.createElement('div'),
+        {
+            classList: "navDiv",
+            innerHTML: "div <p>Hola</p>"
+        }
+    ));
 }
