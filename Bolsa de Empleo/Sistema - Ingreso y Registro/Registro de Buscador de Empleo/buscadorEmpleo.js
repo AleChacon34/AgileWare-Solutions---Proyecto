@@ -19,6 +19,37 @@ function completarRegistro(){
     guardarRegistro(listaBuscadoresdeEmpleo, usuario);
 }
 
+function validateData(userData) {
+    if (userData.enterpriseName == "") {
+        errorValidationMessage();
+        document.getElementById("nombreEmpresa").style.border = "2px solid red";
+    } else if (userData.email == "") {
+        errorValidationMessage();
+        document.getElementById("correo").style.border = "2px solid red";
+    } else if (userData.phone == "") {
+        errorValidationMessage();
+        document.getElementById("telefono").style.border = "2px solid red";
+    } else if (userData.pass == "") {
+        errorValidationMessage();
+        document.getElementById("pass").style.border = "2px solid red";
+    } else if (userData.verifyPass == "") {
+        errorValidationMessage();
+        document.getElementById("verifyPass").style.border = "2px solid red";
+    } else {
+        verifyPass(userData);
+    }
+}
+
+function errorValidationMessage(){
+    Swal.fire({
+        title: "No dejar espacios en blanco",
+        icon: "error",
+        customClass:{
+            confirmButton: "btnErrors"
+        }
+    })
+}
+
 function guardarRegistro(listaUsuarios, infoUsuario){
 
     if (!((infoUsuario.nombreBuscador === "") || (infoUsuario.apellidosBuscador === "") || (infoUsuario.correoBuscador === "") || (infoUsuario.telefonoBuscador === "") || (infoUsuario.generoBuscador === "") || (infoUsuario.contrasennaBuscador === ""))){
