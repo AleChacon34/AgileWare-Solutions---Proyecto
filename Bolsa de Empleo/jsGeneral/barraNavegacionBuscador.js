@@ -61,6 +61,5 @@ function crearBarraNavegacion(){
     //Append NAV to BODY
     htmlBody.appendChild(navBar);
     //Set <nav> as first element of Body
-    let bodyMain = document.querySelector('main');
     htmlBody.insertBefore(navBar, htmlBody.children[0]);
 }
