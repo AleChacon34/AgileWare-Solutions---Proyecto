@@ -11,19 +11,41 @@ function crearBarraNavegacion(){
     navBar.classList.add("navBar");
     //Append NAV to BODY
     htmlBody.appendChild(navBar);
-    //Create Div I
+    //Create Div I, II, III
     let addDivI = document.createElement('div');
-    //Create Icon I
-    let addIcon = document.createElement("i");
-    addIcon.classList.add("fa-solid","fa-user");
-    //Create anchor I
-    let newAnch = document.createElement("a");
-    newAnch.href = "/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Perfil usuario/perfilUsuario.html";
-    let linkAnch = document.createTextNode("Perfil");
-    newAnch.appendChild(linkAnch);
+    let addDivII = document.createElement('div');
+    let addDivIII = document.createElement('div');
+    //Create Icon I, II, III
+    let addIconI = document.createElement("i");
+    addIconI.classList.add("fa-solid","fa-user");
+    let addIconII = document.createElement("i");
+    addIconII.classList.add("fa-solid", "fa-briefcase");
+    let addIconIII = document.createElement("i");
+    addIconIII.classList.add("fa-solid", "fa-hand-pointer");
+    //Create anchor I, II, III
+    let newAnchI = document.createElement("a");
+    newAnchI.href = "/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Perfil usuario/perfilUsuario.html";
+    let linkAnchI = document.createTextNode("Perfil");
+    newAnchI.appendChild(linkAnchI);
+    let newAnchII = document.createElement("a");
+    newAnchII.href = "/Bolsa de Empleo/Buscador de Empleo - Empleos/Visualizar empleos disponibles/visualizarEmpleos.html";
+    let linkAnchII = document.createTextNode("Empleos");
+    newAnchII.appendChild(linkAnchII);
+    let newAnchIII = document.createElement("a");
+    newAnchIII.href = "/Bolsa de Empleo/Buscador de Empleo - Postulaciones/Ver Postulaciones/verPostulaciones.html";
+    let linkAnchIII = document.createTextNode("Postulaciones");
+    newAnchIII.appendChild(linkAnchIII);
     
     //Append Icon to Div
-    addDivI.appendChild(addIcon);
-    addDivI.appendChild(newAnch)
+    addDivI.appendChild(addIconI);
+    addDivII.appendChild(addIconII);
+    addDivIII.appendChild(addIconIII);
+    //Append <a> to Div
+    addDivI.appendChild(newAnchI);
+    addDivII.appendChild(newAnchII);
+    addDivIII.appendChild(newAnchIII);
+    //Append Div to <nav>
     navBar.appendChild(addDivI);
+    navBar.appendChild(addDivII);
+    navBar.appendChild(addDivIII);
 }
