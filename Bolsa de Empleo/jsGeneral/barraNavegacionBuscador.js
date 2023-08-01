@@ -2,10 +2,10 @@
 
 //Load Page
 document.addEventListener("DOMContentLoaded", ()=>{
-    crearBarraNavegacion();
+    crearBarraNavegacionBuscador();
 });
 
-function crearBarraNavegacion(){
+function crearBarraNavegacionBuscador(){
     // Create NAV element and assign class
     let htmlBody = document.querySelector("body");
     let navBar = document.createElement('nav');
