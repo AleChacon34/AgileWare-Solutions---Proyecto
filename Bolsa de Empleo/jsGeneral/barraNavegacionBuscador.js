@@ -1,4 +1,5 @@
 'use strict'
+
 //Load Page
 document.addEventListener("DOMContentLoaded", ()=>{
     crearBarraNavegacion();
@@ -62,4 +63,20 @@ function crearBarraNavegacion(){
     htmlBody.appendChild(navBar);
     //Set <nav> as first element of Body
     htmlBody.insertBefore(navBar, htmlBody.children[0]);
+    // Add Scripts to html/head
+    let htmlHead = document.querySelector('head');
+    let newScriptI = document.createElement('script');
+    let newScriptII = document.createElement('script');
+    let newLinkI = document.createElement('link');
+    //Set attributes for <script> and <link>
+    newScriptI.setAttribute("src", "https://kit.fontawesome.com/3d4c892592.js");
+    newScriptI.setAttribute("crossorigin","anonymous");
+    newScriptII.setAttribute("src", "/Bolsa de Empleo/jsGeneral/cerrarSesion.js");
+    // newScriptII.setAttribute("type", "module");
+    newLinkI.setAttribute("rel", "stylesheet");
+    newLinkI.setAttribute("href", "/Bolsa de Empleo/cssGeneral/barraNavegacionBuscador.css")
+    //Add <script> and <link> to head
+    htmlHead.appendChild(newScriptI);
+    htmlHead.appendChild(newScriptII);
+    htmlHead.appendChild(newLinkI);
 }
