@@ -35,7 +35,7 @@ function crearBarraNavegacionEmpresarial(){
     
     //Create anchor I, II, III, IV
     let newAnchI = document.createElement("a");
-    newAnchI.href = "/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Perfil usuario/perfilUsuario.html";
+    newAnchI.href = "/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Sistema-Perfil Empresa/Sistema-PerfilEmpresa.html";
     let linkAnchI = document.createTextNode("Perfil");
     newAnchI.appendChild(linkAnchI);
     let newAnchII = document.createElement("a");
@@ -70,21 +70,25 @@ function crearBarraNavegacionEmpresarial(){
     navBar.appendChild(addDivV);
     //Append button to Div
     addDivV.appendChild(newBtn);
+    
     //Append NAV to BODY
-    htmlBody.appendChild(navBar);
+    htmlBody.appendChild(navBar); 
     //Set <nav> as first element of Body
     htmlBody.insertBefore(navBar, htmlBody.children[0]);
-    // Add Scripts to html/head
+    
+    // Create Scripts and link 
     let htmlHead = document.querySelector('head');
     let newScriptI = document.createElement('script');
     let newScriptII = document.createElement('script');
     let newLinkI = document.createElement('link');
+    
     //Set attributes for <script> and <link>
     newScriptI.setAttribute("src", "https://kit.fontawesome.com/3d4c892592.js");
     newScriptI.setAttribute("crossorigin","anonymous");
     newScriptII.setAttribute("src", "/Bolsa de Empleo/jsGeneral/cerrarSesion.js");
     newLinkI.setAttribute("rel", "stylesheet");
     newLinkI.setAttribute("href", "/Bolsa de Empleo/cssGeneral/barraNavegacionEmpresa.css")
+    
     //Add <script> and <link> to head
     htmlHead.appendChild(newScriptI);
     htmlHead.appendChild(newScriptII);
