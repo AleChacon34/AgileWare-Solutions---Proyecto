@@ -9,8 +9,6 @@ function crearBarraNavegacion(){
     let htmlBody = document.querySelector("body");
     let navBar = document.createElement('nav');
     navBar.classList.add("navBar");
-    //Append NAV to BODY
-    htmlBody.appendChild(navBar);
     //Create Div I, II, III< IV
     let addDivI = document.createElement('div');
     let addDivII = document.createElement('div');
@@ -60,5 +58,9 @@ function crearBarraNavegacion(){
     navBar.appendChild(addDivIV);
     //Append button to Div
     addDivIV.appendChild(newBtn);
-
+    //Append NAV to BODY
+    htmlBody.appendChild(navBar);
+    //Set <nav> as first element of Body
+    let bodyMain = document.querySelector('main');
+    htmlBody.insertBefore(navBar, htmlBody.children[0]);
 }
