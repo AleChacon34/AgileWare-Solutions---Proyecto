@@ -1,6 +1,9 @@
 body {
     margin: 0;
     background-color: white;
+    background-image: url('../../imagenes/working.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     height: 600px;
     flex-direction: column;
@@ -26,10 +29,11 @@ main .card {
     border: 1px solid black;
     width: 70%;
     height: 43%;
-    background-color: rgb(210, 210, 210);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     padding: 10px;
+    color: white;
 }
 
 main div .offerHeader {
@@ -40,15 +44,37 @@ main div .offerHeader {
 }
 
 main div .offerBody {
-    padding: 10px;
-    width: 70%;
+    padding: 5px;
+    width: 80%;
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.offerBody p{
+    margin: 3px;
+    padding: 5px;
+    background-color: rgb(222, 222, 222);
+    border-radius: 5px;
+    color: black;
+}
+
+.offerBody .description {
+    display: flex;
+    flex-direction: row;
+}
+
+.offerBody h4 {
+    text-align: center;
+    color: white;
+    background-color: rgb(108, 108, 108);
+    border-radius: 5px;
+    padding: 5px;
 }
 
 button {
-    background-color: white;
+    background-color: rgb(0, 145, 104);
+    color: white;
     border: none;
     width: 190px;
     height: 30px;
@@ -56,10 +82,10 @@ button {
 }
 
 button:hover{
-    background-color: rgb(188, 188, 188);
+    background-color: rgb(0, 120, 86);
     cursor: pointer;
 }
 
 button:active {
-    background-color: rgb(156, 156, 156);
+    background-color: rgb(0, 79, 57);
 }
