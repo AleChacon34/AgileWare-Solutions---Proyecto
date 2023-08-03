@@ -1,17 +1,20 @@
 
 'use strict';
 
-let {estadoOferta } = require("./consultarOferta.js ")
+// import { estadoOferta } from "/consultarOferta.js ";
 
 //Agregar funcionalidades a todos los botones
-console.log(estadoOferta);
+
 document.addEventListener("DOMContentLoaded", () =>{
-    // if (estadoOferta == "Oferta Pública"){
-    //     console.log("Oferta Pública")
-    // }
-    // else if (estadoOferta == "Oferta Oculta"){
-    //     console.log("Oferta Oculta")
-    // }
+//     if (estadoOferta.textContent == "Oferta Pública"){
+//         console.log("Oferta Pública")
+//     }
+//     else if (estadoOferta.textContent == "Oferta Oculta"){
+//         console.log("Oferta Oculta")
+//     }
+//     else{
+//         console.log("No funciona")
+//     }
     let actualizarBtn = document.querySelector("#actualizar-btn");
     actualizarBtn.addEventListener('click', actualizarOferta);
     let eliminarBtn = document.querySelector("#eliminar-btn");
