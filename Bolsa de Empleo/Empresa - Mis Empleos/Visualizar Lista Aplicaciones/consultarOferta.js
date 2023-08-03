@@ -1,15 +1,17 @@
 'use strict'
 
-export let estadoOferta = document.querySelector("#estado-oferta");
+let estadoOferta = document.querySelector("#estado-oferta").textContent;
 
 document.addEventListener("DOMContentLoaded", ()=>{
-    if (estadoOferta.textContent == "Oferta pública"){
+    if (estadoOferta == "Oferta pública"){
         console.log("Oferta Pública")
     }
-    else if (estadoOferta.textContent == "Oferta oculta"){
+    else if (estadoOferta == "Oferta oculta"){
         console.log("Oferta Oculta")
     }
     else{
         console.log("No funciona")
     }
-})
+});
+
+module.exports(estadoOferta);

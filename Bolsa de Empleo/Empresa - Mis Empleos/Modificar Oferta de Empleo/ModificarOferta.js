@@ -1,17 +1,17 @@
 
 'use strict';
 
-import { estadoOferta } from "../Visualizar Lista Aplicaciones/consultarOferta.js";
+let {estadoOferta } = require("./consultarOferta.js ")
 
 //Agregar funcionalidades a todos los botones
-
+console.log(estadoOferta);
 document.addEventListener("DOMContentLoaded", () =>{
-    if (estadoOferta.textContent == "Oferta Pública"){
-        console.log("Oferta Pública")
-    }
-    else if (estadoOferta.textContent == "Oferta Oculta"){
-        console.log("Oferta Oculta")
-    }
+    // if (estadoOferta == "Oferta Pública"){
+    //     console.log("Oferta Pública")
+    // }
+    // else if (estadoOferta == "Oferta Oculta"){
+    //     console.log("Oferta Oculta")
+    // }
     let actualizarBtn = document.querySelector("#actualizar-btn");
     actualizarBtn.addEventListener('click', actualizarOferta);
     let eliminarBtn = document.querySelector("#eliminar-btn");
