@@ -1,14 +1,15 @@
 
 'use strict';
 
+import { estadoOferta } from "../Visualizar Lista Aplicaciones/consultarOferta.js";
+
 //Agregar funcionalidades a todos los botones
 
 document.addEventListener("DOMContentLoaded", () =>{
-    let estadoOferta = document.querySelector("#estado-oferta");
-    if (estadoOferta.content == "Oferta Pública"){
+    if (estadoOferta.textContent == "Oferta Pública"){
         console.log("Oferta Pública")
     }
-    else if (estadoOferta.content == "Oferta Oculta"){
+    else if (estadoOferta.textContent == "Oferta Oculta"){
         console.log("Oferta Oculta")
     }
     let actualizarBtn = document.querySelector("#actualizar-btn");
