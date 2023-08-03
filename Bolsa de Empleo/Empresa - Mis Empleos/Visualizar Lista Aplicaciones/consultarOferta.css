@@ -52,8 +52,11 @@ div p{
 }
 
 aside button{
+    height: 25px;
+    width: 150px;
     background-color: #00661b;
     border: none;
+    border-radius: 5px;
     margin: 2px;
 
 }

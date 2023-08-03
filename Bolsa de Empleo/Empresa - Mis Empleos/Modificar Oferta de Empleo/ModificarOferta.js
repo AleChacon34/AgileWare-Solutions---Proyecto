@@ -1,8 +1,16 @@
+
 'use strict';
 
 //Agregar funcionalidades a todos los botones
 
 document.addEventListener("DOMContentLoaded", () =>{
+    let estadoOferta = document.querySelector("#estado-oferta");
+    if (estadoOferta.content == "Oferta Pública"){
+        console.log("Oferta Pública")
+    }
+    else if (estadoOferta.content == "Oferta Oculta"){
+        console.log("Oferta Oculta")
+    }
     let actualizarBtn = document.querySelector("#actualizar-btn");
     actualizarBtn.addEventListener('click', actualizarOferta);
     let eliminarBtn = document.querySelector("#eliminar-btn");
