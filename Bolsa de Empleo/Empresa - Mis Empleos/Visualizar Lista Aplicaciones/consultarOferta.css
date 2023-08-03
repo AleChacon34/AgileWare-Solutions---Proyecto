@@ -14,13 +14,13 @@ body{
 main{
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 30px;
     margin-top: 100px;
     width: 80%;
     height: 40%;
     background-color: rgb(215, 215, 215);
     border: 4px solid rgb(207, 207, 207);
-
+    border-radius: 20px;
 }
 
 div{
@@ -37,6 +37,7 @@ aside{
 div textarea{
     height: 70%;
     width: 100%;
+    resize: none;
 }
 
 div p{
@@ -51,7 +52,7 @@ div p{
 }
 
 aside button{
-    background-color: gray;
+    background-color: #00661b;
     border: none;
     margin: 2px;
 
