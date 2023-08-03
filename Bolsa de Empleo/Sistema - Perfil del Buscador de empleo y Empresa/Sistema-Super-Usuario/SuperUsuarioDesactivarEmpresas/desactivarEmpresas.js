@@ -10,7 +10,7 @@ function desactivarPerfil(){
     Swal.fire({
         icon: "warning",
         title: "Desactivación de usuario",
-        text: "La desactivación del perfil inhabilitará el inicio de sesión de este empresa y de sus usuarios empresariales.",
+        text: "La desactivación del perfil inhabilitará el inicio de sesión de esta empresa y de sus usuarios empresariales.",
         confirmButtonText: "Proceder",
         showDenyButton: true,
         denyButtonText: "Cancelar",

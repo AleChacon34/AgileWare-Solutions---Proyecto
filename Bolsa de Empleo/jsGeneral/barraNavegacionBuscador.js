@@ -10,17 +10,17 @@ function crearBarraNavegacionBuscador(){
     let htmlBody = document.querySelector("body");
     let navBar = document.createElement('nav');
     navBar.classList.add("navBar");
-    //Create Div I, II, III< IV
+    // Create Div I, II, III< IV
     let addDivI = document.createElement('div');
     let addDivII = document.createElement('div');
     let addDivIII = document.createElement('div');
     let addDivIV = document.createElement('div');
-    //Add class for logout IV
+    // Add class for I, IV
     addDivIV.classList.add("logout");
-    //Create button for IV
+    // Create button for IV
     let newBtn = document.createElement('button');
     newBtn.setAttribute('id', "logOut");
-    //Create Icon I, II, III, IV
+    // Create Icon I, II, III, IV
     let addIconI = document.createElement("i");
     addIconI.classList.add("fa-solid","fa-user");
     let addIconII = document.createElement("i");
