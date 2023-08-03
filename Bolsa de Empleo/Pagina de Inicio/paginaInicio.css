@@ -22,7 +22,7 @@ h1{
 }
 
 p{
-    font-size: large;
+    font-size: x-large;
 }
 
 div p{
@@ -38,7 +38,7 @@ main{
     align-items: center;
     border: 5px solid rgb(214, 214, 214);
     border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 main:hover{

@@ -1,5 +1,8 @@
 body {
     background-color: white;
+    background-image: url("../../imagenes/working.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     font-family: sans-serif;
@@ -32,28 +35,25 @@ img {
 }
 
 .visualizar {
-    background-color: rgb(176, 176, 176);
+    background-color: rgb(0, 145, 104);
     translate: 10px 70px;
     margin: 0 10px;
     border: none;
     cursor: pointer;
     padding: 7px;
     border-radius: 5px;
+    color: white;
 }
 
 .visualizar:hover {
     color: white;
-    background-color: rgb(134, 134, 134);
+    background-color: rgb(0, 120, 86);
 }
 
 .visualizar:active {
-    background-color: rgb(106, 106, 106);
+    background-color: rgb(0, 79, 57);
     color: white;
 }
-
-/*TODO estilos especificos del 'nav' */
-
-
 
 /*TODO estilos especificos del 'main section' */
 
@@ -61,7 +61,8 @@ main section .card{
     width: 70%;
     display: flex;
     flex-direction: row;
-    background-color: rgb(225, 225, 225);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white    ;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
@@ -81,7 +82,7 @@ main section .card .offerInfo {
 }
 
 main section .card .offerInfo .info {
-    background-color: rgb(205, 205, 205);
+    background-color: rgba(205, 205, 205, 0.4);
     padding: 10px;
     border-radius: 10px;
 }

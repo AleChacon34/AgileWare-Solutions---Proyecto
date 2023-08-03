@@ -14,15 +14,15 @@ function completarRegistro(){
     let telefono = document.querySelector("input[name='numero-telefono']");
     let genero = document.querySelector("#seleccion-genero");
     let contrasenna = document.querySelector("input[name='contrasenna']");
-    let usuario = {nombreBuscador: nombre.value, apellidosBuscador: apellidos.value, correoBuscador: correo.value, telefonoBuscador: telefono.value, generoBuscador: genero.value, contrasennaBuscador: contrasenna.value,};
+    let verifycontrasenna = document.querySelector("input[name='verifycontrasenna']");
+    let usuario = {nombreBuscador: nombre.value, apellidosBuscador: apellidos.value, correoBuscador: correo.value, telefonoBuscador: telefono.value, generoBuscador: genero.value, contrasennaBuscador: contrasenna.value, verifycontrasenna: verifycontrasenna.value};
     console.log(usuario);
     guardarRegistro(listaBuscadoresdeEmpleo, usuario);
 }
 
-
 function guardarRegistro(listaUsuarios, infoUsuario){
 
-    if (!((infoUsuario.nombreBuscador === "") || (infoUsuario.apellidosBuscador === "") || (infoUsuario.correoBuscador === "") || (infoUsuario.telefonoBuscador === "") || (infoUsuario.generoBuscador === "") || (infoUsuario.contrasennaBuscador === ""))){
+    if (!((infoUsuario.nombreBuscador === "") || (infoUsuario.apellidosBuscador === "") || (infoUsuario.correoBuscador === "") || (infoUsuario.telefonoBuscador === "") || (infoUsuario.generoBuscador === "") || (infoUsuario.contrasennaBuscador === "") || (infoUsuario.verifycontrasenna === "" ))){
         listaUsuarios.push(infoUsuario);
         Swal.fire({
             icon: 'success',
@@ -37,7 +37,42 @@ function guardarRegistro(listaUsuarios, infoUsuario){
             title: 'Información faltante',
             text: 'Por favor llene todos los espacios para completar el registro.',
         })
+        validarRegistro(infoUsuario);
     }
-    
 }
 
+function validarRegistro (infoUsuario){
+    console.log (infoUsuario)
+    if (infoUsuario.nombreBuscador === ""){
+        document.getElementById("nombre-usuario").style.border = "2px solid red";
+    } 
+    if (infoUsuario.apellidosBuscador === ""){
+        document.getElementById("apellidos-usuario").style.border = "2px solid red";
+    } 
+    if (infoUsuario.correoBuscador === ""){
+        document.getElementById("correo").style.border = "2px solid red";
+    } 
+    if (infoUsuario.telefonoBuscador === ""){
+        document.getElementById("numero-telefono").style.border = "2px solid red";
+    } 
+    if (infoUsuario.generoBuscador === ""){
+        document.getElementById("seleccion-genero").style.border = "2px solid red";
+    } 
+    if (infoUsuario.contrasennaBuscador === ""){
+        document.getElementById("contrasenna").style.border = "2px solid red";
+    } 
+    if (infoUsuario.verifycontrasenna === ""){
+        document.getElementById("verifycontrasenna").style.border = "2px solid red";
+    } else {
+        verifiquePass(infoUsuario);
+    }
+}
+
+function verifiquePass (infoUsuario){
+    if (infoUsuario.verifycontrasenna == email){
+        //Swal.fire("Por favor, verifique la contraseña correctamente", "", "error"); 
+        alert ("papaya")
+    } else {
+        alert ("Camaron")
+    }
+}

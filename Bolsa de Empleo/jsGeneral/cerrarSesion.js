@@ -1,11 +1,11 @@
 "use strict";
-
+// import { crearBarraNavegacion } from "./barraNavegacionBuscador.js";
 /**
  * Al cargarse las paginas, llama al evento del boton de cierre de sesion
  */
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("mouseover", () => {
   let btn = document.querySelector('#logOut');
-  btn.onclick = logOut;
+  btn.addEventListener('click', logOut);
 });
 
 /**
