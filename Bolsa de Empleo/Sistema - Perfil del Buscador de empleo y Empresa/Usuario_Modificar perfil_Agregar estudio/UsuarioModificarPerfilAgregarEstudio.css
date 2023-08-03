@@ -39,7 +39,7 @@ justify-content: space-between;
 padding: 3px;
 }
 
-.Modificar{
+section button {
     font-size: 10px;
     width: 10% ;
     height: 50%;
@@ -60,7 +60,7 @@ section .descripcion {
     justify-content: center;
 }
 
-button {
+button .añadirEstudio{
     width: 200px;
     padding: 7px;
     background-color: rgb(170, 170, 170);
