@@ -7,6 +7,7 @@ const cors = require('cors');
 const conf = require('dotenv').config();
 
 const app = express();
+const buscadorRoutes = require('./routes/buscador.routes');
 
 app.use(cors());
 app.use(body_parser.json());
@@ -27,3 +28,5 @@ const db = mongoose.connect(process.env.MONGO_URI, {}).then((res) => {
         console.log(`Server listening at http://localhost:${process.env.PORT}`);
     })
 }, (err) => {console.log('--DATABASE CONNECTION ERROR', err)});
+
+app.use('/buscadores', buscadorRoutes);
