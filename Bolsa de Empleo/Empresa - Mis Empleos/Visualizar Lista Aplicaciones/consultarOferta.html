@@ -4,40 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Consultar Oferta</title>
-    <script src="https://kit.fontawesome.com/3d4c892592.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/Bolsa de Empleo/cssGeneral/barraNavegacionEmpresa.css" />
+    <script src="/Bolsa de Empleo/jsGeneral/barraNavegacionEmpresarial.js"></script>
+    <script type= "module" src="/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarOferta.js"></script>
     <link rel="stylesheet" href = "/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarOferta.css" />
-    <script src="/Bolsa de Empleo/jsGeneral/cerrarSesion.js"></script>
   </head>
   <body>
-    <!-- Esta barra pertenece al perfil de Empresa o Usuario Empresarial -->
-    <nav class="navBar">
-      <div>
-        <i class="fa-solid fa-user"></i>
-        <a href="#">Perfil</a>
-      </div>
-      <div>
-        <i class="fa-solid fa-briefcase"></i>
-        <a href="/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarListaOfertas.html">Mis Empleos</a>
-      </div>
-      <div>
-        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        <a href="/Bolsa de Empleo/Empresa - Reporteria/Consultar perfil de buscadores de empleo/consultarPerfilesBuscadores.html">Reportes</a>
-      </div>
-      <div>
-        <i class="fa-solid fa-users"></i>
-        <a href="/Bolsa de Empleo/Empresa - Colaboradores/Visualizar Colaboradores/visualizarAdministradores.html">Colaboradores</a>
-      </div>
-      <div class="logout">
-        <button id="logOut"><i class="fa-solid fa-right-from-bracket"></i></button>
-      </div>
-    </nav>
     <main>
         <div>
             <!-- Este input guarda el título de la oferta de empleo -->
             <h2>Título de la Oferta</h2>
+            <p id="estado-oferta">Oferta pública</p>
             <!-- Esta área de texto guarda los datos de la oferta de empleo -->
-            <textarea name = "descripcion-oferta">Descripción 
+            <textarea name = "descripcion-oferta" maxlength="3500">Descripción 
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, nesciunt magnam saepe, ipsam doloremque facere placeat cumque suscipit totam voluptates soluta, atque blanditiis officiis deserunt. Eius cumque dolor voluptatum praesentium.
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, nesciunt magnam saepe, ipsam doloremque facere placeat cumque suscipit totam voluptates soluta, atque blanditiis officiis deserunt. Eius cumque dolor voluptatum praesentium.
             </textarea>

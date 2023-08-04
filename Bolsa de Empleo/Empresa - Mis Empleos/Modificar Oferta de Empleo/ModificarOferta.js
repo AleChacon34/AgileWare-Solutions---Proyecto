@@ -1,8 +1,20 @@
+
 'use strict';
+
+// import { estadoOferta } from "/consultarOferta.js ";
 
 //Agregar funcionalidades a todos los botones
 
 document.addEventListener("DOMContentLoaded", () =>{
+//     if (estadoOferta.textContent == "Oferta Pública"){
+//         console.log("Oferta Pública")
+//     }
+//     else if (estadoOferta.textContent == "Oferta Oculta"){
+//         console.log("Oferta Oculta")
+//     }
+//     else{
+//         console.log("No funciona")
+//     }
     let actualizarBtn = document.querySelector("#actualizar-btn");
     actualizarBtn.addEventListener('click', actualizarOferta);
     let eliminarBtn = document.querySelector("#eliminar-btn");
