@@ -1,14 +1,13 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () =>{
-    let enviarBtn = document.querySelector('#enviar-invitacion');
-    enviarBtn.addEventListener("click", enviarInvitacion);
+    let enviarForm = document.querySelector('#enviar-invitacion');
+    enviarForm.addEventListener("click", enviarInvitacion);
 })
 
-function enviarInvitacion(e){
+function enviarInvitacion(){
     let listaCorreo = [];
-    e.preventDefault(e.target);
     let correoInvitado = document.querySelector("#correo");
     listaCorreo.push(correoInvitado.value);
-    console.log(listaCorreo)
+    console.log(listaCorreo);
 }
