@@ -44,8 +44,9 @@ function crearBarraNavegacionEmpresarial(){
     let newLinkI = document.createElement('link');
     
     //Set attributes for <script> and <link>
-    newLinkI.setAttribute("href", "/Bolsa de Empleo/cssGeneral/barraInicio.css")
-    
+    newLinkI.setAttribute("href", "/Bolsa de Empleo/cssGeneral/barraInicio.css");
+    newLinkI.setAttribute("rel", "stylesheet");
+
     //Add <script> and <link> to head
     htmlHead.appendChild(newLinkI);
 }
