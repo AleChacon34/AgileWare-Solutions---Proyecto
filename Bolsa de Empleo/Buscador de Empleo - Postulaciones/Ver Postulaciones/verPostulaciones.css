@@ -1,6 +1,8 @@
 /*TODO estilos generales de la pagina*/
 body {
-
+    background-image: url('../../imagenes/working.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -28,7 +30,8 @@ main aside {
 
 /*TODO estilos especificos del main section */
 main section .card {
-    background-color: rgb(216, 216, 216);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
     margin: 15px 35px;
     padding: 40px;
     border-radius: 10px;
@@ -67,7 +70,8 @@ main aside .filter:hover{
 }
 
 .verPostulacion {
-    background-color: white;
+    background-color: rgb(0, 174, 116);
+    color: white;
     border: none;
     padding: 7px;
     border-radius: 3px;
@@ -75,9 +79,9 @@ main aside .filter:hover{
 }
 
 .verPostulacion:hover {
-    background-color: rgb(185, 185, 185);
+    background-color: rgb(0, 137, 92);
 }
 
 .verPostulacion:active {
-    background-color: rgb(157, 157, 157);
+    background-color: rgb(0, 94, 63);
 }
