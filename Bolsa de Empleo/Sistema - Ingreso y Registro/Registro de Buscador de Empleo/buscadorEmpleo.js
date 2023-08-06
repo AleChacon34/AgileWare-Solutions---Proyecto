@@ -13,16 +13,16 @@ function completarRegistro(){
     let correo = document.querySelector("input[name='correo']");
     let telefono = document.querySelector("input[name='numero-telefono']");
     let genero = document.querySelector("#seleccion-genero");
-    let contrasenna = document.querySelector("input[name='contrasenna']");
-    let verifycontrasenna = document.querySelector("input[name='verifycontrasenna']");
-    let usuario = {nombreBuscador: nombre.value, apellidosBuscador: apellidos.value, correoBuscador: correo.value, telefonoBuscador: telefono.value, generoBuscador: genero.value, contrasennaBuscador: contrasenna.value, verifycontrasenna: verifycontrasenna.value};
+    let contrasenia = document.querySelector("input[name='contrasenia']");
+    let verifycontrasenia = document.querySelector("input[name='verifycontrasenia']");
+    let usuario = {nombreBuscador: nombre.value, apellidosBuscador: apellidos.value, correoBuscador: correo.value, telefonoBuscador: telefono.value, generoBuscador: genero.value, contraseniaBuscador: contrasenia.value, verifycontrasenia: verifycontrasenia.value};
     console.log(usuario);
     guardarRegistro(listaBuscadoresdeEmpleo, usuario);
 }
 
 function guardarRegistro(listaUsuarios, infoUsuario){
 
-    if (!((infoUsuario.nombreBuscador === "") || (infoUsuario.apellidosBuscador === "") || (infoUsuario.correoBuscador === "") || (infoUsuario.telefonoBuscador === "") || (infoUsuario.generoBuscador === "") || (infoUsuario.contrasennaBuscador === "") || (infoUsuario.verifycontrasenna === "" ))){
+    if (!((infoUsuario.nombreBuscador === "") || (infoUsuario.apellidosBuscador === "") || (infoUsuario.correoBuscador === "") || (infoUsuario.telefonoBuscador === "") || (infoUsuario.generoBuscador === "") || (infoUsuario.contraseniaBuscador === "") || (infoUsuario.verifycontrasenia === "" ))){
         listaUsuarios.push(infoUsuario);
         Swal.fire({
             icon: 'success',
@@ -58,17 +58,21 @@ function validarRegistro (infoUsuario){
     if (infoUsuario.generoBuscador === ""){
         document.getElementById("seleccion-genero").style.border = "2px solid red";
     } 
-    if (infoUsuario.contrasennaBuscador === ""){
-        document.getElementById("contrasenna").style.border = "2px solid red";
+    if (infoUsuario.contraseniaBuscador === ""){
+        document.getElementById("contrasenia").style.border = "2px solid red";
     } 
-    if (infoUsuario.verifycontrasenna === ""){
-        document.getElementById("verifycontrasenna").style.border = "2px solid red";
+    if (infoUsuario.verifycontrasenia === ""){
+        document.getElementById("verifycontrasenia").style.border = "2px solid red";
     } else {
         verifiquePass(infoUsuario);
     }
 }
 
-function verifiquePass (infoUsuario);
-    if (verifycontrasenna == infoUsuario.verifiquePass){
-        Swal.fire("Verifique su contraseña y correo electronico", " ")
+function verifiquePass (infoUsuario){
+    if (infoUsuario.verifycontrasenna == email){
+        //Swal.fire("Por favor, verifique la contraseña correctamente", "", "error"); 
+        alert ("papaya")
+    } else {
+        alert ("Camaron")
     }
+}
