@@ -27,7 +27,7 @@ function notificarActualizar(email) {
       Password: "",
       To: `${email}`,
       ReplyTo: "no.reply.agileware@gmail.com",
-      From: "no.reply.agileware@gmail.com",
+      From: "mchaconc1@ucenfotec.ac.cr",
       Subject: "Recuperacion de contraseña",
       Body: `Su contraseña temporal es: ${pass}`,
     }
