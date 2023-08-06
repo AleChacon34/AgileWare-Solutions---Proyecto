@@ -11,12 +11,40 @@ async function getBuscadores(req, res) {
 }
 
 /**
- * POST BUSCADOR
+ * REGISTER BUSCADOR
  */
-async function postBuscador(req, res) {
+async function registerBuscador(req, res) {
     const { body } = req;
-    const data = await buscadorModel.create(body);
-    res.send({ data });
+    const { nombreBuscador, apellidosBuscador } = body;
+    const user = await buscadorModel.findOne({ nombreBuscador, apellidosBuscador });
+
+    if (!user) {
+        const { body } = req;
+        const data = await buscadorModel.create(body);
+        res.send({ data });
+        res.status(200);
+    } else {
+        res.status(501);
+        res.send({ errorMessage: "EL USUARIO YA EXISTE" });
+    }
+}
+
+/**
+ * LOGIN BUSCADOR
+ */
+async function loginBuscador(req, res) {
+    const { body } = req;
+    const { correoBuscador, contraseniaBuscador } = body;
+    const user = await buscadorModel.findOne({ correoBuscador });
+
+    if (user.contraseniaBuscador == contraseniaBuscador) {
+        res.send({ user });
+        res.status(201);
+    } else {
+        res.status(401);
+        res.send({ errorMessage: "INGRESO NO VALIDO" });
+    }
+
 }
 
 /**
@@ -39,4 +67,4 @@ async function deleteBuscador(req, res) {
     res.send({ data });
 }
 
-module.exports = { getBuscadores, postBuscador, putBuscador, deleteBuscador };
+module.exports = { getBuscadores, registerBuscador, loginBuscador, putBuscador, deleteBuscador };
