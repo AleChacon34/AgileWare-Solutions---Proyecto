@@ -8,12 +8,12 @@ const body_parser = require("body-parser");
 const config = require("dotenv").config();
 
 //Crear rutas
-const ofertasRoutes = require("/");
+const ofertasRoutes = require("./routes/ofertas.routes");
 const app = express();
 
 //Establecer la seguridad y json
 app.use(cors());
-app.use(body_parser).json();
+app.use(body_parser.json());
 app.use(body_parser.urlencoded({ extended: false}));
 
 //Configurar headers
