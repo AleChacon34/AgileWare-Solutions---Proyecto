@@ -68,11 +68,7 @@ function validarRegistro (infoUsuario){
     }
 }
 
-function verifiquePass (infoUsuario){
-    if (infoUsuario.verifycontrasenna == email){
-        //Swal.fire("Por favor, verifique la contraseña correctamente", "", "error"); 
-        alert ("papaya")
-    } else {
-        alert ("Camaron")
+function verifiquePass (infoUsuario);
+    if (verifycontrasenna == infoUsuario.verifiquePass){
+        Swal.fire("Verifique su contraseña y correo electronico", " ")
     }
-}
