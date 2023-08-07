@@ -25,14 +25,17 @@ function guardarRegistro(listaUsuarios, infoUsuario){
 
     if (!((infoUsuario.nombreBuscador === "") || (infoUsuario.apellidosBuscador === "") || (infoUsuario.correoBuscador === "") || (infoUsuario.telefonoBuscador === "") || (infoUsuario.generoBuscador === "") || (infoUsuario.contraseniaBuscador === "") || (infoUsuario.verifycontrasenia === "" ))){
         BuscadorService.registerBuscador(infoUsuario).then((res) => {
-            if (res.status == 200) {
-                Swal.fire({
-                    title: "Usuario registrado con exito",
-                    icon: "success"
-                }).then(result => {
-                    location.href = "/Bolsa de Empleo/Sistema - Ingreso y Registro/Inicio de sesion/inicioSesion.html"
-                });
-            }
+            Swal.fire({
+                title: "Usuario registrado con exito",
+                icon: "success"
+            }).then(result => {
+                location.href = "/Bolsa de Empleo/Sistema - Ingreso y Registro/Inicio de sesion/inicioSesion.html"
+            });
+        }).catch(err => {
+            Swal.fire({
+                title: "Usuario ya existente",
+                icon: "error"
+            })
         });
     } else{
         Swal.fire({
