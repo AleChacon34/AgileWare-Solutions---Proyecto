@@ -10,9 +10,14 @@ const buscadorController = require('../controllers/buscador.controller');
 router.get('/', buscadorController.getBuscadores);
 
 /**
- * POST BUSCADOR
+ * REGISTER BUSCADOR
  */
-router.post('/', buscadorController.postBuscador);
+router.post('/register', buscadorController.registerBuscador);
+
+/**
+ * LOGIN BUSCADOR
+ */
+router.post('/login', buscadorController.loginBuscador);
 
 /**
  * PUT BUSCADOR

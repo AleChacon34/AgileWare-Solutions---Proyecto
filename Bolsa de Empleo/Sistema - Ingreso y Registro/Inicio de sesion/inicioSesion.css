@@ -1,4 +1,7 @@
 body {
+    background-image: url('../../imagenes/office-tools-cooperation-group-work-wallpaper-preview.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: 0;
     font-family: sans-serif;
     width: 100vw;
@@ -11,8 +14,10 @@ body {
 }
 
 .container {
-    height: 45%;
-    background-color: lightgrey;
+    height: 55%;
+    width: 20%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -39,12 +44,23 @@ form {
 }
 
 .inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     margin: 5px 10px;
+    width: 100%;
     background-color: rgb(86, 86, 86);
     padding: 7px;
+    translate: -18px 0;
+}
+
+.container h2{
+    text-align: center;
+    translate: -18px 0;
 }
 
 input {
+    width: 100%;
     height: 20px;
 }
 
