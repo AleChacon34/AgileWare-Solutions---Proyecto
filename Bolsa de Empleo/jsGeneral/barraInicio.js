@@ -49,4 +49,42 @@ function crearBarraNavegacionEmpresarial(){
 
     //Add <script> and <link> to head
     htmlHead.appendChild(newLinkI);
+
+    
+    // Function to set the active link based on the current URL
+    function setActiveLinkByUrl() {
+        const currentPath = window.location.pathname;
+        const links = [newAnchI, newAnchII];
+
+        // Remove the "active-link" class from all links
+        links.forEach(link => link.classList.remove("active-link"));
+
+        // Find the link that matches the current URL and add the "active-link" class
+        links.forEach(link => {
+        if (link.getAttribute("href") === currentPath) {
+            link.classList.add("active-link");
+        }
+        });
+    }
+
+    // Call the setActiveLinkByUrl function once on page load
+    setActiveLinkByUrl();
+
+    // Store the active link in localStorage on link click
+    const links = [newAnchI, newAnchII];
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+        localStorage.setItem("activeLink", link.getAttribute("href"));
+        });
+    });
+
+    // Retrieve the active link from localStorage on page load and set it as active
+    const storedActiveLink = localStorage.getItem("activeLink");
+    if (storedActiveLink) {
+        links.forEach(link => {
+        if (link.getAttribute("href") === storedActiveLink) {
+            link.classList.add("active-link");
+        }
+        });
+    }
 }

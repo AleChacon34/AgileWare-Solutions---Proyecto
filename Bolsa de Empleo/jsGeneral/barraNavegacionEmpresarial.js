@@ -93,4 +93,46 @@ function crearBarraNavegacionEmpresarial(){
     htmlHead.appendChild(newScriptI);
     htmlHead.appendChild(newScriptII);
     htmlHead.appendChild(newLinkI);
+    // Function to set the active link based on the current URL
+function setActiveLinkByUrl() {
+    const currentPath = window.location.pathname;
+    const divs = [addDivI, addDivII, addDivIII,addDivIV];
+
+    // Remove the "active-link" class from all divs
+    divs.forEach(div => div.classList.remove("active-link"));
+
+    // Find the div that matches the current URL and add the "active-link" class
+    divs.forEach(div => {
+    const link = div.querySelector("a");
+    if (link && link.getAttribute("href") === currentPath) {
+        div.classList.add("active-link");
+    }
+    });
+}
+
+  // Call the setActiveLinkByUrl function once on page load
+setActiveLinkByUrl();
+
+  // Store the active URL in localStorage on link click
+const divs = [addDivI, addDivII, addDivIII,addDivIV];
+divs.forEach(div => {
+    const link = div.querySelector("a");
+    if (link) {
+    link.addEventListener("click", () => {
+        localStorage.setItem("activeURL", link.getAttribute("href"));
+    });
+    }
+});
+
+  // Retrieve the active URL from localStorage on page load and set the corresponding div as active
+const storedActiveURL = localStorage.getItem("activeURL");
+if (storedActiveURL) {
+    const divWithActiveURL = divs.find(div => {
+    const link = div.querySelector("a");
+    return link && link.getAttribute("href") === storedActiveURL;
+    });
+    if (divWithActiveURL) {
+    divWithActiveURL.classList.add("active-link");
+    }
+}
 }
