@@ -113,7 +113,7 @@ function notificarActualizar(email) {
       Host: "smtp.elasticemail.com",
       Port: 2525,
       Username: "mchaconc1@ucenfotec.ac.cr",
-      Password: "E03F0CA6979490841B723F348AF81210663E",
+      Password: "",
       To: `${email}`,
       ReplyTo: "no.reply.agileware@gmail.com",
       From: "mchaconc1@ucenfotec.ac.cr",
