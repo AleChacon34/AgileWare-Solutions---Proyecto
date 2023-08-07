@@ -37,5 +37,11 @@
     color: #e6d7b8;
 }
 
-
+.active-link {
+    /* background-color: blue;
+    color: white;  */
+    transition: all 0.8s;
+    border-radius: 5px;
+    background-color: rgb(0, 0, 0);
+}
 
