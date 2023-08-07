@@ -1,5 +1,7 @@
 'use strict'
 
+import { OfertaService } from "../Services consultarOfertas/consultarOferta.services.js";
+
 let datosOfertas = [
     {
       tituloOferta: "Ingeniería en Sistemas", requerimientosCuerpo: "5 años de experiencia", descripcionCuerpo: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, nesciunt magnam saepe, ipsam doloremque facere placeat cumque suscipit totam voluptates soluta, atque blanditiis officiis deserunt. Eius cumque dolor voluptatum praesentium." 
@@ -13,6 +15,10 @@ let datosOfertas = [
 ]
 document.addEventListener("DOMContentLoaded", ()=>{
     generarOferta(datosOfertas);
+    OfertaService.findAll().then((response) =>{
+        data = response.data
+        console.log(data)
+    })
 })
 
 function generarOferta(datosOfertas){
