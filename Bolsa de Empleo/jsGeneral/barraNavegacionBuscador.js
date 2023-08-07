@@ -75,12 +75,19 @@ function crearBarraNavegacionBuscador(){
     // newScriptII.setAttribute("type", "module");
     newLinkI.setAttribute("rel", "stylesheet");
     newLinkI.setAttribute("href", "/Bolsa de Empleo/cssGeneral/barraNavegacionBuscador.css")
+    
+    //Import and add Axios to head
+    let newScriptAxios = document.createElement('script');
+    newScriptAxios.setAttribute("src", "https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js");
+
     //Add <script> and <link> to head
     htmlHead.appendChild(newScriptI);
     htmlHead.appendChild(newScriptII);
     htmlHead.appendChild(newLinkI);
+    htmlHead.appendChild(newScriptAxios);
 
-    // Función para establecer el enlace activo en función de la URL actual
+    
+    // Function to set the active link based on the current URL
 function setActiveLinkByUrl() {
     const currentPath = window.location.pathname;
     const divs = [addDivI, addDivII, addDivIII];

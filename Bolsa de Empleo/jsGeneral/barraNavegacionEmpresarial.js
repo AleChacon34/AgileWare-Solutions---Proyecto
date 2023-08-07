@@ -89,10 +89,17 @@ function crearBarraNavegacionEmpresarial(){
     newLinkI.setAttribute("rel", "stylesheet");
     newLinkI.setAttribute("href", "/Bolsa de Empleo/cssGeneral/barraNavegacionEmpresa.css")
     
+    //Import and add Axios to head
+    let newScriptAxios = document.createElement('script');
+    newScriptAxios.setAttribute("src", "https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js");
+
     //Add <script> and <link> to head
     htmlHead.appendChild(newScriptI);
     htmlHead.appendChild(newScriptII);
     htmlHead.appendChild(newLinkI);
+    htmlHead.appendChild(newScriptAxios);
+
+        
     // Function to set the active link based on the current URL
 function setActiveLinkByUrl() {
     const currentPath = window.location.pathname;
