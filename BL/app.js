@@ -9,6 +9,7 @@ const conf = require('dotenv').config();
 const app = express();
 const buscadorRoutes = require('./routes/buscador.routes');
 const empresaRoutes = require('./routes/empresa.routes');
+const usuEmpresarialRoutes = require('./routes/usuEmpresarial.routes');
 
 app.use(cors());
 app.use(body_parser.json());
@@ -32,3 +33,4 @@ const db = mongoose.connect(process.env.MONGO_URI, {}).then((res) => {
 
 app.use('/buscadores', buscadorRoutes);
 app.use('/empresa',empresaRoutes);
+app.use('/usuEmpresarial',usuEmpresarialRoutes);
