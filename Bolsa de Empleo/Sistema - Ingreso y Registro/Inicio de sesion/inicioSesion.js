@@ -1,5 +1,7 @@
 "use strict";
 
+import { BuscadorService } from "./services/login.service.js";
+
 let autenticado = false;
 let usuarioAutenticado = false;
 let usuarioCorrecto = false;
@@ -55,25 +57,39 @@ function obtenerCredenciales(){
     let pass = document.querySelector("input[name='pass']");
     console.log( correo, pass);
     let usuario = {
-        correo:correo.value,
-        pass:pass.value 
+        correoBuscador: correo.value,
+        contraseniaBuscador: pass.value 
     }
     verificarDatosIngreso(usuario);
 }
 
-/**Funcion que verificar los datos ingresados */
+/**Funcion que verificar los datos ingresados y autentica*/
 function verificarDatosIngreso(usuario){
-    for (let user of usuarios){
-        if (usuario.correo === user.correo){
-            usuarioAutenticado = true;
-            if (usuario.pass === user.pass){
-                autenticado = true
-                usuarioCorrecto = user;
-            }
-        }
-    }    
-
-    autenticar();
+    if (usuario.contraseniaBuscador != "" && usuario.correoBuscador != "") {
+        BuscadorService.loginBuscador(usuario).then((res) => {
+            Swal.fire({
+                title: "¡Ingreso permitido!",
+                icon: "success"
+            }).then((result) => {
+                if (res.data.user.rol == "buscador"){
+                    location.replace("/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Perfil usuario/perfilUsuario.html");
+                }
+            });
+        }).catch(err => {
+            console.log(err);
+            Swal.fire({
+                title: "¡Ingreso denegado!",
+                text: "Inténtelo de nuevo",
+                icon: "error"
+            });
+        });
+    } else {
+        Swal.fire({
+            title: "¡Hay espacios en blanco!",
+            text: "Por favor, no deje llene todos los espacios",
+            icon: "error"
+        });
+    }
 }
 
 /**Funcion que realiza la autenticacion final*/
