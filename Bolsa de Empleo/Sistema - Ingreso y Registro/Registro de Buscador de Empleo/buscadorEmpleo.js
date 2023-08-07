@@ -1,7 +1,7 @@
 "use-strict"
 let listaBuscadoresdeEmpleo = [];
 
-import { BuscadorService } from "../../services/login.service.js";
+import { BuscadorService } from "../../services/buscador.service.js";
 
 
 document.addEventListener("DOMContentLoaded", () =>{

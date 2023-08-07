@@ -1,6 +1,6 @@
 "use strict";
 
-import { BuscadorService } from "../../services/login.service.js";
+import { BuscadorService } from "../../services/buscador.service.js";
 
 let autenticado = false;
 let usuarioAutenticado = false;
@@ -86,7 +86,7 @@ function verificarDatosIngreso(usuario){
     } else {
         Swal.fire({
             title: "¡Hay espacios en blanco!",
-            text: "Por favor, no deje llene todos los espacios",
+            text: "Por favor, llene todos los espacios",
             icon: "error"
         });
     }
