@@ -15,8 +15,8 @@ async function getBuscadores(req, res) {
  */
 async function registerBuscador(req, res) {
     const { body } = req;
-    const { nombreBuscador, apellidosBuscador } = body;
-    const user = await buscadorModel.findOne({ nombreBuscador, apellidosBuscador });
+    const { correoBuscador } = body;
+    const user = await buscadorModel.findOne({ correoBuscador });
 
     if (!user) {
         const { body } = req;

@@ -9,7 +9,7 @@ export class BuscadorService {
             {
                 nombreBuscador: newBuscador.nombreBuscador,
                 apellidosBuscador: newBuscador.apellidosBuscador,
-                correoBuscador: newBuscador.contraseniaBuscador,
+                correoBuscador: newBuscador.correoBuscador,
                 telefonoBuscador: newBuscador.telefonoBuscador,
                 generoBuscador: newBuscador.generoBuscador,
                 contraseniaBuscador: newBuscador.contraseniaBuscador
