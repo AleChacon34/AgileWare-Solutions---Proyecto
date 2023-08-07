@@ -1,6 +1,6 @@
 "use strict";
 
-import { BuscadorService } from "./services/login.service.js";
+import { BuscadorService } from "../../services/login.service.js";
 
 let autenticado = false;
 let usuarioAutenticado = false;

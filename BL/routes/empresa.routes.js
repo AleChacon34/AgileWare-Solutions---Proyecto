@@ -1,8 +1,6 @@
 'use strict';
 
 const express = require('express');
-const router = express.Router();
-
 const empresaController = require('../controllers/empresa.controller');
 
 /**
@@ -12,12 +10,12 @@ router.get('/', empresaController.getEmpresa);
 /**
  * REGISTER EMPRESA
  */
-router.post('/register', empresaController.postEmpresa);
+router.post('/register', empresaController.registerEmpresa);
 
 /**
  * LOGIN EMPRESA
  */
-//router.post('/login', empresaController.loginEmpresa);
+router.post('/login', empresaController.loginEmpresa);
 
 /**
  * PUT EMPRESA

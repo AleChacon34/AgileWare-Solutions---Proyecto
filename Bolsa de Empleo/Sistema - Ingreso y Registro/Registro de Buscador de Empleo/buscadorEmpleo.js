@@ -1,6 +1,8 @@
 "use-strict"
 let listaBuscadoresdeEmpleo = [];
 
+import { BuscadorService } from "../../services/login.service.js";
+
 
 document.addEventListener("DOMContentLoaded", () =>{
     let registro = document.querySelector("button[name='completar-registro']");
@@ -16,22 +18,26 @@ function completarRegistro(){
     let contrasenia = document.querySelector("input[name='contrasenia']");
     let verifycontrasenia = document.querySelector("input[name='verifycontrasenia']");
     let usuario = {nombreBuscador: nombre.value, apellidosBuscador: apellidos.value, correoBuscador: correo.value, telefonoBuscador: telefono.value, generoBuscador: genero.value, contraseniaBuscador: contrasenia.value, verifycontrasenia: verifycontrasenia.value};
-    console.log(usuario);
     guardarRegistro(listaBuscadoresdeEmpleo, usuario);
 }
 
 function guardarRegistro(listaUsuarios, infoUsuario){
 
     if (!((infoUsuario.nombreBuscador === "") || (infoUsuario.apellidosBuscador === "") || (infoUsuario.correoBuscador === "") || (infoUsuario.telefonoBuscador === "") || (infoUsuario.generoBuscador === "") || (infoUsuario.contraseniaBuscador === "") || (infoUsuario.verifycontrasenia === "" ))){
-        listaUsuarios.push(infoUsuario);
-        Swal.fire({
-            icon: 'success',
-            title: 'Registro exitoso',
-            text: 'La información del nuevo usuario ha sido guardada exitosamente.',
-        })
-    }
-
-    else{
+        BuscadorService.registerBuscador(infoUsuario).then((res) => {
+            Swal.fire({
+                title: "Usuario registrado con exito",
+                icon: "success"
+            }).then(result => {
+                location.href = "/Bolsa de Empleo/Sistema - Ingreso y Registro/Inicio de sesion/inicioSesion.html"
+            });
+        }).catch(err => {
+            Swal.fire({
+                title: "Usuario ya existente",
+                icon: "error"
+            })
+        });
+    } else{
         Swal.fire({
             icon: 'error',
             title: 'Información faltante',
