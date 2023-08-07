@@ -21,6 +21,9 @@ const buscadorModel = mongoose.Schema(
         },
         contraseniaBuscador: {
             type: String
+        }, 
+        fotoPerfil: {
+            type: Buffer
         }
     },
     {
