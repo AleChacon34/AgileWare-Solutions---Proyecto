@@ -40,6 +40,6 @@ async function deleteEmpresa(req, res) {
     res.send({ data });
 }
 
-module.exports = { getEmpresa, postEmpresa, putEmpresa, delete };
+module.exports = { getEmpresa, postEmpresa, putEmpresa, deleteEmpresa };
 
 
