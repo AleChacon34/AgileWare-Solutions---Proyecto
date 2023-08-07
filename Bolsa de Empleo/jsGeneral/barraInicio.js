@@ -47,8 +47,15 @@ function crearBarraNavegacionEmpresarial(){
     newLinkI.setAttribute("href", "/Bolsa de Empleo/cssGeneral/barraInicio.css");
     newLinkI.setAttribute("rel", "stylesheet");
 
+    //Import and add Axios to head
+    let newScriptAxios = document.createElement('script');
+    newScriptAxios.setAttribute("src", "https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js");
+
     //Add <script> and <link> to head
-    htmlHead.appendChild(newLinkI);
+    htmlHead.append(newLinkI, newScriptAxios);
+
+    
+
 
     
     // Function to set the active link based on the current URL

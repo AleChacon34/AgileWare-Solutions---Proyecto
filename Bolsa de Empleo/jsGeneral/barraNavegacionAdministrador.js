@@ -93,6 +93,13 @@ function crearBarraNavegacionEmpresarial(){
     htmlHead.appendChild(newScriptI);
     htmlHead.appendChild(newScriptII);
     htmlHead.appendChild(newLinkI);
+    htmlHead.appendChild(newScriptAxios);
+
+    //Import and add Axios to head
+    let newScriptAxios = document.createElement('script');
+    newScriptAxios.setAttribute("src", "https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js");
+
+    
     //aquiiiiiiiiiiiiiiiiiii/
     // Function to set the active link based on the current URL
 function setActiveLinkByUrl() {
