@@ -43,7 +43,7 @@ function crearBarraNavegacionEmpresarial(){
     let linkAnchII = document.createTextNode("Mis Empleos");
     newAnchII.appendChild(linkAnchII);
     let newAnchIII = document.createElement("a");
-    newAnchIII.href = "/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarListaOfertas.html";
+    newAnchIII.href = "/Bolsa de Empleo/Empresa - Mis Empleos/Consultar aplicaciones recibidas/listaPostulados.html";
     let linkAnchIII = document.createTextNode("Reportes");
     newAnchIII.appendChild(linkAnchIII);
     let newAnchIV = document.createElement("a");
