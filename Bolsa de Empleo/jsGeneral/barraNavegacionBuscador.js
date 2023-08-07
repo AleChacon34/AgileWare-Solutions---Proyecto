@@ -80,15 +80,15 @@ function crearBarraNavegacionBuscador(){
     htmlHead.appendChild(newScriptII);
     htmlHead.appendChild(newLinkI);
 
-    // Function to set the active link based on the current URL
+    // Función para establecer el enlace activo en función de la URL actual
 function setActiveLinkByUrl() {
     const currentPath = window.location.pathname;
     const divs = [addDivI, addDivII, addDivIII];
 
-    // Remove the "active-link" class from all divs
+    // Eliminar la clase "enlace activo" de todos los divs
     divs.forEach(div => div.classList.remove("active-link"));
 
-    // Find the div that matches the current URL and add the "active-link" class
+    // Encuentre el div que coincida con la URL actual y agregue la clase "enlace activo"
     divs.forEach(div => {
     const link = div.querySelector("a");
     if (link && link.getAttribute("href") === currentPath) {
@@ -97,10 +97,10 @@ function setActiveLinkByUrl() {
     });
 }
 
-  // Call the setActiveLinkByUrl function once on page load
+  // Llame a la función setActiveLinkByUrl una vez en la carga de la página
 setActiveLinkByUrl();
 
-  // Store the active URL in localStorage on link click
+  // Almacene la URL activa en localStorage al hacer clic en el enlace
 const divs = [addDivI, addDivII, addDivIII];
 divs.forEach(div => {
     const link = div.querySelector("a");
@@ -111,7 +111,7 @@ divs.forEach(div => {
     }
 });
 
-  // Retrieve the active URL from localStorage on page load and set the corresponding div as active
+  // Recupere la URL activa de localStorage al cargar la página y configure el div correspondiente como activo
 const storedActiveURL = localStorage.getItem("activeURL");
 if (storedActiveURL) {
     const divWithActiveURL = divs.find(div => {
