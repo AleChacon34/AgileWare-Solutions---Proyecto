@@ -22,9 +22,6 @@ const usuEmpresarialModel =  mongoose.Schema(
         contrasenia:{
             type: String
         },
-        verifycontrasenia:{
-            type: String
-        }
-    },
+    }
 );
 module.exports = mongoose.model ('usuEmpresarial', usuEmpresarialModel)
