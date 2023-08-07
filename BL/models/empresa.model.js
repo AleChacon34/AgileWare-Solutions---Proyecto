@@ -18,6 +18,9 @@ const empresaModel = mongoose.Schema(
         },
         archivosEmpresa:{
             type: String
+        },
+        telefonoEmpresa:{
+            type: Number
         }
         
         

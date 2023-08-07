@@ -1,7 +1,7 @@
 'use strict';
 
 const express = require('express');
-const router = express.router; 
+const router = express.Router(); 
 const usuEmpresarialcontroller = require('../controllers/usuEmpresarial.controller');
 
 //Login Usuario Empresarial//

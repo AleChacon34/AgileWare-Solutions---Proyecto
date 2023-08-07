@@ -4,24 +4,24 @@ const mongoose = require ("mongoose");
 
 const usuEmpresarialModel =  mongoose.Schema(
     {
-        usuarioempresarial:{
+        nombreUsuarioEmpresarial:{
             type: String
         },
-        usuEmpresarialApellido:{
+        apellidoUsuarioEmpresarial:{
             type: String
         },
-        correo:{
+        correoUsuarioEmpresarial:{
             type: String
         },
-        numeroTelefono:{
+        telefonoUsuarioEmpresarial:{
+            type: Number
+        },
+        generoUsuarioEmpresarial:{
             type: String
         },
-        seleccionGenero:{
-            type: String
-        },
-        contrasenia:{
+        contrasennaUsuarioEmpresarial:{
             type: String
         },
     }
 );
-module.exports = mongoose.model ('usuEmpresarial', usuEmpresarialModel)
+module.exports = mongoose.model ('usuarioEmpresarial', usuEmpresarialModel)
