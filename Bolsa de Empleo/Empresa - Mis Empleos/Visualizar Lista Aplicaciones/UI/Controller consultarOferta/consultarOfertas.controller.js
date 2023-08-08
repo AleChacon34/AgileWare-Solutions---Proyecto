@@ -1,6 +1,6 @@
 'use strict'
 
-import { OfertaService } from "../Services consultarOfertas/consultarOferta.services.js";
+// import { OfertaService } from "../Services consultarOfertas/consultarOferta.services.js";
 
 let datosOfertas = [
     {
@@ -15,10 +15,10 @@ let datosOfertas = [
 ]
 document.addEventListener("DOMContentLoaded", ()=>{
     generarOferta(datosOfertas);
-    OfertaService.findAll().then((response) =>{
-        data = response.data
-        console.log(data)
-    })
+    // OfertaService.findAll().then((response) =>{
+    //     data = response.data
+    //     console.log(data)
+    // })
 })
 
 function generarOferta(datosOfertas){
