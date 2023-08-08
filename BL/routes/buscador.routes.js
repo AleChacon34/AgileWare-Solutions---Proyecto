@@ -10,6 +10,11 @@ const buscadorController = require('../controllers/buscador.controller');
 router.get('/', buscadorController.getBuscadores);
 
 /**
+ * GET ONE BUSCADOR
+ */
+router.get('/:id', buscadorController.getOneBuscador);
+
+/**
  * REGISTER BUSCADOR
  */
 router.post('/register', buscadorController.registerBuscador);
