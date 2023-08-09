@@ -1,6 +1,6 @@
 "use strict";
 
-import { BuscadorService } from "../../services/buscador.service.js";
+import { LoginService } from "../../services/login.service.js";
 
 let autenticado = false;
 let usuarioAutenticado = false;
@@ -66,7 +66,7 @@ function obtenerCredenciales(){
 /**Funcion que verificar los datos ingresados y autentica*/
 function verificarDatosIngreso(usuario){
     if (usuario.contraseniaBuscador != "" && usuario.correoBuscador != "") {
-        BuscadorService.loginBuscador(usuario).then((res) => {
+        LoginService.loginUser(usuario).then((res) => {
             Swal.fire({
                 title: "¡Ingreso permitido!",
                 icon: "success"

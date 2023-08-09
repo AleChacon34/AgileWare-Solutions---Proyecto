@@ -3,7 +3,7 @@
 export class LoginService {
     static #URI = "http://localhost:3000";
 
-    static registerBuscador(newUser) {
+    static registerUser(newUser) {
         return axios.post(
             `${LoginService.#URI}/auth/register`,
             {
@@ -22,7 +22,7 @@ export class LoginService {
         );
     }
 
-    static loginBuscador(user) {
+    static loginUser(user) {
         return axios.post(
             `${LoginService.#URI}/auth/login`,
             {

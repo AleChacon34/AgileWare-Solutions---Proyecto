@@ -7,11 +7,7 @@ const cors = require('cors');
 const conf = require('dotenv').config();
 
 const app = express();
-const buscadorRoutes = require('./routes/buscador.routes');
-const empresaRoutes = require('./routes/empresa.routes');
-const usuEmpresarialRoutes = require('./routes/usuEmpresarial.routes');
 const ofertasRoutes = require("./routes/ofertas.routes");
-const superUserRoutes = require('./routes/superUser.routes');
 const authRoutes = require('./routes/auth.routes');
 
 app.use(cors());
@@ -34,9 +30,5 @@ const db = mongoose.connect(process.env.MONGO_URI, {}).then((res) => {
     })
 }, (err) => {console.log('--DATABASE CONNECTION ERROR', err)});
 
-app.use('/buscadores', buscadorRoutes);
-app.use('/empresa',empresaRoutes);
-app.use('/usuEmpresarial',usuEmpresarialRoutes);
 app.use("/ofertas", ofertasRoutes);
-app.use('/superUser', superUserRoutes);
 app.use('/auth', authRoutes);
