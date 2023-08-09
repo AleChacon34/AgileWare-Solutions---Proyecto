@@ -12,7 +12,9 @@ async function getUsuario(request, response){
 //GET ID
 
 async function getUsuarioID(request, response){
-    const data = await userModel.find({});
+    const{body}=request;
+    const {id} = request.params;
+    const data = await userModel.findById(id);
     response.send({data});
 };
 
