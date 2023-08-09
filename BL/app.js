@@ -11,6 +11,7 @@ const buscadorRoutes = require('./routes/buscador.routes');
 const empresaRoutes = require('./routes/empresa.routes');
 const usuEmpresarialRoutes = require('./routes/usuEmpresarial.routes');
 const ofertasRoutes = require("./routes/ofertas.routes");
+const superUserRoutes = require('./routes/superUser.routes');
 
 app.use(cors());
 app.use(body_parser.json());
@@ -36,3 +37,4 @@ app.use('/buscadores', buscadorRoutes);
 app.use('/empresa',empresaRoutes);
 app.use('/usuEmpresarial',usuEmpresarialRoutes);
 app.use("/ofertas", ofertasRoutes);
+app.use('/superUser', superUserRoutes);
