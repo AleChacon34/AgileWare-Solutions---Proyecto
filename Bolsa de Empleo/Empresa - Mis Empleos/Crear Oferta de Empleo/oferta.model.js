@@ -5,14 +5,14 @@ export class Oferta{
     #seccionTitulo;
     #seccionRequerimientos;
     #seccionDescripcion;
-    #estadoOferta
+    #estadoOferta;
 
     //Constructor
     constructor(formData){
         this.setTitulo(formData.get("seccionTitulo"));
         this.setRequerimientos(formData.get("seccionRequerimientos"));
         this.setDescripcion(formData.get("seccionDescripcion"));
-        this.setEstadoOferta(formData.get("estadoOferta"))
+        this.setEstadoOferta(formData.get("estadoOferta"));
     }
 
     //Setters

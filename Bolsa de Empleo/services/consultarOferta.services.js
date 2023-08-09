@@ -11,7 +11,8 @@ export class OfertaService{
         axios.post(OfertaService.#URL+"/ofertas", {
             seccionTitulo: nuevaOferta.getTitulo(),
             seccionRequerimientos: nuevaOferta.getRequerimientos(),
-            seccionDescripcion: nuevaOferta.getDescripcion()
+            seccionDescripcion: nuevaOferta.getDescripcion(),
+            estadoOferta: nuevaOferta.getEstadoOferta(),
         })
-    };
+    };  
 }

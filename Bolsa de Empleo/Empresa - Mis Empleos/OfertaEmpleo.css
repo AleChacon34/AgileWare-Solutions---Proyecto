@@ -24,21 +24,37 @@ main{
 #ofertaForm{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    justify-content: space-between;
+    width: 66%;
+    height: 80%;
     align-items: center;
+    border: 3px solid rgb(203, 203, 203);
+    border-radius: 15px;
+    padding: 10px;
 }
 
 #ofertaForm div{
     display: flex;
     height: 30%;
-    width: 60%;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
 
+#estadoOferta{
+    height: 75px;
+    width: 300px;
+    text-align: center;
+    font-size: larger;
+    color: white;
+    font-weight: bolder;
+    background-color: #3ca2a2;
+}
 
+#estadoOferta option{
+    font-weight: bold;
+}
 
 div input{
     height: 40px;
@@ -52,8 +68,13 @@ div input{
     background-color: rgb(228, 228, 228);
 }
 
-.buttons{
-    justify-content: space-around;
+.button{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    height: 5%;
+    width: 10%;
+    align-items: center;
 }
 
 table, th, td {
@@ -64,7 +85,7 @@ th {
     background-color: #92c7a3
 }
 
-.btns{
+#agregarBtn{
     color: white;
     background-color: #3ca2a2;
     border-style: none;
@@ -74,13 +95,13 @@ th {
     border-radius: 4px;
 }
 
-.btns:hover{
+#agregarBtn:hover{
     background-color: #92c7a3;
     color: black;
     font-weight: bolder;
 }
 
-.btns:disabled{
+#agregarBtn:disabled{
     opacity: 75%;
 }
 
