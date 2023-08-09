@@ -16,9 +16,8 @@ async function registerUser(req, res) {
  * LOGIN USER
  */
 async function loginUser(req, res) {
-    const { correo, contrasenia } = req;
+    const { correo, contrasenia } = req.body;
     const data = await userModel.findOne({ correo });
-    console.log(data);
     
     if (data.contrasenia == contrasenia) {
         res.status(200);
