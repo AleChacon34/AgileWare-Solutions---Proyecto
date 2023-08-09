@@ -60,9 +60,9 @@ async function loginBuscador(req, res) {
  * PUT BUSCADOR
  */
 async function putBuscador(req, res) {
+    const { id } = req.params;
     const { body } = req;
-    const { nombreBuscador, apellidosBuscador } = body;
-    const data = await buscadorModel.findOneAndUpdate({ nombreBuscador, apellidosBuscador }, body);
+    const data = await buscadorModel.findByIdAndUpdate(id, body);
     res.send({ data });
 }
 

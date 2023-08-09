@@ -27,7 +27,7 @@ router.post('/login', buscadorController.loginBuscador);
 /**
  * PUT BUSCADOR
  */
-router.put('/', buscadorController.putBuscador);
+router.put('/:id', buscadorController.putBuscador);
 
 /**
  * DELETE BUSCADOR
