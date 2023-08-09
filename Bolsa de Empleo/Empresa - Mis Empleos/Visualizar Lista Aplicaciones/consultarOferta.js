@@ -1,5 +1,6 @@
 'use strict'
 
+let data = [{seccionTitulo: "Ingenieria", seccionRequerimientos: "Ninguno", seccionDescripcion: "Lorem Ipsum"}];
 
 document.addEventListener("DOMContentLoaded", ()=>{
     let estadoOferta = document.querySelector(".estado-oferta");
@@ -18,3 +19,5 @@ document.addEventListener("DOMContentLoaded", ()=>{
         console.log("No funciona")
     }
 });
+
+function modificarOferta
