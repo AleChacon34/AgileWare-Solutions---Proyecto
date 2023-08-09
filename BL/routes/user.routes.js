@@ -13,24 +13,13 @@ router.get('/',userControllers.getUsuario);
 
 router.get('/:id', userControllers.getUsuarioID);
 
-//Register Usuario//
-
-router.get('/register', userControllers.registerUser);
-
-//Login Usuario//
-
-router.get('/login', userControllers.loginUser);
-
 //Put Usuario//
 
-router.get('/put', userControllers.putUsuario);
+router.put('/put', userControllers.putUsuario);
 
 //Delete Usuario//
 
-router.get('/delete', userControllers.deleteUsuario);
+router.delete('/delete', userControllers.deleteUsuario);
 
-//Update Usuario//
-
-router.get('/update', userControllers.updateUsuario);
 
 module.exports = router;
