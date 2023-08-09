@@ -47,4 +47,23 @@ export class BuscadorService {
             }
         );
     }
+
+    static updateBuscador(id, updatedUser) {
+        return axios.put(
+            `${BuscadorService.#URI}/buscadores/${id}`,
+            {
+                nombreBuscador: updatedUser.nombreBuscador,
+                apellidosBuscador: updatedUser.apellidosBuscador,
+                correoBuscador: updatedUser.correoBuscador,
+                telefonoBuscador: updatedUser.telefonoBuscador,
+                generoBuscador: updatedUser.generoBuscador,
+                contraseniaBuscador: updatedUser.contraseniaBuscador
+            },
+            {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+            );
+    }
 }
