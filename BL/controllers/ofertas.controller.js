@@ -1,6 +1,6 @@
 'use strict';
 
-const OfertaModel = require("../model/ofertas.model");
+const OfertaModel = require("../models/ofertas.model");
 
 // Crear funciones de CRUD
 //GET

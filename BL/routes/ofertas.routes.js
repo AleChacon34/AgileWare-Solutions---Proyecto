@@ -1,7 +1,7 @@
 'use strict';
 
 //Obtener Js de controller y llamar a Express
-const ofertasController = require("../controller/ofertas.controller");
+const ofertasController = require("../controllers/ofertas.controller");
 const express = require("express");
 
 //Activar rutas
