@@ -5,39 +5,58 @@
     <link rel="stylesheet" href="/Bolsa de Empleo/cssGeneral/barraInicio.css">
     <link rel="stylesheet" href="/Bolsa de Empleo/Empresa - Mis Empleos/OfertaEmpleo.css"/>
     <script src = "/Bolsa de Empleo/jsGeneral/SweetAlert.js"></script>
-    <script src="/Bolsa de Empleo/Empresa - Mis Empleos/Crear Oferta de Empleo/crearOfertaEmpleo.js"></script>
+    <script type = "module" src="/Bolsa de Empleo/Empresa - Mis Empleos/Crear Oferta de Empleo/crearOfertaEmpleo.js"></script>
     <script src="/Bolsa de Empleo/jsGeneral/barraNavegacionEmpresarial.js"></script>
   </head>
   <body>
     <!-- Esta barra pertenece al perfil de Empresa o Usuario Empresarial -->
     <main>
-      <div>
-        <!-- Este input guarda el título de la oferta de empleo -->
-        <label for="seccionTitulo">TÍTULO DE LA OFERTA: </label>
-        <input
-          id="seccion-titulo"
-          type="text"
-          placeholder="Ingeniería, Enseñanza, Conductor, (...)"
-          maxlength="75"
-          minlength="25"
-        />
-      </div>
-      <div>
-        <!-- Esta área de texto guarda los datos de la oferta de empleo -->
-        <label for="seccion-datos"></label>
-        <textarea
-          id="seccionDescripcion"
-          name="Datos de la oferta"
-          placeholder="Ingrese los datos de la oferta de empleo..."
-          minlength="500"
-          maxlength="3500"
-        ></textarea>
-      </div>
-      <div class="buttons">
-        <!-- Estos botones -->
-        <button class="btns" type="submit" name="publicar">PUBLICAR OFERTA</button>
-        <button class="btns" type="submit" name = "ocultar">OCULTAR OFERTA</button>
-      </div>
+      <form id="ofertaForm">
+        <div>
+          <!-- Este input guarda el título de la oferta de empleo -->
+          <label for="seccionTitulo">TÍTULO DE LA OFERTA: </label>
+          <input
+            id="seccionTitulo"
+            name = "seccionTitulo"
+            type="text"
+            placeholder="Ingeniería, Enseñanza, Conductor, (...)"
+            maxlength="75"
+            minlength="5"
+          />
+        </div>
+        <select id="estadoOferta" name="estadoOferta">
+          <option>Oferta pública</option>
+          <option>Oferta oculta</option>
+        </select>
+        <div>
+          <!-- Esta área de texto guarda los requerimientos de la oferta de empleo -->
+          <h4>Requerimientos</h4>
+          <label for="seccionRequerimientos"></label>
+          <textarea
+            id="seccionRequerimientos"
+            name="seccionRequerimientos"
+            placeholder="Ingrese los requerimientos de la oferta de empleo..."
+            minlength="5"
+            maxlength="3500"
+          ></textarea>
+        </div>
+        <div>
+          <!-- Esta área de texto guarda los datos de la oferta de empleo -->
+          <h4>Descripción de la oferta</h4>
+          <label for="seccionDescripcion"></label>
+          <textarea
+            id="seccionDescripcion"
+            name="seccionDescripcion"
+            placeholder="Ingrese los datos de la oferta de empleo..."
+            minlength="50"
+            maxlength="3500"
+          ></textarea>
+        </div>
+        <div class="button">
+          <!-- Estos botones -->
+          <button id="agregarBtn" type="submit" name="publicar">AGREGAR OFERTA</button>
+        </div>
+      </form> 
     </main>
   </body>
 </html>

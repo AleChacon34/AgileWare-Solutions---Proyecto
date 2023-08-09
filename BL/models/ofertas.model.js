@@ -19,6 +19,11 @@ const OfertaModel = mongoose.Schema(
         {
             type: String
         },
+
+        estadoOferta:
+        {
+            type: String
+        },
     },
 
     {
