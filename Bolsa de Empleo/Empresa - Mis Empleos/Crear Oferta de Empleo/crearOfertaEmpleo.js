@@ -1,5 +1,6 @@
 "use-strict";
 import { Oferta } from "./oferta.model.js";
+import {OfertaService} from "../../services/consultarOferta.services.js"
 // Asignamiento de alerta para los botones de Publicar y Ocultar Oferta
 
 document.addEventListener("DOMContentLoaded", () =>{
@@ -21,35 +22,45 @@ function postOferta(e){
 
   //Poner el border de los espacios vacios en rojo
   
-  if (cuadroTitulo.value === "" || cuadroRequerimientos.value === "" || cuadroDescripcion.value === "")
+  if (cuadroTitulo.value === "" || cuadroRequerimientos.value === "" || cuadroDescripcion.value === ""){
     Swal.fire({
       icon: 'error',
       title: 'Por favor llene todos los espacios requeridos',
       confirmButtonText: 'Continuar',
     })
-    if (cuadroTitulo.value === "" ){
-      cuadroTitulo.style.border = "2px solid red";
-    }
+  } 
+  if (cuadroTitulo.value === "" ){
+    cuadroTitulo.style.border = "2px solid red";
+  }
 
-    if (cuadroRequerimientos.value === ""){
-      cuadroRequerimientos.style.border = "2px solid red";
-    }
+  if (cuadroRequerimientos.value === ""){
+    cuadroRequerimientos.style.border = "2px solid red";
+  }
 
-    if (cuadroDescripcion.value === ""){
-      cuadroDescripcion.style.border = "2px solid red";
-    }
+  if (cuadroDescripcion.value === ""){
+    cuadroDescripcion.style.border = "2px solid red";
+  }
 
   else{
-    Swal.fire({
-      customClass: {popup: "swal"},
-      icon: 'success',
-      title: 'Oferta publicada con éxito',
-      confirmButtonText: 'Continuar',
-    }).then((result) => {
-      if (result.isConfirmed) {
-          window.location.replace("/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarListaOfertas.html")
-      };
-    });
+    const formData = new FormData(e.target);
+    const nuevaOferta = new Oferta(formData);
+    console.log(nuevaOferta)
+    OfertaService.registrarOferta(nuevaOferta);
+    alertaCreacion();
   }
-}
+} 
+
+//Mensaje de confirmación
+function alertaCreacion(){
+  Swal.fire({
+    customClass: {popup: "swal"},
+    icon: 'success',
+    title: 'Oferta agregada con éxito',
+    confirmButtonText: 'Continuar',
+  }).then((result) => {
+    if (result.isConfirmed) {
+        window.location.replace("/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarListaOfertas.html")
+    };
+  });
+} 
   
