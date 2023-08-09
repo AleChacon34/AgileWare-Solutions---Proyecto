@@ -11,6 +11,15 @@ async function getBuscadores(req, res) {
 }
 
 /**
+ * GET ONE BUSCADOR
+ */
+async function getOneBuscador(req, res) {
+    const { id } = req.params;
+    const data = await buscadorModel.findById(id);
+    res.send({ data });
+}
+
+/**
  * REGISTER BUSCADOR
  */
 async function registerBuscador(req, res) {
@@ -67,4 +76,4 @@ async function deleteBuscador(req, res) {
     res.send({ data });
 }
 
-module.exports = { getBuscadores, registerBuscador, loginBuscador, putBuscador, deleteBuscador };
+module.exports = { getBuscadores, getOneBuscador, registerBuscador, loginBuscador, putBuscador, deleteBuscador };

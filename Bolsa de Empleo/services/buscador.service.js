@@ -36,4 +36,15 @@ export class BuscadorService {
             }
         );
     }
+
+    static getOneBuscador(id) {
+        return axios.get(
+            `${BuscadorService.#URI}/buscadores/${id}`,
+            {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+        );
+    }
 }

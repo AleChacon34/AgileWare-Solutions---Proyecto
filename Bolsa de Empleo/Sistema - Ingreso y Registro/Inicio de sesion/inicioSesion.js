@@ -71,6 +71,7 @@ function verificarDatosIngreso(usuario){
                 title: "¡Ingreso permitido!",
                 icon: "success"
             }).then((result) => {
+                localStorage.setItem('activeUser', JSON.stringify(res.data.user._id));
                 if (res.data.user.rol == "buscador"){
                     location.replace("/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Perfil usuario/perfilUsuario.html");
                 }
