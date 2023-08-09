@@ -1,4 +1,4 @@
-'use strict';
+    'use strict';
 
 const OfertaModel = require("../models/ofertas.model");
 
