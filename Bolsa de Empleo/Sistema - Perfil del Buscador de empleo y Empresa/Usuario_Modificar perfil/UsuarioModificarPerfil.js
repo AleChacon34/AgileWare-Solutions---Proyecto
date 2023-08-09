@@ -1,5 +1,7 @@
 "use strict";
 
+import { BuscadorService } from "../../services/buscador.service.js";
+
 let user = {
     name: "Marco",
     lastName: "Chacon",
@@ -15,21 +17,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function getData() {
-    let name = document.getElementById('name').value;
-    let lastName = document.getElementById('lastName').value;
-    let email = document.getElementById('email').value;
-    let phone = document.getElementById('phone').value;
-    let gender = document.getElementById('gender').value;
-    let pass = document.getElementById('pass').value;
+    let nombreBuscador = document.getElementById('name').value;
+    let apellidosBuscador = document.getElementById('lastName').value;
+    let correoBuscador = document.getElementById('email').value;
+    let telefonoBuscador = document.getElementById('phone').value;
+    let generoBuscador = document.getElementById('gender').value;
+    let contraseniaBuscador = document.getElementById('pass').value;
     let verifyPass = document.getElementById('verifyPass').value;
 
     let newUser = {
-        name, 
-        lastName,
-        email,
-        phone,
-        gender,
-        pass,
+        nombreBuscador, 
+        apellidosBuscador,
+        correoBuscador,
+        telefonoBuscador,
+        generoBuscador,
+        contraseniaBuscador,
         verifyPass
     }
 
@@ -37,19 +39,19 @@ function getData() {
 }
 
 function verifyData(newUser) {
-    if (newUser.name == "") {
+    if (newUser.nombreBuscador == "") {
         errorValidationMessage();
         document.getElementById("name").style.border = "2px solid red";
-    } else if (newUser.lastName == "") {
+    } else if (newUser.apellidosBuscador == "") {
         errorValidationMessage();
         document.getElementById("lastName").style.border = "2px solid red";
-    } else if (newUser.email == "") {
+    } else if (newUser.correoBuscador == "") {
         errorValidationMessage();
         document.getElementById("email").style.border = "2px solid red";
-    } else if (newUser.phone == "") {
+    } else if (newUser.telefonoBuscador == "") {
         errorValidationMessage();
         document.getElementById("phone").style.border = "2px solid red";
-    } else if (newUser.pass == "") {
+    } else if (newUser.contraseniaBuscador == "") {
         errorValidationMessage();
         document.getElementById("pass").style.border = "2px solid red";
     } else if (newUser.verifyPass == "") {
@@ -71,22 +73,13 @@ function errorValidationMessage() {
 }
 
 function verifyPass(newUser) {
-    if (newUser.verifyPass == newUser.pass) {
-        updateData(newUser);
+    if (newUser.verifyPass == newUser.contraseniaBuscador) {
+        BuscadorService.updateBuscador(JSON.parse(localStorage.getItem('activeUser')), newUser).then(res => {
+            notificarActualizar();
+        });
     } else {
         Swal.fire("Por favor, verifica las contraseñas", "", "error");
     }
-}
-
-function updateData(newUser) {
-    user.name = newUser.name;
-    user.lastName = newUser.lastName;
-    user.email = newUser.email;
-    user.phone = newUser.phone;
-    user.pass = newUser.pass;
-
-    notificarActualizar();
-    console.log(user);
 }
 
 function notificarActualizar(){
