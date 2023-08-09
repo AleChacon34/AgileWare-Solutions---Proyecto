@@ -12,6 +12,7 @@ const empresaRoutes = require('./routes/empresa.routes');
 const usuEmpresarialRoutes = require('./routes/usuEmpresarial.routes');
 const ofertasRoutes = require("./routes/ofertas.routes");
 const superUserRoutes = require('./routes/superUser.routes');
+const authRoutes = require('./routes/auth.routes');
 
 app.use(cors());
 app.use(body_parser.json());
@@ -38,3 +39,4 @@ app.use('/empresa',empresaRoutes);
 app.use('/usuEmpresarial',usuEmpresarialRoutes);
 app.use("/ofertas", ofertasRoutes);
 app.use('/superUser', superUserRoutes);
+app.use('/auth', authRoutes);
