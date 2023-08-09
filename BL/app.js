@@ -9,6 +9,7 @@ const conf = require('dotenv').config();
 const app = express();
 const ofertasRoutes = require("./routes/ofertas.routes");
 const authRoutes = require('./routes/auth.routes');
+const userRoutes = require('./routes/user.routes')
 
 app.use(cors());
 app.use(body_parser.json());
@@ -32,3 +33,4 @@ const db = mongoose.connect(process.env.MONGO_URI, {}).then((res) => {
 
 app.use("/ofertas", ofertasRoutes);
 app.use('/auth', authRoutes);
+app.use("/user",userRoutes);
