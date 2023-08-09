@@ -1,5 +1,5 @@
 "use-strict";
-
+import { Oferta } from "./oferta.model.js";
 // Asignamiento de alerta para los botones de Publicar y Ocultar Oferta
 
 document.addEventListener("DOMContentLoaded", () =>{
