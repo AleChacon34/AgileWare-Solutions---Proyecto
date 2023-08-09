@@ -36,4 +36,34 @@ export class BuscadorService {
             }
         );
     }
+
+    static getOneBuscador(id) {
+        return axios.get(
+            `${BuscadorService.#URI}/buscadores/${id}`,
+            {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+        );
+    }
+
+    static updateBuscador(id, updatedUser) {
+        return axios.put(
+            `${BuscadorService.#URI}/buscadores/${id}`,
+            {
+                nombreBuscador: updatedUser.nombreBuscador,
+                apellidosBuscador: updatedUser.apellidosBuscador,
+                correoBuscador: updatedUser.correoBuscador,
+                telefonoBuscador: updatedUser.telefonoBuscador,
+                generoBuscador: updatedUser.generoBuscador,
+                contraseniaBuscador: updatedUser.contraseniaBuscador
+            },
+            {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+            );
+    }
 }
