@@ -9,45 +9,36 @@ document.addEventListener("DOMContentLoaded", () =>{
     form.addEventListener("submit", postOferta);
 })
 
-// function publicarOferta(e){
-//     e.preventDefault(e.target);
-//     Swal.fire({
-//         customClass: {popup: "swal"},
-//         icon: 'success',
-//         title: 'Oferta publicada con éxito',
-//         confirmButtonText: 'Continuar',
-//       }).then((result) => {
-//         if (result.isConfirmed) {
-//             window.location.replace("/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarListaOfertas.html")
-//         };
-//       });
-// }
 
-// function ocultarOferta(e){
-//     e.preventDefault(e.target);
-//     console.log("oculta")
-//     Swal.fire({
-//         customClass: {popup: "swal"},
-//         icon: 'success',
-//         title: 'Oferta ocultada con éxito',
-//         confirmButtonText: 'Continuar',
-//       }).then((result) => {
-//         if (result.isConfirmed) {
-//             window.location.replace("/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarListaOfertas.html")
-//         }
-//       });
-// }
+function postOferta(e){
+  e.preventDefault(e.target);
 
-function postOferta(){
+  //Obtener el contenido de los espacios de la oferta
   let publicarBtn = document.querySelector("button[name='publicar']");
   let cuadroTitulo= document.querySelector("#seccionTitulo");
   let cuadroRequerimientos= document.querySelector("#seccionRequerimientos");
   let cuadroDescripcion= document.querySelector("#seccionDescripcion");
 
-  if ((cuadroTitulo.value === "" && cuadroRequerimientos.value === "" && cuadroDescripcion.value === "")){
-    publicarBtn.disabled = true;
-    console.log("Vacio")
-  }
+  //Poner el border de los espacios vacios en rojo
+  
+  if (cuadroTitulo.value === "" || cuadroRequerimientos.value === "" || cuadroDescripcion.value === "")
+    Swal.fire({
+      icon: 'error',
+      title: 'Por favor llene todos los espacios requeridos',
+      confirmButtonText: 'Continuar',
+    })
+    if (cuadroTitulo.value === "" ){
+      cuadroTitulo.style.border = "2px solid red";
+    }
+
+    if (cuadroRequerimientos.value === ""){
+      cuadroRequerimientos.style.border = "2px solid red";
+    }
+
+    if (cuadroDescripcion.value === ""){
+      cuadroDescripcion.style.border = "2px solid red";
+    }
+
   else{
     Swal.fire({
       customClass: {popup: "swal"},
@@ -61,3 +52,4 @@ function postOferta(){
     });
   }
 }
+  

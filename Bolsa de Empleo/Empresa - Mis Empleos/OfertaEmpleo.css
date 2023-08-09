@@ -80,6 +80,10 @@ th {
     font-weight: bolder;
 }
 
+.btns:disabled{
+    opacity: 75%;
+}
+
 .swal{
     border-radius: 15px;
 }
