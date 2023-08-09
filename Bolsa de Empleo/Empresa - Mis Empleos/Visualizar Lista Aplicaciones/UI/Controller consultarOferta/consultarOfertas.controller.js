@@ -1,6 +1,6 @@
 'use strict'
 
-// import { OfertaService } from "../Services consultarOfertas/consultarOferta.services.js";
+import { OfertaService } from "../Services consultarOfertas/consultarOferta.services.js";
 
 let datosOfertas = [
     {
@@ -13,16 +13,18 @@ let datosOfertas = [
         tituloOferta: "Ingeniería en Programación", requerimientosCuerpo: "15 años de experiencia", descripcionCuerpo: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi, nesciunt magnam saepe, ipsam doloremque facere placeat cumque suscipit totam voluptates soluta, atque blanditiis officiis deserunt. Eius cumque dolor voluptatum praesentium." 
     }
 ]
-document.addEventListener("DOMContentLoaded", ()=>{
+document.addEventListener("scroll", ()=>{
     generarOferta(datosOfertas);
-    // OfertaService.findAll().then((response) =>{
-    //     data = response.data
-    //     console.log(data)
-    // })
 })
 
 function generarOferta(datosOfertas){
-    for (let oferta = 0; oferta < datosOfertas.length; oferta++){
+    //Acceder a las ofertas
+    OfertaService.findAll().then((response) =>{
+        data = response.data
+        console.log(data)
+    });
+
+    for (let oferta = 0; oferta < response.data; oferta++){
         console.log("Una oferta")
         //Crear DIV principal con id
         let addDiv = document.createElement('div');
