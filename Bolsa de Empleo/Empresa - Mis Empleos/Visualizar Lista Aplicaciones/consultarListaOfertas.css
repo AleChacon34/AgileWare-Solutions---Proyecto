@@ -33,6 +33,20 @@ main div{
     height: 50px;
     width: 150px;
     border-radius: 5px;
+    background-color: rgb(177, 177, 177);
+    border: 3px double black;
+    font-weight: bolder;
+}
+
+#agregarOferta:hover{
+    background-color: #00661b;
+    font-weight: bolder;
+    border-style: none;
+}
+
+#agregarOferta a{
+    text-decoration: none;
+    color: white;
 }
 
 div input[name="barra-busqueda"]{
