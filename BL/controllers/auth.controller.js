@@ -1,7 +1,6 @@
 'use strict';
 
-const authModel = require('../models/auth.model');
-const userModel = require('../models/auth.model');
+const userModel = require('../models/user.model');
 
 /**
  * REGISTER USER
@@ -18,7 +17,7 @@ async function registerUser(req, res) {
  */
 async function loginUser(req, res) {
     const { correo, contrasenia } = req;
-    const data = await authModel.findOne({ correo });
+    const data = await userModel.findOne({ correo });
     console.log(data);
     
     if (data.contrasenia == contrasenia) {
