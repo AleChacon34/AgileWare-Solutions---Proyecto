@@ -12,7 +12,6 @@ async function getUsuario(request, response){
 //GET ID
 
 async function getUsuarioID(request, response){
-    const{body}=request;
     const {id} = request.params;
     const data = await userModel.findById(id);
     response.send({data});
