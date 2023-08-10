@@ -1,36 +1,37 @@
 "use-strict"
-let listaUsuariosEmpresariales = [];
 
+import { UserEmpresa } from "../../models/userEmpresa.model.js";
+import { LoginService } from "../../services/login.service.js"
 
 document.addEventListener("DOMContentLoaded", () =>{
-    let registro = document.querySelector("button[name='completar-registro']");
-    registro.addEventListener("click", completarRegistro);
-})
+    let form = document.querySelector("form");
+    form.addEventListener("submit", getData);
+});
 
-function completarRegistro(){
-    let nombre = document.querySelector("input[name='usuario-empresarial']");
-    let apellidos = document.querySelector("input[name='usuario-empresarial-apellidos']");
-    let correo = document.querySelector("input[name='correo']");
-    let telefono = document.querySelector("input[name='numero-telefono']");
-    let genero = document.querySelector("#seleccion-genero");
-    let contrasenna = document.querySelector("input[name='contrasenna']");
-    let usuario = {nombreUsuarioEmpresarial: nombre.value, apellidosUsuarioEmpresarial: apellidos.value, correoUsuarioEmpresarial: correo.value, telefonoUsuarioEmpresarial: telefono.value, generoUsuarioEmpresarial: genero.value, contrasennaUsuarioEmpresarial: contrasenna.value,};
-    console.log(usuario);
-    guardarRegistro(listaUsuariosEmpresariales, usuario);
+function getData(e) {
+    e.preventDefault();
+    let formData = new FormData(e.target);
+    let newUser = new UserEmpresa(formData);
+    console.log(newUser);
+    guardarRegistro(newUser);
 }
 
-function guardarRegistro(listaUsuarios, infoUsuario){
+function guardarRegistro(newUser){
 
-    if (!((infoUsuario.nombreUsuarioEmpresarial === "") || (infoUsuario.apellidosUsuarioEmpresarial === "") || (infoUsuario.correoUsuarioEmpresarial === "") || (infoUsuario.telefonoUsuarioEmpresarial === "") || (infoUsuario.generoUsuarioEmpresarial === "") || (infoUsuario.contrasennaUsuarioEmpresarial === ""))){
-        listaUsuarios.push(infoUsuario);
-        Swal.fire({
-            icon: 'success',
-            title: 'Registro exitoso',
-            text: 'La información del nuevo usuario empresarial ha sido guardada exitosamente.',
-        })
-    }
-
-    else{
+    if (!((newUser.getNombre() === "") || (newUser.getApellidos() === "") || (newUser.getCorreo() === "") || (newUser.getTelefono() === "") || (newUser.getGenero() === "") || (newUser.getContrasenia() === ""))){
+        LoginService.registerUser(newUser).then(res => {
+            Swal.fire({
+                icon: 'success',
+                title: 'Registro exitoso',
+                text: 'La información del nuevo usuario empresarial ha sido guardada exitosamente.',
+            });
+        }).catch(err => {
+            Swal.fire({
+                icon: 'error',
+                title: 'El usuario ya existe',
+            });
+        });
+    } else {
         Swal.fire({
             icon: 'error',
             title: 'Información faltante',

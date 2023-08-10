@@ -6,10 +6,10 @@ import { User } from "../../models/user.model.js";
 
 document.addEventListener("DOMContentLoaded", () =>{
     let formData = document.querySelector("form");
-    formData.addEventListener('submit', test);
+    formData.addEventListener('submit', getData);
 })
 
-function test(e) {
+function getData(e) {
     e.preventDefault(e.target);
     let formData = new FormData(e.target);
     let newUser = new User(formData);
