@@ -33,4 +33,4 @@ const db = mongoose.connect(process.env.MONGO_URI, {}).then((res) => {
 
 app.use("/ofertas", ofertasRoutes);
 app.use('/auth', authRoutes);
-app.use("/user",userRoutes);
+app.use("/users", userRoutes);

@@ -15,11 +15,11 @@ router.get('/:id', userControllers.getUsuarioID);
 
 //Put Usuario//
 
-router.put('/put', userControllers.putUsuario);
+router.put('/:id', userControllers.putUsuario);
 
 //Delete Usuario//
 
-router.delete('/delete', userControllers.deleteUsuario);
+router.delete('/:id', userControllers.deleteUsuario);
 
 
 module.exports = router;

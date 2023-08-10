@@ -1,6 +1,5 @@
 "use strict";
-
-import { json } from "body-parser";
+    
 import { LoginService } from "../../services/login.service.js";
 
 let autenticado = false;
