@@ -1,6 +1,6 @@
 "use-strict"
 
-import { UserEmpresa } from "../../models/userEmpresa.modeljs";
+import { UserEmpresa } from "../../models/userEmpresa.model.js";
 
 let listaUsuariosEmpresariales = [];
 
@@ -16,6 +16,7 @@ function completarRegistro(e){
     e.preventDefault();
     let formData = new FormData(e.target);
     let newUser = new UserEmpresa(formData);
+
     guardarRegistro(newUser);
 }
 
