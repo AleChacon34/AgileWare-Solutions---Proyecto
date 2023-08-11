@@ -29,12 +29,12 @@ export class UserService {
         return axios.put(
             `${UserService.#URI}/users/${id}`,
             {
-                nombre: newUser.nombre,
-                apellidos: newUser.apellidos,
-                correo: newUser.correo,
-                telefono: newUser.telefono,
-                genero: newUser.genero,
-                contrasenia: newUser.contrasenia,
+                nombre: newUser.getNombre(),
+                apellidos: newUser.getApellidos(),
+                correo: newUser.getCorreo(),
+                telefono: newUser.getTelefono(),
+                genero: newUser.getGenero(),
+                contrasenia: newUser.getContrasenia(),
             },
             {
                 headers: {
