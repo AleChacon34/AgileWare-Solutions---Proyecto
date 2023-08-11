@@ -15,6 +15,7 @@ function getOfertas(){
 }
 
 function crearSecciones(data){
+    console.log(data._id)
     //Crear DIV principal con id
     let addDiv = document.createElement('div');
     //Crear section del div
@@ -31,7 +32,9 @@ function crearSecciones(data){
     let textareaII = document.createElement('p');
     textareaII.setAttribute("id", "descripcionCuerpo");
     let newAnch = document.createElement('a');
-    newAnch.setAttribute("href", "/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarOferta.html");
+    // newAnch.setAttribute("href", "/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarOferta.html");
+    newAnch.setAttribute("id", "verInfo");
+    newAnch.addEventListener('click', verInformacion);
     //Agregar texto a cada elemento desde datosOfertas
     addH3I.appendChild(document.createTextNode(data.seccionTitulo));
     addH4I.appendChild(document.createTextNode("Requerimientos"));
@@ -44,5 +47,14 @@ function crearSecciones(data){
     addDiv.appendChild(addSec);
     //Agregar Div al main
     let mainBody = document.querySelector('main');
-    mainBody.insertBefore(addDiv, mainBody.children[1]);    
+    mainBody.insertBefore(addDiv, mainBody.children[1]);
+    localStorage.setItem("currentIDs", JSON.stringify(data._id))    
+}
+
+function verInformacion(e){
+    console.log(localStorage.getItem("currentIDs"))
+    let htmlBody = document.querySelector('body');
+    let parentNode = e.target.parentNode;
+    parentNode
+    console.log(parentNode)
 }
