@@ -19,27 +19,6 @@ async function getOneOferta(request, response) {
     response.send({ data });
 }
 
-//GET ONE
-
-async function getOneOferta(request, response) {
-    const { id } = request.params;
-    const data = await OfertaModel.findById(id);
-    response.send({ data });
-}
-
-//GET ONE
-
-async function getOneOferta(request, response) {
-    const { id } = request.params;
-    const data = await OfertaModel.findById(id);
-    response.send({ data });
-}
-
-async function getOneOferta(request, response){
-    const {id} = request.params;
-    const data = await OfertaModel.findById(id);
-    response.send({data});
-}
 //POST
 
 async function postOferta(request, response){
