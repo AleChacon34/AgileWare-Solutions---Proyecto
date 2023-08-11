@@ -7,8 +7,10 @@ export class User {
     #correo;
     #telefono;
     #genero;
+    #rol
     #contrasenia;
     #verifyContrasenia;
+    #foto;
 
     //Constructor
     constructor(formData){
@@ -19,6 +21,7 @@ export class User {
         this.setGenero(formData.get('genero'));
         this.setContrasenia(formData.get('contrasenia'));
         this.setVerifyContrasenia(formData.get('verifyContrasenia'));
+        this.setFoto(formData.get('foto'));
     }
 
     //Setters
@@ -32,9 +35,13 @@ export class User {
 
     setGenero(pGenero){this.#genero = pGenero};
 
+    setRol(pRol){this.#rol = pRol};
+
     setContrasenia(pContrasenia){this.#contrasenia = pContrasenia};
 
     setVerifyContrasenia(pVerifyContrasenia){this.#verifyContrasenia = pVerifyContrasenia};
+
+    setFoto(pFoto){this.#foto = pFoto};
 
     //Getters
 
@@ -48,7 +55,11 @@ export class User {
 
     getGenero(){return this.#genero};
 
+    getRol(){return this.#rol};
+
     getContrasenia(){return this.#contrasenia};
 
     getVerifyContrasenia(){return this.#verifyContrasenia};
+
+    getFoto(){return this.#foto};
 }

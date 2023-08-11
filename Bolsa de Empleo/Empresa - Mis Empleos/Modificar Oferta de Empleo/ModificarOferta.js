@@ -2,28 +2,34 @@
 'use strict';
 
 // import { estadoOferta } from "/consultarOferta.js ";
+import {OfertaService} from "../../services/consultarOferta.services.js";
 
 //Agregar funcionalidades a todos los botones
 
 document.addEventListener("DOMContentLoaded", () =>{
-//     if (estadoOferta.textContent == "Oferta Pública"){
-//         console.log("Oferta Pública")
-//     }
-//     else if (estadoOferta.textContent == "Oferta Oculta"){
-//         console.log("Oferta Oculta")
-//     }
-//     else{
-//         console.log("No funciona")
-//     }
-    let actualizarBtn = document.querySelector("#actualizar-btn");
-    actualizarBtn.addEventListener('click', actualizarOferta);
-    let eliminarBtn = document.querySelector("#eliminar-btn");
-    eliminarBtn.addEventListener('click', eliminarOferta);
-    let publicarBtn = document.querySelector("#publicar-btn");
-    publicarBtn.addEventListener('click', publicarOferta);
-    let ocultarBtn = document.querySelector("#ocultar-btn");
-    ocultarBtn.addEventListener('click', ocultarOferta);
+    let eliminarBtn = document.querySelector("#eliminarBtn");
+    eliminarBtn.addEventListener("click");
+    let form = document.querySelector("ofertaForm");
+    let id = localStorage.getItem('currentIDs');
+    OfertaService.findOne(id).then((response)=>{
+        let data = response.data.data;
+        verOferta(data);
+    })
 });
+
+function verOferta(data){
+    let seccionTitulo = document.querySelector("#seccionTitulo");
+    seccionTitulo.value = data.seccionTitulo;
+    let seccionRequerimientos = document.querySelector("#seccionRequerimientos");
+    seccionRequerimientos.value = data.seccionRequerimientos;
+    let seccionDescripcion = document.querySelector("#seccionDescripcion");
+    seccionDescripcion.value = data.seccionDescripcion;
+    let estadoOferta = document.querySelector("#estadoOferta");
+    estadoOferta.value = data.estadoOferta;
+}
+
+
+
 
 // Funcion para actualizar los datos de la Oferta
 function actualizarOferta(){
