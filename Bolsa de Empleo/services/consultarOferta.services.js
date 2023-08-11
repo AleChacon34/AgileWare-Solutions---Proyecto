@@ -8,8 +8,16 @@ export class OfertaService{
     };
 
     static findOne(idCode){
-        console.log(idCode)
         return axios.get(OfertaService.#URL+"/ofertas/" + idCode);   
+    };
+
+    static updateOne(idCode, data){
+        return axios.put(OfertaService.#URL+"/ofertas/" + idCode, {
+            seccionTitulo: data.seccionTitulo,
+            seccionRequerimientos: data.seccionRequerimientos,
+            seccionDescripcion: data.seccionDescripcion,
+            estadoOferta: data.estadoOferta,
+        });
     }
 
     static registrarOferta(nuevaOferta){

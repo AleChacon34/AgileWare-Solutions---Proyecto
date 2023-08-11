@@ -47,3 +47,4 @@ async function deleteOferta(request, response){
 
 
 module.exports = {getOfertas, postOferta, getOneOferta, updateOferta, deleteOferta};
+module.exports = {getOfertas, getOneOferta, postOferta, updateOferta, deleteOferta};
