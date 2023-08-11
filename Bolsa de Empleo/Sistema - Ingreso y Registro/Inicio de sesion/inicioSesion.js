@@ -80,7 +80,7 @@ function verificarDatosIngreso(usuario){
                 } else if (res.data.data.rol == "Reclutador") {
                     location.replace('/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Sistema-Perfil Usuario Empresarial/Sistema-Perfil -Usuario-Empresarial.html');
                 } else if (res.data.data.rol == "Superusuario") {
-                    
+                    location.replace('/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Sistema-Super-Usuario/Sistema-Super-Usuario.html');
                 }
             });
         }).catch(err => {
