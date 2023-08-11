@@ -7,6 +7,9 @@ import {OfertaService} from "../../services/consultarOferta.services.js";
 //Agregar funcionalidades a todos los botones
 
 document.addEventListener("DOMContentLoaded", () =>{
+    let eliminarBtn = document.querySelector("#eliminarBtn");
+    eliminarBtn.addEventListener("click");
+    let form = document.querySelector("ofertaForm");
     let id = localStorage.getItem('currentIDs');
     OfertaService.findOne(id).then((response)=>{
         let data = response.data.data;
