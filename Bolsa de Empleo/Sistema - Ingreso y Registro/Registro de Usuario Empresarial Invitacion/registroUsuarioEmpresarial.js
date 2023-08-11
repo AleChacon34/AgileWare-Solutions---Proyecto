@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 })
 
 
+
 function completarRegistro(e){
     e.preventDefault(e.target);
     let nombre = document.querySelector("input[name='usuario-empresarial']");
@@ -18,7 +19,7 @@ function completarRegistro(e){
     let genero = document.querySelector("#seleccion-genero");
     let contrasenna = document.querySelector("input[name='contrasenna']");
     let verifycontrasennia = document.querySelector("input[name='verifycontrasennia']");
-    let usuario = {nombreUsuarioEmpresarial: nombre.value, apellidosUsuarioEmpresarial: apellidos.value, correoUsuarioEmpresarial: correo.value, telefonoUsuarioEmpresarial: telefono.value, generoUsuarioEmpresarial: genero.value, contrasennaUsuarioEmpresarial: contrasenna.value,  verifycontrasennia: verifycontrasennia.value};
+    let usuario = {nombreUsuarioEmpresarial: nombre.value, apellidosUsuarioEmpresarial: apellidos.value, correoUsuarioEmpresarial: correo.value, verifyCorreousuarioEmpresarial: verifyCorreousuarioEmpresarial.value, telefonoUsuarioEmpresarial: telefono.value, generoUsuarioEmpresarial: genero.value, contrasennaUsuarioEmpresarial: contrasenna.value,  verifycontrasennia: verifycontrasennia.value};
     console.log(usuario);
     guardarRegistro(listaUsuariosEmpresariales, usuario);
 }
@@ -36,10 +37,26 @@ function guardarRegistro(listaUsuarios, infoUsuario){
             text: 'Por favor llene todos los espacios para completar el registro.',
         })
     }
-    
 }
 function verificarContrasennia(listaUsuarios, infoUsuario){
     if (infoUsuario.contrasennaUsuarioEmpresarial === infoUsuario.verifycontrasennia){
+        listaUsuarios.push(infoUsuario);
+        Swal.fire({
+            icon: 'success',
+            title: 'Registro exitoso',
+            text: 'La información del nuevo usuario empresarial ha sido guardada exitosamente.',
+        })  
+        }
+        else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Información faltante',
+                text: 'Las contraseñas no coinciden',
+            })
+        }
+}
+function verificarEmail(listaUsuarios,infoUsuario){
+    if (correoUsuarioEmpresarial === verifyCorreousuarioEmpresarial){
         listaUsuarios.push(infoUsuario);
         Swal.fire({
             icon: 'success',
