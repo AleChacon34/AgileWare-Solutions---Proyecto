@@ -55,6 +55,7 @@ function crearSecciones(data){
 
 function verInformacion(data){
     localStorage.setItem("currentIDs", data._id);
+    location.replace('/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarOferta.html')
     let htmlBody = document.querySelector('body');
     //let parentNode = e.target.parentNode;
     //parentNode
