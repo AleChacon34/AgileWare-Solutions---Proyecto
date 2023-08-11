@@ -24,7 +24,7 @@ const userModel = mongoose.Schema(
     },
     rol: {
       type: String,
-      default: "buscador",
+      default: "Buscador",
     },
     fotoPerfil: {
       type: Buffer,

@@ -12,6 +12,7 @@ export class LoginService {
                 correo: newUser.getCorreo(),
                 telefono: newUser.getTelefono(),
                 genero: newUser.getGenero(),
+                rol: newUser.getRol(),
                 contrasenia: newUser.getContrasenia()
             }, 
             {
