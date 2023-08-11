@@ -34,7 +34,9 @@ function crearSecciones(data){
     let newAnch = document.createElement('a');
     // newAnch.setAttribute("href", "/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarOferta.html");
     newAnch.setAttribute("id", "verInfo");
-    newAnch.addEventListener('click', verInformacion);
+    newAnch.addEventListener('click', () => {
+        verInformacion(data);
+    });
     //Agregar texto a cada elemento desde datosOfertas
     addH3I.appendChild(document.createTextNode(data.seccionTitulo));
     addH4I.appendChild(document.createTextNode("Requerimientos"));
@@ -51,10 +53,10 @@ function crearSecciones(data){
     localStorage.setItem("currentIDs", JSON.stringify(data._id))    
 }
 
-function verInformacion(e){
-    console.log(localStorage.getItem("currentIDs"))
+function verInformacion(data){
+    localStorage.setItem("currentIDs", data._id);
     let htmlBody = document.querySelector('body');
-    let parentNode = e.target.parentNode;
-    parentNode
-    console.log(parentNode)
+    //let parentNode = e.target.parentNode;
+    //parentNode
+    //console.log(parentNode)
 }
