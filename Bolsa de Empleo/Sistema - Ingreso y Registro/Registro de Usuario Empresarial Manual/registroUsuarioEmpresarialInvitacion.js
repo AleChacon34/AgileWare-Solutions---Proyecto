@@ -25,6 +25,7 @@ function guardarRegistro(newUser){
                 title: 'Registro exitoso',
                 text: 'La información del nuevo usuario empresarial ha sido guardada exitosamente.',
             });
+            location.replace('iniciarSesion.html');
         }).catch(err => {
             Swal.fire({
                 icon: 'error',
@@ -36,6 +37,6 @@ function guardarRegistro(newUser){
             icon: 'error',
             title: 'Información faltante',
             text: 'Por favor llene todos los espacios para completar el registro.',
-        })
+        });
     }
 }

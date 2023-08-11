@@ -1,13 +1,14 @@
 'use strict'
 import { OfertaService } from "../../services/consultarOferta.services.js";
-import { Oferta } from "../Crear Oferta de Empleo/oferta.model.js";
 
 // let dataList = [{seccionTitulo: "Ingenieria", seccionRequerimientos: "Ninguno", seccionDescripcion: "Lorem Ipsum"}];
 
 document.addEventListener("DOMContentLoaded", ()=>{
-    OfertaService.findOne("64d3f9bde22bc595f416a70c").then((response) =>{
+    let id = localStorage.getItem('currentIDs');
+    OfertaService.findOne(id).then((response) =>{
         console.log(response)
         let data = response.data.data;
+        //console.log(data);
         verOferta(data);
     })
 })

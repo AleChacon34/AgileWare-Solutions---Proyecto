@@ -10,8 +10,8 @@ const router = express.Router();
 //GET Oferta
 router.get("/", ofertasController.getOfertas);
 
-// GET ONE OFERTA
-router.get("/:id", ofertasController.getOneOferta);
+//GET ONE oferta
+router.get('/:id', ofertasController.getOneOferta);
 
 //Post Oferta
 router.post("/", ofertasController.postOferta);
