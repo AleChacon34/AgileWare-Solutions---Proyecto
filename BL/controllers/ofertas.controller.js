@@ -10,6 +10,11 @@ async function getOfertas(request, response){
     response.send({data});
 };
 
+async function getOneOferta(request, response){
+    const {id} = request.params;
+    const data = await OfertaModel.findById(id);
+    response.send({data});
+}
 //POST
 
 async function postOferta(request, response){
@@ -37,4 +42,4 @@ async function deleteOferta(request, response){
 
 
 
-module.exports = {getOfertas, postOferta, updateOferta, deleteOferta};
+module.exports = {getOfertas, getOneOferta, postOferta, updateOferta, deleteOferta};

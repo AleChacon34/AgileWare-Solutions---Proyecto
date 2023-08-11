@@ -8,8 +8,7 @@ export class OfertaService{
     };
 
     static findOne(idCode){
-        console.log(idCode)
-        return axios.get(OfertaService.#URL+"/ofertas/", {params: {_id: idCode}})   
+        return axios.get(OfertaService.#URL+"/ofertas/" +idCode)   
     }
 
     static registrarOferta(nuevaOferta){

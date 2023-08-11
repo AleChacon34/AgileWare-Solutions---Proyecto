@@ -8,8 +8,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     OfertaService.findOne("64d3f9bde22bc595f416a70c").then((response) =>{
         console.log(response)
         let data = response.data.data;
-        console.log(data);
-        data.forEach(verOferta)
+        verOferta(data);
     })
 })
 

@@ -20,6 +20,7 @@ function crearSecciones(data){
     let addDiv = document.createElement('div');
     //Crear section del div
     let addSec = document.createElement('section');
+    addSec.setAttribute("id", data._id)
     //Crear h3, h4, textarea, anchor 
     let addH3I = document.createElement('h3');
     addH3I.setAttribute("id", "tituloOFerta");
