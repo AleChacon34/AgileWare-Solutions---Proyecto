@@ -1,8 +1,23 @@
 'use strict'
+import { OfertaService } from "../../services/consultarOferta.services.js";
+import { Oferta } from "../Crear Oferta de Empleo/oferta.model.js";
 
-let data = [{seccionTitulo: "Ingenieria", seccionRequerimientos: "Ninguno", seccionDescripcion: "Lorem Ipsum"}];
+// let dataList = [{seccionTitulo: "Ingenieria", seccionRequerimientos: "Ninguno", seccionDescripcion: "Lorem Ipsum"}];
 
 document.addEventListener("DOMContentLoaded", ()=>{
+    OfertaService.findOne("64d3f9bde22bc595f416a70c").then((response) =>{
+        let data = response.data.data;
+        console.log(data);
+        verOferta
+    })
+})
+
+function verOferta(data){
+    //Crear Div principal
+    let addDiv = document.createElement()
+    
+    
+    
     let estadoOferta = document.querySelector(".estado-oferta");
     console.log(estadoOferta);
     if (estadoOferta.textContent == "Oferta pública"){
@@ -18,6 +33,4 @@ document.addEventListener("DOMContentLoaded", ()=>{
     else{
         console.log("No funciona")
     }
-});
-
-function modificarOferta
+}
