@@ -28,7 +28,7 @@ const userModel = mongoose.Schema(
     },
     fotoPerfil: {
       type: Buffer,
-    },
+    }
   },
   {
     timestamps: true,

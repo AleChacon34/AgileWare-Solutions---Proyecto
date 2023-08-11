@@ -7,12 +7,12 @@ export class LoginService {
         return axios.post(
             `${LoginService.#URI}/auth/register`,
             {
-                nombre: newUser.nombre,
-                apellidos: newUser.apellidos,
-                correo: newUser.correo,
-                telefono: newUser.telefono,
-                genero: newUser.genero,
-                contrasenia: newUser.contrasenia
+                nombre: newUser.getNombre(),
+                apellidos: newUser.getApellidos(),
+                correo: newUser.getCorreo(),
+                telefono: newUser.getTelefono(),
+                genero: newUser.getGenero(),
+                contrasenia: newUser.getContrasenia()
             }, 
             {
                 headers: {

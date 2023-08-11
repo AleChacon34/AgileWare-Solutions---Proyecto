@@ -1,5 +1,5 @@
 "use strict";
-
+    
 import { LoginService } from "../../services/login.service.js";
 
 let autenticado = false;
@@ -53,27 +53,28 @@ document.addEventListener("DOMContentLoaded", () =>{
  * Funcion que obtiene las credenciales de los 'inputs' para luego ser verificados
  */
 function obtenerCredenciales(){
-    let correo = document.querySelector("input[name='correo']");
-    let pass = document.querySelector("input[name='pass']");
-    console.log( correo, pass);
+    let correo = document.querySelector("input[name='correo']").value;
+    let contrasenia = document.querySelector("input[name='pass']").value;
     let usuario = {
-        correoBuscador: correo.value,
-        contraseniaBuscador: pass.value 
+        correo,
+        contrasenia
     }
     verificarDatosIngreso(usuario);
 }
 
 /**Funcion que verificar los datos ingresados y autentica*/
 function verificarDatosIngreso(usuario){
-    if (usuario.contraseniaBuscador != "" && usuario.correoBuscador != "") {
+    if (usuario.contrasenia != "" && usuario.correo != "") {
         LoginService.loginUser(usuario).then((res) => {
             Swal.fire({
                 title: "¡Ingreso permitido!",
                 icon: "success"
             }).then((result) => {
-                localStorage.setItem('activeUser', JSON.stringify(res.data.user._id));
-                if (res.data.user.rol == "buscador"){
+                localStorage.setItem('activeUser', JSON.stringify(res.data.data._id));
+                if (res.data.data.rol == "buscador"){
                     location.replace("/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Perfil usuario/perfilUsuario.html");
+                } else if (res.data.data.rol == "Administrador") {
+                    location.replace('/Bolsa de Empleo/Sistema - Perfil del Buscador de Empleo y Empresa/Sistema-Perfil Usuario Empresarial/Sistema-Perfil-Usuario-Empresarial.html');
                 }
             });
         }).catch(err => {

@@ -1,29 +1,29 @@
 'use strict';
 
-import { BuscadorService } from "../../services/buscador.service.js";
+import { UserService } from "../../services/user.service.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     loadData();
 });
 
 function loadData() {
-    let user = JSON.parse(localStorage.getItem('activeUser'));
+    let id = JSON.parse(localStorage.getItem('activeUser'));
 
-    let nombreBuscador = document.getElementById('nombreBuscador');
-    let apellidosBuscador = document.getElementById('apellidosBuscador');
-    let correoBuscador = document.getElementById('correoBuscador');
-    let telefonoBuscador = document.getElementById('telefonoBuscador');
-    let generoBuscador = document.getElementById('generoBuscador');
+    let nombre = document.getElementById('nombre');
+    let apellidos = document.getElementById('apellidos');
+    let correo = document.getElementById('correo');
+    let telefono = document.getElementById('telefono');
+    let genero = document.getElementById('genero');
 
-    BuscadorService.getOneBuscador(user).then(res => {
+    UserService.getOneUser(id).then(res => {
         let userData = res.data.data;
 
         console.log(userData);
 
-        nombreBuscador.innerHTML = `${userData.nombreBuscador}`;
-        apellidosBuscador.innerHTML = `${userData.apellidosBuscador}`;
-        correoBuscador.innerHTML = `${userData.correoBuscador}`;
-        telefonoBuscador.innerHTML = `${userData.telefonoBuscador}`;
-        generoBuscador.innerHTML = `${userData.generoBuscador}`;
+        nombre.innerHTML = `${userData.nombre}`;
+        apellidos.innerHTML = `${userData.apellidos}`;
+        correo.innerHTML = `${userData.correo}`;
+        telefono.innerHTML = `${userData.telefono}`;
+        genero.innerHTML = `${userData.genero}`;
     });
 }
