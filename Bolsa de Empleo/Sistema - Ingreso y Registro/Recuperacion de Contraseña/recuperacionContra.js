@@ -61,13 +61,12 @@ function getHTML(passKey) {
                                     <tr>
                                         <td style="padding:0 35px;">
                                             <h1 style="color:#1e1e2d; font-weight:500; margin:0;font-size:32px;font-family:'Rubik',sans-serif;">
-                                              You have requested to reset your password
+                                            Ha solicitado restablecer su contraseña
                                             </h1>
                                             <span style="display:inline-block; vertical-align:middle; margin:29px 0 26px; border-bottom:1px solid #cecece; width:100px;"></span>
                                             <p style="color:#455056; font-size:15px;line-height:24px; margin:0;">
-                                                We cannot simply send you your old password. A unique link to reset your
-                                                password has been generated for you. To reset your password, click the
-                                                following link and follow the instructions.
+                                            No podemos enviarle su contraseña anterior.
+                                            Se ha generado una contraseña temporal para usted.
                                             </p>
 
                                             ${passKey}
@@ -85,7 +84,7 @@ function getHTML(passKey) {
                             <td style="text-align:center;">
                                 <p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;">&copy; 
                                   <strong>
-                                    www.rakeshmandal.com
+                                    www.urlfalso.com
                                   </strong>
                                 </p>
                             </td>
@@ -113,7 +112,7 @@ function notificarActualizar(email) {
       Host: "smtp.elasticemail.com",
       Port: 2525,
       Username: "mchaconc1@ucenfotec.ac.cr",
-      Password: "",
+      Password: "E03F0CA6979490841B723F348AF81210663E",
       To: `${email}`,
       ReplyTo: "no.reply.agileware@gmail.com",
       From: "mchaconc1@ucenfotec.ac.cr",

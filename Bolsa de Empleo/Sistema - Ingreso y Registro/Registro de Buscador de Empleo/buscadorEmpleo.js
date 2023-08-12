@@ -13,6 +13,7 @@ function getData(e) {
     e.preventDefault(e.target);
     let formData = new FormData(e.target);
     let newUser = new User(formData);
+    newUser.setRol('buscador');
     guardarRegistro(newUser);
 }
 
@@ -24,7 +25,7 @@ function guardarRegistro(newUser){
                 title: "Usuario registrado con exito",
                 icon: "success"
             }).then(result => {
-                location.href = "/Bolsa de Empleo/Sistema - Ingreso y Registro/Inicio de sesion/inicioSesion.html"
+                location.href = "/Bolsa de Empleo/Sistema - Ingreso y Registro/Inicio de sesion/inicioSesion.html";
             });
         }).catch(err => {
             Swal.fire({
