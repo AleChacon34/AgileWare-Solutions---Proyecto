@@ -11,12 +11,12 @@ export class OfertaService{
         return axios.get(OfertaService.#URL+"/ofertas/" + idCode);   
     };
 
-    static updateOne(idCode, data){
-        return axios.put(OfertaService.#URL+"/ofertas/" + idCode, {
-            seccionTitulo: data.seccionTitulo,
-            seccionRequerimientos: data.seccionRequerimientos,
-            seccionDescripcion: data.seccionDescripcion,
-            estadoOferta: data.estadoOferta,
+    static updateOne(idCode, seccionTitulo, seccionRequerimientos, seccionDescripcion, estadoOferta){
+        return axios.put(`${OfertaService.#URL}/ofertas/${idCode}`, {
+            seccionTitulo: seccionTitulo,
+            seccionRequerimientos: seccionRequerimientos,
+            seccionDescripcion: seccionDescripcion,
+            estadoOferta: estadoOferta,
         });
     }
 

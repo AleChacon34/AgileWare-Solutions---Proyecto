@@ -30,8 +30,8 @@ async function postOferta(request, response){
 //UPDATE(PUT)
 async function updateOferta(request, response){
     const {body} = request;
-    const {_id} = body;
-    const data = await OfertaModel.findOneAndUpdate({_id}, body);
+    const { id } = request.params;
+    const data = await OfertaModel.findByIdAndUpdate(id, body);
     response.send({data});
 };
 

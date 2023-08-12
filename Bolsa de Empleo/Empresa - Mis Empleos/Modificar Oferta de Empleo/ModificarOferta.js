@@ -8,13 +8,14 @@ import {OfertaService} from "../../services/consultarOferta.services.js";
 
 document.addEventListener("DOMContentLoaded", () =>{
     let eliminarBtn = document.querySelector("#eliminarBtn");
-    eliminarBtn.addEventListener("click");
-    let form = document.querySelector("ofertaForm");
+    eliminarBtn.addEventListener("click", eliminarOferta);
     let id = localStorage.getItem('currentIDs');
     OfertaService.findOne(id).then((response)=>{
         let data = response.data.data;
         verOferta(data);
     })
+    let form = document.querySelector("#ofertaForm");
+    form.addEventListener("submit", actualizarOferta);
 });
 
 function verOferta(data){
@@ -32,7 +33,8 @@ function verOferta(data){
 
 
 // Funcion para actualizar los datos de la Oferta
-function actualizarOferta(){
+function actualizarOferta(e, id){
+    e.preventDefault(e.target);
     Swal.fire({
         icon: "warning",
         title: 'Actualización de Oferta',
@@ -41,15 +43,23 @@ function actualizarOferta(){
         showCancelButton: true,
         cancelButtonText: "Cancelar",
     }).then((result) => {
+        let id = localStorage.getItem('currentIDs');
+        let seccionTitulo = document.querySelector("#seccionTitulo").value;
+        let seccionRequerimientos = document.querySelector("#seccionRequerimientos").value;
+        let seccionDescripcion = document.querySelector("#seccionDescripcion").value;
+        let estadoOferta = document.querySelector("#estadoOferta").value;
+        console.log(id, seccionTitulo, seccionRequerimientos, seccionDescripcion);
+        OfertaService.updateOne(id, seccionTitulo, seccionRequerimientos, seccionDescripcion, estadoOferta);
+        console.log(id, seccionTitulo, seccionRequerimientos, seccionDescripcion)
         Swal.fire({
             icon: "success",
             title: "Oferta actualizada con éxito",
             timer: 2500,
-        }).then(() =>{
-            if(result.isConfirmed){
-                window.location.replace("/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarOferta.html");
-            };
-        });
+        })
+           
+            // if(result.isConfirmed){
+            //     window.location.replace("/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarOferta.html");
+            // };
     });
 };
 
