@@ -15,7 +15,7 @@ function getOfertas(){
 }
 
 function crearSecciones(data){
-    if (data.visibilidad === "Activa"){
+    if (data.visibilidad === "Activa" && data.publicador === "Empresa"){
         //Crear DIV principal con id
         let addDiv = document.createElement('div');
         //Crear section del div
