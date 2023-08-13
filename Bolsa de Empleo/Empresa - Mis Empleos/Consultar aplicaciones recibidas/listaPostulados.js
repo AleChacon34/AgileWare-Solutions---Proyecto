@@ -7,29 +7,6 @@ document.addEventListener("DOMContentLoaded", () =>{
     genBtn.addEventListener('click', imprimirReporte);
 });
 
-// function generarReporte(data){
-
-//     switch (opcionSeleccion.value){
-//         case "OFERTAS":
-//             imprimirReporte(data, opcionSeleccion);
-//             break;
-//         case "COLABORADORES":
-//             imprimirReporte(datosUsuariosC, opcionSeleccion);
-//             break;
-//         case "BUSCADORES DE EMPLEO":
-//             imprimirReporte(datosUsuariosB, opcionSeleccion);
-//             break;
-//         case "POSTULACIONES DE EMPLEO":
-//             imprimirReporte(datosUsuariosP, opcionSeleccion);
-//             break;
-//         case "INVITACIONES DE EMPLEO":
-//             imprimirReporte(datosInvitaciones, opcionSeleccion);
-//             break;
-//         default:
-//             break;
-//     }
-// }
-
 function imprimirReporte(){
     OfertaService.findAll().then((response)=>{
         let data = response.data.data;
