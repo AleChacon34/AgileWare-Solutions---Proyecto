@@ -12,23 +12,20 @@ function registrarTipoUsuario(e){
     switch (rolUsuario.value){
         case "Una empresa que busca ofrecer empleos en el plataforma...":
             localStorage.setItem("rolUsuario", "Empresa");
-            console.log(localStorage.getItem("rolUsuario"))
+            window.location.href = "../../Registro de Empresa/registroEmpresa.html"
             break;
         case "Un buscador de empleo...":
             localStorage.setItem("rolUsuario", "Buscador");
-            console.log(localStorage.getItem("rolUsuario"))
+            window.location.href = "../../Registro de Buscador de Empleo/buscadorEmpleo.html"
             break;
         case "El manager de una empresa...":
             localStorage.setItem("rolUsuario", "Manager");
-            console.log(localStorage.getItem("rolUsuario"))
             break; 
         case "El reclutador de una empresa...":
             localStorage.setItem("rolUsuario", "Reclutador");
-            console.log(localStorage.getItem("rolUsuario"))
             break;  
         case "El administrador de una empresa...":
             localStorage.setItem("rolUsuario", "Administrador");
-            console.log(localStorage.getItem("rolUsuario"))
             break; 
     }   
 }

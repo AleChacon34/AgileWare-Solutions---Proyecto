@@ -1,0 +1,36 @@
+html, body{
+    width: 100vw;
+    height: 100vh;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main{
+    height: 100%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mainForm{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#mainForm select{
+    font-size: large;
+}
+
+form button{
+    font-size: medium;
+    width: 200px;
+    height: 25px;
+}
