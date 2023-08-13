@@ -5,7 +5,7 @@ export class OfertaService{
 
     // Get ofertas
     static findAll(){
-        return axios.get(OfertaService.#URL+"/ofertas", {params: {visibilidad: "Activa"}})
+        return axios.get(`${OfertaService.#URL}/ofertas/`);
     };
 
     //Get one oferta
@@ -18,7 +18,7 @@ export class OfertaService{
         return axios.delete(OfertaService.#URL+"/ofertas/" + idCode);
     }
 
-    static updateOne(idCode, seccionTitulo, seccionRequerimientos, seccionDescripcion, estadoOferta){
+    static updateOne(idCode, seccionTitulo, seccionRequerimientos, seccionDescripcion, estadoOferta, visibilidad){
         return axios.put(`${OfertaService.#URL}/ofertas/${idCode}`, {
             seccionTitulo: seccionTitulo,
             seccionRequerimientos: seccionRequerimientos,

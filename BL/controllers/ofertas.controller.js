@@ -38,8 +38,8 @@ async function updateOferta(request, response){
 
 async function deleteOferta(request, response){
     const {body} = request;
-    const {_id} = body;
-    const data = await OfertaModel.findOneAndDelete({_id});
+    const { id } = request.params;
+    const data = await OfertaModel.findByIdAndDelete(id, body);
     response.send({data});
 };
 
