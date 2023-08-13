@@ -67,18 +67,20 @@ function eliminarOferta(){
         showCancelButton: true,
         cancelButtonText: "Cancelar",
     }).then((result) => {
-        let id = localStorage.getItem('currentIDs');
-        let seccionTitulo = document.querySelector("#seccionTitulo").value;
-        let seccionRequerimientos = document.querySelector("#seccionRequerimientos").value;
-        let seccionDescripcion = document.querySelector("#seccionDescripcion").value;
-        let estadoOferta = document.querySelector("#estadoOferta").value;
-        let visibilidad =  "Inactiva"
-        OfertaService.updateOne(id, seccionTitulo, seccionRequerimientos, seccionDescripcion, estadoOferta, visibilidad);
-        Swal.fire({
-            icon: "success",
-            title: "Oferta eliminada con éxito",
-        }).then(()=>{
-                window.location.replace("/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarListaOfertas.html");
-            });
+        if (result.isConfirmed){
+            let id = localStorage.getItem('currentIDs');
+            let seccionTitulo = document.querySelector("#seccionTitulo").value;
+            let seccionRequerimientos = document.querySelector("#seccionRequerimientos").value;
+            let seccionDescripcion = document.querySelector("#seccionDescripcion").value;
+            let estadoOferta = document.querySelector("#estadoOferta").value;
+            let visibilidad =  "Inactiva"
+            OfertaService.updateOne(id, seccionTitulo, seccionRequerimientos, seccionDescripcion, estadoOferta, visibilidad);
+            Swal.fire({
+                icon: "success",
+                title: "Oferta eliminada con éxito",
+            }).then(()=>{
+                    window.location.replace("/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarListaOfertas.html");
+                });
+        }    
     });
 };
