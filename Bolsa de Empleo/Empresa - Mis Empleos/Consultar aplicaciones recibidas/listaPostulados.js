@@ -1,6 +1,7 @@
 'use strict';
 
 import { OfertaService } from "../../services/consultarOferta.services.js"
+import { UserService } from "../../services/user.service.js";
 
 document.addEventListener("DOMContentLoaded", () =>{
     let genBtn = document.querySelector("button[name='generar-reporte']");
@@ -8,14 +9,14 @@ document.addEventListener("DOMContentLoaded", () =>{
 });
 
 function imprimirReporte(){
+    let opcionSeleccion = document.querySelector("#seleccion-reporte");
+
     OfertaService.findAll().then((response)=>{
         let data = response.data.data;
-        let opcionSeleccion = document.querySelector("#seleccion-reporte");
-        console.log(data);
-        console.log(data.visibilidad);
         //Borrar el cuerpo de la tabla ya existente en el HTML
         let crearTabla = document.querySelector(".tabla-datos tbody");
         crearTabla.innerHTML = "";
+    
         
         //Visualizar ofertas de la empresa
         if (opcionSeleccion.value === "OFERTAS"){
@@ -55,25 +56,6 @@ function imprimirReporte(){
                     row.insertCell(1).appendChild(document.createTextNode(data.seccionTitulo));
                     row.insertCell(2).appendChild(document.createTextNode(data.createdAt));
                     row.insertCell(3).appendChild(document.createTextNode(data.estadoOferta));   
-                }
-            });
-        };
-
-        //Visualizar colaboradores
-        if (opcionSeleccion.value === "BUSCADORES DE EMPLEO"){
-            //Crear el Table Header
-            let headRowO = crearTabla.insertRow()
-            headRowO.insertCell(0).outerHTML ="<th>ID</th>";
-            headRowO.insertCell(1).outerHTML ="<th>Nombre del buscador</th>";
-            headRowO.insertCell(2).outerHTML ="<th>Correo electrónico</th>";
-
-            data.forEach((data)=>{
-                //Crear las filas con la informacion de los objetos
-                if (data.visibilidad === "Activa" && data.publicador === "Empresa"){
-                    let row = crearTabla.insertRow();
-                    row.insertCell(0).appendChild(document.createTextNode(data._id));
-                    row.insertCell(1).appendChild(document.createTextNode(data.seccionTitulo));
-                    row.insertCell(2).appendChild(document.createTextNode(data.createdAt));
                 }
             });
         };
@@ -120,4 +102,31 @@ function imprimirReporte(){
             });
         };
     });
+
+    //Visualizar colaboradores
+    if (opcionSeleccion.value === "BUSCADORES DE EMPLEO"){
+        UserService.getUsers().then((response)=>{
+            let crearTabla = document.querySelector(".tabla-datos tbody");
+            crearTabla.innerHTML = "";
+            let data = response.data.data
+             //Crear el Table Header
+            let headRowO = crearTabla.insertRow()
+            headRowO.insertCell(0).outerHTML ="<th>ID</th>";
+            headRowO.insertCell(1).outerHTML ="<th>Nombre del buscador</th>";
+            headRowO.insertCell(2).outerHTML ="<th>Correo electrónico</th>";
+
+            data.forEach((data)=>{
+                console.log(data.visibilidad)
+                //Crear las filas con la informacion de los objetos
+                if (data.visibilidad === "Activa" && data.rol === "Manager" && data.pertenencia === "Plataforma"){
+                    let row = crearTabla.insertRow();
+                    row.insertCell(0).appendChild(document.createTextNode(data._id));
+                    row.insertCell(1).appendChild(document.createTextNode(data.nombre + " " + data.apellidos));
+                    row.insertCell(2).appendChild(document.createTextNode(data.correo));
+                }
+            });
+        })   
+    };
+
+    
 }
