@@ -17,7 +17,7 @@ router.get('/:id', ofertasController.getOneOferta);
 router.post("/", ofertasController.postOferta);
 
 //Update(put) Oferta
-router.put("/", ofertasController.updateOferta);
+router.put("/:id", ofertasController.updateOferta);
 
 //Delete Oferta
 router.delete("/", ofertasController.deleteOferta);

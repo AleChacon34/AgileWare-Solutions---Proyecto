@@ -3,20 +3,28 @@
 export class OfertaService{
     static #URL = "http://localhost:3000";
 
+    // Get ofertas
     static findAll(){
-        return axios.get(OfertaService.#URL+"/ofertas")
+        return axios.get(`${OfertaService.#URL}/ofertas/`);
     };
 
+    //Get one oferta
     static findOne(idCode){
         return axios.get(OfertaService.#URL+"/ofertas/" + idCode);   
     };
 
-    static updateOne(idCode, data){
-        return axios.put(OfertaService.#URL+"/ofertas/" + idCode, {
-            seccionTitulo: data.seccionTitulo,
-            seccionRequerimientos: data.seccionRequerimientos,
-            seccionDescripcion: data.seccionDescripcion,
-            estadoOferta: data.estadoOferta,
+    //Delete one oferta
+    static deleteOne(idCode){
+        return axios.delete(OfertaService.#URL+"/ofertas/" + idCode);
+    }
+
+    static updateOne(idCode, seccionTitulo, seccionRequerimientos, seccionDescripcion, estadoOferta, visibilidad){
+        return axios.put(`${OfertaService.#URL}/ofertas/${idCode}`, {
+            seccionTitulo: seccionTitulo,
+            seccionRequerimientos: seccionRequerimientos,
+            seccionDescripcion: seccionDescripcion,
+            estadoOferta: estadoOferta,
+            visibilidad: visibilidad
         });
     }
 

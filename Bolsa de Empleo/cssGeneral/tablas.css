@@ -11,6 +11,9 @@
 .tabla-datos th {
     background-color: #92c7a3
 }
+.tabla-datos td {
+    font-size: medium;
+}
 
 #seleccion-reporte{
     width: 200px;

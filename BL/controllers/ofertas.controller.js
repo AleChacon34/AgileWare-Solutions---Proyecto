@@ -1,6 +1,5 @@
     'use strict';
 
-const ofertasModel = require("../models/ofertas.model");
 const OfertaModel = require("../models/ofertas.model");
 
 // Crear funciones de CRUD
@@ -30,8 +29,8 @@ async function postOferta(request, response){
 //UPDATE(PUT)
 async function updateOferta(request, response){
     const {body} = request;
-    const {_id} = body;
-    const data = await OfertaModel.findOneAndUpdate({_id}, body);
+    const { id } = request.params;
+    const data = await OfertaModel.findByIdAndUpdate(id, body);
     response.send({data});
 };
 
@@ -39,12 +38,11 @@ async function updateOferta(request, response){
 
 async function deleteOferta(request, response){
     const {body} = request;
-    const {_id} = body;
-    const data = await OfertaModel.findOneAndDelete({_id});
+    const { id } = request.params;
+    const data = await OfertaModel.findByIdAndDelete(id, body);
     response.send({data});
 };
 
 
 
 module.exports = {getOfertas, postOferta, getOneOferta, updateOferta, deleteOferta};
-module.exports = {getOfertas, getOneOferta, postOferta, updateOferta, deleteOferta};
