@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     form.addEventListener("submit", actualizarOferta);
 });
 
+// Funcion para desplegar la informacion de la oferta seleccionada
 function verOferta(data){
     let seccionTitulo = document.querySelector("#seccionTitulo");
     seccionTitulo.value = data.seccionTitulo;
@@ -30,10 +31,8 @@ function verOferta(data){
 }
 
 
-
-
 // Funcion para actualizar los datos de la Oferta
-function actualizarOferta(e, id){
+function actualizarOferta(e){
     e.preventDefault(e.target);
     Swal.fire({
         icon: "warning",
@@ -48,22 +47,17 @@ function actualizarOferta(e, id){
         let seccionRequerimientos = document.querySelector("#seccionRequerimientos").value;
         let seccionDescripcion = document.querySelector("#seccionDescripcion").value;
         let estadoOferta = document.querySelector("#estadoOferta").value;
-        console.log(id, seccionTitulo, seccionRequerimientos, seccionDescripcion);
         OfertaService.updateOne(id, seccionTitulo, seccionRequerimientos, seccionDescripcion, estadoOferta);
-        console.log(id, seccionTitulo, seccionRequerimientos, seccionDescripcion)
         Swal.fire({
             icon: "success",
             title: "Oferta actualizada con éxito",
-            timer: 2500,
-        })
-           
-            // if(result.isConfirmed){
-            //     window.location.replace("/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarOferta.html");
-            // };
+        }).then(()=>{
+                window.location.replace("/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarOferta.html");
+            });
     });
 };
 
-// Funcion para eliminar la Oferta
+// Funcion para cambiar la visibilidad de una oferta a Inactiva (eliminacion logica)
 function eliminarOferta(){
     Swal.fire({
         icon: "warning",
@@ -73,15 +67,19 @@ function eliminarOferta(){
         showCancelButton: true,
         cancelButtonText: "Cancelar",
     }).then((result) => {
+        let id = localStorage.getItem('currentIDs');
+        let seccionTitulo = document.querySelector("#seccionTitulo").value;
+        let seccionRequerimientos = document.querySelector("#seccionRequerimientos").value;
+        let seccionDescripcion = document.querySelector("#seccionDescripcion").value;
+        let estadoOferta = document.querySelector("#estadoOferta").value;
+        let visibilidad =  "Inactiva"
+        OfertaService.updateOne(id, seccionTitulo, seccionRequerimientos, seccionDescripcion, estadoOferta, visibilidad);
         Swal.fire({
             icon: "success",
             title: "Oferta eliminada con éxito",
-            timer: 2500,
-        }).then(() =>{
-            if(result.isConfirmed){
-                window.location.replace("/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarOferta.html");
-            };
-        });
+        }).then(()=>{
+                window.location.replace("/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarListaOfertas.html");
+            });
     });
 };
 

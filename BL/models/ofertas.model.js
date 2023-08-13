@@ -24,6 +24,12 @@ const OfertaModel = mongoose.Schema(
         {
             type: String
         },
+
+        visibilidad:
+        {
+            type: String,
+            default: "Activa"
+        }
     },
 
     {

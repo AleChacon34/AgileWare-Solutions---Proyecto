@@ -3,13 +3,20 @@
 export class OfertaService{
     static #URL = "http://localhost:3000";
 
+    // Get ofertas
     static findAll(){
-        return axios.get(OfertaService.#URL+"/ofertas")
+        return axios.get(OfertaService.#URL+"/ofertas", {params: {visibilidad: "Activa"}})
     };
 
+    //Get one oferta
     static findOne(idCode){
         return axios.get(OfertaService.#URL+"/ofertas/" + idCode);   
     };
+
+    //Delete one oferta
+    static deleteOne(idCode){
+        return axios.delete(OfertaService.#URL+"/ofertas/" + idCode);
+    }
 
     static updateOne(idCode, seccionTitulo, seccionRequerimientos, seccionDescripcion, estadoOferta){
         return axios.put(`${OfertaService.#URL}/ofertas/${idCode}`, {
@@ -17,6 +24,7 @@ export class OfertaService{
             seccionRequerimientos: seccionRequerimientos,
             seccionDescripcion: seccionDescripcion,
             estadoOferta: estadoOferta,
+            visibilidad: visibilidad
         });
     }
 
