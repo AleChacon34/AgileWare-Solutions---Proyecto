@@ -20,12 +20,15 @@ function registrarTipoUsuario(e){
             break;
         case "El manager de una empresa...":
             localStorage.setItem("rolUsuario", "Manager");
+            window.location.href = "../../Registro de Usuario Empresarial Invitacion/registrousuEmpresaria.html"
             break; 
         case "El reclutador de una empresa...":
             localStorage.setItem("rolUsuario", "Reclutador");
+            window.location.href = "../../Registro de Usuario Empresarial Invitacion/registrousuEmpresaria.html"
             break;  
         case "El administrador de una empresa...":
             localStorage.setItem("rolUsuario", "Administrador");
+            window.location.href = "../../Registro de Usuario Empresarial Invitacion/registrousuEmpresaria.html"
             break; 
     }   
 }
