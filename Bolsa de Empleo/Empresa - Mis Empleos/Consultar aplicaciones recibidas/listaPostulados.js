@@ -1,158 +1,146 @@
 'use strict';
 
+import { OfertaService } from "../../services/consultarOferta.services.js"
+
 document.addEventListener("DOMContentLoaded", () =>{
     let genBtn = document.querySelector("button[name='generar-reporte']");
-    genBtn.addEventListener('click', generarReporte);
+    genBtn.addEventListener('click', imprimirReporte);
 });
 
-function generarReporte(){
-    let datosUsuariosO = [
-        {id: "#123", titulo: "Ingeniería Mecatrónica", estado: "Pública"},
-        {id: "#321", titulo: "Diseño Web", estado: "Oculta"},
-        {id: "#213", titulo: "Data Analysis", estado: "Pública"}
-    ];
+// function generarReporte(data){
 
-    let datosUsuariosC = [
-        {nombre: "Jonathan", apellidos: "Mora Herra", correoElectronico: "jmorah@ucenfotec.ac.cr", rol: "Aministrador"},
-        {nombre: "Marco", apellidos: "Mora Herra", correoElectronico: "jmorah@ucenfotec.ac.cr", rol: "Manager"},
-        {nombre: "Cristopher", apellidos: "Mora Herra", correoElectronico: "jmorah@ucenfotec.ac.cr", rol: "Reclutador"}
-    ];
+//     switch (opcionSeleccion.value){
+//         case "OFERTAS":
+//             imprimirReporte(data, opcionSeleccion);
+//             break;
+//         case "COLABORADORES":
+//             imprimirReporte(datosUsuariosC, opcionSeleccion);
+//             break;
+//         case "BUSCADORES DE EMPLEO":
+//             imprimirReporte(datosUsuariosB, opcionSeleccion);
+//             break;
+//         case "POSTULACIONES DE EMPLEO":
+//             imprimirReporte(datosUsuariosP, opcionSeleccion);
+//             break;
+//         case "INVITACIONES DE EMPLEO":
+//             imprimirReporte(datosInvitaciones, opcionSeleccion);
+//             break;
+//         default:
+//             break;
+//     }
+// }
 
-    let datosUsuariosB = [
-        {nombre: "Jonathan", apellidos: "Mora Herra", correoElectronico: "jmorah@ucenfotec.ac.cr", estado: "Enviada", numeroTelefonico: "8888-8888"},
-        {nombre: "Marco", apellidos: "Mora Herra", correoElectronico: "jmorah@ucenfotec.ac.cr", estado: "Enviada", numeroTelefonico: "8888-8888"},
-        {nombre: "Cristopher", apellidos: "Mora Herra", correoElectronico: "jmorah@ucenfotec.ac.cr", estado: "Enviada", numeroTelefonico: "8888-8888"}
-    ];
-
-    let datosUsuariosP = [
-        {nombre: "Jonathan", apellidos: "Mora Herra", correoElectronico: "jmorah@ucenfotec.ac.cr", postulacion: "titulo de la oferta", estado: "Enviada"},
-        {nombre: "Marco", apellidos: "Mora Herra", correoElectronico: "jmorah@ucenfotec.ac.cr", postulacion: "titulo de la oferta", estado: "En revisión"},
-        {nombre: "Cristopher", apellidos: "Mora Herra", correoElectronico: "jmorah@ucenfotec.ac.cr", postulacion: "titulo de la oferta", estado: "Denegada"}
-    ];
-
-    let datosInvitaciones= [
-        {id: "#123", correoElectronicoInvitado: "usuario@dominio.com", emisor: "Nombre emisor", rol: "Reclutador"},
-        {id: "#321", correoElectronicoInvitado: "usuario@dominio.com", emisor: "Nombre emisor", rol: "Manager"},
-        {id: "#213", correoElectronicoInvitado: "usuario@dominio.com", emisor: "Nombre emisor", rol: "Administrador"}
-    ]; 
-
-    let opcionSeleccion = document.querySelector("#seleccion-reporte");
-
-    switch (opcionSeleccion.value){
-        case "OFERTAS":
-            imprimirReporte(datosUsuariosO, opcionSeleccion);
-            break;
-        case "COLABORADORES":
-            imprimirReporte(datosUsuariosC, opcionSeleccion);
-            break;
-        case "BUSCADORES DE EMPLEO":
-            imprimirReporte(datosUsuariosB, opcionSeleccion);
-            break;
-        case "POSTULACIONES DE EMPLEO":
-            imprimirReporte(datosUsuariosP, opcionSeleccion);
-            break;
-        case "INVITACIONES DE EMPLEO":
-            imprimirReporte(datosInvitaciones, opcionSeleccion);
-            break;
-        default:
-            break;
-    }
-}
-
-function imprimirReporte(listaDatos, opcion){
-    //Borrar el cuerpo de la tabla ya existente en el HTML
-    let crearTabla = document.querySelector(".tabla-datos tbody");
-    crearTabla.innerHTML = "";
-
-    // Diferentes tipos de reportes
-    switch (opcion.value){
-        case "OFERTAS":
+function imprimirReporte(){
+    OfertaService.findAll().then((response)=>{
+        let data = response.data.data;
+        let opcionSeleccion = document.querySelector("#seleccion-reporte");
+        console.log(data);
+        console.log(data.visibilidad);
+        //Borrar el cuerpo de la tabla ya existente en el HTML
+        let crearTabla = document.querySelector(".tabla-datos tbody");
+        crearTabla.innerHTML = "";
+        
+        //Visualizar ofertas de la empresa
+        if (opcionSeleccion.value === "OFERTAS"){
             //Crear el Table Header
-            let headRowO = crearTabla.insertRow(0)
-            headRowO.insertCell(0).outerHTML ="<th>ID de la Oferta</th>";
-            headRowO.insertCell(1).outerHTML ="<th>Título</th>";
-            headRowO.insertCell(2).outerHTML ="<th>Estado</th>";
+            let headRowO = crearTabla.insertRow()
+            headRowO.insertCell(0).outerHTML ="<th>ID</th>";
+            headRowO.insertCell(1).outerHTML ="<th>Título de la oferta</th>";
+            headRowO.insertCell(2).outerHTML ="<th>Fecha de creación</th>";
+            headRowO.insertCell(3).outerHTML ="<th>Estado</th>";
 
-            //Crear las filas con la informacion de los objetos
-            for(let dato = 0;  dato < listaDatos.length; dato++){
-                let row = crearTabla.insertRow();
-                row.insertCell(0).appendChild(document.createTextNode(listaDatos[dato].id));
-                row.insertCell(1).appendChild(document.createTextNode(listaDatos[dato].titulo));
-                row.insertCell(2).appendChild(document.createTextNode(listaDatos[dato].estado));
-            }
-            break;
-        case "COLABORADORES":
+            data.forEach((data)=>{
+                //Crear las filas con la informacion de los objetos
+                if (data.visibilidad === "Activa" && data.publicador === "Empresa"){
+                    let row = crearTabla.insertRow();
+                    row.insertCell(0).appendChild(document.createTextNode(data._id));
+                    row.insertCell(1).appendChild(document.createTextNode(data.seccionTitulo));
+                    row.insertCell(2).appendChild(document.createTextNode(data.createdAt));
+                    row.insertCell(3).appendChild(document.createTextNode(data.estadoOferta));   
+                }
+            });
+        }  
+
+        //Visualizar colaboradores
+        if (opcionSeleccion.value === "COLABORADORES"){
             //Crear el Table Header
-            let headRowC = crearTabla.insertRow(0)
-            headRowC.insertCell(0).outerHTML ="<th>Nombre</th>";
-            headRowC.insertCell(1).outerHTML ="<th>Apellidos</th>";
-            headRowC.insertCell(2).outerHTML ="<th>Correo Electrónico</th>";
-            headRowC.insertCell(3).outerHTML ="<th>Rol</th>";
+            let headRowO = crearTabla.insertRow()
+            headRowO.insertCell(0).outerHTML ="<th>ID</th>";
+            headRowO.insertCell(1).outerHTML ="<th>Nombre del colaborador</th>";
+            headRowO.insertCell(2).outerHTML ="<th>Fecha de registro</th>";
+            headRowO.insertCell(3).outerHTML ="<th>Puesto empresarial</th>";
 
-            //Crear las filas con la informacion de los objetos
-            for(let dato = 0;  dato < listaDatos.length; dato++){
-                let row = crearTabla.insertRow();
-                row.insertCell(0).appendChild(document.createTextNode(listaDatos[dato].nombre));
-                row.insertCell(1).appendChild(document.createTextNode(listaDatos[dato].apellidos));
-                row.insertCell(2).appendChild(document.createTextNode(listaDatos[dato].correoElectronico));
-                row.insertCell(3).appendChild(document.createTextNode(listaDatos[dato].rol));
-            }
-            break;
-        case "BUSCADORES DE EMPLEO":
+            data.forEach((data)=>{
+                //Crear las filas con la informacion de los objetos
+                if (data.visibilidad === "Activa" && data.publicador === "Empresa"){
+                    let row = crearTabla.insertRow();
+                    row.insertCell(0).appendChild(document.createTextNode(data._id));
+                    row.insertCell(1).appendChild(document.createTextNode(data.seccionTitulo));
+                    row.insertCell(2).appendChild(document.createTextNode(data.createdAt));
+                    row.insertCell(3).appendChild(document.createTextNode(data.estadoOferta));   
+                }
+            });
+        };
+
+        //Visualizar colaboradores
+        if (opcionSeleccion.value === "BUSCADORES DE EMPLEO"){
             //Crear el Table Header
-            let headRowB = crearTabla.insertRow(0)
-            headRowB.insertCell(0).outerHTML ="<th>Nombre</th>";
-            headRowB.insertCell(1).outerHTML ="<th>Apellidos</th>";
-            headRowB.insertCell(2).outerHTML ="<th>Correo Electrónico</th>";
-            headRowB.insertCell(3).outerHTML ="<th>Número de teléfono</th>";
+            let headRowO = crearTabla.insertRow()
+            headRowO.insertCell(0).outerHTML ="<th>ID</th>";
+            headRowO.insertCell(1).outerHTML ="<th>Nombre del buscador</th>";
+            headRowO.insertCell(2).outerHTML ="<th>Correo electrónico</th>";
 
-            //Crear las filas con la informacion de los objetos
-            for(let dato = 0;  dato < listaDatos.length; dato++){
-                let row = crearTabla.insertRow();
-                row.insertCell(0).appendChild(document.createTextNode(listaDatos[dato].nombre));
-                row.insertCell(1).appendChild(document.createTextNode(listaDatos[dato].apellidos));
-                row.insertCell(2).appendChild(document.createTextNode(listaDatos[dato].correoElectronico));
-                row.insertCell(3).appendChild(document.createTextNode(listaDatos[dato].numeroTelefonico));
-            }
-            break;
-        case "POSTULACIONES DE EMPLEO":
+            data.forEach((data)=>{
+                //Crear las filas con la informacion de los objetos
+                if (data.visibilidad === "Activa" && data.publicador === "Empresa"){
+                    let row = crearTabla.insertRow();
+                    row.insertCell(0).appendChild(document.createTextNode(data._id));
+                    row.insertCell(1).appendChild(document.createTextNode(data.seccionTitulo));
+                    row.insertCell(2).appendChild(document.createTextNode(data.createdAt));
+                }
+            });
+        };
+
+        //Visualizar colaboradores
+        if (opcionSeleccion.value === "POSTULACIONES DE EMPLEO"){
             //Crear el Table Header
-            let headRowP = crearTabla.insertRow(0)
-            headRowP.insertCell(0).outerHTML ="<th>Nombre</th>";
-            headRowP.insertCell(1).outerHTML ="<th>Apellidos</th>";
-            headRowP.insertCell(2).outerHTML ="<th>Correo Electrónico</th>";
-            headRowP.insertCell(3).outerHTML ="<th>Oferta Postulada</th>";
-            headRowP.insertCell(4).outerHTML ="<th>Estado</th>";
+            let headRowO = crearTabla.insertRow()
+            headRowO.insertCell(0).outerHTML ="<th>ID</th>";
+            headRowO.insertCell(1).outerHTML ="<th>Nombre del buscador</th>";
+            headRowO.insertCell(2).outerHTML ="<th>Titulo de la oferta</th>";
+            headRowO.insertCell(3).outerHTML ="<th>Estado de la postulación</th>";
 
-            //Crear las filas con la informacion de los objetos
-            for(let dato = 0;  dato < listaDatos.length; dato++){
-                let row = crearTabla.insertRow();
-                row.insertCell(0).appendChild(document.createTextNode(listaDatos[dato].nombre));
-                row.insertCell(1).appendChild(document.createTextNode(listaDatos[dato].apellidos));
-                row.insertCell(2).appendChild(document.createTextNode(listaDatos[dato].correoElectronico));
-                row.insertCell(3).appendChild(document.createTextNode(listaDatos[dato].postulacion));
-                row.insertCell(4).appendChild(document.createTextNode(listaDatos[dato].estado));
-            }
-            break;
-        case "INVITACIONES DE EMPLEO":
+            data.forEach((data)=>{
+                //Crear las filas con la informacion de los objetos
+                if (data.visibilidad === "Activa" && data.publicador === "Empresa"){
+                    let row = crearTabla.insertRow();
+                    row.insertCell(0).appendChild(document.createTextNode(data._id));
+                    row.insertCell(1).appendChild(document.createTextNode(data.seccionTitulo));
+                    row.insertCell(2).appendChild(document.createTextNode(data.createdAt));
+                    row.insertCell(3).appendChild(document.createTextNode(data.estadoOferta));   
+                }
+            });
+        };
+
+        //Visualizar colaboradores
+        if (opcionSeleccion.value === "INVITACIONES"){
             //Crear el Table Header
-            let headRowI = crearTabla.insertRow(0)
-            headRowI.insertCell(0).outerHTML ="<th>ID Oferta</th>";
-            headRowI.insertCell(1).outerHTML ="<th>Correo del Invitado</th>";
-            headRowI.insertCell(2).outerHTML ="<th>Emisor de la Invitación</th>";
-            headRowI.insertCell(3).outerHTML ="<th>Rol del Emisor</th>";
+            let headRowO = crearTabla.insertRow()
+            headRowO.insertCell(0).outerHTML ="<th>ID</th>";
+            headRowO.insertCell(1).outerHTML ="<th>Puesto del usuario</th>";
+            headRowO.insertCell(2).outerHTML ="<th>Fecha de envío</th>";
+            headRowO.insertCell(3).outerHTML ="<th>Correo Electrónico</th>";
 
-            //Crear las filas con la informacion de los objetos
-            for(let dato = 0;  dato < listaDatos.length; dato++){
-                let row = crearTabla.insertRow();
-                row.insertCell(0).appendChild(document.createTextNode(listaDatos[dato].id));
-                row.insertCell(1).appendChild(document.createTextNode(listaDatos[dato].correoElectronicoInvitado));
-                row.insertCell(2).appendChild(document.createTextNode(listaDatos[dato].emisor));
-                row.insertCell(3).appendChild(document.createTextNode(listaDatos[dato].rol));
-            }
-            break;
-        default:
-            break;
-    }
-   
+            data.forEach((data)=>{
+                //Crear las filas con la informacion de los objetos
+                if (data.visibilidad === "Activa" && data.publicador === "Empresa"){
+                    let row = crearTabla.insertRow();
+                    row.insertCell(0).appendChild(document.createTextNode(data._id));
+                    row.insertCell(1).appendChild(document.createTextNode(data.seccionTitulo));
+                    row.insertCell(2).appendChild(document.createTextNode(data.createdAt));
+                    row.insertCell(3).appendChild(document.createTextNode(data.estadoOferta));   
+                }
+            });
+        };
+    });
 }
