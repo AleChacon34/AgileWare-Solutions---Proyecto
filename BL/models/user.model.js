@@ -24,10 +24,22 @@ const userModel = mongoose.Schema(
     },
     rol: {
       type: String,
-      default: "buscador",
+      default: "Buscador",
     },
-    fotoPerfil: {
+    foto: {
       type: Buffer,
+    },
+
+    visibilidad:
+    {
+      type: String,
+      default: "Activa"
+    },
+
+    pertenencia:
+    {
+      type: String,
+      default: "Plataforma"
     }
   },
   {

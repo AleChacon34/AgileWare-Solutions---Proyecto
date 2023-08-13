@@ -5,28 +5,55 @@
             <link rel="stylesheet" href="/Bolsa de Empleo/cssGeneral/barraInicio.css">
             <link rel="stylesheet" href= "/Bolsa de Empleo/Empresa - Mis Empleos/OfertaEmpleo.css"/>
             <script src="/Bolsa de Empleo/jsGeneral/barraNavegacionEmpresarial.js"></script>
-            <script src="/Bolsa de Empleo/Empresa - Mis Empleos/Modificar Oferta de Empleo/ModificarOferta.js"></script>            <script src="/Bolsa de Empleo/jsGeneral/SweetAlert.js"></script>
+            <script type="module" src="/Bolsa de Empleo/Empresa - Mis Empleos/Modificar Oferta de Empleo/ModificarOferta.js"></script>            <script src="/Bolsa de Empleo/jsGeneral/SweetAlert.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         </head>
         <body>
             <!-- Esta barra pertenece al perfil de Empresa o Usuario Empresarial -->
             <main>
-                <div>
-                    <!-- Este input guarda el título de la oferta de empleo -->
-                    <label for = "seccion-titulo">TÍTULO DE LA OFERTA: </label>
-                    <input id = "seccion-titulo" type = "text" maxlength="75" minlength="25" placeholder="Nombre actual de la Oferta(...)">
-                </div>
-                <div>
-                    <!-- Esta área de texto guarda los datos de la oferta de empleo -->
-                    <label for = "seccion-datos"></label>
-                    <!-- Esta área de texto guarda los datos de la oferta de empleo -->
-                    <p id = "seccionDatos" name = "Datos de la oferta" maxlength="3500" minlength="500" placeholder= "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos facere ipsa ipsam quod neque esse sed a quo dignissimos modi? Beatae culpa minima enim sapiente in ullam quos quidem quisquam."></p>
-                </div>
-                <div class = "buttons">
-                    <button id="actualizar-btn" class="btns" type="submit">ACTUALIZAR OFERTA</button>
-                    <button id="eliminar-btn" class="btns" type="submit">ELIMINAR OFERTA</button>
-                    <button id="publicar-btn" class="btns" type="submit">PUBLICAR OFERTA</button>
-                    <button id="ocultar-btn" class="btns" type="submit">OCULTAR OFERTA</button>
-                </div>
+                <form id="ofertaForm">
+                    <div>
+                      <!-- Este input guarda el título de la oferta de empleo -->
+                      <label for="seccionTitulo">TÍTULO DE LA OFERTA: </label>
+                      <input
+                        id="seccionTitulo"
+                        name = "seccionTitulo"
+                        type="text"
+                        maxlength="75"
+                        minlength="5"
+                      />
+                    </div>
+                    <select id="estadoOferta" name="estadoOferta">
+                      <option>Oferta pública</option>
+                      <option>Oferta oculta</option>
+                    </select>
+                    <div>
+                      <!-- Esta área de texto guarda los requerimientos de la oferta de empleo -->
+                      <h4>Requerimientos</h4>
+                      <label for="seccionRequerimientos"></label>
+                      <textarea
+                        id="seccionRequerimientos"
+                        name="seccionRequerimientos"
+                        minlength="5"
+                        maxlength="3500"
+                      ></textarea>
+                    </div>
+                    <div>
+                      <!-- Esta área de texto guarda los datos de la oferta de empleo -->
+                      <h4>Descripción de la oferta</h4>
+                      <label for="seccionDescripcion"></label>
+                      <textarea
+                        id="seccionDescripcion"
+                        name="seccionDescripcion"
+                        minlength="50"
+                        maxlength="3500"
+                      ></textarea>
+                    </div>
+                    <div class = "buttons">
+                        <button id="actualizarBtn" class="btns" type="submit">ACTUALIZAR OFERTA</button>
+                        <button id="eliminarBtn" class="btns" type="button">ELIMINAR OFERTA</button>
+                    </div>
+                </form>  
             </main>
         </body>
     </html>

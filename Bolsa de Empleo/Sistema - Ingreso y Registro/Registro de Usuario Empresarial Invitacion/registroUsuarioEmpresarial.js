@@ -1,35 +1,29 @@
 "use-strict"
+
+import { UserEmpresa } from "../../models/userEmpresa.model.js";
+
 let listaUsuariosEmpresariales = [];
 
 
 document.addEventListener("DOMContentLoaded", () =>{
-    let registro = document.querySelector("button[name='completar-registro']");
-    registro.addEventListener("click", completarRegistro);
+    let form = document.querySelector("form");
+    form.addEventListener("submit", completarRegistro);
 })
 
-function completarRegistro(){
-    let nombre = document.querySelector("input[name='usuario-empresarial']");
-    let apellidos = document.querySelector("input[name='usuario-empresarial-apellidos']");
-    let correo = document.querySelector("input[name='correo']");
-    let telefono = document.querySelector("input[name='numero-telefono']");
-    let genero = document.querySelector("#seleccion-genero");
-    let contrasenna = document.querySelector("input[name='contrasenna']");
-    let usuario = {nombreUsuarioEmpresarial: nombre.value, apellidosUsuarioEmpresarial: apellidos.value, correoUsuarioEmpresarial: correo.value, telefonoUsuarioEmpresarial: telefono.value, generoUsuarioEmpresarial: genero.value, contrasennaUsuarioEmpresarial: contrasenna.value,};
-    console.log(usuario);
-    guardarRegistro(listaUsuariosEmpresariales, usuario);
+
+
+function completarRegistro(e){
+    e.preventDefault();
+    let formData = new FormData(e.target);
+    let newUser = new UserEmpresa(formData);
+
+    guardarRegistro(newUser);
 }
 
-function guardarRegistro(listaUsuarios, infoUsuario){
-
-    if (!((infoUsuario.nombreUsuarioEmpresarial === "") || (infoUsuario.apellidosUsuarioEmpresarial === "") || (infoUsuario.correoUsuarioEmpresarial === "") || (infoUsuario.telefonoUsuarioEmpresarial === "") || (infoUsuario.generoUsuarioEmpresarial === "") || (infoUsuario.contrasennaUsuarioEmpresarial === ""))){
-        listaUsuarios.push(infoUsuario);
-        Swal.fire({
-            icon: 'success',
-            title: 'Registro exitoso',
-            text: 'La información del nuevo usuario empresarial ha sido guardada exitosamente.',
-        })
+function guardarRegistro(newUser){
+    if (!((newUser.getNombre() === "") || (newUser.getApellidos() === "") || (newUser.getCorreo() === "") || (newUser.getTelefono() === "") || (newUser.getGenero() === "") || (newUser.getContrasenia() === "") || (newUser.getVerifyContrasenia() === ""))){
+        verificarContrasennia(newUser);
     }
-
     else{
         Swal.fire({
             icon: 'error',
@@ -37,4 +31,20 @@ function guardarRegistro(listaUsuarios, infoUsuario){
             text: 'Por favor llene todos los espacios para completar el registro.',
         })
     }
+}
+function verificarContrasennia(newUser){
+    if (newUser.getContrasenia() === newUser.getVerifyContrasenia()){
+        Swal.fire({
+            icon: 'success',
+            title: 'Registro exitoso',
+            text: 'La información del nuevo usuario empresarial ha sido guardada exitosamente.',
+        })  
+        }
+        else{
+            Swal.fire({
+                icon: 'error',
+                title: 'Información faltante',
+                text: 'Las contraseñas no coinciden',
+            })
+        }
 }

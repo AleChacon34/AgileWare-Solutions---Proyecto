@@ -26,7 +26,7 @@ main{
     flex-direction: column;
     justify-content: space-between;
     width: 66%;
-    height: 80%;
+    height: 100%;
     align-items: center;
     border: 3px solid rgb(203, 203, 203);
     border-radius: 15px;
@@ -35,7 +35,7 @@ main{
 
 #ofertaForm div{
     display: flex;
-    height: 30%;
+    height: 25%;
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -43,7 +43,7 @@ main{
 }
 
 #estadoOferta{
-    height: 75px;
+    height: 25px;
     width: 300px;
     text-align: center;
     font-size: larger;
@@ -64,7 +64,7 @@ div input{
 #seccionDescripcion, #seccionRequerimientos{
     width: 100%;
     resize: none;
-    height: 200px;
+    height: 100px;
     background-color: rgb(228, 228, 228);
 }
 

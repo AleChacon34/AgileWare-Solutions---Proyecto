@@ -71,10 +71,16 @@ function verificarDatosIngreso(usuario){
                 icon: "success"
             }).then((result) => {
                 localStorage.setItem('activeUser', JSON.stringify(res.data.data._id));
-                if (res.data.data.rol == "buscador"){
+                if (res.data.data.rol == "Buscador"){
                     location.replace("/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Perfil usuario/perfilUsuario.html");
                 } else if (res.data.data.rol == "Administrador") {
-                    location.replace('/Bolsa de Empleo/Sistema - Perfil del Buscador de Empleo y Empresa/Sistema-Perfil Usuario Empresarial/Sistema-Perfil-Usuario-Empresarial.html');
+                    location.replace('/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Sistema-Perfil Usuario Empresarial/Sistema-Perfil -Usuario-Empresarial.html');
+                } else if (res.data.data.rol == "Manager") {
+                    location.replace('/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Sistema-Perfil Usuario Empresarial/Sistema-Perfil -Usuario-Empresarial.html');
+                } else if (res.data.data.rol == "Reclutador") {
+                    location.replace('/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Sistema-Perfil Usuario Empresarial/Sistema-Perfil -Usuario-Empresarial.html');
+                } else if (res.data.data.rol == "Superusuario") {
+                    location.replace('/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Sistema-Super-Usuario/Sistema-Super-Usuario.html');
                 }
             });
         }).catch(err => {

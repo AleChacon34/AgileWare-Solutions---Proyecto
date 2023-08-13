@@ -6,7 +6,9 @@
     <title>Sistema-Super-Usuario</title>
     <link rel="stylesheet" href="/Bolsa de Empleo/cssGeneral/barraInicio.css">
     <link rel="stylesheet" href="Sistema-Super-Usuario.css">
+    <script type="module" src="perfilSuperUsuario.js"></script>
     <script src="/Bolsa de Empleo/jsGeneral/barraNavegacionSuperUsuario.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <main><!--Esta parte se refleja la informacion del super usuario-->
@@ -14,9 +16,9 @@
             <img src="Captura de pantalla 2023-07-06 141638.png" alt="Foto ">
         </section>
         <section>
-            <p>Nombre Usuario</p>
-            <p>Correo Electrónico</p>
-            <p>Número Telefónico</p>
+            <p id="nombreCompleto">Nombre Usuario</p>
+            <p id="correo">Correo Electrónico</p>
+            <p id="telefono">Número Telefónico</p>
         </section>
         <section>
             <button type="button"name="editar-perfil"><a href="/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Sistema-SuperUsuario-ModificarPerfil/Sistema-SuperUsuario-ModificarPerfil.html">Editar informacion del Perfil</a></button> 

@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/Bolsa de Empleo/cssGeneral/barraInicio.css">
     <link rel="stylesheet" href="/Bolsa de Empleo/cssGeneral/registros.css" />
     <link rel="stylesheet" href="/Bolsa de Empleo/cssGeneral/barraNavegacionEmpresa.css">
-    <script src = "/Bolsa de Empleo/Sistema - Ingreso y Registro/Registro de Usuario Empresarial Invitacion/registroUsuarioEmpresarial.js"></script>
+    <script type="module" src = "/Bolsa de Empleo/Sistema - Ingreso y Registro/Registro de Usuario Empresarial Invitacion/registroUsuarioEmpresarial.js"></script>
     <script src = "/Bolsa de Empleo/jsGeneral/SweetAlert.js"></script>
     <script src="https://kit.fontawesome.com/3d4c892592.js" crossorigin="anonymous"></script>
 </head>
@@ -33,17 +33,24 @@
         <form><!--Acá inicia el formulario de registro usuario empresarial -->    
             <div>
                 <section><!--Esta seccion se encuentra el nombre,apellidos,correo electrónico,número telefónico y género -->
-                    <p>Nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name = "usuario-empresarial" /></p> 
-                    <p>Apellidos:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="usuario-empresarial-apellidos"/></p>
-                    <p>Correo Electrónico:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="correo"/></p>
-                    <p>Número Telefónico:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="tel" name="numero-telefono"/></p>
-                    <p>Género:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="genero" id="seleccion-genero">
+                    <legend>Nombre:</legend>
+                    <input type="text" name = "usuario-empresarial" /> 
+                    <legend>Apellidos:</legend>
+                    <input type="text" minlength="1" name="usuario-empresarial-apellidos"/>
+                    <legend>Correo Electrónico:</legend>
+                        <input type="email" name="correo"/></p>
+                    <legend>Número Telefónico:</legend>
+                        <input type="tel" name="numero-telefono"/></p>
+                    <legend>Género</legend>
+                        <select name="genero" id="seleccion-genero">
                         <option>No especificar</option><!--Aca se especificaria el tipo de genero-->
                         <option>Femenino</option>
                         <option>Masculino</option>
                     </select></p>
-                    <p>Contraseña:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name = "contrasenna"></p>
-                    <p> Verificar Contraseña:&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name = "contrasenna"></p>
+                    <legend>Contraseña:</legend>
+                        <input type="password" minlength="8" maxlength="12" name = "contrasenna"></p>
+                    <legend>Verificar Contraseña:</legend>
+                        <input type="password" name = "verifycontrasennia"></p>
                 </section>
             </div>
             <div class = "image-placeholder">
@@ -52,7 +59,7 @@
                     <p>*Subir foto de perfil <input type = "file" name = "subir-archivo"><a></a></input></p>    
                 </section>
                 <section>
-                    <button type = "button" name = "completar-registro">Completar el Registro</button>
+                    <button type = "submit" name = "completar-registro">Completar el Registro</button>
                 </section>   
             </div>   
         </form>
