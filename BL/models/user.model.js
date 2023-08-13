@@ -29,13 +29,11 @@ const userModel = mongoose.Schema(
     foto: {
       type: Buffer,
     },
-
     visibilidad:
     {
       type: String,
       default: "Activa"
     },
-
     pertenencia:
     {
       type: String,

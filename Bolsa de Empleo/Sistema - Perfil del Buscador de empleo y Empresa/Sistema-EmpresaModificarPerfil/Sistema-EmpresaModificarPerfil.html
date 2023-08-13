@@ -8,49 +8,52 @@
         <link rel="stylesheet" href="Sistema-EmpresaModificarPerfil.css">
         <script src ="/Bolsa de Empleo/jsGeneral/SweetAlert.js"></script>
         <script src="/Bolsa de Empleo/jsGeneral/barraNavegacionEmpresarial.js"></script> 
-        <script src="/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Sistema-EmpresaModificarPerfil/Sistema-EmpresaModificarPerfil.js"></script> 
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script type="module" src="/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Sistema-EmpresaModificarPerfil/Sistema-EmpresaModificarPerfil.js"></script> 
 </head>
 <body>  
     <main><!--En esta parte se ingresa la información de perfil empresa -->
         <h1>Perfil de la Empresa</h1>
-        <form id="newUserData">
-            <section>
-                <div class="container">
-                    <label >Nombre de la Empresa</label>
-                    <input type="text" id="nombreEmpresa">
-                </div>
-                <div class="container">
-                    <label>Correo Electrónico</label>
-                    <input type="email" id="correo">
-                </div>
-                <div class="container">
-                    <label>Número Telefónico</label>
-                    <input type="tel" id="telefono">
-                </div>
-                <div class="container">
-                    <label>Contraseña</label>
-                    <input type="password" id="pass" minlength="8" maxlength="15">
-                </div>
-                <div class="container">
-                    <label>Verificar contraseña</label>
-                    <input type="password" id="verifyPass" minlength="8" maxlength="15">
-                </div>
-            </section>
-            <section>
-                <div class="container">
-                    <label>Mis Archivos</label>
-                    <button type="button">Añadir archivo</button>
-                </div>
-            </section>
-        </form>
-        <div class="block">
-                <img src="Captura de pantalla 2023-07-06 141638.png" alt="Foto">
-            <div class="container">
-                <p>Subir foto de perfil</p>
-                <button>Añadir archivo</button>
+        <form action="">
+            <div>
+                <section>
+                    <div class="container">
+                        <label >Nombre de la Empresa</label>
+                        <input type="text" id="nombre">
+                    </div>
+                    <div class="container">
+                        <label>Correo Electrónico</label>
+                        <input type="email" id="correo">
+                    </div>
+                    <div class="container">
+                        <label>Número Telefónico</label>
+                        <input type="tel" id="telefono">
+                    </div>
+                    <div class="container">
+                        <label>Contraseña</label>
+                        <input type="password" id="contrasenia" minlength="8" maxlength="15">
+                    </div>
+                    <div class="container">
+                        <label>Verificar contraseña</label>
+                        <input type="password" id="verifyContrasenia" minlength="8" maxlength="15">
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <label>Mis Archivos</label>
+                        <button type="button">Añadir archivo</button>
+                    </div>
+                </section>
             </div>
-            <button type="button" id="btn">ACTUALIZAR PERFIL</button>
-        </div>
+            <div class="block">
+                    <img src="Captura de pantalla 2023-07-06 141638.png" alt="Foto">
+                <div class="container">
+                    <p>Subir foto de perfil</p>
+                    <button>Añadir archivo</button>
+                </div>
+                <button type="submit" id="btn">ACTUALIZAR PERFIL</button>
+            </div>
+        </form>
     </main>
 </body>
 </html>

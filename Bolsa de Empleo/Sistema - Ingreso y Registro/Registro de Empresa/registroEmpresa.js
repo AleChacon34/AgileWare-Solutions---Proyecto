@@ -1,40 +1,45 @@
-"use-strict"
-let listaEmpresas = [];
+"use strict";
 
+import { UserEmpresa } from '../../models/userEmpresa.model.js';
+import { LoginService } from '../../services/login.service.js'
 
 document.addEventListener("DOMContentLoaded", () =>{
-    let registro = document.querySelector("button[name='completar-registro'] a");
-    registro.addEventListener("click", completarRegistro);
+    let form = document.querySelector('form');
+    form.addEventListener("submit", completarRegistro);
 })
 
-function completarRegistro(){
-    let nombre = document.querySelector("input[name='nombre-empresa']");
-    let contrasenna = document.querySelector("input[name='contrasenna']");
-    let correo = document.querySelector("input[name='correo']");
-    let telefono = document.querySelector("input[name='numero-telefono']");
-    let usuario = {nombreEmpresa: nombre.value, correoEmpresa: correo.value, telefonoEmpresa: telefono.value, contrasennaEmpresa: contrasenna.value,};
-    console.log(usuario);
-    guardarRegistro(listaEmpresas, usuario);
+function completarRegistro(e){
+    e.preventDefault();
+    let formData = new FormData(e.target);
+    let newUser = new UserEmpresa(formData);
+    newUser.setApellidos("");
+    newUser.setGenero("");
+    newUser.setRol("Empresa");
+    guardarRegistro(newUser);
 }
 
-function guardarRegistro(listaUsuarios, infoUsuario){
+function guardarRegistro(newUser){
 
-    if (!((infoUsuario.nombreEmpresa === "") || (infoUsuario.apellidosBuscador === "") || (infoUsuario.correoEmpresa === "") || (infoUsuario.telefonoEmpresa === "") || (infoUsuario.generoBuscador === "") || (infoUsuario.contrasennaEmpresa === ""))){
-        listaUsuarios.push(infoUsuario);
-        Swal.fire({
-            icon: 'success',
-            title: 'Registro exitoso',
-            text: 'La información de la nueva empresa ha sido guardada exitosamente.',
-        })
-    }
-
-    else{
+    if (!((newUser.getNombre() === "") || (newUser.getCorreo() === "") || (newUser.getTelefono() === "") || (newUser.getContrasenia() === ""))){
+        LoginService.registerUser(newUser).then(res => {
+            Swal.fire({
+                icon: 'success',
+                title: 'Registro exitoso',
+            });
+            location.replace('/Bolsa de Empleo/Sistema - Ingreso y Registro/Inicio de sesion/inicioSesion.html');
+        }).catch(err => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error al registrar',
+                text: 'Ha habido un error, por favor vuelta a intentarlo',
+            });
+        });
+    } else {
         Swal.fire({
             icon: 'error',
             title: 'Información faltante',
             text: 'Por favor llene todos los espacios para completar el registro.',
-        })
+        });
     }
-        
 }
     

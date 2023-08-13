@@ -4,7 +4,7 @@
     <title>Registro de Empresa</title>
     <link rel="stylesheet" href="/Bolsa de Empleo/cssGeneral/barraInicio.css">
     <link rel="stylesheet" href="/Bolsa de Empleo/cssGeneral/registros.css" />
-    <script src="/Bolsa de Empleo/Sistema - Ingreso y Registro/Registro de Empresa/registroEmpresa.js"></script>
+    <script type="module" src="/Bolsa de Empleo/Sistema - Ingreso y Registro/Registro de Empresa/registroEmpresa.js"></script>
     <script src = "/Bolsa de Empleo/jsGeneral/SweetAlert.js"></script>
     <script src="/Bolsa de Empleo/jsGeneral/barraInicio.js"></script>
 </head>
@@ -14,11 +14,11 @@
         <form>    
             <div>
                 <section><!--Esta seccion se encuentra el nombre de la empresa,contraseña,correo electrónico y número telefónico -->
-                    <p>Nombre Empresa:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name = "nombre-empresa"/></p> 
-                    <p>Contraseña:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name = "contrasenna"></p>
-                    <p> Verificar Contraseña:&nbsp;&nbsp;&nbsp;<input type="password" name = "contrasenna"></p>
+                    <p>Nombre Empresa:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name ="nombre"/></p> 
                     <p>Correo Electrónico:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="correo"/></p>
-                    <p>Número Telefónico:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="tel" name="numero-telefono"/></p>
+                    <p>Número Telefónico:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="tel" name="telefono"/></p>
+                    <p>Contraseña:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="contrasenia"></p>
+                    <p>Verificar Contraseña:&nbsp;&nbsp;&nbsp;<input type="password" name = "verifyContrasenia"></p>
                 </section>
                 <section class = "base-btn"><!--Se inicia con la parte de ver los archivos de la computadora -->
                     <p>Mis archivos:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type = "file" name = "ver-archivos"><a></a></input></p>   
@@ -30,7 +30,7 @@
                     <p>*Subir foto de perfil <input type = "file" name = "subir-archivo"><a></a></input></p>    
                 </section>
                 <section>
-                    <button type = "button" name = "completar-registro"><a>Completar el Registro</a></button>
+                    <button type = "submit" name = "completar-registro"><a>Completar el Registro</a></button>
                 </section>   
             </div>   
         </form>

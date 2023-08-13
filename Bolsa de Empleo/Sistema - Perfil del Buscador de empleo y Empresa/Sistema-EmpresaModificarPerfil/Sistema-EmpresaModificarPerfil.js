@@ -1,61 +1,77 @@
 "use strict";
 
-let user = {
-    enterpriseName: "AgileWare Solutions",
-    email: "agileware@correo.com",
-    phone: "11223344",
-    pass: "agileware"
-}
+import { UserEmpresa } from '../../models/userEmpresa.model.js';
+import { UserService } from '../../services/user.service.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    let btn = document.querySelector("#btn");
-    btn.addEventListener('click', getData);
+    loadData();
+    let form = document.querySelector('form');
+    form.addEventListener('submit', getData);
 });
 
-function getData() {
-    let enterpriseName = document.getElementById("nombreEmpresa").value;
-    let email = document.getElementById("correo").value;
-    let phone = document.getElementById("telefono").value;
-    let pass = document.getElementById("pass").value;
-    let verifyPass = document.getElementById("verifyPass").value;
+function loadData() {
+    let nombre = document.getElementById('nombre');
+    let correo = document.getElementById('correo');
+    let telefono = document.getElementById('telefono');
 
-    let newUserData = {
-        enterpriseName,
-        email,
-        phone, 
-        pass,
-        verifyPass
-    }
+    let id = JSON.parse(localStorage.getItem('activeUser'));
+    UserService.getOneUser(id).then(res => {
+        nombre.value = res.data.data.nombre;
+        correo.value = res.data.data.correo;
+        telefono.value = res.data.data.telefono;
+    });
+}
 
-    validateData(newUserData);
+function getData(e) {
+    e.preventDefault();
+    console.log(e.target);
+    let formData = new FormData(e.target);
+    let newUser = new UserEmpresa(formData);
+    console.log(newUser);
+    //validateData(newUser);
 }
 
 function validateData(userData) {
-    if (userData.enterpriseName == "") {
+    if (userData.getNombre() == null) {
         errorValidationMessage();
-        document.getElementById("nombreEmpresa").style.border = "2px solid red";
-    } else if (userData.email == "") {
+        document.getElementById("nombre").style.border = "2px solid red";
+    } else if (userData.getCorreo() == null) {
         errorValidationMessage();
         document.getElementById("correo").style.border = "2px solid red";
-    } else if (userData.phone == "") {
+    } else if (userData.getTelefono() == null) {
         errorValidationMessage();
         document.getElementById("telefono").style.border = "2px solid red";
-    } else if (userData.pass == "") {
+    } else if (userData.getContrasenia() == null) {
         errorValidationMessage();
-        document.getElementById("pass").style.border = "2px solid red";
-    } else if (userData.verifyPass == "") {
+        document.getElementById("contrasenia").style.border = "2px solid red";
+    } else if (userData.getVerifyContrasenia() == null) {
         errorValidationMessage();
-        document.getElementById("verifyPass").style.border = "2px solid red";
+        document.getElementById("verifyContrasenia").style.border = "2px solid red";
     } else {
         verifyPass(userData);
     }
 }
 
 function verifyPass(userData) {
-    if (userData.pass !== userData.verifyPass) {
+    if (userData.getContrasenia() !== userData.getVerifyContrasenia()) {
         Swal.fire("Por favor, verifique la contraseña correctamente", "", "error");
     } else {
-        updateData(userData);
+        let id = JSON.parse(localStorage.getItem('activeUser'));
+        UserService.updateUser(id, userData).then(res => {
+            Swal.fire({
+                icon: "success",
+                title: "Datos Actualizados",
+                text: "Los datos fueron actualizados correctamente",
+                timer: 1500,
+            });
+        }).catch(err => {
+            Swal.fire({
+                icon: "error",
+                title: "Ha habido un error",
+                text: "Por favor, intentelo de nuevo",
+                timer: 1500,
+            });
+        });
     }
 }
 
@@ -67,24 +83,4 @@ function errorValidationMessage() {
             confirmButton: "btnError"
         }
     });
-}
-
-function updateData(userData) {
-    user.enterpriseName = userData.enterpriseName;
-    user.email = userData.email;
-    user.phone = userData.phone;
-    user.pass = userData.pass;
-
-    notificarActualizar();
-
-    console.log(user);
-}
-
-function notificarActualizar(){
-    Swal.fire({
-        icon: "success",
-        title: "Datos Actualizados",
-        text: "Los datos fueron actualizados correctamente",
-        timer: 1500,
-    })
 }
