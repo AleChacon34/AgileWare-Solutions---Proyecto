@@ -19,7 +19,7 @@ function verOferta(data){
     //Crear section del div
     let addSec = document.createElement('section');
     //Crear h3, h4, textarea, anchor 
-    let addH3I = document.createElement('h3');
+    let addH3I = document.createElement('h2');
     addH3I.setAttribute("id", "tituloOFerta");
     let addH4I = document.createElement('h4');
     addH4I.setAttribute("id", "requerimientos");
@@ -38,8 +38,7 @@ function verOferta(data){
     newAnchI.setAttribute("href", "/Bolsa de Empleo/Empresa - Mis Empleos/Modificar Oferta de Empleo/ModificarOferta.html")
     let newAnchII = document.createElement("a");
     newAnchII.setAttribute("href", "/Bolsa de Empleo/Empresa - Mis Empleos/Consultar aplicaciones recibidas/listaPostulados.html")
-
-
+    let addPI = document.createElement("p");
 
     //Agregar texto a cada elemento desde datosOfertas
     addH3I.appendChild(document.createTextNode(data.seccionTitulo));
@@ -49,11 +48,15 @@ function verOferta(data){
     textareaII.appendChild(document.createTextNode(data.seccionDescripcion));
     newAnchI.appendChild(document.createTextNode("MODIFICAR OFERTA"));
     newAnchII.appendChild(document.createTextNode("VER POSTULADOS"));
-
-
-    
+    addPI.appendChild(document.createTextNode(data.estadoOferta));
+        if (addPI.textContent === "Oferta pública"){
+            addPI.setAttribute("id", "pOfertaPublica")
+        }
+        else if (addPI.textContent === "Oferta oculta"){
+            addPI.setAttribute("id", "pOfertaOculta")
+        }
     //Agregar los H3, H4 y textarea al section, y este al Div
-    addSec.append(addH3I, addH4I, textareaI, addH4II, textareaII);
+    addSec.append(addH3I, addPI, addH4I, textareaI, addH4II, textareaII);
     addDiv.appendChild(addSec);
     addBtnI.appendChild(newAnchI);
     addBtnII.appendChild(newAnchII);
