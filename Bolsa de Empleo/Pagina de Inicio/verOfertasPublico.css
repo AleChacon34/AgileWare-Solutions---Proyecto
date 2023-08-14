@@ -5,5 +5,62 @@ html, body{
 }
 
 body{
+    display: flex;
+    flex-direction: column;
     font-family: sans-serif;
+    align-items: center;
 }
+
+main {
+    height: 95%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main div{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    height: 400px;
+    width: 90%;
+    background-color: rgb(236, 236, 236);
+    border-radius: 10px;
+    margin: 40px;
+}
+
+div section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+    height: 80%;
+}
+
+div aside{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 35%;
+    height: 80%;
+}
+
+div textarea {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    overflow: scroll;
+}
+
+div h3, div h4{
+    margin: 2px;
+}
+
+aside img{
+    height: 100%;
+    width: 100%;
+}
+
+

@@ -52,7 +52,7 @@ function crearBarraNavegacionEmpresarial(){
     newScriptAxios.setAttribute("src", "https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js");
 
     //Add <script> and <link> to head
-    htmlBody.append(newLinkI, newScriptAxios);
+    htmlHead.append(newLinkI, newScriptAxios);
 
     
 

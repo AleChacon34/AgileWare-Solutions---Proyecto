@@ -26,11 +26,11 @@ function crearSecciones(data){
         addH3I.setAttribute("id", "tituloOFerta");
         let addH4I = document.createElement('h4');
         addH4I.setAttribute("id", "requerimientos");
-        let textareaI = document.createElement('p');
+        let textareaI = document.createElement('textarea');
         textareaI.setAttribute("id", "requerimientosCuerpo");
         let addH4II = document.createElement('h4');
         addH4II.setAttribute("id", "descripcionOferta");
-        let textareaII = document.createElement('p');
+        let textareaII = document.createElement('textarea');
         textareaII.setAttribute("id", "descripcionCuerpo");
         let newBtn = document.createElement('button');
         newBtn.setAttribute("class", "verOferta");
@@ -44,13 +44,13 @@ function crearSecciones(data){
         textareaI.appendChild(document.createTextNode(data.seccionRequerimientos));
         addH4II.appendChild(document.createTextNode("Descripción"));
         textareaII.appendChild(document.createTextNode(data.seccionDescripcion));
-        newBtn.appendChild(document.createTextNode("Ver oferta"));
+        newBtn.appendChild(document.createTextNode("Postularse para este puesto"));
         addAside.appendChild(img);
 
         //Agregar los H3, H4 y textarea al section, y este al Div
         
-        addSec.append(addAside, addH3I, addH4I, textareaI, addH4II, textareaII, newBtn);
-        addDiv.appendChild(addSec);
+        addSec.append(addH3I, addH4I, textareaI, addH4II, textareaII, newBtn);
+        addDiv.append(addAside, addSec);
         //Agregar Div al main
         let mainBody = document.querySelector('main');
         mainBody.insertBefore(addDiv, mainBody.children[1]);
@@ -62,7 +62,6 @@ document.addEventListener("mouseover", () =>{
     let ofertaBtns = document.querySelectorAll(".verOferta");
         for (let i = 0; i < ofertaBtns.length; i++) {
             let btn = ofertaBtns[i];
-            console.log(btn)
             btn.addEventListener('click', pedirIngreso);
         }
 })
@@ -73,7 +72,7 @@ function pedirIngreso(){
     Swal.fire({
         icon: "error",
         title: "Error de Ingreso",
-        text: "Por favor inicie sesión para postularse para esta oferta.",
+        text: "Por favor inicie sesión para postularse para este puesto",
         confirmButtonText: "Iniciar Sesión",
         showDenyButton: true,
         denyButtonText: "Cancelar",
