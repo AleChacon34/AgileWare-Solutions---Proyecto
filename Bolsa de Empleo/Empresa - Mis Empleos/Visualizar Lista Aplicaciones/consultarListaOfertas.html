@@ -9,13 +9,18 @@
     <script src="/Bolsa de Empleo/jsGeneral/barraNavegacionEmpresarial.js"></script>
     <script type="module" src="/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarOfertas.controller.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/Bolsa de Empleo/jsGeneral/SweetAlert.js"></script>
   </head>
   <body>
     <!-- Esta barra pertenece al perfil de Empresa o Usuario Empresarial -->
     <main>
         <div>
             <button name="agregarOferta" id="agregarOferta"><a href = "/Bolsa de Empleo/Empresa - Mis Empleos/Crear Oferta de Empleo/crearOfertaEmpleo.html">AGREGAR OFERTA</a></button>
-            <input type ="search" name = "barra-busqueda" placeholder= "Búsqueda">
+            <form id="busquedaForm">
+              <input type ="search" name = "barra-busqueda" id = "barraBusqueda"placeholder= "Búsqueda">
+              <button type="submit">Buscar</button>
+            </form>
+        </div>   
     </main>
   </body>
 </html>
