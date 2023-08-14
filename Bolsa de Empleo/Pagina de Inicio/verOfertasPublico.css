@@ -35,6 +35,7 @@ main div{
 div section{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 60%;
     height: 80%;
 }
