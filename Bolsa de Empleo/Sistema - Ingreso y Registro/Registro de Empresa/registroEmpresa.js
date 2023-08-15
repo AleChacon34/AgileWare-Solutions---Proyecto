@@ -12,10 +12,11 @@ function completarRegistro(e){
     e.preventDefault();
     let formData = new FormData(e.target);
     let newUser = new UserEmpresa(formData);
+    console.log(newUser);
     newUser.setApellidos("");
     newUser.setGenero("");
     newUser.setRol("Empresa");
-    guardarRegistro(newUser);
+    //guardarRegistro(newUser);
 }
 
 function guardarRegistro(newUser){
