@@ -12,11 +12,10 @@ function completarRegistro(e){
     e.preventDefault();
     let formData = new FormData(e.target);
     let newUser = new UserEmpresa(formData);
-    console.log(newUser);
     newUser.setApellidos("");
     newUser.setGenero("");
     newUser.setRol("Empresa");
-    //guardarRegistro(newUser);
+    guardarRegistro(newUser);
 }
 
 function guardarRegistro(newUser){
@@ -25,7 +24,7 @@ function guardarRegistro(newUser){
         LoginService.registerUser(newUser).then(res => {
             Swal.fire({
                 icon: 'success',
-                title: 'Registro exitoso',
+                title: 'Registro exitoso'
             });
             location.replace('/Bolsa de Empleo/Sistema - Ingreso y Registro/Inicio de sesion/inicioSesion.html');
         }).catch(err => {

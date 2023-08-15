@@ -24,11 +24,9 @@ function loadData() {
 
 function getData(e) {
     e.preventDefault();
-    console.log(e.target);
     let formData = new FormData(e.target);
     let newUser = new UserEmpresa(formData);
-    console.log(newUser);
-    //validateData(newUser);
+    validateData(newUser);
 }
 
 function validateData(userData) {
