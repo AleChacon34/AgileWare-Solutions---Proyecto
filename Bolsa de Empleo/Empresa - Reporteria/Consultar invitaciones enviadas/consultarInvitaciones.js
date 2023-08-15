@@ -1,29 +1,13 @@
 'use strict';
 
+import { UserService}
+
 document.addEventListener("DOMContentLoaded", () =>{
     let genBtn = document.querySelector("button[name='generar-reporte']");
     genBtn.addEventListener('click', generarReporte);
 });
 
 function generarReporte(){
-    let datosEmpresas = [
-        {nombreEmpresa: "Empresa1", correoEmpresa: "empresa@empresa.com", estadoEmpresa: "Inactiva"},
-        {nombreEmpresa: "Empresa2", correoEmpresa: "empresa@empresa.com", estadoEmpresa: "Activa"},
-        {nombreEmpresa: "Empresa3", correoEmpresa: "empresa@empresa.com", estadoEmpresa: "Activa"},
-        {nombreEmpresa: "Empresa4", correoEmpresa: "empresa@empresa.com", estadoEmpresa: "Inactiva"},
-        {nombreEmpresa: "Empresa5", correoEmpresa: "empresa@empresa.com", estadoEmpresa: "Activa"},
-        {nombreEmpresa: "Empresa6", correoEmpresa: "empresa@empresa.com", estadoEmpresa: "Inactiva"}
-    ];
-
-    let datosInvitaciones = [
-        {nombreEmpresa: "Empresa1", correoEmpresa: "empresa@empresa.com", correoEmisor: "super-usuario@super-usuario.com"},
-        {nombreEmpresa: "Empresa2", correoEmpresa: "empresa@empresa.com", correoEmisor: "super-usuario@super-usuario.com"},
-        {nombreEmpresa: "Empresa3", correoEmpresa: "empresa@empresa.com", correoEmisor: "super-usuario@super-usuario.com"},
-        {nombreEmpresa: "Empresa4", correoEmpresa: "empresa@empresa.com", correoEmisor: "super-usuario@super-usuario.com"},
-        {nombreEmpresa: "Empresa5", correoEmpresa: "empresa@empresa.com", correoEmisor: "super-usuario@super-usuario.com"},
-        {nombreEmpresa: "Empresa6", correoEmpresa: "empresa@empresa.com", correoEmisor: "super-usuario@super-usuario.com"}
-    ];
-
     let opcionSeleccion = document.querySelector("#seleccion-reporte");
 
     switch (opcionSeleccion.value){

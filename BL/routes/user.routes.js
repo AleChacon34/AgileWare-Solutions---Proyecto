@@ -13,6 +13,9 @@ router.get('/',userControllers.getUsuario);
 
 router.get('/:id', userControllers.getUsuarioID);
 
+//Filter Usuario
+router.post(`/filtro`, userControllers.filterUsuario);
+
 //Put Usuario//
 
 router.put('/:id', userControllers.putUsuario);
