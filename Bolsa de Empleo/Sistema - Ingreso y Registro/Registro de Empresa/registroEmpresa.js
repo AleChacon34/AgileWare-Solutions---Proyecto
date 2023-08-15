@@ -24,7 +24,7 @@ function guardarRegistro(newUser){
         LoginService.registerUser(newUser).then(res => {
             Swal.fire({
                 icon: 'success',
-                title: 'Registro exitoso',
+                title: 'Registro exitoso'
             });
             location.replace('/Bolsa de Empleo/Sistema - Ingreso y Registro/Inicio de sesion/inicioSesion.html');
         }).catch(err => {
