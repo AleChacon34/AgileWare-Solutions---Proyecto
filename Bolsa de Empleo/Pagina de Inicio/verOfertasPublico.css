@@ -24,8 +24,8 @@ main div{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding: 15px;
-    height: 500px;
+    padding: 5px 10px 5px 10px;
+    height: 600px;
     width: 90%;
     background-color: rgb(236, 236, 236);
     border-radius: 10px;
