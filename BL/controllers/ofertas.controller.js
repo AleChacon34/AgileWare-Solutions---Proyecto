@@ -18,6 +18,14 @@ async function getOneOferta(request, response) {
     response.send({ data });
 }
 
+//FILTER
+
+async function filterOferta(request, response) {
+    const { seccionTitulo } = request.body;
+    const data = await OfertaModel.find({seccionTitulo});
+    response.send({ data });
+}
+
 //POST
 
 async function postOferta(request, response){
@@ -45,4 +53,4 @@ async function deleteOferta(request, response){
 
 
 
-module.exports = {getOfertas, postOferta, getOneOferta, updateOferta, deleteOferta};
+module.exports = {getOfertas, postOferta, getOneOferta, updateOferta, deleteOferta, filterOferta};

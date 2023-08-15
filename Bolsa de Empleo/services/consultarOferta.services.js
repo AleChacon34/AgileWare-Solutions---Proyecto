@@ -13,6 +13,12 @@ export class OfertaService{
         return axios.get(OfertaService.#URL+"/ofertas/" + idCode);   
     };
 
+    //Filter oferta
+    static filter(titulo){
+        return axios.post(OfertaService.#URL + "/ofertas/filtro/", {seccionTitulo: titulo});
+    }
+    
+
     //Delete one oferta
     static deleteOne(idCode){
         return axios.delete(OfertaService.#URL+"/ofertas/" + idCode);
