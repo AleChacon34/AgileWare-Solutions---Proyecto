@@ -112,12 +112,14 @@ function mostrarResultados(data, paramBusqueda){
             addH3I.setAttribute("id", "tituloOFerta");
             let addH4I = document.createElement('h4');
             addH4I.setAttribute("id", "requerimientos");
-            let textareaI = document.createElement('p');
+            let textareaI = document.createElement('textarea');
+            textareaI.setAttribute("disabled", true);
             textareaI.setAttribute("id", "requerimientosCuerpo");
             let addH4II = document.createElement('h4');
             addH4II.setAttribute("id", "descripcionOferta");
-            let textareaII = document.createElement('p');
+            let textareaII = document.createElement('textarea');
             textareaII.setAttribute("id", "descripcionCuerpo");
+            textareaII.setAttribute("disabled", true);
             let newAnch = document.createElement('a');
             let addPI = document.createElement('p');
             newAnch.setAttribute("id", "verInfo");
@@ -142,7 +144,6 @@ function mostrarResultados(data, paramBusqueda){
             addSec.append(addH3I, addPI, addH4I, textareaI, addH4II, textareaII, newAnch);
             addDiv.appendChild(addSec);
             //Agregar Div al main
-            let mainBody = document.querySelector('main');
             mainBody.insertBefore(addDiv, mainBody.children[1]);
             localStorage.setItem("currentIDs", JSON.stringify(data._id))  
         }

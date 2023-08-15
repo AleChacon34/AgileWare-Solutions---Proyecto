@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     let form = document.querySelector("#busquedaForm");
     form.addEventListener("submit", filtrarOfertas)
     getOfertas();
-})
+});
 
 function getOfertas(){
     //Acceder a las ofertas
@@ -91,13 +91,16 @@ function filtrarOfertas(e){
     e.preventDefault(e.target);
     OfertaService.filter(paramBusqueda.value).then((response) => {
         let data = response.data.data;
+        console.log(data)
         if(data == ""){
             Swal.fire({
                 icon: "info",
                 title: "Búsqueda",
                 text: "No se encontraron resultados con los criterios brindados, por favor inténtelo de nuevo"
+            }).then(()=>{
+                location.reload();
             })
-            paramBusqueda.value = "";
+            
         }
         else{
             data.forEach(mostrarResultados);
@@ -108,11 +111,11 @@ function filtrarOfertas(e){
 function mostrarResultados(data, paramBusqueda){
     if (paramBusqueda.value != ""){
         let mainBody = document.querySelector("main");
-        for ( let div = 1; div < mainBody.children.length; div++ ){
-            mainBody.children[div].replaceChildren();
+        for ( let div = 1; div <= mainBody.children.length; div++ ){
+           mainBody.removeChild(mainBody.children[1]);
         }
         if (data.visibilidad === "Activa" && data.estadoOferta != "Oferta oculta"){
-            console.log('hola')
+            console.log(data)
             //Crear DIV principal con id
             let addDiv = document.createElement('div');
             //Crear section del div
@@ -138,11 +141,12 @@ function mostrarResultados(data, paramBusqueda){
             textareaI.appendChild(document.createTextNode(data.seccionRequerimientos));
             addH4II.appendChild(document.createTextNode("Descripción"));
             textareaII.appendChild(document.createTextNode(data.seccionDescripcion));
+            addAside.appendChild(img);
             //Agregar los H3, H4 y textarea al section, y este al Div
             addSec.append(addH3I, addH4I, textareaI, addH4II, textareaII);
-            addDiv.appendChild(addAside, addSec);
+            addDiv.append(addAside, addSec);
             //Agregar Div al main
-            let mainBody = document.querySelector('main');
+            mainBody = document.querySelector('main');
             mainBody.insertBefore(addDiv, mainBody.children[1]);
         }
     }
