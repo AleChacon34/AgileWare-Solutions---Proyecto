@@ -49,14 +49,13 @@ div aside{
 
 div textarea {
     background-color: white;
-    font-size: large;
     padding: 15px;
     height: 20%;
     border-radius: 10px;
     overflow: scroll;
 }
 
-div h4{
+div h4, div h3{
     margin: 5px;
 }
 
