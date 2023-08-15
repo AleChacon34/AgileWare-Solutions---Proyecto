@@ -1,31 +1,21 @@
 'use strict';
 
-import { UserService}
+import { UserService } from "../../services/user.service.js"
 
 document.addEventListener("DOMContentLoaded", () =>{
     let genBtn = document.querySelector("button[name='generar-reporte']");
-    genBtn.addEventListener('click', generarReporte);
+    genBtn.addEventListener('click', imprimirReporte);
 });
 
-function generarReporte(){
-    let opcionSeleccion = document.querySelector("#seleccion-reporte");
-
-    switch (opcionSeleccion.value){
-        case "INVITACIONES ENVIADAS":
-            imprimirReporte(datosInvitaciones, opcionSeleccion);
-            break;
-        case "REPORTE DE EMPRESAS":
-            imprimirReporte(datosEmpresas, opcionSeleccion);
-            break;
-        default:
-            break;
-    }
-}
-
-function imprimirReporte(listaDatos, opcion){
+function imprimirReporte(){
+    let opcionSeleccion = document.querySelector("#seleccionReporte");
     //Borrar el cuerpo de la tabla ya existente en el HTML
     let crearTabla = document.querySelector(".tabla-datos tbody");
     crearTabla.innerHTML = "";
+    UserService.filter("Empresa").then((response)=>{
+        let data =  response.data.data;
+        console.log(data)
+    })
 
     // Diferentes tipos de reportes
     switch (opcion.value){

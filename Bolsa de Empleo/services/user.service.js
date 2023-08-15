@@ -27,7 +27,7 @@ export class UserService {
 
     //Filter usuario
     static filter(rol){
-        return axios.post(UserService.#URL + "/users/filtro/", {rol: rol});
+        return axios.post(UserService.#URI + "/users/filtro/", {rol: rol});
     }
 
     static updateUser(id, newUser) {
