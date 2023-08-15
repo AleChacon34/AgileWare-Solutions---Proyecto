@@ -1,6 +1,6 @@
 "use strict";
 
-import { OfertaService } from "../services/consultarOferta.services.js"
+import { OfertaService } from "../services/"
 
 document.addEventListener("DOMContentLoaded", ()=>{
     getOfertas();
