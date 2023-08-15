@@ -37,6 +37,7 @@ function crearSecciones(data){
         let addAside = document.createElement('aside');
         let img = document.createElement('img');
         img.setAttribute("src", "#");
+        // img.setAttribute("alt", "#");
 
         //Agregar texto a cada elemento desde datosOfertas
         addH3I.appendChild(document.createTextNode(data.seccionTitulo));
