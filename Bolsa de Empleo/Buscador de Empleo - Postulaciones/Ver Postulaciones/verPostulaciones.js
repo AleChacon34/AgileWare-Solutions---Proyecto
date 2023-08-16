@@ -37,6 +37,7 @@ function generarPostulaciones(datosInvitaciones){
     let addDivII = document.createElement("div");
     let addH2 = document.createElement("h2");
     let addBtn = document.createElement("button");
+    addBtn.setAttribute("class", "verPostulacion")
     let parI =  document.createElement("p");
     let parII =  document.createElement("p");
 
@@ -47,6 +48,7 @@ function generarPostulaciones(datosInvitaciones){
     addBtn.appendChild(document.createTextNode("Ver oferta"));
 //Agrupar elementos
     addDivI.appendChild(addH2);
+    addDivII.appendChild(parI, parII);
     mainDiv.append(addDivI, addDivII, addBtn);
     addSec.appendChild(mainDiv);
 }
