@@ -4,7 +4,7 @@ import { OfertaService } from "../../services/consultarOferta.services.js"
 
 document.addEventListener("DOMContentLoaded", ()=>{
     let form = document.querySelector("#busquedaForm");
-    form.addEventListener("submit", filtrarOfertas)
+    form.addEventListener("submit", filtrarOfertas);
     getOfertas();
 })
 
@@ -85,8 +85,12 @@ function filtrarOfertas(e){
                 icon: "info",
                 title: "Búsqueda",
                 text: "No se encontraron resultados con los criterios brindados, por favor inténtelo de nuevo"
-            })
-            paramBusqueda.value = "";
+            }).then((result)=>{
+                if(result.isConfirmed){
+                    location.reload();
+                    paramBusqueda.value = ""
+                }
+            })  
         }
         else{
             data.forEach(mostrarResultados);

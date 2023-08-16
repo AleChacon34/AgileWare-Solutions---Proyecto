@@ -5,32 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Postulaciones</title>
     <link rel="stylesheet" href="/Bolsa de Empleo/cssGeneral/barraInicio.css">
-    <link rel="stylesheet" href="verPostulaciones.css" />
+    <link rel="stylesheet" href="./verPostulaciones.css" />
     <script src="verPostulaciones.js"></script>
     <script src="/Bolsa de Empleo/jsGeneral/barraNavegacionBuscador.js"></script>
   </head>
   <body>
     <main>
-      <!-- <section>
-        <div class="card"> -->
-          <!-- Cada una de estas secciones contiene los datos de la aplicacion y su estado -->
-          <!-- <div>
-            <h2>Empresa A</h2>
-          </div>
-          <div>
-            <p>Informacion de la solicitud</p>
-            <p>Informacion de la solicitud</p>
-            <p>Informacion de la solicitud</p>
-          </div>
-          <button class="verPostulacion">Ver postulacion</button>
-        </div> -->
-      <!-- </section> -->
-      <aside>
       <!-- El filtro permite buscar una postulación específica dentro de las postulaciones -->
-        <div class="filter">
-          <input type="text" placeholder="Buscar postulacion...">
-        </div>
-      </aside>
+      <form id="busquedaForm">
+        <input type ="search" name = "barra-busqueda" id = "barraBusqueda"placeholder= "Título de la oferta...">
+        <button type="submit">Buscar</button>
+      </form>
     </main>
   </body>
 </html>
