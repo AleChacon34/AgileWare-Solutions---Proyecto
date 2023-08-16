@@ -1,8 +1,14 @@
 'use strict';
+let datosInvitaciones =
+    {
+        nombreEmpresa: "Test I", tituloOferta: "Oferta en papas", estadoPostulacion: "Enviada", idOferta: "123"
+    }
 
 document.addEventListener("DOMContentLoaded", ()=>{
-    generarPostulaciones;
+    generarPostulaciones(datosInvitaciones);
 })
+
+
 
 
 /**
@@ -23,7 +29,7 @@ function redirect() {
     window.location.href = "postulacion.html";
 }
 
-function generarPostulaciones(){
+function generarPostulaciones(datosInvitaciones){
     let addSec = document.createElement("section");
     let mainDiv = document.createElement("div");
     mainDiv.setAttribute("class", "card");
@@ -33,5 +39,14 @@ function generarPostulaciones(){
     let addBtn = document.createElement("button");
     let parI =  document.createElement("p");
     let parII =  document.createElement("p");
-    let parIII =  document.createElement("p");
+
+//Agregar contenido a los elementos
+    addH2.appendChild(document.createTextNode(datosInvitaciones.nombreEmpresa));
+    parI.appendChild(document.createTextNode(datosInvitaciones.tituloOferta));
+    parII.appendChild(document.createTextNode(datosInvitaciones.estadoPostulacion));
+    addBtn.appendChild(document.createTextNode("Ver oferta"));
+//Agrupar elementos
+    addDivI.appendChild(addH2);
+    mainDiv.append(addDivI, addDivII, addBtn);
+    addSec.appendChild(mainDiv);
 }
