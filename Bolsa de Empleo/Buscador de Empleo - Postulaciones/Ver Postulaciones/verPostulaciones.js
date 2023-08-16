@@ -5,6 +5,8 @@ let datosInvitaciones =
     }
 
 document.addEventListener("DOMContentLoaded", ()=>{
+    let form = document.querySelector("#busquedaForm");
+    form.addEventListener("submit", filtrarOfertas);
     generarPostulaciones(datosInvitaciones);
 })
 
@@ -48,4 +50,28 @@ function generarPostulaciones(datosInvitaciones){
         let btn = btns[i];
         btn.addEventListener("click", redirect);
     }
+}
+
+function filtrarOfertas(e){
+    let paramBusqueda =  document.querySelector("#barraBusqueda");
+    e.preventDefault(e.target);
+    
+    OfertaService.filter(paramBusqueda.value).then((response) => {
+        let data = response.data.data;
+        if(data == ""){
+            Swal.fire({
+                icon: "info",
+                title: "Búsqueda",
+                text: "No se encontraron resultados con los criterios brindados, por favor inténtelo de nuevo"
+            }).then((result)=>{
+                if(result.isConfirmed){
+                    location.reload();
+                    paramBusqueda.value = ""
+                }
+            })  
+        }
+        else{
+            data.forEach(mostrarResultados);
+        }   
+    })
 }

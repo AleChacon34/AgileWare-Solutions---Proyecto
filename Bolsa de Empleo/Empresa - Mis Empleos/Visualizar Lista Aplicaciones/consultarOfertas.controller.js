@@ -4,7 +4,7 @@ import { OfertaService } from "../../services/consultarOferta.services.js"
 
 document.addEventListener("DOMContentLoaded", ()=>{
     let form = document.querySelector("#busquedaForm");
-    form.addEventListener("submit", filtrarOfertas)
+    form.addEventListener("submit", filtrarOfertas);
     getOfertas();
 })
 
