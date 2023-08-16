@@ -48,4 +48,18 @@ export class UserService {
             }
         );
     }
+    static updatePassword(correo, password) {
+        return axios.put(
+            `${UserService.#URI}/users/password`,
+            {
+                correo: correo,
+                contrasenia: password
+            },
+            {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+        );
+    }
 }
