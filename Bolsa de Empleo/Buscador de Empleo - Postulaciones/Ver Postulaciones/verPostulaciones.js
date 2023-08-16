@@ -51,4 +51,7 @@ function generarPostulaciones(datosInvitaciones){
     addDivII.appendChild(parI, parII);
     mainDiv.append(addDivI, addDivII, addBtn);
     addSec.appendChild(mainDiv);
+//Agregar elementos al main
+    let mainBody = document.querySelector("main");
+    mainBody.appendChild(addSec);
 }
