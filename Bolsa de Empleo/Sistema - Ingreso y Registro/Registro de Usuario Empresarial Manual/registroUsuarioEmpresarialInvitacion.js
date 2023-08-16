@@ -22,10 +22,10 @@ function guardarRegistro(newUser){
         LoginService.registerUser(newUser).then(res => {
             Swal.fire({
                 icon: 'success',
-                title: 'Registro exitoso',
+                title: 'Registro exitoso',  
                 text: 'La información del nuevo usuario empresarial ha sido guardada exitosamente.',
             });
-            location.replace('iniciarSesion.html');
+            location.replace('/Bolsa de Empleo/Sistema - Ingreso y Registro/Inicio de sesion/inicioSesion.html');
         }).catch(err => {
             Swal.fire({
                 icon: 'error',
