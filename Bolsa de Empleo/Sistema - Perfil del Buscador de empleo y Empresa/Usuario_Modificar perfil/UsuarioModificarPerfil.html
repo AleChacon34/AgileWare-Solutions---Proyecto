@@ -1,73 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" /> 
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Usuario Modificar Perfil</title>
-    <script src ="/Bolsa de Empleo/jsGeneral/SweetAlert.js"></script>
+    <script src="/Bolsa de Empleo/jsGeneral/SweetAlert.js"></script>
     <script src="/Bolsa de Empleo/jsGeneral/barraNavegacionBuscador.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="/Bolsa de Empleo/cssGeneral/barraInicio.css">
-    <link rel="stylesheet" href="UsuarioModificarPerfil.css">
-    <script type="module" src="/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Usuario_Modificar perfil/UsuarioModificarPerfil.js"></script>
+    <link rel="stylesheet" href="/Bolsa de Empleo/cssGeneral/barraInicio.css" />
+    <link rel="stylesheet" href="UsuarioModificarPerfil.css" />
+    <script
+      type="module"
+      src="/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Usuario_Modificar perfil/UsuarioModificarPerfil.js"
+    ></script>
   </head>
   <body>
-    <main><!-- En esta parte se ingresa la información del prefil Usario-->
+    <main>
+      <!-- En esta parte se ingresa la información del prefil Usario-->
       <h1>Perfil Usuario</h1>
-      <div class="block">
-        <section>
-          <div class="container">
-            <label >Nombre</label>
-            <input type="text" id="name">
-          </div>
-          <div class="container">
-            <label for="name">Apellidos</label>
-            <input type="text" id="lastName">
-          </div>
-          <div class="container">
-            <label>Correo Electrónico</label>
-            <input type="email" id="email">
-          </div>
-          <div class="container">
-            <label>Número Telefónico</label>
-            <input type="tel" id="phone">
-          </div>
-          <div class="container">
-            <label for="name">Genero</label>
-            <select name="" id="gender">
-              <option value="No especificar">No especificar</option>
-              <option value="Masculino">Masculino</option>
-              <option value="Femenino">Femenino</option>
-            </select>
-          </div>
-          <div class="container">
-            <label>Contreaseña</label>
-            <input type="password" id="pass">
-          </div>
-          <div class="container">
-            <label>Verificar contreaseña</label>
-            <input type="password" id="verifyPass">
-          </div>
-        </section>
-        <section>
-          <div class="container">
-            <label>Mis Archivos</label>
-            <input type="file" id="file">
-          </div>
-          <div class="container">
-            <label>Estudios</label>
-            <button type="button" name="agregar-campodeestudio"><a href="/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Usuario_Modificar perfil_Agregar estudio/UsuarioModificarPerfilAgregarEstudio.html">Agregar sección de estudios</a></button>
-          </div>
-        </section>
+      <form action="">
+        <div class="block">
+          <section>
+            <div class="container">
+              <label>Nombre</label>
+              <input type="text" id="name" name="nombre" />
+            </div>
+            <div class="container">
+              <label for="name">Apellidos</label>
+              <input type="text" id="lastName" name="apellidos" />
+            </div>
+            <div class="container">
+              <label>Correo Electrónico</label>
+              <input type="email" id="email" name="correo" />
+            </div>
+            <div class="container">
+              <label>Número Telefónico</label>
+              <input type="number" id="phone" name="telefono" />
+            </div>
+            <div class="container">
+              <label for="name">Genero</label>
+              <select name="genero" id="gender">
+                <option value="No especificar">No especificar</option>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+              </select>
+            </div>
+            <div class="container">
+              <label>Contraseña</label>
+              <input type="password" id="pass" name="contrasenia" />
+            </div>
+            <div class="container">
+              <label>Verificar contraseña</label>
+              <input type="password" id="verifyPass" name="verifyContrasenia" />
+            </div>
+          </section>
+          <section>
+            <div class="container">
+              <label>Mis Archivos</label>
+              <input type="file" id="file" />
+            </div>
+            <div class="container">
+              <label>Estudios</label>
+              <button type="button" name="agregar-campodeestudio">
+                <a
+                  href="/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Usuario_Modificar perfil_Agregar estudio/UsuarioModificarPerfilAgregarEstudio.html"
+                  >Agregar sección de estudios</a
+                >
+              </button>
+            </div>
+          </section>
         </div>
         <div class="block">
-            <img src="Captura de pantalla 2023-07-06 141638.png" alt="Foto">
+          <img src="Captura de pantalla 2023-07-06 141638.png" alt="Foto" />
           <div class="container">
             <p>Subir foto de perfil</p>
-            <input type="file" id="photo">
+            <input type="file" id="photo" />
           </div>
-            <button type="button" id="actualizar_perfil">ACTUALIZAR PERFIL</button>
+          <button type="submit" id="actualizar_perfil">
+            ACTUALIZAR PERFIL
+          </button>
         </div>
+      </form>
     </main>
   </body>
 </html>
