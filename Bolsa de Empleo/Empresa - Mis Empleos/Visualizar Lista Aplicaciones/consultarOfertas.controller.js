@@ -85,8 +85,12 @@ function filtrarOfertas(e){
                 icon: "info",
                 title: "Búsqueda",
                 text: "No se encontraron resultados con los criterios brindados, por favor inténtelo de nuevo"
-            })
-            paramBusqueda.value = "";
+            }).then((result)=>{
+                if(result.isConfirmed){
+                    location.reload();
+                    paramBusqueda.value = ""
+                }
+            })  
         }
         else{
             data.forEach(mostrarResultados);
