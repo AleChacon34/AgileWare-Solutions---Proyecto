@@ -16,6 +16,7 @@ function getData() {
   notificarActualizar(email)
 }
 
+
 function getHTML(passKey) {
   const _HTML = `
     <!doctype html>
@@ -84,7 +85,8 @@ function getHTML(passKey) {
                             <td style="text-align:center;">
                                 <p style="font-size:14px; color:rgba(69, 80, 86, 0.7411764705882353); line-height:18px; margin:0 0 0;">&copy; 
                                   <strong>
-                                    www.urlfalso.com
+                                    No respondas a este mensaje,ya que no podemos enviar respuestas desde esta dirección de correo electrónico.
+                                    
                                   </strong>
                                 </p>
                             </td>
@@ -111,11 +113,11 @@ function notificarActualizar(email) {
     {
       Host: "smtp.elasticemail.com",
       Port: 2525,
-      Username: "mchaconc1@ucenfotec.ac.cr",
-      Password: "E03F0CA6979490841B723F348AF81210663E",
+      Username: "no.reply.agileware@gmail.com",
+      Password: "",
       To: `${email}`,
       ReplyTo: "no.reply.agileware@gmail.com",
-      From: "mchaconc1@ucenfotec.ac.cr",
+      From: "no.reply.agileware@gmail.com",
       Subject: "Recuperacion de contraseña",
       Body: `${getHTML(pass)}`,
     }
