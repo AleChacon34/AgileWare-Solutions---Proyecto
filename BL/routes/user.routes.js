@@ -17,8 +17,10 @@ router.get('/:id', userControllers.getUsuarioID);
 router.post(`/filtro`, userControllers.filterUsuario);
 
 //Put Usuario//
-
 router.put('/:id', userControllers.putUsuario);
+
+//UPDATE PASSWORD
+router.put('/password', userControllers.updatePassword);
 
 //Delete Usuario//
 
