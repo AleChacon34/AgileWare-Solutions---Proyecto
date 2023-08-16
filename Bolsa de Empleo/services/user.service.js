@@ -25,6 +25,11 @@ export class UserService {
         );
     }
 
+    //Filter usuario
+    static filter(rol){
+        return axios.post(UserService.#URI + "/users/filtro/", {rol: rol});
+    }
+
     static updateUser(id, newUser) {
         return axios.put(
             `${UserService.#URI}/users/${id}`,
