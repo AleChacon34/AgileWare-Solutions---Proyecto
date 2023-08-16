@@ -14,9 +14,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
 /**
  * Al cargar la pagina, se le asigna el evento a los botones
  */
-document.addEventListener("loadstart", () => {
+document.addEventListener("mouseOver", () => {
     let btns = document.querySelectorAll('.verPostulacion');
     for (let i = 0; i < btns.length; i++) {
+        console.log()
         let btn = btns[i];
         btn.addEventListener("click", redirect);
     }
