@@ -15,22 +15,28 @@
         <form><!--Acá inicia el formulario de registro usuario empresarial -->    
             <div>
                 <section><!--Esta seccion se encuentra el nombre,apellidos,correo electrónico,número telefónico y género -->
-                    <p>Nombre:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name = "nombre" /></p> 
-                    <p>Apellidos:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="apellidos"/></p>
-                    <p>Correo Electrónico:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" name="correo"/></p>
-                    <p>Número Telefónico:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="tel" name="telefono"/></p>
-                    <p>Género:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="genero" id="genero">
+                    <legend>Nombre:</legend>
+                        <input type="text" name = "nombre" />
+                    <legend>Apellidos:</legend>
+                        <input type="text" minlength="1" name="apellidos"/></p>
+                    <legend>Correo Electrónico:</legend>
+                        <input type="email" name="correo"/></p>
+                    <legend>Número Telefónico:</legend>
+                        <input type="tel" name="telefono"/></p>
+                    <legend>Género:</legend>
+                    <select name="genero" id="genero">
                         <option value="No especificar">No especificar</option><!--Aca se especificaria el tipo de genero-->
                         <option value="Femenino">Femenino</option>
                         <option value="Masculino">Masculino</option>
                     </select></p>
-                    <p>Rol: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="rol" id="rol">
+                    <legend>Rol: 
+                        <select name="rol" id="rol">
                         <option value="Administrador">Administrador</option>
                         <option value="Manager">Manager</option>
                         <option value="Reclutador">Reclutador</option>
-                    </select></p>
-                    <p>Contraseña:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name = "contrasenia"></p>
-                    <p> Verificar Contraseña:&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name = "verifyContrasenia"></p>
+                    </select></legend>
+                    <legend>Contraseña:<input type="password" minlength="8" maxlength="12" name = "contrasenia"></legend>
+                    <legend> Verificar Contraseña:<input type="password" name = "verifyContrasenia"></legend>
                 </section>
             </div>
             <div class = "image-placeholder">

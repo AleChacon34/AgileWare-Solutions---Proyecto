@@ -110,7 +110,9 @@ function getHTML(passKey) {
 function notificarActualizar(email) {
   let pass = randomPassword();
   UserService.updatePassword(email, pass).then(res => {
-    console.log('---ENVIADO---');
+    console.log(res);
+  }).catch(err => {
+    console.log(err);
   });
   Email.send(
     {
