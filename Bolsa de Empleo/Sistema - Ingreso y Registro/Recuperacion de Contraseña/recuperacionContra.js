@@ -1,6 +1,6 @@
 "use strict";
 
-let password = '12345678';
+import { UserService } from '../../services/user.service.js';
 
 //Aqui llama a un 'listener' para llama al evento de un boton
 document.addEventListener("DOMContentLoaded", () => {
@@ -109,12 +109,15 @@ function getHTML(passKey) {
 //Funcion que se encargar de enviar el email por medio de un API
 function notificarActualizar(email) {
   let pass = randomPassword();
+  UserService.updatePassword(email, pass).then(res => {
+    console.log('---ENVIADO---');
+  });
   Email.send(
     {
       Host: "smtp.elasticemail.com",
       Port: 2525,
       Username: "no.reply.agileware@gmail.com",
-      Password: "",
+      Password: "E5691885D7414511FF9097F567CB3F3DDDEA",
       To: `${email}`,
       ReplyTo: "no.reply.agileware@gmail.com",
       From: "no.reply.agileware@gmail.com",
