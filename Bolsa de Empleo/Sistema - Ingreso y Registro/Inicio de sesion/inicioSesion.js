@@ -71,7 +71,7 @@ function verificarDatosIngreso(usuario){
                 icon: "success"
             }).then((result) => {
                 localStorage.setItem('activeUser', JSON.stringify(res.data.data._id));
-                if (res.data.data.rol == "Buscador"){
+                if (res.data.data.rol == "buscador"){
                     location.replace("/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Perfil usuario/perfilUsuario.html");
                 } else if (res.data.data.rol == "Administrador") {
                     location.replace('/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Sistema-Perfil Usuario Empresarial/Sistema-Perfil -Usuario-Empresarial.html');
