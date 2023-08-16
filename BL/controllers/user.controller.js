@@ -30,8 +30,8 @@ async function filterUsuario(request, response) {
 
 //UPDATE PASSWORD
 async function updatePassword(req, res) {
-    const { correo, password } = req.body;
-    const data = await userModel.find({ correo }, password);
+    const { correo, contrasenia } = req.body;
+    const data = await userModel.find({ correo }, contrasenia);
     res.send({ data });
 }
 
@@ -52,4 +52,4 @@ async function deleteUsuario(request, response){
     response.send({data});
 };
 
-module.exports = { getUsuario, getUsuarioID, putUsuario, deleteUsuario, filterUsuario};
+module.exports = { getUsuario, getUsuarioID, updatePassword, putUsuario, deleteUsuario, filterUsuario};
