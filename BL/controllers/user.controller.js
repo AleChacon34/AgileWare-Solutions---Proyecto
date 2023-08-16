@@ -22,12 +22,18 @@ async function getUsuarioID(request, response){
 };
 
 //FILTER
-
 async function filterUsuario(request, response) {
     const { rol } = request.body;
     const data = await userModel.find({rol});
     response.send({ data });
 };
+
+//UPDATE PASSWORD
+async function updatePassword(req, res) {
+    const { correo, password } = req.body;
+    const data = await userModel.find({ correo }, password);
+    res.send({ data });
+}
 
 //UPDATE USER
 async function putUsuario(request, response){
