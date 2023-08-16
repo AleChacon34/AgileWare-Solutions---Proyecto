@@ -16,7 +16,7 @@ function generarPostulaciones(datosInvitaciones){
     //Crear elementos
     let addDiv =  document.createElement("div");
     let addSecI = document.createElement("section");
-    let addSecII = document.createElement("section");
+    let addAside = document.createElement("aside");
     let parI =  document.createElement("p");
     let parII =  document.createElement("p");
     let parIII =  document.createElement("p");
@@ -38,8 +38,8 @@ function generarPostulaciones(datosInvitaciones){
     //Agrupar elementos
     addSecI.append(parI, parII, parIII);
     select.append(optionI, optionII, optionIII, optionIV);
-    addSecII.append(select);
-    addDiv.append(addSecI, addSecII);
+    addAside.append(select);
+    addDiv.append(addSecI, addAside);
     let mainBody = document.querySelector("main");
     mainBody.appendChild(addDiv);
 }

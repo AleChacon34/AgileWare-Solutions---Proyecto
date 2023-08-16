@@ -8,10 +8,51 @@ body{
     display: flex;
     flex-direction: column;
     font-family: sans-serif;
+    align-items: center;
+    justify-content: space-between;
 }
 
 main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 90%;
+    width: 80%;
+}
+
+main div{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(220, 220, 220);
+    margin: 20px 5px 20px 5px;
+    width: 40%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 3px double gray;
+}
+
+div section{
+    display: flex;
+    flex-basis: 70%;
+    flex-direction: column;
+}
+
+div aside{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: 25%;
+}
+
+
+section p{
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px; 
+}
+
+aside select{
+    display: inline;
+    height: 50px;
+    font-size: large;
 }
