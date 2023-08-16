@@ -60,10 +60,10 @@ function verOferta(data){
     newAnchII.appendChild(document.createTextNode("VER POSTULADOS"));
     addPI.appendChild(document.createTextNode(data.estadoOferta));
         if (addPI.textContent === "Oferta pública"){
-            addPI.setAttribute("id", "pOfertaPublica")
+            addPI.setAttribute("id", "pOfertaPublica");
         }
         else if (addPI.textContent === "Oferta oculta"){
-            addPI.setAttribute("id", "pOfertaOculta")
+            addPI.setAttribute("id", "pOfertaOculta");
         }
     //Agregar los H3, H4 y textarea al section, y este al Div
     addSec.append(addH3I, addPI, addH4I, textareaI, addH4II, textareaII);
