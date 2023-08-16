@@ -1,20 +1,12 @@
 "use strict";
 
 import { UserService } from "../../services/user.service.js";
-
-let user = {
-    name: "Marco",
-    lastName: "Chacon",
-    email: "marco@gamil.com",
-    phone: "11223344",
-    gender: "Masculino",
-    pass: "12345678",
-}
+import { User } from "../../models/user.model.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     loadData();
-    let btn = document.querySelector('#actualizar_perfil');
-    btn.addEventListener('click', getData);
+    let form = document.querySelector('form');
+    form.addEventListener('submit', getData);
 });
 
 function loadData() {
@@ -35,45 +27,31 @@ function loadData() {
     });
 }
 
-function getData() {
-    let nombre = document.getElementById('name').value;
-    let apellidos = document.getElementById('lastName').value;
-    let correo = document.getElementById('email').value;
-    let telefono = document.getElementById('phone').value;
-    let genero = document.getElementById('gender').value;
-    let contrasenia = document.getElementById('pass').value;
-    let verifyPass = document.getElementById('verifyPass').value;
-
-    let newUser = {
-        nombre, 
-        apellidos,
-        correo,
-        telefono,
-        genero,
-        contrasenia,
-        verifyPass
-    }
-
+function getData(e) {
+    e.preventDefault()
+    let formData = new FormData(e.target);
+    let newUser = new User(formData);
+    newUser.setRol("Buscador");
     verifyData(newUser);
 }
 
 function verifyData(newUser) {
-    if (newUser.nombre == "") {
+    if (newUser.getNombre() == "") {
         errorValidationMessage();
         document.getElementById("name").style.border = "2px solid red";
-    } else if (newUser.apellidos == "") {
+    } if (newUser.getApellidos() == "") {
         errorValidationMessage();
         document.getElementById("lastName").style.border = "2px solid red";
-    } else if (newUser.correo == "") {
+    } if (newUser.getCorreo() == "") {
         errorValidationMessage();
         document.getElementById("email").style.border = "2px solid red";
-    } else if (newUser.telefono == "") {
+    } if (newUser.getTelefono() == "") {
         errorValidationMessage();
         document.getElementById("phone").style.border = "2px solid red";
-    } else if (newUser.contrasenia == "") {
+    } if (newUser.getContrasenia() == "") {
         errorValidationMessage();
         document.getElementById("pass").style.border = "2px solid red";
-    } else if (newUser.verifyPass == "") {
+    } if (newUser.getVerifyContrasenia() == "") {
         errorValidationMessage();
         document.getElementById("verifyPass").style.border = "2px solid red";
     } else {
@@ -95,6 +73,8 @@ function verifyPass(newUser) {
     if (newUser.verifyPass == newUser.contrasenia) {
         UserService.updateUser(JSON.parse(localStorage.getItem('activeUser')), newUser).then(res => {
             notificarActualizar();
+            setInterval(1000);
+            location.href = "/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Perfil usuario/perfilUsuario.html"
         });
     } else {
         Swal.fire("Por favor, verifica las contraseñas", "", "error");
