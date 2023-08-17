@@ -19,7 +19,7 @@ function getData(e) {
 
 function verifyUser(email) {
   UserService.getUserByEmail(email).then(res => {
-    if (res.) {
+    if (res.data.data != []) {
       notificarActualizar(email);
     } else {
       Swal.fire({
