@@ -1,45 +1,42 @@
 'use strict'
 
-export class postulacioneservice{
+export class postulacionService{
     static #URL = "http://localhost:3000";
 
     // Get postulaciones
     static findAll(){
-        return axios.get(`${postulacioneservice.#URL}/postulaciones/`);
+        return axios.get(`${postulacionService.#URL}/postulaciones/`);
     };
 
     //Get one postulacion
     static findOne(idCode){
-        return axios.get(postulacioneservice.#URL+"/postulaciones/" + idCode);   
+        return axios.get(postulacionService.#URL+"/postulaciones/" + idCode);   
     };
 
     //Filter postulacion
     static filter(titulo){
-        return axios.post(postulacioneservice.#URL + "/postulaciones/filtro/", {seccionTitulo: titulo});
+        return axios.post(postulacionService.#URL + "/postulaciones/filtro/", {seccionTitulo: titulo});
     }
     
 
     //Delete one postulacion
     static deleteOne(idCode){
-        return axios.delete(postulacioneservice.#URL+"/postulaciones/" + idCode);
+        return axios.delete(postulacionService.#URL+"/postulaciones/" + idCode);
     }
 
+    //Put postulacion
     static updateOne(idCode, seccionTitulo, seccionRequerimientos, seccionDescripcion, estadopostulacion, visibilidad){
-        return axios.put(`${postulacioneservice.#URL}/postulaciones/${idCode}`, {
-            seccionTitulo: seccionTitulo,
-            seccionRequerimientos: seccionRequerimientos,
-            seccionDescripcion: seccionDescripcion,
-            estadopostulacion: estadopostulacion,
+        return axios.put(`${postulacionService.#URL}/postulaciones/${idCode}`, {
+            estado: estado,
             visibilidad: visibilidad
         });
     }
 
-    static registrarpostulacion(nuevapostulacion){
-        axios.post(postulacioneservice.#URL+"/postulaciones", {
-            seccionTitulo: nuevapostulacion.getTitulo(),
-            seccionRequerimientos: nuevapostulacion.getRequerimientos(),
-            seccionDescripcion: nuevapostulacion.getDescripcion(),
-            estadopostulacion: nuevapostulacion.getEstadopostulacion(),
+    //Post postulacion
+    static registrarPostulacion(nuevaPostulacion){
+        axios.post(postulacionService.#URL+"/postulaciones", {
+            estado: nuevaPostulacion.getEstado(),
+            visibilidad: nuevaPostulacion.getVisibilidad(),
         })
     };  
 }
