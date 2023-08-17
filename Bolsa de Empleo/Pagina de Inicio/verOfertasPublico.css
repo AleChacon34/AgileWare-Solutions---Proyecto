@@ -52,6 +52,7 @@ div textarea {
     height: 20%;
     border-radius: 10px;
     overflow: scroll;
+    resize: none;
 }
 
 div h4, div h3{

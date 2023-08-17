@@ -1,107 +1,78 @@
-body {
+html, body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    align-items: center;
     background-color: white;
     background-image: url("../../imagenes/working.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    display: flex;
-    flex-direction: column;
-    font-family: sans-serif;
-    margin: 0;
 }
-
 
 main {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-
-main section {
-    width: 85%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-main aside {
-    width: 10%;
-}
-
-img {
-    width: 130px;
-    height: 100px;
-}
-
-.visualizar {
-    background-color: rgb(0, 145, 104);
-    translate: 10px 70px;
-    margin: 0 10px;
-    border: none;
-    cursor: pointer;
-    padding: 7px;
-    border-radius: 5px;
-    color: white;
-}
-
-.visualizar:hover {
-    color: white;
-    background-color: rgb(0, 120, 86);
-}
-
-.visualizar:active {
-    background-color: rgb(0, 79, 57);
-    color: white;
-}
-
-/*TODO estilos especificos del 'main section' */
-
-main section .card{
-    width: 70%;
-    display: flex;
-    flex-direction: row;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white    ;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 20px;
-    margin: 15px 5px;
-    border-radius: 10px;
-}
-
-main section .card:hover {
-    padding: 30px;
-    border: 1px solid rgba(14,150,112,1);
-    transition: all 0.3s;
-}
-
-main section .card .offerInfo {
-    margin-left: 15px;
-}
-
-main section .card .offerInfo .info {
-    background-color: rgba(205, 205, 205, 0.4);
-    padding: 10px;
-    border-radius: 10px;
-}
-
-/*TODO estilos especificos del 'main aside' */
-
-main aside .filter {
-    padding: 10px;
-    width: 180px;
-    background-color: rgb(216, 216, 216);
+    width: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
     align-items: center;
-    margin: 15px 0;
-    border-radius: 5px;
 }
 
-main aside .filter:hover{
-    border: 1px solid rgb(0, 88, 189);
+main div{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px 5px 10px;
+    height: 400px;
+    width: 90%;
+    background-color: rgb(236, 236, 236);
+    border-radius: 10px;
+    margin: 40px;
 }
+
+div section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+    height: 80%;
+}
+
+div aside{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 35%;
+    height: 80%;
+}
+
+div textarea {
+    background-color: white;
+    padding: 15px;
+    height: 20%;
+    border-radius: 10px;
+    overflow: scroll;
+    resize: none;
+}
+
+div h4, div h3{
+    margin: 5px;
+}
+
+aside img{
+    height: 100%;
+    width: 100%;
+}
+
+section button{
+    margin-top: auto;
+}
+
+
+
+
+
