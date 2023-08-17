@@ -41,5 +41,5 @@ export class OfertaService{
             seccionDescripcion: nuevaOferta.getDescripcion(),
             estadoOferta: nuevaOferta.getEstadoOferta(),
         })
-    };  
+    };
 }
