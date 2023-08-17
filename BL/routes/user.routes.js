@@ -20,7 +20,7 @@ router.post(`/filtro`, userControllers.filterUsuario);
 router.put('/:id', userControllers.putUsuario);
 
 //UPDATE PASSWORD
-router.put('/password', userControllers.updatePassword);
+router.put('/:correo', userControllers.updatePassword);
 
 //Delete Usuario//
 

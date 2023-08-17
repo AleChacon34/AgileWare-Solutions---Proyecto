@@ -30,8 +30,9 @@ async function filterUsuario(request, response) {
 
 //UPDATE PASSWORD
 async function updatePassword(req, res) {
-    const { correo, contrasenia } = req.body;
-    const data = await userModel.find({ correo }, contrasenia);
+    const { correo } = req.params;
+    const { body } = req;
+    const data = await userModel.findOneAndUpdate({ correo }, body);
     res.send({ data });
 }
 

@@ -48,12 +48,12 @@ export class UserService {
             }
         );
     }
-    static updatePassword(correo, password) {
+
+    static updatePassword(correo, pass) {
         return axios.put(
-            `${UserService.#URI}/users/password`,
+            `${UserService.#URI}/users/${correo}`,
             {
-                correo: correo,
-                contrasenia: password
+                contrasenia: pass
             },
             {
                 headers: {

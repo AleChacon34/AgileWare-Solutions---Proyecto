@@ -1,18 +1,19 @@
 "use strict";
 
 import { UserService } from '../../services/user.service.js';
+import { User } from '../../models/user.model.js';
 
 //Aqui llama a un 'listener' para llama al evento de un boton
 document.addEventListener("DOMContentLoaded", () => {
-  let actualizarBtn = document.querySelector(
-    "button[name='recuperar-contrasenna']"
-  );
-  actualizarBtn.addEventListener("click", getData);
+  let form = document.querySelector("form");
+  form.addEventListener("submit", getData);
 });
 
 //Esta funcion se encarga de obtener los datos de email de input
-function getData() {
-  let email = document.getElementById('email').value;
+function getData(e) {
+  e.preventDefault();
+  let formData = new FormData(e.target);
+  let email = new User(formData);
   notificarActualizar(email)
 }
 
@@ -110,6 +111,11 @@ function getHTML(passKey) {
 function notificarActualizar(email) {
   let pass = randomPassword();
   UserService.updatePassword(email, pass).then(res => {
+    Swal.fire({
+      icon: "success",
+      text: "Recibirá un correo con la información para la recuperación de contraseña.",
+      confirmButtonText: "Continuar",
+    });
     console.log(res);
   }).catch(err => {
     console.log(err);
@@ -127,15 +133,9 @@ function notificarActualizar(email) {
       Body: `${getHTML(pass)}`,
     }
   ).then((message) => {
-    password = pass;
-    console.log(password);
-    Swal.fire({
-      icon: "success",
-      text: "Recibirá un correo con la información para la recuperación de contraseña.",
-      confirmButtonText: "Continuar",
-    });
+    console.log(pass);
   }).catch((err) => {
-    Swal.fire("Ha habido un error", "", "warning");
+    Swal.fire("Ha habido un error", "", "error");
   });
 }
 
