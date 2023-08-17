@@ -48,12 +48,27 @@ export class UserService {
             }
         );
     }
-    static updatePassword(correo, password) {
+
+    static updatePassword(correo, pass) {
         return axios.put(
-            `${UserService.#URI}/users/password`,
+            `${UserService.#URI}/users/`,
             {
-                correo: correo,
-                contrasenia: password
+                correo: correo.getCorreo(),
+                contrasenia: pass
+            },
+            {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+        );
+    }
+
+    static getUserByEmail(email) {
+        return axios.post(
+            `${UserService.#URI}/users/emailFilter`,
+            {
+                correo: email.getCorreo()
             },
             {
                 headers: {

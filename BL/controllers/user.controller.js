@@ -21,6 +21,13 @@ async function getUsuarioID(request, response){
     }
 };
 
+//GET USER BY EMAIL
+async function getUserByEmail(req, res) {
+    const { body } = req;
+    const data = await userModel.find({ body });
+    res.send({ data }); 
+}
+
 //FILTER
 async function filterUsuario(request, response) {
     const { rol } = request.body;
@@ -30,8 +37,10 @@ async function filterUsuario(request, response) {
 
 //UPDATE PASSWORD
 async function updatePassword(req, res) {
-    const { correo, contrasenia } = req.body;
-    const data = await userModel.find({ correo }, contrasenia);
+    const { body } = req;
+    const { correo } = body;
+    const data = await userModel.findOneAndUpdate({ correo }, body);
+    res.status(200);
     res.send({ data });
 }
 
@@ -52,4 +61,4 @@ async function deleteUsuario(request, response){
     response.send({data});
 };
 
-module.exports = { getUsuario, getUsuarioID, updatePassword, putUsuario, deleteUsuario, filterUsuario};
+module.exports = { getUsuario, getUsuarioID, updatePassword, putUsuario, deleteUsuario, filterUsuario, getUserByEmail };

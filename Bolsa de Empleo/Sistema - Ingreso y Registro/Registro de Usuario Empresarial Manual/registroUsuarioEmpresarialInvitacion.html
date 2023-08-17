@@ -16,27 +16,27 @@
             <div>
                 <section><!--Esta seccion se encuentra el nombre,apellidos,correo electrónico,número telefónico y género -->
                     <legend>Nombre:</legend>
-                        <input type="text" name = "nombre" />
+                        <input id="cajas" type="text" name = "nombre" /><br>
                     <legend>Apellidos:</legend>
-                        <input type="text" minlength="1" name="apellidos"/></p>
+                        <input id="cajas" type="text" minlength="1" name="apellidos"/></p>
                     <legend>Correo Electrónico:</legend>
-                        <input type="email" name="correo"/></p>
+                        <input id="cajas" type="email" name="correo"/></p>
                     <legend>Número Telefónico:</legend>
-                        <input type="tel" name="telefono"/></p>
+                        <input id="cajas"type="tel" name="telefono"/></p>
                     <legend>Género:</legend>
-                    <select name="genero" id="genero">
+                    <select id="box" name="genero" id="genero">
                         <option value="No especificar">No especificar</option><!--Aca se especificaria el tipo de genero-->
                         <option value="Femenino">Femenino</option>
                         <option value="Masculino">Masculino</option>
-                    </select></p>
+                    </select><br>
                     <legend>Rol: 
-                        <select name="rol" id="rol">
+                        <select id= "box" name="rol" id="rol">
                         <option value="Administrador">Administrador</option>
                         <option value="Manager">Manager</option>
                         <option value="Reclutador">Reclutador</option>
-                    </select></legend>
-                    <legend>Contraseña:<input type="password" minlength="8" maxlength="12" name = "contrasenia"></legend>
-                    <legend> Verificar Contraseña:<input type="password" name = "verifyContrasenia"></legend>
+                    </select></legend><br>
+                    <br><legend>Contraseña:<input id= "cajas" type="password" minlength="8" maxlength="12" name = "contrasenia"></legend>
+                    <br><legend> Verificar Contraseña:<input id= "cajas" type="password" name = "verifyContrasenia"></legend>
                 </section>
             </div>
             <div class = "image-placeholder">

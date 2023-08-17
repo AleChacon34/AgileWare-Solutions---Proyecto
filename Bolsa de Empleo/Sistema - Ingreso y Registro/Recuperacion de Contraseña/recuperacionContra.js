@@ -1,21 +1,79 @@
 "use strict";
 
 import { UserService } from '../../services/user.service.js';
+import { User } from '../../models/user.model.js';
 
 //Aqui llama a un 'listener' para llama al evento de un boton
 document.addEventListener("DOMContentLoaded", () => {
-  let actualizarBtn = document.querySelector(
-    "button[name='recuperar-contrasenna']"
-  );
-  actualizarBtn.addEventListener("click", getData);
+  let form = document.querySelector("form");
+  form.addEventListener("submit", getData);
 });
 
 //Esta funcion se encarga de obtener los datos de email de input
-function getData() {
-  let email = document.getElementById('email').value;
-  notificarActualizar(email)
+function getData(e) {
+  e.preventDefault();
+  let formData = new FormData(e.target);
+  let email = new User(formData);
+  verifyUser(email);
 }
 
+function verifyUser(email) {
+  UserService.getUserByEmail(email).then(res => {
+    if (res.data.data != []) {
+      notificarActualizar(email);
+    } else {
+      Swal.fire({
+        title: "El usuario no existe",
+        text: "Por favor, ingrese un correo de usuario existente",
+        icon: "error"
+      });
+    }
+  });
+}
+
+//Funcion que se encargar de enviar el email por medio de un API
+function notificarActualizar(email) {
+  let pass = randomPassword();
+  UserService.updatePassword(email, pass).then(res => {
+    Email.send(
+      {
+        Host: "smtp.elasticemail.com",
+        Port: 2525,
+        Username: "no.reply.agileware@gmail.com",
+        Password: "E5691885D7414511FF9097F567CB3F3DDDEA",
+        To: `${email}`,
+        ReplyTo: "no.reply.agileware@gmail.com",
+        From: "no.reply.agileware@gmail.com",
+        Subject: "Recuperacion de contraseña",
+        Body: `${getHTML(pass)}`,
+      }
+    ).then((message) => {
+      console.log(pass);
+      Swal.fire({
+        title: "Contraseña modificada con éxito",
+        text: "Se le ha enviado un correo con su nueva contraseña",
+        icon: "success"
+      })
+    }).catch((err) => {
+      Swal.fire("Ha habido un error", "", "error");
+    });
+  }).catch(err => {
+    console.log(err);
+  });
+}
+
+//Funcion que se encarga de generar una contraseña temporal
+function randomPassword() {
+  let pass = "";
+  let str = "ABDCEFGHIJKLMNOPQRSTUVWXYZ" + "abcdefghijklmnopqrstuvwxyz1234567890";
+
+  for (let i = 1; i <= 10; i++) {
+    let char = Math.floor(Math.random() * str.length + 1);
+    pass += str.charAt(char);
+  }
+
+  return pass;
+}
 
 function getHTML(passKey) {
   const _HTML = `
@@ -104,50 +162,4 @@ function getHTML(passKey) {
     </html>`;
 
   return _HTML; 
-}
-
-//Funcion que se encargar de enviar el email por medio de un API
-function notificarActualizar(email) {
-  let pass = randomPassword();
-  UserService.updatePassword(email, pass).then(res => {
-    console.log(res);
-  }).catch(err => {
-    console.log(err);
-  });
-  Email.send(
-    {
-      Host: "smtp.elasticemail.com",
-      Port: 2525,
-      Username: "no.reply.agileware@gmail.com",
-      Password: "E5691885D7414511FF9097F567CB3F3DDDEA",
-      To: `${email}`,
-      ReplyTo: "no.reply.agileware@gmail.com",
-      From: "no.reply.agileware@gmail.com",
-      Subject: "Recuperacion de contraseña",
-      Body: `${getHTML(pass)}`,
-    }
-  ).then((message) => {
-    password = pass;
-    console.log(password);
-    Swal.fire({
-      icon: "success",
-      text: "Recibirá un correo con la información para la recuperación de contraseña.",
-      confirmButtonText: "Continuar",
-    });
-  }).catch((err) => {
-    Swal.fire("Ha habido un error", "", "warning");
-  });
-}
-
-//Funcion que se encarga de generar una contraseña temporal
-function randomPassword() {
-  let pass = "";
-  let str = "ABDCEFGHIJKLMNOPQRSTUVWXYZ" + "abcdefghijklmnopqrstuvwxyz1234567890";
-
-  for (let i = 1; i <= 10; i++) {
-    let char = Math.floor(Math.random() * str.length + 1);
-    pass += str.charAt(char);
-  }
-
-  return pass;
 }
