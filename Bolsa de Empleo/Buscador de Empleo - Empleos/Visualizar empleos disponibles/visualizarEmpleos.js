@@ -23,6 +23,7 @@ function crearSecciones(data){
     if (data.visibilidad === "Activa" && data.estadoOferta != "Oferta oculta"){
         //Crear DIV principal con id
         let addDiv = document.createElement('div');
+        addDiv.setAttribute("id", data._id);
         //Crear section del div
         let addSec = document.createElement('section');
         addSec.setAttribute("id", data._id)
@@ -62,30 +63,34 @@ function crearSecciones(data){
         let mainBody = document.querySelector('main');
         mainBody.insertBefore(addDiv, mainBody.children[1]);
     }
-      
 }
 
-document.addEventListener("mouseover", () =>{
+document.addEventListener("mouseover", (data) =>{
     let ofertaBtns = document.querySelectorAll(".verOferta");
         for (let i = 0; i < ofertaBtns.length; i++) {
             let btn = ofertaBtns[i];
-            btn.addEventListener('click', pedirIngreso);
+            btn.addEventListener('click', aplicarPuesto);
         }
 })
 
 // Función para redirigir al usuario a iniciar sesión
-function pedirIngreso(){
+function aplicarPuesto(e){
     console.log('Funciona')
     Swal.fire({
-        icon: "error",
-        title: "Error de Ingreso",
-        text: "Por favor inicie sesión para postularse para este puesto",
-        confirmButtonText: "Iniciar Sesión",
+        icon: "warning",
+        title: "Postulación",
+        text: "¿Desea postularse para este puesto?",
+        confirmButtonText: "Confirmar",
         showDenyButton: true,
         denyButtonText: "Cancelar",
     }).then((result) => {
         if (result.isConfirmed){
-            location.href="/Bolsa de Empleo/Sistema - Ingreso y Registro/Inicio de sesion/inicioSesion.html";
+            Swal.fire({
+                icon: "success",
+                title: "Postulación exitosa",
+            });
+            localStorage.setItem("postulacionID", e.target.parentNode.id)
+            location.href = "../../Buscador de Empleo - Postulaciones/Ver Postulaciones/postulacion.html"
         }
     })
 }

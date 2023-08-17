@@ -5,9 +5,9 @@ import { OfertaService } from "../../services/consultarOferta.services.js";
 
 document.addEventListener("DOMContentLoaded", ()=>{
     let id = localStorage.getItem('currentIDs');
+    console.log(id)
     OfertaService.findOne(id).then((response) =>{
         let data = response.data.data;
-        //console.log(data);
         verOferta(data);
     })
 })

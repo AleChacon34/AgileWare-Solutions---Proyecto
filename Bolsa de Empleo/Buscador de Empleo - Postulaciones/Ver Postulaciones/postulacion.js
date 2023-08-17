@@ -1,8 +1,16 @@
 "use strict";
 
+import { OfertaService } from "../../services/consultarOferta.services.js";
+
 document.addEventListener('DOMContentLoaded', () => {
-    let estado = document.querySelector('p');
-    estadoPostulacion(estado);
+    let id = localStorage.getItem('postulacionID');
+    console.log(id)
+    OfertaService.findOne(id).then((response)=>{
+        let data = response.data.data;
+        verOferta(data);
+    })
+    // let estado = document.querySelector('p');
+    // estadoPostulacion(estado);
 })
 
 function estadoPostulacion(estado) {
