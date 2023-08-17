@@ -51,9 +51,24 @@ export class UserService {
 
     static updatePassword(correo, pass) {
         return axios.put(
-            `${UserService.#URI}/users/${correo}`,
+            `${UserService.#URI}/users/`,
             {
+                correo: correo.getCorreo(),
                 contrasenia: pass
+            },
+            {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            }
+        );
+    }
+
+    static getUserByEmail(email) {
+        return axios.post(
+            `${UserService.#URI}/users/emailFilter`,
+            {
+                correo: email.getCorreo()
             },
             {
                 headers: {

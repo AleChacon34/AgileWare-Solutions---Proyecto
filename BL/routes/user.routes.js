@@ -6,12 +6,13 @@ const router = express.Router();
 
 
 //Get Usuario//
-
 router.get('/',userControllers.getUsuario);
 
 //Get Usuario id//
-
 router.get('/:id', userControllers.getUsuarioID);
+
+//Get usuario por correo
+router.post('/emailFilter', userControllers.getUserByEmail);
 
 //Filter Usuario
 router.post(`/filtro`, userControllers.filterUsuario);
@@ -20,10 +21,9 @@ router.post(`/filtro`, userControllers.filterUsuario);
 router.put('/:id', userControllers.putUsuario);
 
 //UPDATE PASSWORD
-router.put('/:correo', userControllers.updatePassword);
+router.put('/', userControllers.updatePassword);
 
 //Delete Usuario//
-
 router.delete('/:id', userControllers.deleteUsuario);
 
 
