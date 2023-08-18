@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     let idPostulante = localStorage.getItem("activeUser");
     postulacionService.findByIdPostulante(idPostulante).then((response)=>{
         let data =  response.data.data;
+        console.log(data)
         data.forEach(generarPostulaciones)
     });
 })
@@ -19,6 +20,7 @@ function redirect() {
 }
 
 function generarPostulaciones(data){
+    console.log(data.idOferta);
     OfertaService.findOne(data.idOferta).then((response)=>{
         let titulo = response.data.data.seccionTitulo;
         let addSec = document.createElement("section");
