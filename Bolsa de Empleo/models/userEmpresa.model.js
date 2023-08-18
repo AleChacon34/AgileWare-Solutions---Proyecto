@@ -10,6 +10,7 @@ export class UserEmpresa {
     #rol;
     #contrasenia;
     #verifyContrasenia;
+    #pertenencia;
 
     //Constructor
     constructor(formData){
@@ -40,6 +41,8 @@ export class UserEmpresa {
 
     setVerifyContrasenia(pVerifyContrasenia){this.#verifyContrasenia = pVerifyContrasenia};
 
+    setPertenencia(pPertenencia){this.#pertenencia = pPertenencia};
+
     //Getters
 
     getNombre(){return this.#nombre};
@@ -57,4 +60,6 @@ export class UserEmpresa {
     getContrasenia(){return this.#contrasenia};
 
     getVerifyContrasenia(){return this.#verifyContrasenia};
+
+    getPertenencia(){return this.#pertenencia};
 }
