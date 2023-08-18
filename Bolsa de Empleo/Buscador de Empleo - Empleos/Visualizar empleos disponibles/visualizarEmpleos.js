@@ -78,7 +78,7 @@ document.addEventListener("mouseover", (data) =>{
 // Función para redirigir al usuario a iniciar sesión
 function aplicarPuesto(e){
     let idPostulante = localStorage.getItem("activeUser");
-    const dataPostulacion = {idOferta: e.target.parentNode.id, idPostulante: idPostulante, estadoPostulacion: "EnviadaTestII"};
+    const dataPostulacion = {idOferta: e.target.parentNode.id, idPostulante: idPostulante, estadoPostulacion: "Enviada"};
     const nuevaPostulacion = new Postulacion(dataPostulacion);
     postulacionService.registrarPostulacion(nuevaPostulacion);
     Swal.fire({
