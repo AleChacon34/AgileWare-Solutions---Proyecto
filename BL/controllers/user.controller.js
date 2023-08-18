@@ -24,7 +24,8 @@ async function getUsuarioID(request, response){
 //GET USER BY EMAIL
 async function getUserByEmail(req, res) {
     const { body } = req;
-    const data = await userModel.find({ body });
+    const { correo } = body;
+    const data = await userModel.find({ correo });
     res.send({ data }); 
 }
 
