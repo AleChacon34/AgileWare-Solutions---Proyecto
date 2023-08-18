@@ -12,5 +12,19 @@ document.addEventListener("mouseover", () => {
  * Funcion que se encargar de redirigir a la pagina de inicio al dar 'click' en el boton de cierre de sesion
  */
 function logOut() {
-  location.replace("/Bolsa de Empleo/Pagina de Inicio/paginaInicio.html");
+  Swal.fire(
+    {
+      icon: "question",
+      title: "Cerrar sesión",
+      text: "¿Está seguro(a) que desea cerrar la sesión?",
+      showCancelButton: true,
+      cancelButtonText: "Regresar",
+      confirmButtonText: "Cerrar sesión"
+    }
+  ).then((result)=>{
+    if (result.isConfirmed){
+      location.replace("/Bolsa de Empleo/Pagina de Inicio/paginaInicio.html");
+    }
+  })
+  
 }

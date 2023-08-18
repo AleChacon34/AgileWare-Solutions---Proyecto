@@ -67,11 +67,13 @@ function crearBarraNavegacionBuscador(){
     let htmlHead = document.querySelector('head');
     let newScriptI = document.createElement('script');
     let newScriptII = document.createElement('script');
+    let newScriptIII = document.createElement('script');
     let newLinkI = document.createElement('link');
     //Set attributes for <script> and <link>
     newScriptI.setAttribute("src", "https://kit.fontawesome.com/3d4c892592.js");
     newScriptI.setAttribute("crossorigin","anonymous");
     newScriptII.setAttribute("src", "/Bolsa de Empleo/jsGeneral/cerrarSesion.js");
+    newScriptIII.setAttribute("src", "/Bolsa de Empleo/jsGeneral/SweetAlert.js");
     // newScriptII.setAttribute("type", "module");
     newLinkI.setAttribute("rel", "stylesheet");
     newLinkI.setAttribute("href", "/Bolsa de Empleo/cssGeneral/barraNavegacionBuscador.css")
@@ -81,8 +83,7 @@ function crearBarraNavegacionBuscador(){
     newScriptAxios.setAttribute("src", "https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js");
 
     //Add <script> and <link> to head
-    htmlHead.appendChild(newScriptI);
-    htmlHead.appendChild(newScriptII);
+    htmlHead.append(newScriptI, newScriptII, newScriptIII);
     htmlHead.appendChild(newLinkI);
     htmlHead.appendChild(newScriptAxios);
 
