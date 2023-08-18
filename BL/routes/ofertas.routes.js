@@ -14,7 +14,10 @@ router.get("/", ofertasController.getOfertas);
 router.get('/:id', ofertasController.getOneOferta);
 
 //FILTER ofertas
-router.post(`/filtro`, ofertasController.filterOferta)
+router.post(`/filtro`, ofertasController.filterOferta);
+
+//Get mis ofertas
+router.post(`/misOfertas`, ofertasController.getMisOfertas)
 
 //Post Oferta
 router.post("/", ofertasController.postOferta);

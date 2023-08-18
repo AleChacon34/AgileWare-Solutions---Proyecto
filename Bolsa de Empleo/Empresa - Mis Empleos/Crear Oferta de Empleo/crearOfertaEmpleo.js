@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () =>{
     // let ocultarBtn = document.querySelector("button[name='ocultar']");
     let form = document.querySelector("#ofertaForm");
     form.addEventListener("submit", postOferta);
+    let publicador = localStorage.getItem("activeUser");
+    let nombreEmpresa = document.querySelector("#nombreEmpresa");
+    nombreEmpresa.value = publicador;
 })
 
 
@@ -15,10 +18,10 @@ function postOferta(e){
   e.preventDefault(e.target);
 
   //Obtener el contenido de los espacios de la oferta
-  let publicarBtn = document.querySelector("button[name='publicar']");
   let cuadroTitulo= document.querySelector("#seccionTitulo");
   let cuadroRequerimientos= document.querySelector("#seccionRequerimientos");
   let cuadroDescripcion= document.querySelector("#seccionDescripcion");
+  
 
   //Poner el border de los espacios vacios en rojo
   
@@ -58,7 +61,7 @@ function alertaCreacion(){
     confirmButtonText: 'Continuar',
   }).then((result) => {
     if (result.isConfirmed) {
-        window.location.replace("/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarListaOfertas.html")
+        // window.location.replace("/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarListaOfertas.html")
     };
   });
 } 

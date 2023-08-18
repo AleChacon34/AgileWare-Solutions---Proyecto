@@ -18,6 +18,10 @@ export class OfertaService{
         return axios.post(OfertaService.#URL + "/ofertas/filtro/", {seccionTitulo: titulo});
     }
 
+    //Get mis ofertas
+    static findByPublicador(idPublicador){
+        return axios.post(OfertaService.#URL + "/ofertas/misOfertas/", {publicador: idPublicador});
+    }
     //Delete one oferta
     static deleteOne(idCode){
         return axios.delete(OfertaService.#URL+"/ofertas/" + idCode);
@@ -39,6 +43,7 @@ export class OfertaService{
             seccionRequerimientos: nuevaOferta.getRequerimientos(),
             seccionDescripcion: nuevaOferta.getDescripcion(),
             estadoOferta: nuevaOferta.getEstadoOferta(),
+            publicador: nuevaOferta.getPublicador()
         })
     };
 }

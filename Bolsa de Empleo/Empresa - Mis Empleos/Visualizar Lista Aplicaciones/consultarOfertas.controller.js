@@ -10,14 +10,16 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 function getOfertas(){
     //Acceder a las ofertas
-    OfertaService.findAll().then((response) =>{
-        let data = response.data.data
+    let idPublicador = localStorage.getItem("activeUser")
+    OfertaService.findByPublicador(idPublicador).then((response) =>{
+        let data = response.data.data;
         data.forEach(crearSecciones)
     })
 }
 
 function crearSecciones(data){
-    if (data.visibilidad === "Activa" && data.publicador === "Empresa"){
+    console.log
+    if (data.visibilidad === "Activa"){
         //Crear DIV principal con id
         let addDiv = document.createElement('div');
         //Crear section del div

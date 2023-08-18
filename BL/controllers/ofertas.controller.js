@@ -10,6 +10,12 @@ async function getOfertas(request, response){
     response.send({data});
 };
 
+async function getMisOfertas(request, response){
+    const {publicador} = request.body;
+    const data = await OfertaModel.find({publicador});
+    response.send({data});
+};
+
 //GET ONE
 
 async function getOneOferta(request, response) {
@@ -53,4 +59,4 @@ async function deleteOferta(request, response){
 
 
 
-module.exports = {getOfertas, postOferta, getOneOferta, updateOferta, deleteOferta, filterOferta};
+module.exports = {getOfertas, postOferta, getOneOferta, updateOferta, deleteOferta, filterOferta, getMisOfertas};

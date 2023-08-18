@@ -6,6 +6,7 @@ export class Oferta{
     #seccionRequerimientos;
     #seccionDescripcion;
     #estadoOferta;
+    #publicador;
 
     //Constructor
     constructor(formData){
@@ -13,6 +14,7 @@ export class Oferta{
         this.setRequerimientos(formData.get("seccionRequerimientos"));
         this.setDescripcion(formData.get("seccionDescripcion"));
         this.setEstadoOferta(formData.get("estadoOferta"));
+        this.setPublicador(formData.get("nombreEmpresa"));
     }
 
     //Setters
@@ -24,6 +26,8 @@ export class Oferta{
 
     setEstadoOferta(pEstadoOferta){this.#estadoOferta = pEstadoOferta};
 
+    setPublicador(pPublicador){this.#publicador = pPublicador};
+
     //Getters
 
     getTitulo(){return this.#seccionTitulo};
@@ -33,4 +37,6 @@ export class Oferta{
     getDescripcion(){return this.#seccionDescripcion};
 
     getEstadoOferta(){return this.#estadoOferta};
+
+    getPublicador(){return this.#publicador};
 }

@@ -26,7 +26,7 @@ const OfertaModel = mongoose.Schema(
         },
 
         publicador: {
-            type: mongoose.Types.ObjectId,
+            type: mongoose.Types.ObjectId
         },
 
         visibilidad:
