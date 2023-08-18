@@ -61,8 +61,8 @@ function imprimirReporte(){
                     let pertenencia =  localStorage.getItem("activeUser");
                     if (data.visibilidad === "Activa" && data.pertenencia === pertenencia){
                         let row = crearTabla.insertRow();
-                        row.insertCell(0).appendChild(document.createTextNode(data._id));
-                        row.insertCell(1).appendChild(document.createTextNode(data.nombre + data.apellidos));
+                        row.insertCell(0).appendChild(document.createTextNode((data._id.substring(4, 8))));
+                        row.insertCell(1).appendChild(document.createTextNode(data.nombre + " " + data.apellidos));
                         row.insertCell(2).appendChild(document.createTextNode((data.createdAt.substring(0, 10))));
                         row.insertCell(3).appendChild(document.createTextNode(data.rol));   
                     }
