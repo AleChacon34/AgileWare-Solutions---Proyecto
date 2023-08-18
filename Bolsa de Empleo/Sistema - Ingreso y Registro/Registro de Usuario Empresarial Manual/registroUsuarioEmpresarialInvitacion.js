@@ -14,7 +14,6 @@ function getData(e) {
     e.preventDefault();
     let formData = new FormData(e.target);
     let newUser = new UserEmpresa(formData);
-    console.log(newUser);
     validarRegistro(newUser);
 }
 
@@ -48,43 +47,49 @@ function guardarRegistro(newUser){
 function validarRegistro(newUser){
     if (newUser.getNombre()===""){
         document.getElementById("nombre").style.border = "2px solid red";
-        mensajeerror();
+        mensajeError();
     } 
     if (newUser.getApellidos()===""){
         document.getElementById("apellidos").style.border = "2px solid red";
-        mensajeerror();
+        mensajeError();
 
     }
     if (newUser.getCorreo()===""){
         document.getElementById("correo").style.border = "2px solid red";
-        mensajeerror();
+        mensajeError();
 
     }
     if (newUser.getTelefono()===""){
         document.getElementById("telefono").style.border = "2px solid red";
-        mensajeerror();
+        mensajeError();
 
     }
     if (newUser.getGenero()===""){
         document.getElementById("genero").style.border = "2px solid red";
-        mensajeerror();
+        mensajeError();
 
     }
     if (newUser.getContrasenia()===""){
         document.getElementById("contrasenia").style.border = "2px solid red";
-        mensajeerror();
+        mensajeError();
 
     }
     if (newUser.getVerifyContrasenia()===""){
         document.getElementById("verifyContrasenia").style.border = "2px solid red";
-        mensajeerror();
+        mensajeError();
 
-    } else{
+    }
+    if (newUser.getPertenencia()===""){
+        document.getElementById("verifyContrasenia").style.border = "2px solid red";
+        mensajeError();
+
+    }
+    else{
         guardarRegistro(newUser)
     }
 }
 
-function mensajeerror(){
+function mensajeError(){
     Swal.fire({
         icon: 'error',
         title: 'Información faltante',
