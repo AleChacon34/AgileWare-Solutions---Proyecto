@@ -25,10 +25,8 @@ const OfertaModel = mongoose.Schema(
             type: String
         },
 
-        publicador:
-        {
-            type: String,
-            default: "Empresa"
+        publicador: {
+            type: mongoose.Types.ObjectId,
         },
 
         visibilidad:

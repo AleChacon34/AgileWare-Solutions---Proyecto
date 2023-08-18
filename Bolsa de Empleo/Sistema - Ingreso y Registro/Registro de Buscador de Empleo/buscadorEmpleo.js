@@ -14,6 +14,7 @@ function getData(e) {
     let formData = new FormData(e.target);
     let newUser = new User(formData);
     newUser.setRol('buscador');
+    newUser.setPertenencia("plataforma");
     guardarRegistro(newUser);
 }
 

@@ -11,6 +11,7 @@ export class User {
     #contrasenia;
     #verifyContrasenia;
     #foto;
+    #pertenencia;
 
     //Constructor
     constructor(formData){
@@ -43,6 +44,8 @@ export class User {
 
     setFoto(pFoto){this.#foto = pFoto};
 
+    setPertenencia(pPertenencia){this.#pertenencia = pPertenencia};
+
     //Getters
 
     getNombre(){return this.#nombre};
@@ -62,4 +65,6 @@ export class User {
     getVerifyContrasenia(){return this.#verifyContrasenia};
 
     getFoto(){return this.#foto};
+
+    getPertenencia(){return this.#pertenencia};
 }

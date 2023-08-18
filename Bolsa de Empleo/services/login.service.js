@@ -13,6 +13,7 @@ export class LoginService {
                 telefono: newUser.getTelefono(),
                 genero: newUser.getGenero(),
                 rol: newUser.getRol(),
+                pertenencia: newUser.getPertenencia(),
                 contrasenia: newUser.getContrasenia()
             }, 
             {

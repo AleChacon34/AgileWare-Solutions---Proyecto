@@ -47,6 +47,9 @@ let usuarios = [
 document.addEventListener("DOMContentLoaded", () =>{
     let btnLogin = document.querySelector("#ing1");
     btnLogin.addEventListener("click", obtenerCredenciales);
+
+    let btnRegistro = document.querySelector('#registro');
+    btnRegistro.addEventListener('click', redirect);
 });
 
 /**
@@ -156,3 +159,24 @@ function paginaInicio(rol){
     }
 }
 
+function redirect() {
+    Swal.fire({
+        icon: "info",
+        title: "Tipo de usuario a registrarse",
+        text: "¿Qué tipo de usuario se registrará?",
+        showConfirmButton: true,
+        confirmButtonText: "Buscador de empleo",
+        showCancelButton: true,
+        cancelButtonText: "Usuario de Empresa",
+        showDenyButton: true,
+        denyButtonText: "Empresa"
+    }).then(res => {
+        if (res.isConfirmed) {
+            location.href = '/Bolsa de Empleo/Sistema - Ingreso y Registro/Registro de Buscador de Empleo/buscadorEmpleo.html'
+        } else if (res.dismiss == 'cancel') {
+            location.href = "/Bolsa de Empleo/Sistema - Ingreso y Registro/Registro de Usuario Empresarial Manual/registroUsuarioEmpresarialInvitacion.html";
+        } else if (res.isDenied) {
+            location.href = "/Bolsa de Empleo/Sistema - Ingreso y Registro/Registro de Empresa/registroEmpresa.html";
+        }
+    });
+}
