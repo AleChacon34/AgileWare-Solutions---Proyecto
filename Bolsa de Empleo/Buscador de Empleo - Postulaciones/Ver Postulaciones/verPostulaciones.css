@@ -19,15 +19,16 @@ body {
 
 main {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
     width: 90%;
     height: 80%;
 }
 
 main section {
-    width: 85%;
+    width: 60%;
     display: flex;
+    flex-basis: 30%;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -42,7 +43,7 @@ main section .card {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    margin: 15px 35px;
+    margin: 15px;
     padding: 40px;
     border-radius: 10px;
     width: 50%;
@@ -80,10 +81,53 @@ main aside .filter:hover{
     border: 1px solid rgb(0, 88, 189);
 }
 
-.verPostulacion {
+.verPostulacionEnviada {
     background-color: rgb(0, 174, 116);
     color: white;
     border: none;
+    height: 50px;
+    width: 150px;
+    font-size: larger;
+    font-weight: bold;
+    padding: 7px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.verPostulacionEnRevision{
+    background-color: rgb(174, 133, 0);
+    color: white;
+    border: none;
+    height: 50px;
+    width: 150px;
+    font-size: larger;
+    font-weight: bold;
+    padding: 7px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.verPostulacionAceptada{
+    background-color: rgb(0, 61, 174);
+    color: white;
+    border: none;
+    height: 50px;
+    width: 150px;
+    font-size: larger;
+    font-weight: bold;
+    padding: 7px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.verPostulacionDenegada{
+    background-color: rgb(216, 60, 60);
+    color: white;
+    border: none;
+    height: 50px;
+    width: 150px;
+    font-size: larger;
+    font-weight: bold;
     padding: 7px;
     border-radius: 3px;
     cursor: pointer;

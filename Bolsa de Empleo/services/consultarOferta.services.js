@@ -17,7 +17,6 @@ export class OfertaService{
     static filter(titulo){
         return axios.post(OfertaService.#URL + "/ofertas/filtro/", {seccionTitulo: titulo});
     }
-    
 
     //Delete one oferta
     static deleteOne(idCode){
