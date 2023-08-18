@@ -42,4 +42,3 @@ function guardarRegistro(newUser){
         });
     }
 }
-    
