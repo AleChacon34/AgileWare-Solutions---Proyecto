@@ -19,7 +19,6 @@ function getData(e) {
 
 function verifyUser(email) {
   UserService.getUserByEmail(email).then(res => {
-    console.log(res);
     if (res.data.data.length != 0) {
       notificarActualizar(email);
     } else {
@@ -40,13 +39,14 @@ function notificarActualizar(email) {
   }).catch(err => {
     console.log(err);
   });
+  console.log(email);
   Email.send(
     {
       Host: "smtp.elasticemail.com",
       Port: 2525,
       Username: "no.reply.agileware@gmail.com",
-      Password: "98477A4DE4EE81736D72241EA64FA43F477B",
-      To: `${email}`,
+      Password: "",
+      To: `${email.getCorreo()}`,
       From: "no.reply.agileware@gmail.com",
       Subject: "Recuperacion de contraseña",
       Body: `${getHTML(pass)}`,
@@ -103,7 +103,7 @@ function getHTML(passKey) {
                         </tr>
                         <tr>
                             <td style="text-align:center;">
-                              <a href="https://rakeshmandal.com" title="logo" target="_blank">
+                              <a href="https://www.mtss.go.cr/" title="logo" target="_blank">
                                 <img width="60" src="http://drive.google.com/uc?export=view&id=18gzsoq-FG_KshIrRiKabdWGShPGU6_jG" title="logo" alt="logo">
                               </a>
                             </td>

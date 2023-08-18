@@ -8,7 +8,7 @@ let listaUsuariosEmpresariales = [];
 document.addEventListener("DOMContentLoaded", () =>{
     let form = document.querySelector("form");
     form.addEventListener("submit", completarRegistro);
-})
+});
 
 
 
@@ -16,6 +16,7 @@ function completarRegistro(e){
     e.preventDefault();
     let formData = new FormData(e.target);
     let newUser = new UserEmpresa(formData);
+    
 
     guardarRegistro(newUser);
 }
