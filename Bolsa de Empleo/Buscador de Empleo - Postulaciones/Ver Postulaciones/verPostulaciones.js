@@ -1,13 +1,22 @@
 'use strict';
+
+import { postulacionService } from "../../services/postulaciones.services.js";
+
 let datosInvitaciones =
     {
         nombreEmpresa: "Test I", tituloOferta: "Oferta en papas", estadoPostulacion: "Enviada", idOferta: "123"
     }
 
+
 document.addEventListener("DOMContentLoaded", ()=>{
     let form = document.querySelector("#busquedaForm");
     form.addEventListener("submit", filtrarOfertas);
-    generarPostulaciones(datosInvitaciones);
+    let idPostulante = localStorage.getItem("activeUser");
+    postulacionService.findByIdPostulante(idPostulante).then((response)=>{
+        let data =  response.data.data;
+        console.log(data)
+        data.forEach(generarPostulaciones)
+    });
 })
 
 /**
@@ -17,7 +26,7 @@ function redirect() {
     window.location.href = "postulacion.html";
 }
 
-function generarPostulaciones(datosInvitaciones){
+function generarPostulaciones(data){
     let addSec = document.createElement("section");
     let mainDiv = document.createElement("div");
     mainDiv.setAttribute("class", "card");
