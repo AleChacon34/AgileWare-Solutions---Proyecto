@@ -2,6 +2,7 @@
 
 import {postulacionService} from "../../services/postulaciones.services.js"
 import {OfertaService} from "../../services/consultarOferta.services.js"
+import { UserService } from "../../services/user.service.js";
 
 let datosInvitaciones =
     {
@@ -11,11 +12,30 @@ let datosInvitaciones =
 
 
 document.addEventListener("DOMContentLoaded", ()=>{
+    let id = localStorage.getItem('activeUser');
     let form = document.querySelector("#ofertaForm");
+
     generarPostulaciones(datosInvitaciones);
+
     postulacionService.findAll().then((response)=>{
         let data = response.data.data;
-        data.forEach((data)=>{
+        UserService.getOneUser(id).then(res => {
+            let user = res.data.data;
+            if (user.rol == "Empresa") {
+                data.forEach(element => {
+                    OfertaService.findAll().then(res => {
+                        let oferta = res.data.data
+                        if (oferta.pertenencia == user._id) {
+                            console.log(element);
+                        }
+                    });
+                });
+            } else {
+                
+            }
+        });
+
+        /*data.forEach((data)=>{
             let publicador = localStorage.getItem("activeUser");
             let idOferta =  data.idOferta;
             cons
@@ -24,7 +44,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 console.log(data);
             })
 
-        })
+        })*/
     })
 })
 
