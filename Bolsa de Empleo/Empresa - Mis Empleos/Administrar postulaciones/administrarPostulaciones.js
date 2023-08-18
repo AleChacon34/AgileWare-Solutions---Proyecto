@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
         data.forEach((data)=>{
             let publicador = localStorage.getItem("activeUser");
             let idOferta =  data.idOferta;
-            cons
             OfertaService.findOne(idOferta).then((response)=>{
                 let data =  response.data.data;
                 console.log(data);
