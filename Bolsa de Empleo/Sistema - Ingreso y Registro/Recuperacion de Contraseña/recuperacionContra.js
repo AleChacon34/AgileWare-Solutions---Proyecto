@@ -36,30 +36,30 @@ function verifyUser(email) {
 function notificarActualizar(email) {
   let pass = randomPassword();
   UserService.updatePassword(email, pass).then(res => {
-    Email.send(
-      {
-        Host: "smtp.elasticemail.com",
-        Port: 2525,
-        Username: "no.reply.agileware@gmail.com",
-        Password: "E5691885D7414511FF9097F567CB3F3DDDEA",
-        To: `${email}`,
-        ReplyTo: "no.reply.agileware@gmail.com",
-        From: "no.reply.agileware@gmail.com",
-        Subject: "Recuperacion de contraseña",
-        Body: `${getHTML(pass)}`,
-      }
-    ).then((message) => {
-      console.log(pass);
-      Swal.fire({
-        title: "Contraseña modificada con éxito",
-        text: "Se le ha enviado un correo con su nueva contraseña",
-        icon: "success"
-      })
-    }).catch((err) => {
-      Swal.fire("Ha habido un error", "", "error");
-    });
+    console.log(res.data.data);
   }).catch(err => {
     console.log(err);
+  });
+  Email.send(
+    {
+      Host: "smtp.elasticemail.com",
+      Port: 2525,
+      Username: "no.reply.agileware@gmail.com",
+      Password: "98477A4DE4EE81736D72241EA64FA43F477B",
+      To: `${email}`,
+      From: "no.reply.agileware@gmail.com",
+      Subject: "Recuperacion de contraseña",
+      Body: `${getHTML(pass)}`,
+    }
+  ).then((message) => {
+    console.log(pass);
+    Swal.fire({
+      title: "Contraseña modificada con éxito",
+      text: "Se le ha enviado un correo con su nueva contraseña",
+      icon: "success"
+    })
+  }).catch((err) => {
+    Swal.fire("Ha habido un error", "", "error");
   });
 }
 
