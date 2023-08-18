@@ -14,7 +14,7 @@ function loadData() {
     let correo = document.getElementById('correo');
     let telefono = document.getElementById('telefono');
 
-    let id = JSON.parse(localStorage.getItem('activeUser'));
+    let id = localStorage.getItem('activeUser');
     UserService.getOneUser(id).then(res => {
         nombre.value = res.data.data.nombre;
         correo.value = res.data.data.correo;
