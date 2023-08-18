@@ -6,13 +6,15 @@
             <title>Visualizar Administradores</title>
             <link rel="stylesheet" href="/Bolsa de Empleo/cssGeneral/barraInicio.css">
             <link rel="stylesheet" href="/Bolsa de Empleo/Empresa - Colaboradores/Visualizar Colaboradores/visualizarColaboradores.css"/>
-            <script src="/Bolsa de Empleo/Empresa - Colaboradores/Visualizar Colaboradores/visualizarAdministradores.js"></script>
+            <script type="module" src="/Bolsa de Empleo/Empresa - Colaboradores/Visualizar Colaboradores/visualizarAdministradores.js"></script>
             <script src="/Bolsa de Empleo/jsGeneral/SweetAlert.js"></script>
             <script src="/Bolsa de Empleo/jsGeneral/barraNavegacionEmpresarial.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+            <script src="https://smtpjs.com/v3/smtp.js"></script>
         </head> 
         <body>
             <!-- Esta es la barra de navegación de la Empresa -->
-            <h1>
+            <h1 id="nombreEmpresa">
                 NOMBRE DE LA EMPRESA
             </h1>
             <!-- Esta barra me permite visualizar los usuarios por tipo -->

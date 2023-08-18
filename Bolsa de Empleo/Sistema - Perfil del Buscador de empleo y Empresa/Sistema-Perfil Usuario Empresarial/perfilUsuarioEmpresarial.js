@@ -13,7 +13,7 @@ function loadData() {
     let telefono = document.getElementById('telefono');
     let genero = document.getElementById('genero');
 
-    let id = JSON.parse(localStorage.getItem('activeUser'));
+    let id = localStorage.getItem('activeUser');
     UserService.getOneUser(id).then(res => {
         nombre.innerHTML = `${res.data.data.nombre}`;
         apellidos.innerHTML = `${res.data.data.apellidos}`;

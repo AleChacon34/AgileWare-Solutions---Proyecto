@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function loadData() {
-    let id = JSON.parse(localStorage.getItem('activeUser'));
+    let id = localStorage.getItem('activeUser');
 
     let nombre = document.getElementById('nombre');
     let apellidos = document.getElementById('apellidos');
