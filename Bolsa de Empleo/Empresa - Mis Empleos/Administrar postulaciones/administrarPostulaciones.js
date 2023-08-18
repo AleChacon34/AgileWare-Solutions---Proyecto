@@ -1,5 +1,7 @@
 'use strict';
 
+import {postulacionService} from "../../services/postulaciones.services.js"
+
 let datosInvitaciones =
     {
         nombreBuscador: "Jonathan", apellidos: "Mora Herra", correo: "jmorah@correo.com", tituloOferta: "Oferta en papas", estadoPostulacion: "Enviada"
