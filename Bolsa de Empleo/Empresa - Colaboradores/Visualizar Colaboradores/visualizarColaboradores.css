@@ -52,11 +52,13 @@ main{
 
 main .card{
     display: flex;
+    width: 100%;
     justify-content: space-between;
-    height: 30%;
+    height: auto;
     margin: 10px;
     padding: 10px;
-    border: 2px solid rgb(205, 205, 205)
+    border: 2px solid rgb(205, 205, 205);
+    box-shadow: 7px 7px 15px;
 }
 
 main button {
@@ -119,5 +121,10 @@ section button  {
     padding: 7px;
 }
 
+p {
+    background-color: rgb(206, 206, 206);
+    padding: 10px;
+    border-radius: 5px;
+}
 
 
