@@ -77,7 +77,7 @@ document.addEventListener("mouseover", (data) =>{
 
 // Función para redirigir al usuario a iniciar sesión
 function aplicarPuesto(e){
-    const dataPostulacion = {idOferta: "64dd3b4691029bff175d5252", idPostulante: "64dd3b4691029bff175d6262", estadoPostulacion: "EnviadaTestII"};
+    const dataPostulacion = {idOferta: e.target.parentNode.id, idPostulante: "64dd3b4691029bff175d6262", estadoPostulacion: "EnviadaTestII"};
     const nuevaPostulacion = new Postulacion(dataPostulacion);
     postulacionService.registrarPostulacion(nuevaPostulacion);
     Swal.fire({
