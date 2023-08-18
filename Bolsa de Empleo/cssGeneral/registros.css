@@ -11,11 +11,11 @@ legend{
     height: 75%;
     
 }
-#cajas{
+.cajas{
     translate: 160px -100%;
     width: 70%;
 }
-#box{
+.box{
     translate: 160px -90%;
     width: 120px;
     height: -20px;
