@@ -15,12 +15,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
     generarPostulaciones(datosInvitaciones);
     postulacionService.findAll().then((response)=>{
         let data = response.data.data;
-        console.log(data)
         data.forEach((data)=>{
             let publicador = localStorage.getItem("activeUser");
-            OfertaService.findByPublicador(publicador).then((response)=>{
+            let idOferta =  data.idOferta;
+            cons
+            OfertaService.findOne(idOferta).then((response)=>{
                 let data =  response.data.data;
-                console.log(data)
+                console.log(data);
             })
 
         })
