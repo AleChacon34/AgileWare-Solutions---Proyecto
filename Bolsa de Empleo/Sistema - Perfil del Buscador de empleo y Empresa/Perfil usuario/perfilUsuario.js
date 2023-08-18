@@ -17,9 +17,6 @@ function loadData() {
 
     UserService.getOneUser(id).then(res => {
         let userData = res.data.data;
-
-        console.log(userData);
-
         nombre.innerHTML = `${userData.nombre}`;
         apellidos.innerHTML = `${userData.apellidos}`;
         correo.innerHTML = `${userData.correo}`;

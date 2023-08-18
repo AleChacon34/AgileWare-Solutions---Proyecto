@@ -70,7 +70,7 @@ function verificarDatosIngreso(usuario){
                 title: "¡Ingreso permitido!",
                 icon: "success"
             }).then((result) => {
-                localStorage.setItem('activeUser', JSON.stringify(res.data.data._id));
+                localStorage.setItem('activeUser', res.data.data._id);
                 if (res.data.data.rol == "buscador"){
                     location.replace("/Bolsa de Empleo/Sistema - Perfil del Buscador de empleo y Empresa/Perfil usuario/perfilUsuario.html");
                 } else if (res.data.data.rol == "Administrador") {
