@@ -9,14 +9,9 @@ export class postulacionService{
     };
 
     //Get one postulacion
-    static findOne(idCode){
-        return axios.get(postulacionService.#URL+"/postulaciones/" + idCode);   
+    static findByIdPostulante(idPostulante){
+        return axios.post(postulacionService.#URL+"/postulaciones/misPostulaciones/", {idPostulante: idPostulante});   
     };
-
-    //Filter postulacion
-    static filter(titulo){
-        return axios.post(postulacionService.#URL + "/postulaciones/filtro/", {seccionTitulo: titulo});
-    }
     
 
     //Delete one postulacion

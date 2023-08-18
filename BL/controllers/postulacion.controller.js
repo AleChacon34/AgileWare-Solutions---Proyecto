@@ -14,8 +14,8 @@ async function getPostulaciones(req, res) {
  * GET ONE POSTULACION
  */
 async function getOnePostulacion(req, res) {
-    const { id } = req.params;
-    const data = await postulacionModel.findById(id);
+    const { idPostulante } = req.body;
+    const data = await postulacionModel.find({idPostulante});
     res.send({ data });
 }
 
