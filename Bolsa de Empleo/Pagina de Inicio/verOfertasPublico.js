@@ -71,7 +71,6 @@ document.addEventListener("mouseover", () =>{
 
 // Función para redirigir al usuario a iniciar sesión
 function pedirIngreso(){
-    console.log('Funciona')
     Swal.fire({
         icon: "error",
         title: "Error de Ingreso",
