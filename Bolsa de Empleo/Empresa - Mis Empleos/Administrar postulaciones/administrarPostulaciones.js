@@ -19,14 +19,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     postulacionService.findAll().then((response)=>{
         let data = response.data.data;
-        UserService.getOneUser(id).then(res => {
-            let user = res.data.data;
-            if (user.rol == "Empresa") {
-                data.forEach(element => {
-                    OfertaService.findAll().then(res => {
-                        let oferta = res.data.data
+        UserService.getOneUser(id).then((response) => {
+            let user = response.data.data;
+            if (user.pertenencia == null || user.pertenencia === id) {
+                data.forEach(() => {
+                    postulacionService.findByIdPostulante().then((response) => {
+                        let oferta = response.data.data;
                         if (oferta.pertenencia == user._id) {
-                            console.log(element);
                         }
                     });
                 });
