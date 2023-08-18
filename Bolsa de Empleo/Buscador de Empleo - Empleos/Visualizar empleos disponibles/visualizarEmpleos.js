@@ -4,6 +4,8 @@
 "use strict";
 
 import { OfertaService } from "../../services/consultarOferta.services.js"
+import { Postulacion } from "../../Buscador de Empleo - Postulaciones/Ver Postulaciones/postulacion.model.js";
+import { postulacionService } from "../../services/postulaciones.services.js";
 
 document.addEventListener("DOMContentLoaded", ()=>{
     let form = document.querySelector("#busquedaForm");
@@ -75,7 +77,9 @@ document.addEventListener("mouseover", (data) =>{
 
 // Función para redirigir al usuario a iniciar sesión
 function aplicarPuesto(e){
-    console.log('Funciona')
+    const dataPostulacion = {idOferta: "64dd3b4691029bff175d5252", idPostulante: "64dd3b4691029bff175d6262", estadoPostulacion: "EnviadaTestII"};
+    const nuevaPostulacion = new Postulacion(dataPostulacion);
+    postulacionService.registrarPostulacion(nuevaPostulacion);
     Swal.fire({
         icon: "warning",
         title: "Postulación",
@@ -88,9 +92,9 @@ function aplicarPuesto(e){
             Swal.fire({
                 icon: "success",
                 title: "Postulación exitosa",
+                text: "Puede consultar el estado de la postulación en la pestaña de Postulaciones"
             });
-            localStorage.setItem("postulacionID", e.target.parentNode.id)
-            location.href = "../../Buscador de Empleo - Postulaciones/Ver Postulaciones/postulacion.html"
+            // location.href = "../../Buscador de Empleo - Postulaciones/Ver Postulaciones/postulacion.html"
         }
     })
 }

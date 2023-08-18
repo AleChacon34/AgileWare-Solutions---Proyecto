@@ -13,6 +13,7 @@ const PostulacionModel = mongoose.Schema(
         estado: {
             type: String,
         },
+
         visibilidad: {
             type: String,
             default: "Activa"
