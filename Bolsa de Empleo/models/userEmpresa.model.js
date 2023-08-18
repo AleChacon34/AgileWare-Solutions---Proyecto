@@ -20,6 +20,7 @@ export class UserEmpresa {
         this.setTelefono(formData.get('telefono'));
         this.setGenero(formData.get('genero'));
         this.setRol(formData.get('rol'));
+        this.setPertenencia(formData.get('pertenencia'));
         this.setContrasenia(formData.get('contrasenia'));
         this.setVerifyContrasenia(formData.get('verifyContrasenia'));
     }
