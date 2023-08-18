@@ -34,9 +34,10 @@ export class postulacionService{
 
     //Post postulacion
     static registrarPostulacion(nuevaPostulacion){
-        axios.post(postulacionService.#URL+"/postulaciones", {
-            estado: nuevaPostulacion.getEstado(),
-            visibilidad: nuevaPostulacion.getVisibilidad(),
+        axios.post(postulacionService.#URL + "/postulaciones", {
+            idOferta: nuevaPostulacion.getIdOferta(),
+            idPostulante: nuevaPostulacion.getIdPostulante(),
+            estado: nuevaPostulacion.getEstadoPostulacion()
         })
     };  
 }

@@ -12,7 +12,6 @@ const PostulacionModel = mongoose.Schema(
         },
         estado: {
             type: String,
-            default: "Enviada"
         },
         visibilidad: {
             type: String,

@@ -44,7 +44,6 @@ function postOferta(e){
   else{
     const formData = new FormData(e.target);
     const nuevaOferta = new Oferta(formData);
-    console.log(nuevaOferta)
     OfertaService.registrarOferta(nuevaOferta);
     alertaCreacion();
   }
