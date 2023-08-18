@@ -6,70 +6,17 @@
     <title>Empleos</title>
     <link rel="stylesheet" href="/Bolsa de Empleo/cssGeneral/barraInicio.css">
     <link rel="stylesheet" href="/Bolsa de Empleo/Buscador de Empleo - Empleos/Visualizar empleos disponibles/visualizarEmpleos.css">
+    <script src="/Bolsa de Empleo/jsGeneral/SweetAlert.js"></script>
     <script src="/Bolsa de Empleo/jsGeneral/barraNavegacionBuscador.js"></script>
-    <script src="visualizarEmpleos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="visualizarEmpleos.js"></script>
   </head>
   <body>
     <main>
-      <section>
-        <div class="card">
-          <div class="image">
-            <img src="#" alt="Enterprise Logo">
-          </div>
-          <!-- Está sección contiene los datos de la oferta de empleo -->
-          <div class="offerInfo">
-            <div class="carrera">
-              <h3>Ingeniero en Desarrollo de Software</h3>
-            </div>
-            <div class="info">
-              <p>Experiencia de 1 a 2 años</p>
-              <p>Conocimiento en HTML, CSS y JavaScript</p>
-              <p>Conocimiento en base de datos de MongoDB</p>
-            </div>
-          </div>
-          <button class="visualizar">Ver Oferta</button>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img src="#" alt="Enterprise Logo">
-          </div>
-          <!-- Está sección contiene los datos de la oferta de empleo -->
-          <div class="offerInfo">
-            <div class="carrera">
-              <h3>Ingeniero en Desarrollo de Software</h3>
-            </div>
-            <div class="info">
-              <p>Experiencia de 1 a 2 años</p>
-              <p>Conocimiento en HTML, CSS y JavaScript</p>
-              <p>Conocimiento en base de datos de MongoDB</p>
-            </div>
-          </div>
-          <button class="visualizar">Ver Oferta</button>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img src="#" alt="Enterprise Logo">
-          </div>
-          <!-- Está sección contiene los datos de la oferta de empleo -->
-          <div class="offerInfo">
-            <div class="carrera">
-              <h3>Ingeniero en Desarrollo de Software</h3>
-            </div>
-            <div class="info">
-              <p>Experiencia de 1 a 2 años</p>
-              <p>Conocimiento en HTML, CSS y JavaScript</p>
-              <p>Conocimiento en base de datos de MongoDB</p>
-            </div>
-          </div>
-          <button class="visualizar">Ver Oferta</button>
-        </div>
-      </section>
-      <aside>
-        <!-- Está sección permite filtrar las ofertas de empleo -->
-        <div class="filter">
-          <input type="text" placeholder="Buscar empleo...">
-        </div>
-      </aside>
+      <form id="busquedaForm">
+        <input type ="search" name = "barra-busqueda" id = "barraBusqueda"placeholder= "Título de la oferta...">
+        <button type="submit">Buscar</button>
+      </form>
     </main>
   </body>
 </html>

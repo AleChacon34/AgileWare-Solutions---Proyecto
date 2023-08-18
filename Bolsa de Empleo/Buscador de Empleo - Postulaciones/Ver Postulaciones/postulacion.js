@@ -1,8 +1,21 @@
 "use strict";
 
+import { postulacionService } from "../../services/postulaciones.services.js";
+import { Postulacion } from "./postulacion.model.js";
+import { OfertaService } from "../../services/consultarOferta.services.js";
+
 document.addEventListener('DOMContentLoaded', () => {
-    let estado = document.querySelector('p');
-    estadoPostulacion(estado);
+    let id = localStorage.getItem('postulacionID');
+    const dataPostulacion = {idOferta: "64dd3b4691029bff175d5151", idPostulante: "64dd3b4691029bff175d6161", estadoPostulacion: "EnviadaTest"};
+    const nuevaPostulacion = new Postulacion(dataPostulacion);
+    postulacionService.registrarPostulacion(nuevaPostulacion);
+    
+    OfertaService.findOne(id).then((response)=>{
+        let data = response.data.data;
+        verOferta(data);
+    })
+    // let estado = document.querySelector('p');
+    // estadoPostulacion(estado);
 })
 
 function estadoPostulacion(estado) {

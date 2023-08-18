@@ -10,7 +10,7 @@ export class OfertaService{
 
     //Get one oferta
     static findOne(idCode){
-        return axios.get(OfertaService.#URL+"/ofertas/" + idCode);   
+        return axios.get(`${OfertaService.#URL}/ofertas/${idCode}`);   
     };
 
     //Filter oferta
@@ -41,5 +41,5 @@ export class OfertaService{
             seccionDescripcion: nuevaOferta.getDescripcion(),
             estadoOferta: nuevaOferta.getEstadoOferta(),
         })
-    };  
+    };
 }
