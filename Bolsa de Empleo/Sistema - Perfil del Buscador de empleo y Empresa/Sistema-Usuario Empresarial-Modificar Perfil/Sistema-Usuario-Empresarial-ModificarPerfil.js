@@ -16,7 +16,7 @@ function loadData() {
     let phone = document.getElementById('phone');
     let gender = document.getElementById('gender');
 
-    let id = JSON.parse(localStorage.getItem('activeUser'));
+    let id = localStorage.getItem('activeUser');
     UserService.getOneUser(id).then(res => {
         name.value = res.data.data.nombre;
         lastName.value = res.data.data.apellidos;
