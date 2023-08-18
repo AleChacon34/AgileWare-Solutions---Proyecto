@@ -15,7 +15,7 @@ function getData(e) {
     let formData = new FormData(e.target);
     let newUser = new UserEmpresa(formData);
     console.log(newUser);
-    guardarRegistro(newUser);
+    validarRegistro(newUser);
 }
 
 function guardarRegistro(newUser){
@@ -41,4 +41,54 @@ function guardarRegistro(newUser){
             text: 'Por favor llene todos los espacios para completar el registro.',
         });
     }
+}
+
+
+
+function validarRegistro(newUser){
+    if (newUser.getNombre()===""){
+        document.getElementById("nombre").style.border = "2px solid red";
+        mensajeerror();
+    } 
+    if (newUser.getApellidos()===""){
+        document.getElementById("apellidos").style.border = "2px solid red";
+        mensajeerror();
+
+    }
+    if (newUser.getCorreo()===""){
+        document.getElementById("correo").style.border = "2px solid red";
+        mensajeerror();
+
+    }
+    if (newUser.getTelefono()===""){
+        document.getElementById("telefono").style.border = "2px solid red";
+        mensajeerror();
+
+    }
+    if (newUser.getGenero()===""){
+        document.getElementById("genero").style.border = "2px solid red";
+        mensajeerror();
+
+    }
+    if (newUser.getContrasenia()===""){
+        document.getElementById("contrasenia").style.border = "2px solid red";
+        mensajeerror();
+
+    }
+    if (newUser.getVerifyContrasenia()===""){
+        document.getElementById("verifyContrasenia").style.border = "2px solid red";
+        mensajeerror();
+
+    } else{
+        guardarRegistro(newUser)
+    }
+}
+
+function mensajeerror(){
+    Swal.fire({
+        icon: 'error',
+        title: 'Información faltante',
+        text: 'Por favor llene todos los espacios para completar el registro.',
+    })
+    
 }

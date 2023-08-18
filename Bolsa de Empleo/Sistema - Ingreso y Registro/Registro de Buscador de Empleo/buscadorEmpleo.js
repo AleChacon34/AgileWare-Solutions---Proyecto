@@ -39,7 +39,6 @@ function guardarRegistro(newUser){
             title: 'Información faltante',
             text: 'Por favor llene todos los espacios para completar el registro.',
         })
-        validarRegistro(newUser);
     }
 }
 

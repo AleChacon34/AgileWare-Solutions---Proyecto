@@ -3,6 +3,14 @@
 import { UserService } from '../../services/user.service.js';
 import { User } from '../../models/user.model.js';
 
+/**
+ * Expresion regular
+ * (a-zA-Z0-9) de la a a la z minusculas, mayusculas y numeros - seguido de +@
+ * (a-zA-Z0-9) de la a a la z minusculas, mayusculas y numeros - seguido de +\.
+ * (a-zA-Z) de la a a la z minusculas, mayusculas.
+ */
+const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
 //Aqui llama a un 'listener' para llama al evento de un boton
 document.addEventListener("DOMContentLoaded", () => {
   let form = document.querySelector("form");
@@ -18,17 +26,38 @@ function getData(e) {
 }
 
 function verifyUser(email) {
-  UserService.getUserByEmail(email).then(res => {
-    if (res.data.data.length != 0) {
-      notificarActualizar(email);
-    } else {
-      Swal.fire({
-        title: "El usuario no existe",
-        text: "Por favor, ingrese un correo de usuario existente",
-        icon: "error"
-      });
-    }
-  });
+  let validEmail = isValidEmail(email.getCorreo());
+  
+  if (validEmail === true) {
+    UserService.getUserByEmail(email).then(res => {
+      if (res.data.data.length != 0) {
+        notificarActualizar(email);
+      } else {
+        Swal.fire({
+          title: "El usuario no existe",
+          text: "Por favor, ingrese un correo de usuario existente",
+          icon: "error"
+        });
+      }
+    });
+  }else {
+    Swal.fire({
+      title: "Correo Invalido",
+      text: "Por favor, ingrese un correo con un formato valido",
+      icon: "error"
+    });
+  }
+}
+
+/**
+ * Funcion que se encarga de revisar que el email sea valido
+ * utilizando una expresion regular. 
+ * Se llama a la funcion test() que se encarga de comparar 
+ * lo que tiene la expresion vs el correo.
+ */
+
+function isValidEmail(email) {
+  return emailRegex.test(email);
 }
 
 //Funcion que se encargar de enviar el email por medio de un API
@@ -45,7 +74,7 @@ function notificarActualizar(email) {
       Host: "smtp.elasticemail.com",
       Port: 2525,
       Username: "no.reply.agileware@gmail.com",
-      Password: "",
+      Password: "98477A4DE4EE81736D72241EA64FA43F477B",
       To: `${email.getCorreo()}`,
       From: "no.reply.agileware@gmail.com",
       Subject: "Recuperacion de contraseña",
