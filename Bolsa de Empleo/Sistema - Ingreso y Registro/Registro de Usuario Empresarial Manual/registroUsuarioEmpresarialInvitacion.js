@@ -3,6 +3,8 @@
 import { UserEmpresa } from "../../models/userEmpresa.model.js";
 import { LoginService } from "../../services/login.service.js"
 
+let listaUsuariosEmpresariales = [];
+
 document.addEventListener("DOMContentLoaded", () =>{
     let form = document.querySelector("form");
     form.addEventListener("submit", getData);
