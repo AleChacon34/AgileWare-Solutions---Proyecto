@@ -10,9 +10,9 @@ const postulacionController = require('../controllers/postulacion.controller');
 router.get('/', postulacionController.getPostulaciones);
 
 /**
- * GET ON POSTULACION
+ * GET ONE POSTULACION
  */
-router.get('/:id', postulacionController.getOnePostulacion);
+router.post('/misPostulaciones', postulacionController.getOnePostulacion);
 
 /**
  * CREATE POSTULACION
