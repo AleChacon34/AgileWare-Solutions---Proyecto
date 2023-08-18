@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     console.log(id)
     OfertaService.findOne(id).then((response) =>{
         let data = response.data.data;
+        console.log(data)
         verOferta(data);
     })
 })
@@ -37,7 +38,7 @@ function verOferta(data){
     let newAnchI = document.createElement("a");
     newAnchI.setAttribute("href", "/Bolsa de Empleo/Empresa - Mis Empleos/Modificar Oferta de Empleo/ModificarOferta.html")
     let newAnchII = document.createElement("a");
-    newAnchII.setAttribute("href", "/Bolsa de Empleo/Empresa - Mis Empleos/Consultar aplicaciones recibidas/listaPostulados.html")
+    newAnchII.setAttribute("href", "/Bolsa de Empleo/Empresa - Mis Empleos/Administrar Postulaciones/administrarPostulaciones.html")
     let addPI = document.createElement("p");
 
     //Agregar texto a cada elemento desde datosOfertas
