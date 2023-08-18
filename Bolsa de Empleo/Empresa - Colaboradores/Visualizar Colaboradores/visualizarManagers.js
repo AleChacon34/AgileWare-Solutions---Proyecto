@@ -30,8 +30,7 @@ function displayAlert() {
     if (result.isConfirmed) {
       insertEmail();
     } else if (result.isDenied) {
-      location.href =
-        "../../Sistema - Ingreso y Registro/Registro de Usuario Empresarial/registrousuEmpresaria.html";
+      location.href = "../../Sistema - Ingreso y Registro/Registro de Usuario Empresarial Manual/registroUsuarioEmpresarialManual.html"
     }
   });
 }
