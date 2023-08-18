@@ -3,17 +3,47 @@
 import { UserService } from "../../services/user.service.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-  loadData();
+  loadUsers();
   let btn = document.querySelector("#agregar-colaborador");
   btn.onclick = displayAlert;
 });
 
-function loadData() {
-  let h1 = document.getElementById('nombreEmpresa');
-  let id = localStorage.getItem('activeUser');
-  UserService.getOneUser(id).then(res => {
-    h1.innerHTML = res.data.data.nombre;
+function loadUsers() {
+  let users;
+  UserService.getUsers().then(res => {
+    users = res.data.data;
+    users.forEach(user => {
+      if (user.rol == "Administrador") {
+        let main = document.querySelector('main');
+
+        let div = document.createElement('div');
+        div.setAttribute('class', 'card');
+
+        let section = document.createElement('section');
+
+        let h4 = document.createElement('h4');
+        let p1 = document.createElement('p');
+        let p2 = document.createElement('p');
+  
+        let textNombre = document.createTextNode(user.nombre);
+        let textApellido = document.createTextNode(user.apellidos);
+        let textRol = document.createTextNode(user.rol);
+  
+        h4.append(textNombre);
+        p1.append(textApellido);
+        p2.append(textRol);
+  
+        section.appendChild(h4);
+        section.appendChild(p1);
+        section.appendChild(p2);
+
+        div.appendChild(section);
+
+        main.insertBefore(div, main.children[1]);
+      }
+    });
   });
+
 }
 
 // En esta sección se le pregunta la opción de invitación: manual o por correo 
