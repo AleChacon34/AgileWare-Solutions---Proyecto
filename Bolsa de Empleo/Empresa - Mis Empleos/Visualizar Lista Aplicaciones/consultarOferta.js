@@ -61,7 +61,7 @@ function verOferta(data){
     addDiv.appendChild(addSec);
     addBtnI.appendChild(newAnchI);
     addBtnII.appendChild(newAnchII);
-    addAside.append(addBtnI, addBtnII);
+    addAside.append(addBtnI);
 
     //Agregar Div y Aside al main
     let mainBody = document.querySelector('main');

@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             let user = response.data.data;
             if (user.pertenencia == null || user.pertenencia === id) {
                 data.forEach(() => {
-                    OfertaService.findAll().then((response) => {
+                    postulacionService.findByIdPostulante().then((response) => {
                         let oferta = response.data.data;
                         if (oferta.pertenencia == user._id) {
                         }
