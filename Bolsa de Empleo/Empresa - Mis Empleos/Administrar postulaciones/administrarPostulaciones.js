@@ -1,6 +1,7 @@
 'use strict';
 
 import {postulacionService} from "../../services/postulaciones.services.js"
+import {OfertaService} from "../../services/consultarOferta.services.js"
 
 let datosInvitaciones =
     {
@@ -12,6 +13,18 @@ let datosInvitaciones =
 document.addEventListener("DOMContentLoaded", ()=>{
     let form = document.querySelector("#ofertaForm");
     generarPostulaciones(datosInvitaciones);
+    postulacionService.findAll().then((response)=>{
+        let data = response.data.data;
+        console.log(data)
+        data.forEach((data)=>{
+            let publicador = localStorage.getItem("activeUser");
+            OfertaService.findByPublicador(publicador).then((response)=>{
+                let data =  response.data.data;
+                console.log(data)
+            })
+
+        })
+    })
 })
 
 function generarPostulaciones(datosInvitaciones){
