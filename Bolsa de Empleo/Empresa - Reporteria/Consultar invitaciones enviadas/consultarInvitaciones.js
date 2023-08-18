@@ -94,7 +94,7 @@ function imprimirReporte(){
         })
     }
 
-    if(opcionSeleccion.value === "REPORTE DE MANAGERS"){
+    if(opcionSeleccion.value === "REPORTE DE RECLUTADORES"){
         UserService.filter("Reclutador").then((response)=>{
             //Borrar el cuerpo de la tabla ya existente en el HTML
             let crearTabla = document.querySelector(".tabla-datos tbody");
@@ -118,7 +118,7 @@ function imprimirReporte(){
         })
     }
 
-    if(opcionSeleccion.value === "REPORTE DE MANAGERS"){
+    if(opcionSeleccion.value === "REPORTE DE BUSCADORES"){
         UserService.filter("buscador").then((response)=>{
             //Borrar el cuerpo de la tabla ya existente en el HTML
             let crearTabla = document.querySelector(".tabla-datos tbody");
@@ -127,8 +127,7 @@ function imprimirReporte(){
             let headRowI = crearTabla.insertRow(0)
             headRowI.insertCell(0).outerHTML ="<th>Nombre de la Empresa</th>";
             headRowI.insertCell(1).outerHTML ="<th>Correo Electrónico</th>";
-            headRowI.insertCell(2).outerHTML ="<th>Pertenencia</th>";
-            headRowI.insertCell(3).outerHTML ="<th>Fecha de creación</th>";
+            headRowI.insertCell(2).outerHTML ="<th>Fecha de creación</th>";
             let data =  response.data.data;
             console.log(data)
             data.forEach((data)=>{ 
@@ -136,8 +135,7 @@ function imprimirReporte(){
                 let row = crearTabla.insertRow();
                 row.insertCell(0).appendChild(document.createTextNode(data.nombre));
                 row.insertCell(1).appendChild(document.createTextNode(data.correo));
-                row.insertCell(2).appendChild(document.createTextNode(data.pertenencia));
-                row.insertCell(3).appendChild(document.createTextNode((data.createdAt.substring(0, 10))));
+                row.insertCell(2).appendChild(document.createTextNode((data.createdAt.substring(0, 10))));
             })
         })
     }
