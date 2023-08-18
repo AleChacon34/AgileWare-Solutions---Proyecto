@@ -61,7 +61,7 @@ function alertaCreacion(){
     confirmButtonText: 'Continuar',
   }).then((result) => {
     if (result.isConfirmed) {
-        // window.location.replace("/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarListaOfertas.html")
+        window.location.replace("/Bolsa de Empleo/Empresa - Mis Empleos/Visualizar Lista Aplicaciones/consultarListaOfertas.html")
     };
   });
 } 

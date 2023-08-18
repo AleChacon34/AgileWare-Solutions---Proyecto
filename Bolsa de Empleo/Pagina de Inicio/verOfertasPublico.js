@@ -91,7 +91,6 @@ function filtrarOfertas(e){
     e.preventDefault(e.target);
     OfertaService.filter(paramBusqueda.value).then((response) => {
         let data = response.data.data;
-        console.log(data)
         if(data == ""){
             Swal.fire({
                 icon: "info",
@@ -115,7 +114,6 @@ function mostrarResultados(data, paramBusqueda){
            mainBody.removeChild(mainBody.children[1]);
         }
         if (data.visibilidad === "Activa" && data.estadoOferta != "Oferta oculta"){
-            console.log(data)
             //Crear DIV principal con id
             let addDiv = document.createElement('div');
             //Crear section del div
